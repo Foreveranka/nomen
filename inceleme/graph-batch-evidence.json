@@ -1,0 +1,13 @@
+{
+  "checkedAt": "2026-09-11T03:18:41.449Z",
+  "elapsedMs": 973,
+  "coverage": {
+    "status": "live",
+    "checked": 48,
+    "eligible": 48,
+    "withheld": [],
+    "message": "The Graph checked Sepolia ownership and metadata URI continuity before AI ranking. Feedback history informs the comparison, not a quality guarantee.",
+    "indexedBlock": 11679244,
+    "indexedAt": "2026-09-11T03:18:24.000Z"
+  }
+}

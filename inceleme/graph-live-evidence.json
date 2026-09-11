@@ -1,0 +1,24 @@
+{
+  "checkedAt": "2026-09-11T03:17:47.491Z",
+  "agent": {
+    "agentId": "10226",
+    "owner": "0xd7256e7a20368bac505a738cc1c2cbc8d0648849",
+    "registeredIn": "11679005",
+    "feedbackCount": "0",
+    "distinctClients": "0",
+    "name": {
+      "label": "reader",
+      "owner": "0xd7256e7a20368bac505a738cc1c2cbc8d0648849",
+      "live": true,
+      "expiry": "1820629908"
+    }
+  },
+  "_meta": {
+    "block": {
+      "number": 11679240,
+      "timestamp": 1789096644
+    },
+    "hasIndexingErrors": false
+  },
+  "verifiedAgainst": "0x29904930ef63e6c79cf99aa6b9da4fe007e0d2261d5f54a691cbcb8c65570139"
+}

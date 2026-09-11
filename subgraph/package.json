@@ -1,0 +1,13 @@
+{
+  "name": "nomen-subgraph",
+  "license": "MIT",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy nomen"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.98.0",
+    "@graphprotocol/graph-ts": "0.38.1"
+  }
+}

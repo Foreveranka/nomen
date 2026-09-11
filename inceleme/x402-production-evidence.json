@@ -1,0 +1,14 @@
+{
+  "checkedAt": "2026-09-11T02:38:19.601Z",
+  "endpoint": "https://nomen-beta.vercel.app/api/dogrula?chain=ethereum&agentId=22817",
+  "network": "Base Sepolia",
+  "amountUSDC": "0.001",
+  "payer": "0xb422a67E72Bc398BbA7d19a558493be4DF739AF2",
+  "recipient": "0xD7256e7a20368bAc505A738CC1C2cbc8d0648849",
+  "transaction": "0x4d72400049103b95d4532aaaa84fd4e5902d980ea3336759b5b00f72ade0135f",
+  "unpaid": 402,
+  "invalid": 402,
+  "paid": 200,
+  "replay": 402,
+  "transferVerified": true
+}

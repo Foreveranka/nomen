@@ -1,0 +1,301 @@
+{
+ "bos_metadata": [
+  {
+   "zincir": "ethereum",
+   "id": 1,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "ethereum",
+   "id": 2,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "ethereum",
+   "id": 3,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "ethereum",
+   "id": 4,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "ethereum",
+   "id": 5,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "ethereum",
+   "id": 6,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  }
+ ],
+ "gecersiz_json": [
+  {
+   "zincir": "ethereum",
+   "id": 2363,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "ethereum",
+   "id": 2366,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "ethereum",
+   "id": 2367,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "ethereum",
+   "id": 2368,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "ethereum",
+   "id": 2369,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "ethereum",
+   "id": 2370,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  }
+ ],
+ "erisilemez": [
+  {
+   "zincir": "ethereum",
+   "id": 2365,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "ethereum",
+   "id": 6997,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "ethereum",
+   "id": 6998,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "ethereum",
+   "id": 7034,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "ethereum",
+   "id": 7035,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "ethereum",
+   "id": 7037,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  }
+ ],
+ "kopya": [
+  {
+   "zincir": "ethereum",
+   "id": 2445,
+   "name": "EarlyAgent",
+   "desc": "Early registered AI agent on ERC-8004, seeking to establish identity and reputation in the decentralized agent economy. Low serial number holder.",
+   "etiketler": [
+    "kopyasi:2433"
+   ]
+  },
+  {
+   "zincir": "ethereum",
+   "id": 6887,
+   "name": "Minara AI",
+   "desc": "Intelligent crypto assistant powered by AI. Provides real-time market analysis, DeFi guidance, swap intent parsing, perp trading suggestions, and prediction mar",
+   "etiketler": [
+    "kopyasi:6815"
+   ]
+  },
+  {
+   "zincir": "ethereum",
+   "id": 7202,
+   "name": "Agent",
+   "desc": "AgentAgentAgentAgentAgentAgentAgentAgentAgentAgentAgentAgentAgentAgent",
+   "etiketler": [
+    "kopyasi:7156"
+   ]
+  },
+  {
+   "zincir": "ethereum",
+   "id": 9664,
+   "name": "1",
+   "desc": "1111111111111111111111111111111111111111111111111111111",
+   "etiketler": [
+    "kopyasi:9659"
+   ]
+  },
+  {
+   "zincir": "ethereum",
+   "id": 9666,
+   "name": "1",
+   "desc": "1111111111111111111111111111111111111111111111111111111",
+   "etiketler": [
+    "kopyasi:9659"
+   ]
+  },
+  {
+   "zincir": "ethereum",
+   "id": 9672,
+   "name": "1",
+   "desc": "1111111111111111111111111111111111111111111111111111111",
+   "etiketler": [
+    "kopyasi:9659"
+   ]
+  }
+ ],
+ "anlamsiz": [
+  {
+   "zincir": "ethereum",
+   "id": 3337,
+   "name": "Alex #3337",
+   "desc": "https://x.com/sadd_asd77675\nhttps://x.com/sadd_asd77675",
+   "etiketler": [
+    "ulasim_adresi_yok"
+   ]
+  },
+  {
+   "zincir": "ethereum",
+   "id": 7156,
+   "name": "Agent",
+   "desc": "AgentAgentAgentAgentAgentAgentAgentAgentAgentAgentAgentAgentAgentAgent",
+   "etiketler": [
+    "ulasim_adresi_yok"
+   ]
+  },
+  {
+   "zincir": "ethereum",
+   "id": 7198,
+   "name": "agent.eth",
+   "desc": "agent.eth test\nagent.eth test\nagent.eth test\nagent.eth test",
+   "etiketler": [
+    "kendi_beyani_test"
+   ]
+  },
+  {
+   "zincir": "ethereum",
+   "id": 7199,
+   "name": "Agent",
+   "desc": "AgentAgentAgentAgentAgentAgentAgentAgentAgentAgentAgent",
+   "etiketler": [
+    "ulasim_adresi_yok"
+   ]
+  },
+  {
+   "zincir": "ethereum",
+   "id": 7209,
+   "name": "sizi-botyim71 by Olas",
+   "desc": "whatever",
+   "etiketler": []
+  },
+  {
+   "zincir": "ethereum",
+   "id": 7341,
+   "name": "dAi",
+   "desc": "dAidAidAidAidAidAidAidAidAidAidAidAidAidAidAidAidAi",
+   "etiketler": [
+    "ulasim_adresi_yok"
+   ]
+  }
+ ],
+ "eksik_alan": [
+  {
+   "zincir": "ethereum",
+   "id": 9765,
+   "name": "Alphakek AI",
+   "desc": "AI that loves money and its only purpose is to make you an insane amount of money so you can both be happy.",
+   "etiketler": [
+    "eksik:type"
+   ]
+  },
+  {
+   "zincir": "ethereum",
+   "id": 13721,
+   "name": "",
+   "desc": "",
+   "etiketler": [
+    "eksik:name,description,image"
+   ]
+  },
+  {
+   "zincir": "ethereum",
+   "id": 13825,
+   "name": "",
+   "desc": "",
+   "etiketler": [
+    "eksik:name,description,image"
+   ]
+  },
+  {
+   "zincir": "ethereum",
+   "id": 13828,
+   "name": "",
+   "desc": "",
+   "etiketler": [
+    "eksik:name,description,image"
+   ]
+  },
+  {
+   "zincir": "ethereum",
+   "id": 13931,
+   "name": "",
+   "desc": "",
+   "etiketler": [
+    "eksik:name,description,image"
+   ]
+  },
+  {
+   "zincir": "ethereum",
+   "id": 15774,
+   "name": "",
+   "desc": "",
+   "etiketler": [
+    "eksik:name,description,image"
+   ]
+  }
+ ],
+ "rpc_error": []
+}

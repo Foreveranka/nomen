@@ -1,0 +1,115 @@
+"""
+An ERC-8004 agent as the chain knows it. Everything here comes from events, never from
+an offchain judgement, so a consumer can reproduce it from the logs alone.
+"""
+type Agent @entity(immutable: false) {
+  id: ID!                        # chainId-agentId
+  agentId: BigInt!
+  owner: Bytes!
+  agentURI: String!
+  registeredAt: BigInt!
+  registeredIn: BigInt!          # block
+  uriUpdates: BigInt!            # how often the metadata pointer moved
+  lastUpdatedAt: BigInt!
+  transfers: BigInt!             # ownership changes since minting
+  metadata: [AgentMetadata!]! @derivedFrom(field: "agent")
+  feedback: [Feedback!]! @derivedFrom(field: "agent")
+  validations: [Validation!]! @derivedFrom(field: "agent")
+  feedbackCount: BigInt!
+  distinctClients: BigInt!
+  name: NomenName
+}
+
+type AgentMetadata @entity(immutable: false) {
+  id: ID!                        # agent-key
+  agent: Agent!
+  key: String!
+  value: Bytes!
+  updatedAt: BigInt!
+}
+
+"""Identity immediately after a registry event. Immutable rows survive mutable-state pruning."""
+type IdentityCheckpoint @entity(immutable: true) {
+  id: ID!                        # transaction-logIndex
+  agentKey: String!              # chainId-agentId
+  owner: Bytes!
+  agentURI: String!
+  block: BigInt!
+  position: BigInt!              # block * 2^32 + logIndex, orders events within a block
+}
+
+"""
+One onchain review. `revoked` flips when the author takes it back, so a reader can
+tell the difference between a score that stood and one that was withdrawn.
+"""
+type Feedback @entity(immutable: false) {
+  id: ID!                        # agent-client-index
+  agent: Agent!
+  client: Bytes!
+  index: BigInt!
+  value: BigInt!
+  valueDecimals: Int!
+  tag1: String!
+  tag2: String!
+  endpoint: String!
+  feedbackURI: String!
+  createdAt: BigInt!
+  revoked: Boolean!
+  revokedAt: BigInt
+}
+
+type Validation @entity(immutable: false) {
+  id: ID!                        # requestHash
+  agent: Agent!
+  validator: Bytes!
+  requestURI: String!
+  requestedAt: BigInt!
+  response: Int
+  responseURI: String
+  tag: String
+  respondedAt: BigInt
+}
+
+"""One (agent, reviewer) pair. Exists so distinct reviewers are counted exactly, not inferred."""
+type AgentClient @entity(immutable: true) {
+  id: ID!                        # agent-client
+  agent: Agent!
+  client: Bytes!
+  firstSeenAt: BigInt!
+}
+
+"""A subname issued by the registrar. live means not revoked; queries must also require expiry_gt now and verify current endorsement onchain."""
+type NomenName @entity(immutable: false) {
+  id: ID!                        # label
+  label: String!
+  agent: Agent!
+  owner: Bytes!
+  tokenId: BigInt!
+  claimedAt: BigInt!
+  expiry: BigInt
+  live: Boolean!
+  revokedAt: BigInt
+  revokeReason: String
+}
+
+"""Every scan the registrar has committed to, so the eligibility list has a history."""
+type Scan @entity(immutable: true) {
+  id: ID!                        # tx-logIndex
+  root: Bytes!
+  source: String!
+  publishedAt: BigInt!
+}
+
+"""One row the whole directory can be read from."""
+type Registry @entity(immutable: false) {
+  id: ID!
+  agents: BigInt!
+  feedbackTotal: BigInt!
+  feedbackRevoked: BigInt!
+  validationsRequested: BigInt!
+  validationsAnswered: BigInt!
+  namesLive: BigInt! # unrevoked registrations; excludes neither expiry nor new root invalidation
+  namesRevoked: BigInt!
+  lastScanRoot: Bytes
+  lastScanAt: BigInt
+}

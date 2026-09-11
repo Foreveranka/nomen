@@ -1,0 +1,293 @@
+{
+ "bos_metadata": [
+  {
+   "zincir": "sepolia",
+   "id": 21,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "sepolia",
+   "id": 22,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "sepolia",
+   "id": 27,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "sepolia",
+   "id": 28,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "sepolia",
+   "id": 29,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "sepolia",
+   "id": 30,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  }
+ ],
+ "gecersiz_json": [
+  {
+   "zincir": "sepolia",
+   "id": 59,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "sepolia",
+   "id": 60,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "sepolia",
+   "id": 61,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "sepolia",
+   "id": 62,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "sepolia",
+   "id": 63,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "sepolia",
+   "id": 64,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  }
+ ],
+ "erisilemez": [
+  {
+   "zincir": "sepolia",
+   "id": 1,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "sepolia",
+   "id": 2,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "sepolia",
+   "id": 3,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "sepolia",
+   "id": 4,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "sepolia",
+   "id": 5,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "sepolia",
+   "id": 6,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  }
+ ],
+ "kopya": [
+  {
+   "zincir": "sepolia",
+   "id": 361,
+   "name": "Zyfai Rebalancer Agent",
+   "desc": "A ZK powered rebalancer agent that finds the best yet low risk yield opportunities for you across various bluechip protocols on multiple chains, such as Base, A",
+   "etiketler": [
+    "kopyasi:323"
+   ]
+  },
+  {
+   "zincir": "sepolia",
+   "id": 415,
+   "name": "Twitter Intelligence Agent",
+   "desc": "Twitter/X tools (timeline, tweet detail, search) Created by Heurist Mesh.",
+   "etiketler": [
+    "kopyasi:379"
+   ]
+  },
+  {
+   "zincir": "sepolia",
+   "id": 547,
+   "name": "Minara AI",
+   "desc": "Intelligent crypto assistant powered by AI. Provides real-time market analysis, DeFi guidance, swap intent parsing, perp trading suggestions, and prediction mar",
+   "etiketler": [
+    "kopyasi:546"
+   ]
+  },
+  {
+   "zincir": "sepolia",
+   "id": 549,
+   "name": "Minara AI",
+   "desc": "Intelligent crypto assistant powered by AI. Provides real-time market analysis, DeFi guidance, swap intent parsing, perp trading suggestions, and prediction mar",
+   "etiketler": [
+    "kopyasi:546"
+   ]
+  },
+  {
+   "zincir": "sepolia",
+   "id": 702,
+   "name": "ancient-oracle-prophecies",
+   "desc": "Ask about the future just for fun",
+   "etiketler": [
+    "kopyasi:701"
+   ]
+  },
+  {
+   "zincir": "sepolia",
+   "id": 882,
+   "name": "OpenClaw Test Agent",
+   "desc": "AI agent registered via 8004-mcp on Ethereum Sepolia testnet",
+   "etiketler": [
+    "kopyasi:881"
+   ]
+  }
+ ],
+ "anlamsiz": [
+  {
+   "zincir": "sepolia",
+   "id": 20,
+   "name": "agentic-trust-lets-go-live.8004-agent.eth",
+   "desc": "First agent on testnet, but ready to go live.  Yahoooooo",
+   "etiketler": []
+  },
+  {
+   "zincir": "sepolia",
+   "id": 33,
+   "name": "agentic-trust-go-agent-account.8004-agent.eth",
+   "desc": "I love the new agent wallet first class on-chain feature.  Just need to call it agent account.  This is about more than just money.  But,  great job adding it.",
+   "etiketler": []
+  },
+  {
+   "zincir": "sepolia",
+   "id": 114,
+   "name": "agentic-trust-mm-agent-owner-test1.8004-agent.eth",
+   "desc": "agentic-trust-mm-agent-owner-test1 ...",
+   "etiketler": []
+  },
+  {
+   "zincir": "sepolia",
+   "id": 115,
+   "name": "agentic-trust-rich-v1.8004-agent.eth",
+   "desc": "richv1 test",
+   "etiketler": [
+    "kendi_beyani_test"
+   ]
+  },
+  {
+   "zincir": "sepolia",
+   "id": 116,
+   "name": "agent-trust-richv2.8004-agent.eth",
+   "desc": "richv2 ...",
+   "etiketler": []
+  },
+  {
+   "zincir": "sepolia",
+   "id": 117,
+   "name": "agentic-trust-richv10.8004-agent.eth",
+   "desc": "v10",
+   "etiketler": []
+  }
+ ],
+ "eksik_alan": [
+  {
+   "zincir": "sepolia",
+   "id": 113,
+   "name": "Bob",
+   "desc": "bob is great and has many friends. great guy indeed",
+   "etiketler": [
+    "eksik:type"
+   ]
+  },
+  {
+   "zincir": "sepolia",
+   "id": 380,
+   "name": "agent test",
+   "desc": "this is an agent test this is an agent test this is an agent test ",
+   "etiketler": [
+    "eksik:type"
+   ]
+  },
+  {
+   "zincir": "sepolia",
+   "id": 453,
+   "name": "test ai agent",
+   "desc": "this is a test this is a test this is a test this is a test ",
+   "etiketler": [
+    "eksik:type"
+   ]
+  },
+  {
+   "zincir": "sepolia",
+   "id": 454,
+   "name": "Test Agent 2",
+   "desc": "this is a test this is a test this is a test this is a test ",
+   "etiketler": [
+    "eksik:type"
+   ]
+  },
+  {
+   "zincir": "sepolia",
+   "id": 455,
+   "name": "Test Agent 3",
+   "desc": "another test another test another test another test",
+   "etiketler": [
+    "eksik:type"
+   ]
+  },
+  {
+   "zincir": "sepolia",
+   "id": 531,
+   "name": "666yytt",
+   "desc": "666yytt666yytt666yytt666",
+   "etiketler": [
+    "eksik:type,image"
+   ]
+  }
+ ],
+ "rpc_error": []
+}

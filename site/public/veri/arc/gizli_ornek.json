@@ -1,0 +1,353 @@
+{
+ "bos_metadata": [
+  {
+   "zincir": "arc",
+   "id": 1,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "arc",
+   "id": 16,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "arc",
+   "id": 54,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "arc",
+   "id": 77,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "arc",
+   "id": 78,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "arc",
+   "id": 157,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  }
+ ],
+ "gecersiz_json": [
+  {
+   "zincir": "arc",
+   "id": 1520,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "arc",
+   "id": 1521,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "arc",
+   "id": 1522,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "arc",
+   "id": 1532,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "arc",
+   "id": 1533,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "arc",
+   "id": 1534,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  }
+ ],
+ "erisilemez": [
+  {
+   "zincir": "arc",
+   "id": 2,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "arc",
+   "id": 3,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "arc",
+   "id": 4,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "arc",
+   "id": 5,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "arc",
+   "id": 6,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "arc",
+   "id": 7,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  }
+ ],
+ "kopya": [
+  {
+   "zincir": "arc",
+   "id": 59,
+   "name": "ArcPilot",
+   "desc": "Your onchain guide for swaps, pools, and reputation on Arc. Designed to assist users with DeFi actions, onboarding, and intelligent interaction across the FajuA",
+   "etiketler": [
+    "kopyasi:58"
+   ]
+  },
+  {
+   "zincir": "arc",
+   "id": 272,
+   "name": "ArcPilot",
+   "desc": "Your onchain guide for swaps, pools, and reputation on Arc. Designed to assist users with DeFi actions, onboarding, and intelligent interaction across the FajuA",
+   "etiketler": [
+    "kopyasi:58"
+   ]
+  },
+  {
+   "zincir": "arc",
+   "id": 273,
+   "name": "ArcPilot",
+   "desc": "Your onchain guide for swaps, pools, and reputation on Arc. Designed to assist users with DeFi actions, onboarding, and intelligent interaction across the FajuA",
+   "etiketler": [
+    "kopyasi:58"
+   ]
+  },
+  {
+   "zincir": "arc",
+   "id": 378,
+   "name": "ArcPilot",
+   "desc": "Your onchain guide for swaps, pools, and reputation on Arc. Designed to assist users with DeFi actions, onboarding, and intelligent interaction across the FajuA",
+   "etiketler": [
+    "kopyasi:58"
+   ]
+  },
+  {
+   "zincir": "arc",
+   "id": 1079,
+   "name": "ArcPilot",
+   "desc": "Your onchain guide for swaps, pools, and reputation on Arc. Designed to assist users with DeFi actions, onboarding, and intelligent interaction across the FajuA",
+   "etiketler": [
+    "kopyasi:58"
+   ]
+  },
+  {
+   "zincir": "arc",
+   "id": 1112,
+   "name": "ArcPilot",
+   "desc": "Your onchain guide for swaps, pools, and reputation on Arc. Designed to assist users with DeFi actions, onboarding, and intelligent interaction across the FajuA",
+   "etiketler": [
+    "kopyasi:58"
+   ]
+  }
+ ],
+ "anlamsiz": [
+  {
+   "zincir": "arc",
+   "id": 1431,
+   "name": "<|\"|ArcLancer Demo Agent<|\"|",
+   "desc": "<|\"|ipfs://QmMyAgentMetadataHash<|\"|",
+   "etiketler": [
+    "ulasim_adresi_yok",
+    "kendi_beyani_test",
+    "alan_yazimi:agent_type→type"
+   ]
+  },
+  {
+   "zincir": "arc",
+   "id": 1661,
+   "name": "ya",
+   "desc": "skill",
+   "etiketler": [
+    "ulasim_adresi_yok",
+    "alan_yazimi:agent_type→type"
+   ]
+  },
+  {
+   "zincir": "arc",
+   "id": 1662,
+   "name": "oke",
+   "desc": "sat",
+   "etiketler": [
+    "ulasim_adresi_yok",
+    "alan_yazimi:agent_type→type"
+   ]
+  },
+  {
+   "zincir": "arc",
+   "id": 1663,
+   "name": "sare",
+   "desc": "sare",
+   "etiketler": [
+    "ulasim_adresi_yok",
+    "alan_yazimi:agent_type→type"
+   ]
+  },
+  {
+   "zincir": "arc",
+   "id": 1664,
+   "name": "sas",
+   "desc": "sad",
+   "etiketler": [
+    "ulasim_adresi_yok",
+    "alan_yazimi:agent_type→type"
+   ]
+  },
+  {
+   "zincir": "arc",
+   "id": 1665,
+   "name": "rte",
+   "desc": "s",
+   "etiketler": [
+    "ulasim_adresi_yok",
+    "alan_yazimi:agent_type→type"
+   ]
+  }
+ ],
+ "eksik_alan": [
+  {
+   "zincir": "arc",
+   "id": 1659,
+   "name": "setStatus",
+   "desc": "",
+   "etiketler": [
+    "eksik:type,description,image"
+   ]
+  },
+  {
+   "zincir": "arc",
+   "id": 2192,
+   "name": "Orchestrator",
+   "desc": "",
+   "etiketler": [
+    "eksik:type,description,image"
+   ]
+  },
+  {
+   "zincir": "arc",
+   "id": 2512,
+   "name": "bba68541",
+   "desc": "",
+   "etiketler": [
+    "eksik:type,description,image"
+   ]
+  },
+  {
+   "zincir": "arc",
+   "id": 2550,
+   "name": "test",
+   "desc": "",
+   "etiketler": [
+    "eksik:description,image"
+   ]
+  },
+  {
+   "zincir": "arc",
+   "id": 2551,
+   "name": "Milton",
+   "desc": "",
+   "etiketler": [
+    "eksik:description,image"
+   ]
+  },
+  {
+   "zincir": "arc",
+   "id": 2563,
+   "name": "Compliance",
+   "desc": "",
+   "etiketler": [
+    "eksik:description,image"
+   ]
+  }
+ ],
+ "rpc_error": [
+  {
+   "zincir": "arc",
+   "id": 10,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "arc",
+   "id": 11,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "arc",
+   "id": 12,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "arc",
+   "id": 13,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "arc",
+   "id": 14,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "arc",
+   "id": 15,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  }
+ ]
+}

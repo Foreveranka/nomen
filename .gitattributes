@@ -1,0 +1,2 @@
+# Preserve snapshot status bytes exactly; never apply text line-ending conversion.
+*.bin binary

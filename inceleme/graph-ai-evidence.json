@@ -1,0 +1,176 @@
+{
+  "checkedAt": "2026-09-11T03:20:21.892Z",
+  "base": "https://nomen-beta.vercel.app",
+  "subgraph": "https://api.studio.thegraph.com/query/1760110/nomen/v0.3.0",
+  "checks": "Real DeepSeek output; Graph facts and immutable snapshot checkpoints independently queried at the returned block.",
+  "cases": [
+    {
+      "request": "Find an agent for crypto research and risk assessment using onchain data.",
+      "model": "deepseek-flash",
+      "registry": {
+        "status": "live",
+        "checked": 2,
+        "eligible": 2,
+        "withheld": [],
+        "message": "The Graph checked Sepolia ownership and metadata URI continuity before AI ranking. Feedback history informs the comparison, not a quality guarantee.",
+        "indexedBlock": 11679252,
+        "indexedAt": "2026-09-11T03:20:12.000Z"
+      },
+      "matches": [
+        {
+          "key": "sepolia:1194",
+          "reason": "Explicitly does crypto research and risk assessment using onchain metrics.",
+          "gaps": [
+            "No verification of onchain data coverage or report accuracy.",
+            "Unknown task-specific availability."
+          ],
+          "registrySignals": [
+            "identity",
+            "feedback",
+            "changes"
+          ],
+          "registryEvidence": {
+            "source": "the-graph",
+            "indexedBlock": 11679252,
+            "indexedAt": "2026-09-11T03:20:12.000Z",
+            "baselineBlock": 11665373,
+            "owner": "0xb702f862d5140ac3f801e6b95b144e8479f30f0a",
+            "feedbackCount": "1",
+            "distinctClients": "1",
+            "uriUpdates": "1",
+            "transfers": "0",
+            "signals": [
+              {
+                "id": "identity",
+                "text": "Indexed owner agrees with the published snapshot."
+              },
+              {
+                "id": "uri",
+                "text": "Metadata URI agrees with the snapshot block. Contents at that URI can still change."
+              },
+              {
+                "id": "feedback",
+                "text": "1 feedback records indexed, including withdrawn records; not verified task completions."
+              },
+              {
+                "id": "clients",
+                "text": "1 distinct feedback wallets across all indexed feedback, not necessarily independent users."
+              },
+              {
+                "id": "changes",
+                "text": "1 URI updates and 0 transfers over the indexed history; not a quality score."
+              }
+            ]
+          }
+        },
+        {
+          "key": "sepolia:1237",
+          "reason": "Offers on-chain analytics for DeFi and token risk assessment.",
+          "gaps": [
+            "No explicit crypto research or risk assessment claim.",
+            "Unknown task-specific availability."
+          ],
+          "registrySignals": [
+            "identity",
+            "feedback",
+            "changes"
+          ],
+          "registryEvidence": {
+            "source": "the-graph",
+            "indexedBlock": 11679252,
+            "indexedAt": "2026-09-11T03:20:12.000Z",
+            "baselineBlock": 11665373,
+            "owner": "0xd2f2e791b62ac9dc8d3304dbde2762562272ddeb",
+            "feedbackCount": "0",
+            "distinctClients": "0",
+            "uriUpdates": "0",
+            "transfers": "2",
+            "signals": [
+              {
+                "id": "identity",
+                "text": "Indexed owner agrees with the published snapshot."
+              },
+              {
+                "id": "uri",
+                "text": "Metadata URI agrees with the snapshot block. Contents at that URI can still change."
+              },
+              {
+                "id": "feedback",
+                "text": "0 feedback records indexed, including withdrawn records; not verified task completions."
+              },
+              {
+                "id": "clients",
+                "text": "0 distinct feedback wallets across all indexed feedback, not necessarily independent users."
+              },
+              {
+                "id": "changes",
+                "text": "0 URI updates and 2 transfers over the indexed history; not a quality score."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "request": "Find an agent that reads published ERC-8004 metadata checks for a supplied agent ID.",
+      "model": "deepseek-flash",
+      "registry": {
+        "status": "live",
+        "checked": 1,
+        "eligible": 1,
+        "withheld": [],
+        "message": "The Graph checked Sepolia ownership and metadata URI continuity before AI ranking. Feedback history informs the comparison, not a quality guarantee.",
+        "indexedBlock": 11679252,
+        "indexedAt": "2026-09-11T03:20:12.000Z"
+      },
+      "matches": [
+        {
+          "key": "sepolia:10226",
+          "reason": "Declares it returns published ERC-8004 metadata checks and reasons for a supplied chain and agent ID.",
+          "gaps": [
+            "Whether every published metadata field is covered for a supplied agent ID is unspecified.",
+            "No information on how the supplied agent ID is validated or resolved."
+          ],
+          "registrySignals": [
+            "identity",
+            "uri",
+            "feedback"
+          ],
+          "registryEvidence": {
+            "source": "the-graph",
+            "indexedBlock": 11679252,
+            "indexedAt": "2026-09-11T03:20:12.000Z",
+            "baselineBlock": 11679005,
+            "owner": "0xd7256e7a20368bac505a738cc1c2cbc8d0648849",
+            "feedbackCount": "0",
+            "distinctClients": "0",
+            "uriUpdates": "0",
+            "transfers": "0",
+            "signals": [
+              {
+                "id": "identity",
+                "text": "Indexed owner agrees with the published snapshot."
+              },
+              {
+                "id": "uri",
+                "text": "Metadata URI agrees with the snapshot block. Contents at that URI can still change."
+              },
+              {
+                "id": "feedback",
+                "text": "0 feedback records indexed, including withdrawn records; not verified task completions."
+              },
+              {
+                "id": "clients",
+                "text": "0 distinct feedback wallets across all indexed feedback, not necessarily independent users."
+              },
+              {
+                "id": "changes",
+                "text": "0 URI updates and 0 transfers over the indexed history; not a quality score."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

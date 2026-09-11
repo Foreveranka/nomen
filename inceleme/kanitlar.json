@@ -1,0 +1,287 @@
+{
+  "review_date": "2026-09-09",
+  "production_code_modified": false,
+  "security_scan_performed": false,
+  "security_scan_reason": "Readiness gate failed; user requested final security scan only after readiness.",
+  "checks": {
+    "eslint": "pass",
+    "typescript": "pass",
+    "forge_tests": {
+      "pass": 20,
+      "fail": 0
+    },
+    "subgraph_build": "pass",
+    "turbopack_build": "blocked: port permission (after font network error)",
+    "webpack_build": "fail: missing @x402/svm/exact/client",
+    "merkle_proofs": {
+      "checked": 5050,
+      "failed": 0
+    },
+    "bulk_null_http_status": 500,
+    "root_source_http_status": 404,
+    "arc_invalid_owner": {
+      "value": "0x0x",
+      "record_count": 633392
+    },
+    "unknown_agent_ui": "999999 shows not_registered plus six green checkmarks"
+  },
+  "onchain_evidence_limit": "PublicNode root getter matched local root; log response empty and known receipt null; secondary provider refused free Sepolia access. No claim-count assertion made.",
+  "sources": [
+    {
+      "path": "README.md",
+      "sha256": "b52831d387abb451b5a51bd592dcd4c2f9d41369a6b61764eabe2136dd2809a2"
+    },
+    {
+      "path": "kontratlar/script/Dagit.s.sol",
+      "sha256": "dfd5fdff1576c5c8761967c738cf809dada34e005c6980e66d8571d0f7f77576"
+    },
+    {
+      "path": "kontratlar/src/NomenRegistrar.sol",
+      "sha256": "d2f38c9a8dc81b3792a3e9d2e0ab4ce7a3f1f67c4241f5bc67094d771b29faa4"
+    },
+    {
+      "path": "kontratlar/src/interfaces/IENSv2.sol",
+      "sha256": "9acf35255277b2375d69f2bdf2c3e48d158ab9d5b09836661211d86c606aaf67"
+    },
+    {
+      "path": "kontratlar/test/Erc7930.t.sol",
+      "sha256": "37ddbd179515c7b13b4ffc22f4a63aa4fb334ccd3de11d21b6d6a4cc17126ffd"
+    },
+    {
+      "path": "kontratlar/test/MerkleCrossCheck.t.sol",
+      "sha256": "b80430fd2a40f45ada7f6e7f60f98b424a80fa26207c07946c52a8cbf1641356"
+    },
+    {
+      "path": "kontratlar/test/NomenRegistrar.t.sol",
+      "sha256": "927431acbdeca4c55e36d16c468d4d52168f05faf992735aa136763221699b65"
+    },
+    {
+      "path": "site/app/agent/[chain]/[id]/page.tsx",
+      "sha256": "f644ef98f5d6f2d41ce1f0e67e8dff95f6610abcdd8459976c5fc932024ff42e"
+    },
+    {
+      "path": "site/app/api/dogrula/route.ts",
+      "sha256": "00eda5e04386f3caefa5438fa739994a3b40cfd1167cf74fcf1ca26d79f174aa"
+    },
+    {
+      "path": "site/app/api/elenen/route.ts",
+      "sha256": "326fcf07a76cbc0ca513cc1638e15433820ea78d71397f917d0aeec215d13295"
+    },
+    {
+      "path": "site/app/api/sahip/route.ts",
+      "sha256": "fbf52b1a1febe3d9cae5228a34b5c5bb121e3bf56389c76c2488a61e94d64db7"
+    },
+    {
+      "path": "site/app/api/toplu/route.ts",
+      "sha256": "d32c86b1dc0256e5b27c26f10afe240904feace98f7b6aa92a92dc4c7cc1339d"
+    },
+    {
+      "path": "site/app/bulk/page.tsx",
+      "sha256": "745a9e928d6561da6b65685e80ce1e2ddca362e18b816d97f954f53cec3f8771"
+    },
+    {
+      "path": "site/app/claim/page.tsx",
+      "sha256": "433535f62b91e9e06345d5291a947f8b58fb11791ce7c3a0441abf320fe24a54"
+    },
+    {
+      "path": "site/app/developers/page.tsx",
+      "sha256": "3e22ee44697801d5320bd504ff4d412c4b074c5a0baf5f1ff04f7ee165fc9c65"
+    },
+    {
+      "path": "site/app/docs/api/page.tsx",
+      "sha256": "8d134adff45d09578c7fa727c7260d72cc160f546a111f5ed6d98b15481d6c32"
+    },
+    {
+      "path": "site/app/docs/checks/page.tsx",
+      "sha256": "c79820acda4c2b74ab288e575a6b427d3edddb8e0d19fd6965285daab11d6f7f"
+    },
+    {
+      "path": "site/app/docs/contracts/page.tsx",
+      "sha256": "14cf356c3480dd0e894148ee34e8911bda378cec9402f727813f2129e86b86f9"
+    },
+    {
+      "path": "site/app/docs/layout.tsx",
+      "sha256": "c451687a8a304065d4da8728bac6f6c20b4d915fb59226c6c2d8fd2c104c1a38"
+    },
+    {
+      "path": "site/app/docs/names/page.tsx",
+      "sha256": "fc262facf9a8dda31717e4b11068dc6acdcfc84efd87495d42fabfef39ccf479"
+    },
+    {
+      "path": "site/app/docs/page.tsx",
+      "sha256": "2c68e23a3557bb5165afda5cc639bed2df0e7130d697320cac3593fb4d762a28"
+    },
+    {
+      "path": "site/app/docs/reproduce/page.tsx",
+      "sha256": "dc24d747f51fdfff46eb8fed4b03b5466f3888ebce17242426e622d508c8eea2"
+    },
+    {
+      "path": "site/app/docs/subgraph/page.tsx",
+      "sha256": "dfc5084de4295cc5ccb20cf4acb9be7a7c9a37d3e39bd34c95437eba73d97dc0"
+    },
+    {
+      "path": "site/app/filtered/page.tsx",
+      "sha256": "d330c3ec3c701b74511f32cbbe2235dd4b4b3dbe18a24d46e4853be72935fad8"
+    },
+    {
+      "path": "site/app/globals.css",
+      "sha256": "09af2f893f3a0b1a529fe0c9f67c8ccdb9ee43b61435e01c314d9e9974d55756"
+    },
+    {
+      "path": "site/app/layout.tsx",
+      "sha256": "8c5bfa6cec3052edca362208756be871edcea667076244f545ea32d1b226b014"
+    },
+    {
+      "path": "site/app/name/[label]/page.tsx",
+      "sha256": "c4e754a23b8815d08b6dc8a673ef50532abc961c665abfd4f991bde4bcbb8d30"
+    },
+    {
+      "path": "site/app/names/page.tsx",
+      "sha256": "254a3269c9571217a0c0276b6be223d049cd57334a1128186cb7d8be7e17c1d3"
+    },
+    {
+      "path": "site/app/owner/[chain]/[address]/page.tsx",
+      "sha256": "4365a4dee4c2060ba48658d43bbe1aa5a65c194dc36bcb7394e0c193f8b429eb"
+    },
+    {
+      "path": "site/app/page.tsx",
+      "sha256": "e0376965bf11660bbbd887a984eed1fee3c1e540850dae6fb68e25d8be5c3d99"
+    },
+    {
+      "path": "site/app/profile/page.tsx",
+      "sha256": "c0fdf8c268c7d2e4de9d3ebec2b8ebc4a52bdeb38f2391d165e4d0597a5d41ea"
+    },
+    {
+      "path": "site/app/providers.tsx",
+      "sha256": "ca895647205a616f155f09d543f2c7b7b08f7d4a5f52ec6bf74074dceba6c54d"
+    },
+    {
+      "path": "site/app/rules/page.tsx",
+      "sha256": "9ff9fb2ed403ea020927ea8f6fdbe5a57f8c4a9a12e4e8e9fc1bb49c9acfaeca"
+    },
+    {
+      "path": "site/components/AjanKart.tsx",
+      "sha256": "db7e08ee86d2eeaed8bb9b7e9137a75bd29433a94ca0116613efa66bc8cbd70c"
+    },
+    {
+      "path": "site/components/Baslik.tsx",
+      "sha256": "c01a8c145bf8639a2c97443f2dfdf90ddbf22d5712b662b5fc1ec03c4b8ceb23"
+    },
+    {
+      "path": "site/lib/aglar.ts",
+      "sha256": "98ce4073270df64f07dfbe0f5084b05fbe214a62d612d76bfbc61bc46e090b42"
+    },
+    {
+      "path": "site/lib/dizin.ts",
+      "sha256": "f4389d83435fcbfb805e2114513b6ff1e2418f7f6a0905a2d870d8db27b1101b"
+    },
+    {
+      "path": "site/lib/registrar.ts",
+      "sha256": "5a31e7411052cafc432b669a6e493c68f1041b00a2797a4d5f29ca1595219b5d"
+    },
+    {
+      "path": "site/lib/veri.ts",
+      "sha256": "3cdb8945533eef3e0a25600af82ac39fa27e3f71e8736ccd73a38b6c3eb6c727"
+    },
+    {
+      "path": "site/lib/wagmi.ts",
+      "sha256": "fd04f97e5d6e9c675cd4c5370e7a6d4589ed0602cc3412a0d9ff9dabe47bb308"
+    },
+    {
+      "path": "site/lib/x402.ts",
+      "sha256": "cb896024bb7b133ecf13692130f7e7b63dea8cb733c35a959ca4121fb3f5c902"
+    },
+    {
+      "path": "site/next.config.ts",
+      "sha256": "2a87bf379b18f80ef2ed5bd1f884ad3ae535c99465f789175801c393ce053c92"
+    },
+    {
+      "path": "site/package.json",
+      "sha256": "1f90a3d3d388780bd7d60f91371c5f7d81572a1945aa3d47a6090331d4ee4734"
+    },
+    {
+      "path": "subgraph/schema.graphql",
+      "sha256": "6832646988aa5c9d210b8313ea64a5b9f7322c60b939911d55f0dc6043053494"
+    },
+    {
+      "path": "subgraph/src/dogrulama.ts",
+      "sha256": "787a28b679ba71c52c83dceec2c8fb177690f24657c36060d4666acac9029937"
+    },
+    {
+      "path": "subgraph/src/isim.ts",
+      "sha256": "936605f7375ac76ae6f48dbe3d1901456775996c2599c8a32ac0d0f114c520ed"
+    },
+    {
+      "path": "subgraph/src/itibar.ts",
+      "sha256": "45edd38b08724734b1f7789d04f5d03ca5e5031ad3e4358104c1670a63e22159"
+    },
+    {
+      "path": "subgraph/src/kimlik.ts",
+      "sha256": "1c9ed37b878ef3a38a4c7f9c3952794631556a7ff0d3bf9ecac310493b92ba98"
+    },
+    {
+      "path": "subgraph/src/ortak.ts",
+      "sha256": "919a928e73baca438c4b5a29263044d27658a175e8bd858dcec0b80e2f9c7884"
+    },
+    {
+      "path": "subgraph/subgraph.yaml",
+      "sha256": "82bf66d3b76a585f3c5d38c2d9891ef23a94fc9cc82f96badd405907c3869eaa"
+    },
+    {
+      "path": "tarayici/adim1_uri.py",
+      "sha256": "3e3895465de284b9fe166aa233a0fb35b1b6bf59ad9577d092d97bf8872fc197"
+    },
+    {
+      "path": "tarayici/adim2_metadata.py",
+      "sha256": "7b62f37eabe279172600eba7284b03b0411b074aadfa0edd3510559ed1b20100"
+    },
+    {
+      "path": "tarayici/adim3_kurallar.py",
+      "sha256": "e52fab87db1b35dc0aba6ccdc115374305c90491d0356b34c9d148496a74dd4e"
+    },
+    {
+      "path": "tarayici/adim4_kategori.py",
+      "sha256": "262d766301293fb81020ec57b9d6c22b0ef3b0586c126381772697333c74b8ec"
+    },
+    {
+      "path": "tarayici/adim5_dizin.py",
+      "sha256": "31473ab7b173abadb00f0f48b9bd68a0a7bf9993969353e9899966f81c6221c6"
+    },
+    {
+      "path": "tarayici/adim6_api_veri.py",
+      "sha256": "ce41eddc6492acd46202a6d3a302b46bcab9b9655371988d126a22da0e1718e4"
+    },
+    {
+      "path": "tarayici/adim7_merkle.py",
+      "sha256": "f8aef538cdd7dd349b0cb014153a9eb95bee19b258581d415599064e1768c6b2"
+    },
+    {
+      "path": "tarayici/arc_etiketle.py",
+      "sha256": "828a2197c67ea142ba9b63499acc1200cd2f9df676aa3337729ee2daa3ae0327"
+    },
+    {
+      "path": "tarayici/ens_kontrol.py",
+      "sha256": "4e514963ac5419ecf742a77839271f24eae8421c08a186bdbd92b901dd81df7d"
+    },
+    {
+      "path": "tarayici/ethereum_etiketle.py",
+      "sha256": "74b76d3addb87942fbacb9312aab2ce47427d3f13204b7f777a2fbe9e5799791"
+    },
+    {
+      "path": "tarayici/sepolia_etiketle.py",
+      "sha256": "76f974df564e4f5d451240156c6379243dafb58ecc323d8fa1c1e8d1dd0048c6"
+    },
+    {
+      "path": "tarayici/tazele.sh",
+      "sha256": "1a3dab7fa5e9c340a902259ccc2a2bc3a1fa6d8a98aca7c97d5308486f203469"
+    },
+    {
+      "path": "tarayici/yeniden_dene.py",
+      "sha256": "60e3d46361dc4fcb3e0366f6a89c31eb3742e0990e754c4f000401e3dbbbb3c4"
+    },
+    {
+      "path": "tarayici/zincirler.py",
+      "sha256": "062d362404bc8b4c13713e080a9f7bf92abf5e2e62a3aad1cb961bcfcd1ea403"
+    }
+  ]
+}

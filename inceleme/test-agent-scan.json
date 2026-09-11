@@ -1,0 +1,17 @@
+{
+  "checked_at": "2026-09-11T02:28:55.117432+00:00",
+  "coverage": "single_record_addition_to_existing_snapshot",
+  "agent_id": 10226,
+  "owner_read_block": 11679005,
+  "registration_transaction": "0x18aa70b16831e38d8c08a928ded65e99c67cb1d77236759e5b629758c1844968",
+  "metadata_hash": "166341865a9881d274d5fac008d96d515e7b75408563c095aeda78ced92230a7",
+  "metadata_source": "onchain_data_uri",
+  "checks": {
+    "uri": true,
+    "retrievable_json": true,
+    "required_fields": true,
+    "unique_within_snapshot": true,
+    "describable_purpose": true
+  },
+  "review": "A NOMEN-owned testnet API demonstration, visibly tagged as a test. Other records were not rescanned."
+}

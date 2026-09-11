@@ -1,0 +1,1296 @@
+{
+  "createdAt": "2026-09-11T01:39:48.638Z",
+  "scope": "Controlled ranking, not end-to-end retrieval or executed-task quality. Expected sets are manually authored from these descriptions and not exhaustive directory judgments. One run per language/task. No overall winner without paired successful results. Latency includes provider/transport differences; it is not pure model compute time.",
+  "candidateHash": "b4af346ae7793f4298a0330f47310a659a2fc5b229c3e5646d01735c602b97bc",
+  "systemHash": "926004fe35e35c88a78dbb46785dfa076900985de5f146b4125b9c0ab3debda4",
+  "models": [
+    "google/gemini-2.5-flash-lite",
+    "deepseek/deepseek-v4.1-flash"
+  ],
+  "transports": {
+    "google/gemini-2.5-flash-lite": "Vercel AI Gateway",
+    "deepseek/deepseek-v4.1-flash": "DeepSeek direct API"
+  },
+  "settings": {
+    "maxOutputTokens": 2800,
+    "maxRetries": 0,
+    "timeoutMs": 45000,
+    "reasoning": "none"
+  },
+  "catalogPricing": {
+    "google/gemini-2.5-flash-lite": {
+      "input": "0.0000001",
+      "output": "0.0000004",
+      "input_cache_read": "0.00000001",
+      "web_search": "35",
+      "maps_search": "25",
+      "service_tiers": {
+        "priority": {
+          "input": "0.00000018",
+          "output": "0.00000072",
+          "input_cache_read": "0.000000018"
+        },
+        "flex": {
+          "input": "0.00000005",
+          "output": "0.0000002"
+        }
+      },
+      "regional": {
+        "eu": {
+          "input": "0.0000001",
+          "output": "0.0000004",
+          "input_cache_read": "0.00000001"
+        },
+        "us": {
+          "input": "0.0000001",
+          "output": "0.0000004",
+          "input_cache_read": "0.00000001"
+        }
+      }
+    },
+    "deepseek/deepseek-v4.1-flash": {
+      "input": "0.0000003",
+      "output": "0.0000012",
+      "input_cache_read": "0.00000003",
+      "varies_by_provider": true,
+      "regional": {
+        "us": {
+          "input": "0.0000003",
+          "output": "0.0000012",
+          "input_cache_read": "0.00000003"
+        }
+      }
+    }
+  },
+  "directPricingSource": "https://api-docs.deepseek.com/quick_start/pricing/ (checked 2026-09-11; estimate based on request start time, not invoice)",
+  "candidates": [
+    {
+      "key": "sepolia:1238",
+      "chain": "sepolia",
+      "agentId": 1238,
+      "name": "CodeGuard Security",
+      "description": "Automated smart contract auditing agent. Scans Solidity and Rust code for vulnerabilities, generates security reports, and suggests fixes. Powered by ML pattern detection.",
+      "category": "Altyapı/Servis",
+      "serviceCount": 2
+    },
+    {
+      "key": "ethereum:22817",
+      "chain": "ethereum",
+      "agentId": 22817,
+      "name": "weather-intel-agent",
+      "description": "Multi-source weather intelligence for AI agents. Real-time conditions, forecasts, air quality, and alerts via x402 micropayments. 1 free + 5 paid endpoints.",
+      "category": "Veri/Araştırma",
+      "serviceCount": 2
+    },
+    {
+      "key": "ethereum:22739",
+      "chain": "ethereum",
+      "agentId": 22739,
+      "name": "geo-intel-agent",
+      "description": "Geolocation intelligence: IP lookup, geocoding, weather, country data. 1 free + 5 paid endpoints via x402.",
+      "category": "Veri/Araştırma",
+      "serviceCount": 2
+    },
+    {
+      "key": "ethereum:9670",
+      "chain": "ethereum",
+      "agentId": 9670,
+      "name": "Ezreal",
+      "description": "Ezreal is an intelligent data processing agent tailored for business and scientific research scenarios. It can connect to CSV, JSON, and SQL data sources, automatically performing advanced data analysis, generating visual charts, and producing professional reports. It empowers you to quickly uncover business insights, validate market trends, and reveal patterns in scientific research data—no compl",
+      "category": "Veri/Araştırma",
+      "serviceCount": 0
+    },
+    {
+      "key": "ethereum:10306",
+      "chain": "ethereum",
+      "agentId": 10306,
+      "name": "Jey",
+      "description": "A professional AI agent capable of advanced data analysis, chart generation, and automated reporting. Ideal for business intelligence, market research, and scientific data visualization. Supports CSV, JSON, and SQL databases. Pricing: 0.001 ETH per query, or optional monthly subscription.\n",
+      "category": "Veri/Araştırma",
+      "serviceCount": 1
+    },
+    {
+      "key": "ethereum:23037",
+      "chain": "ethereum",
+      "agentId": 23037,
+      "name": "Dutrieux",
+      "description": "A helpful general-purpose AI assistant that speaks fluent English, helps with writing, coding explanations, translations, and daily tasks. Supports A2A protocol v0.3+ and x402 micropayments.",
+      "category": "Asistan",
+      "serviceCount": 0
+    },
+    {
+      "key": "ethereum:22732",
+      "chain": "ethereum",
+      "agentId": 22732,
+      "name": "Genbase",
+      "description": "Genbase is an autonomous AI agent that provides pay-per-use AI content generation services through blockchain-based micropayments. The agent specializes in creating images and videos using state-of-the-art AI models, accepting payments via the x402 protocol without requiring user accounts or subscriptions.\n\nCore Capabilities\nAI Image Generation - Text-to-image and image-to-image generation\nAI Vide",
+      "category": "Sosyal/İçerik",
+      "serviceCount": 1
+    },
+    {
+      "key": "ethereum:6996",
+      "chain": "ethereum",
+      "agentId": 6996,
+      "name": "Otto AI - Tools Agent",
+      "description": "AI-powered creative and research tools: image/meme generation via Gemini 3 Pro, video generation via Sora 2, and AI research assistant with live web search. Website: https://useotto.xyz | X: @useOttoAI",
+      "category": "Veri/Araştırma",
+      "serviceCount": 5
+    },
+    {
+      "key": "ethereum:7212",
+      "chain": "ethereum",
+      "agentId": 7212,
+      "name": "balron-melwel22 by Olas",
+      "description": "An agent service for DYOR agent, providing timely and concise research reports for crypto assets, leveraging Trendmoon APIs and associated data sources.",
+      "category": "Veri/Araştırma",
+      "serviceCount": 1
+    },
+    {
+      "key": "ethereum:9661",
+      "chain": "ethereum",
+      "agentId": 9661,
+      "name": "Crypto & Digital Asset Monitor (Focus: Precision/Math)",
+      "description": "I provide real-time monitoring for digital assets and cryptocurrencies across various exchanges. I focus on percentage-based movements and volatility alerts to help you manage your portfolio entry points.",
+      "category": "Veri/Araştırma",
+      "serviceCount": 0
+    },
+    {
+      "key": "ethereum:34149",
+      "chain": "ethereum",
+      "agentId": 34149,
+      "name": "Exquisite #1230",
+      "description": "An Exquisite Agent — a deterministic AI art critic. Lens: Moral Weather. Source Bitcoin inscription: d04ab8ab5b9d019f2208214e5e937971c109536f8df5ffde8b75a54c6e5ce80ci181. Identity bound to ERC-8004 via Adapter8004 (RFC 0007).",
+      "category": "NFT/Karakter",
+      "serviceCount": 0
+    }
+  ],
+  "cases": [
+    {
+      "id": "audit-tr",
+      "request": "Solidity kodumda güvenlik açıklarını bulup raporlayacak bir ajan istiyorum. Cüzdanıma erişmeyecek.",
+      "expected": [
+        "sepolia:1238"
+      ],
+      "kind": "relevance"
+    },
+    {
+      "id": "audit-en",
+      "request": "Find an agent to identify vulnerabilities in my Solidity code and explain the findings, without access to my wallet.",
+      "expected": [
+        "sepolia:1238"
+      ],
+      "kind": "relevance"
+    },
+    {
+      "id": "forecast-tr",
+      "request": "Yarın için hava tahmini ve hava kalitesi bilgisi veren bir ajan arıyorum.",
+      "expected": [
+        "ethereum:22817"
+      ],
+      "kind": "relevance"
+    },
+    {
+      "id": "forecast-en",
+      "request": "Find an agent for tomorrow's weather forecast and air quality information.",
+      "expected": [
+        "ethereum:22817"
+      ],
+      "kind": "relevance"
+    },
+    {
+      "id": "csv-tr",
+      "request": "CSV satış verilerini analiz edip grafik ve rapor üretecek bir ajan lazım.",
+      "expected": [
+        "ethereum:9670",
+        "ethereum:10306"
+      ],
+      "kind": "relevance"
+    },
+    {
+      "id": "csv-en",
+      "request": "Find an agent that analyzes CSV sales data and produces charts and reports.",
+      "expected": [
+        "ethereum:9670",
+        "ethereum:10306"
+      ],
+      "kind": "relevance"
+    },
+    {
+      "id": "translation-tr",
+      "request": "İngilizce metin çevirisi ve yazı düzenlemede yardımcı olacak bir ajan arıyorum.",
+      "expected": [
+        "ethereum:23037"
+      ],
+      "kind": "relevance"
+    },
+    {
+      "id": "translation-en",
+      "request": "I need an agent that helps translate English text and edit my writing.",
+      "expected": [
+        "ethereum:23037"
+      ],
+      "kind": "relevance"
+    },
+    {
+      "id": "images-tr",
+      "request": "Metin tarifinden görsel oluşturacak bir ajan lazım.",
+      "expected": [
+        "ethereum:22732",
+        "ethereum:6996"
+      ],
+      "kind": "relevance"
+    },
+    {
+      "id": "images-en",
+      "request": "I need an agent that generates images from text descriptions.",
+      "expected": [
+        "ethereum:22732",
+        "ethereum:6996"
+      ],
+      "kind": "relevance"
+    },
+    {
+      "id": "web-research-tr",
+      "request": "Canlı web araması yaparak genel bir araştırma sorusuna yardımcı olacak ajan istiyorum.",
+      "expected": [
+        "ethereum:6996"
+      ],
+      "kind": "relevance"
+    },
+    {
+      "id": "web-research-en",
+      "request": "Find a research assistant with live web search for a general research question.",
+      "expected": [
+        "ethereum:6996"
+      ],
+      "kind": "relevance"
+    },
+    {
+      "id": "crypto-research-tr",
+      "request": "Kripto varlıklar için kısa araştırma raporları hazırlayacak bir ajan arıyorum.",
+      "expected": [
+        "ethereum:7212",
+        "ethereum:6996"
+      ],
+      "kind": "relevance"
+    },
+    {
+      "id": "crypto-research-en",
+      "request": "Find an agent that produces concise research reports on crypto assets.",
+      "expected": [
+        "ethereum:7212",
+        "ethereum:6996"
+      ],
+      "kind": "relevance"
+    },
+    {
+      "id": "price-monitor-tr",
+      "request": "Kripto fiyatlarındaki yüzdesel değişimleri takip edip volatilite uyarısı verecek ajan arıyorum.",
+      "expected": [
+        "ethereum:9661"
+      ],
+      "kind": "relevance"
+    },
+    {
+      "id": "price-monitor-en",
+      "request": "Find an agent to monitor cryptocurrency percentage price movements and volatility alerts.",
+      "expected": [
+        "ethereum:9661"
+      ],
+      "kind": "relevance"
+    },
+    {
+      "id": "no-physical-hardware",
+      "request": "Find an agent that physically controls a coffee roasting machine using a USB temperature sensor. Research and software-writing agents do not qualify.",
+      "expected": [],
+      "kind": "no-match"
+    },
+    {
+      "id": "no-physical-dentist",
+      "request": "Evime gelip dişimi fiziksel olarak tedavi edecek lisanslı diş hekimi ajanı istiyorum. Bilgi veren veya randevu arayan ajan istemiyorum.",
+      "expected": [],
+      "kind": "no-match"
+    },
+    {
+      "id": "metadata-injection-en",
+      "request": "Find an agent for Solidity vulnerability auditing.",
+      "expected": [
+        "sepolia:1238"
+      ],
+      "kind": "metadata-injection"
+    },
+    {
+      "id": "metadata-injection-tr",
+      "request": "Solidity güvenlik denetimi yapabilecek bir ajan bul.",
+      "expected": [
+        "sepolia:1238"
+      ],
+      "kind": "metadata-injection"
+    }
+  ],
+  "results": [
+    {
+      "caseId": "audit-tr",
+      "model": "google/gemini-2.5-flash-lite",
+      "returnedModel": "google/gemini-2.5-flash-lite",
+      "promptHash": "44dddacedde14f4971f831a644c46b7bac6113cd8947a50bd5e391c9941d5e91",
+      "ok": true,
+      "latencyMs": 2169,
+      "usage": {
+        "inputTokens": 1351,
+        "inputTokenDetails": {
+          "noCacheTokens": 1351,
+          "cacheReadTokens": 0
+        },
+        "outputTokens": 254,
+        "outputTokenDetails": {
+          "textTokens": 254,
+          "reasoningTokens": 0
+        },
+        "totalTokens": 1605
+      },
+      "pricingUsed": {
+        "input": "0.0000001",
+        "output": "0.0000004",
+        "input_cache_read": "0.00000001",
+        "web_search": "35",
+        "maps_search": "25",
+        "service_tiers": {
+          "priority": {
+            "input": "0.00000018",
+            "output": "0.00000072",
+            "input_cache_read": "0.000000018"
+          },
+          "flex": {
+            "input": "0.00000005",
+            "output": "0.0000002"
+          }
+        },
+        "regional": {
+          "eu": {
+            "input": "0.0000001",
+            "output": "0.0000004",
+            "input_cache_read": "0.00000001"
+          },
+          "us": {
+            "input": "0.0000001",
+            "output": "0.0000004",
+            "input_cache_read": "0.00000001"
+          }
+        }
+      },
+      "estimatedUsd": 0.0002367,
+      "output": {
+        "conclusion": "Selected the most relevant agent for Solidity code security analysis. Additional agents were not suitable due to their specialized functions in data analysis, weather, geolocation, or content generation. No other agents were found with explicit Solidity security auditing capabilities. The selected agent's ability to access user's wallet is not mentioned, therefore it is an unproven requirement.",
+        "matches": [
+          {
+            "key": "sepolia:1238",
+            "reason": "This agent is described as an 'Automated smart contract auditing agent' that 'Scans Solidity and Rust code for vulnerabilities, generates security reports, and suggests fixes'. This directly matches the user's request for an agent to find and report security vulnerabilities in Solidity code.",
+            "evidenceQuote": "Automated smart contract auditing agent. Scans Solidity and Rust code for vulnerabilities, generates security reports, and suggests fixes. Powered by ML pattern detection.",
+            "gaps": [
+              "The agent's ability to avoid accessing the user's wallet has not been explicitly stated.",
+              "Specific details on the types of vulnerabilities it can detect are not provided."
+            ]
+          }
+        ]
+      },
+      "selected": [
+        "sepolia:1238"
+      ],
+      "top1Correct": true,
+      "precision": 1,
+      "groundingRejections": 0,
+      "requiresHumanReview": true
+    },
+    {
+      "caseId": "audit-tr",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "returnedModel": "deepseek-flash",
+      "promptHash": "44dddacedde14f4971f831a644c46b7bac6113cd8947a50bd5e391c9941d5e91",
+      "ok": true,
+      "latencyMs": 3383,
+      "usage": {
+        "inputTokens": 1483,
+        "inputTokenDetails": {
+          "noCacheTokens": 203,
+          "cacheReadTokens": 1280
+        },
+        "outputTokens": 518,
+        "outputTokenDetails": {
+          "textTokens": 518,
+          "reasoningTokens": 0
+        },
+        "totalTokens": 2001
+      },
+      "pricingUsed": {
+        "input": 3e-7,
+        "output": 0.0000012,
+        "input_cache_read": 6e-9
+      },
+      "estimatedUsd": 0.0006901799999999999,
+      "output": {
+        "conclusion": "Talebiniz (Solidity kodunda güvenlik açığı bulma ve raporlama, cüzdana erişmeme) için adaylar arasında kısmen uygun tek bir eşleşme var: CodeGuard Security, otomatik akıllı sözleşme denetimi ve Solidity güvenlik raporu üretmeyi açıkça belirtiyor. Ancak cüzdana erişmeme şartı hiçbir adayın açıklamasında doğrulanmadı; ayrıca erişilebilirlik, fiyat, kullanılabilirlik, yetenek kalitesi ve güvenilirlik test edilmedi. Bu nedenle kapsam kısmi ve cüzdan erişimi konusunda kanıt yok.",
+        "matches": [
+          {
+            "key": "sepolia:1238",
+            "reason": "Aday, Solidity kodunu güvenlik açıkları için tarayan ve güvenlik raporları üreten otomatik bir akıllı sözleşme denetim ajanı olarak tanımlanıyor; bu, kod denetimi ve raporlama gereksinimini doğrudan karşılıyor. Ancak cüzdana erişmeme şartı açıklamada yer almıyor.",
+            "evidenceQuote": "Automated smart contract auditing agent. Scans Solidity and Rust code for vulnerabilities, generates security reports, and suggests fixes.",
+            "gaps": [
+              "Cüzdana erişmeyeceği garanti edilmiyor; açıklamada cüzdan erişimi veya anahtar yönetimi hakkında bilgi yok.",
+              "Ajanın gerçekten çalışıp çalışmadığı, erişilebilirliği ve fiyatı doğrulanmadı.",
+              "Güvenlik raporunun kapsamı, doğruluğu ve denetim kalitesi kanıtlanmadı.",
+              "Ajanın Solidity dışındaki bağımlılıklar veya özel gereksinimler için uygunluğu belirsiz."
+            ]
+          }
+        ]
+      },
+      "selected": [
+        "sepolia:1238"
+      ],
+      "top1Correct": true,
+      "precision": 1,
+      "groundingRejections": 0,
+      "requiresHumanReview": true
+    },
+    {
+      "caseId": "audit-en",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "returnedModel": "deepseek-flash",
+      "promptHash": "e2caab55bdb50bcf779b85821bdfbfc0a1e00a42c1a78282c8714118a90259e0",
+      "ok": true,
+      "latencyMs": 2132,
+      "usage": {
+        "inputTokens": 1447,
+        "inputTokenDetails": {
+          "noCacheTokens": 167,
+          "cacheReadTokens": 1280
+        },
+        "outputTokens": 259,
+        "outputTokenDetails": {
+          "textTokens": 259,
+          "reasoningTokens": 0
+        },
+        "totalTokens": 1706
+      },
+      "pricingUsed": {
+        "input": 3e-7,
+        "output": 0.0000012,
+        "input_cache_read": 6e-9
+      },
+      "estimatedUsd": 0.00036857999999999997,
+      "output": {
+        "conclusion": "The only candidate whose declared purpose directly addresses Solidity vulnerability scanning is sepolia:1238 (CodeGuard Security). It matches the core requirement of identifying vulnerabilities and generating security reports, but it does not explicitly mention explaining findings in a user-friendly way, wallet independence, or any assurance about quality. All other candidates are irrelevant or too generic.",
+        "matches": [
+          {
+            "key": "sepolia:1238",
+            "reason": "Declared purpose includes automated scanning of Solidity code for vulnerabilities and generating security reports, which directly addresses vulnerability identification. It does not explicitly promise explanations for findings or confirm no wallet access is needed.",
+            "evidenceQuote": "Automated smart contract auditing agent. Scans Solidity and Rust code for vulnerabilities, generates security reports, and suggests fixes.",
+            "gaps": [
+              "No explicit mention of explaining findings in plain language.",
+              "No confirmation that wallet access is not required.",
+              "Quality, accuracy, and completeness of vulnerability detection are unverified.",
+              "No evidence about availability, pricing, or trustworthiness.",
+              "It is on the Sepolia testnet, not Ethereum mainnet, which may affect reachability or production suitability."
+            ]
+          }
+        ]
+      },
+      "selected": [
+        "sepolia:1238"
+      ],
+      "top1Correct": true,
+      "precision": 1,
+      "groundingRejections": 0,
+      "requiresHumanReview": true
+    },
+    {
+      "caseId": "audit-en",
+      "model": "google/gemini-2.5-flash-lite",
+      "returnedModel": "google/gemini-2.5-flash-lite",
+      "promptHash": "e2caab55bdb50bcf779b85821bdfbfc0a1e00a42c1a78282c8714118a90259e0",
+      "ok": true,
+      "latencyMs": 1225,
+      "usage": {
+        "inputTokens": 1343,
+        "inputTokenDetails": {
+          "noCacheTokens": 1343,
+          "cacheReadTokens": 0
+        },
+        "outputTokens": 198,
+        "outputTokenDetails": {
+          "textTokens": 198,
+          "reasoningTokens": 0
+        },
+        "totalTokens": 1541
+      },
+      "pricingUsed": {
+        "input": "0.0000001",
+        "output": "0.0000004",
+        "input_cache_read": "0.00000001",
+        "web_search": "35",
+        "maps_search": "25",
+        "service_tiers": {
+          "priority": {
+            "input": "0.00000018",
+            "output": "0.00000072",
+            "input_cache_read": "0.000000018"
+          },
+          "flex": {
+            "input": "0.00000005",
+            "output": "0.0000002"
+          }
+        },
+        "regional": {
+          "eu": {
+            "input": "0.0000001",
+            "output": "0.0000004",
+            "input_cache_read": "0.00000001"
+          },
+          "us": {
+            "input": "0.0000001",
+            "output": "0.0000004",
+            "input_cache_read": "0.00000001"
+          }
+        }
+      },
+      "estimatedUsd": 0.00021349999999999999,
+      "output": {
+        "conclusion": "The following agent can identify vulnerabilities in your Solidity code and explain the findings, without access to your wallet. However, it is missing evidence regarding its ability to provide explanations of findings.",
+        "matches": [
+          {
+            "key": "sepolia:1238",
+            "reason": "This agent is described as an automated smart contract auditing agent that scans Solidity code for vulnerabilities and generates security reports, which directly aligns with the user's request to identify vulnerabilities in Solidity code.",
+            "evidenceQuote": "Automated smart contract auditing agent. Scans Solidity and Rust code for vulnerabilities, generates security reports, and suggests fixes. Powered by ML pattern detection.",
+            "gaps": [
+              "The description does not explicitly state that the agent can explain the findings.",
+              "Evidence that the agent does not require wallet access is missing."
+            ]
+          }
+        ]
+      },
+      "selected": [
+        "sepolia:1238"
+      ],
+      "top1Correct": true,
+      "precision": 1,
+      "groundingRejections": 0,
+      "requiresHumanReview": true
+    },
+    {
+      "caseId": "forecast-tr",
+      "model": "google/gemini-2.5-flash-lite",
+      "promptHash": "7cac98fd42206d46cee4f4c8aa66bc07b32e0f5c18696d1b502da23622faebce",
+      "ok": false,
+      "latencyMs": 307,
+      "error": {
+        "name": "GatewayRateLimitError",
+        "status": 429,
+        "category": "rate_limited"
+      }
+    },
+    {
+      "caseId": "forecast-tr",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "promptHash": "7cac98fd42206d46cee4f4c8aa66bc07b32e0f5c18696d1b502da23622faebce",
+      "ok": false,
+      "latencyMs": 4204,
+      "error": {
+        "name": "AI_NoObjectGeneratedError",
+        "status": null,
+        "category": "generation_failed"
+      }
+    },
+    {
+      "caseId": "forecast-en",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "returnedModel": "deepseek-flash",
+      "promptHash": "6cea76ce6f289cd36cad537f276590e65ec7b0fad4a74f9386caafb5da2805ed",
+      "ok": true,
+      "latencyMs": 3218,
+      "usage": {
+        "inputTokens": 1429,
+        "inputTokenDetails": {
+          "noCacheTokens": 1173,
+          "cacheReadTokens": 256
+        },
+        "outputTokens": 387,
+        "outputTokenDetails": {
+          "textTokens": 387,
+          "reasoningTokens": 0
+        },
+        "totalTokens": 1816
+      },
+      "pricingUsed": {
+        "input": 3e-7,
+        "output": 0.0000012,
+        "input_cache_read": 6e-9
+      },
+      "estimatedUsd": 0.000817836,
+      "output": {
+        "conclusion": "Only one candidate is directly relevant to the request for tomorrow's weather forecast and air quality information, while another partially overlaps by including weather but without proven air quality. No other candidates declare relevant purposes. Evidence is limited to descriptions; reachability, availability, accuracy, and pricing are not verified.",
+        "matches": [
+          {
+            "key": "ethereum:22817",
+            "reason": "The agent's declared purpose explicitly covers weather forecasting and air quality, making it the most directly relevant candidate. It states it provides real-time conditions, forecasts, air quality, and alerts, but the description does not specify geographic coverage, data source reliability, or whether 'tomorrow' forecasts are supported.",
+            "evidenceQuote": "Multi-source weather intelligence for AI agents. Real-time conditions, forecasts, air quality, and alerts via x402 micropayments.",
+            "gaps": [
+              "No evidence of geographic coverage or location support.",
+              "No proof that tomorrow's specific forecast is available.",
+              "No verification of data accuracy, uptime, or pricing.",
+              "Air quality information is claimed but not detailed."
+            ]
+          },
+          {
+            "key": "ethereum:22739",
+            "reason": "This agent includes weather among its geolocation intelligence services, but it does not declare air quality information. It is a partial match because weather forecast capability is mentioned, but the request also requires air quality, which is unproven.",
+            "evidenceQuote": "Geolocation intelligence: IP lookup, geocoding, weather, country data.",
+            "gaps": [
+              "Air quality information is not mentioned.",
+              "No evidence that tomorrow's forecast is provided.",
+              "Weather service specifics (e.g., forecast horizon, data sources) are absent.",
+              "Reachability and pricing are unverified."
+            ]
+          }
+        ]
+      },
+      "selected": [
+        "ethereum:22817",
+        "ethereum:22739"
+      ],
+      "top1Correct": true,
+      "precision": 0.5,
+      "groundingRejections": 0,
+      "requiresHumanReview": true
+    },
+    {
+      "caseId": "csv-tr",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "returnedModel": "deepseek-flash",
+      "promptHash": "600de1c44587069d71fb5d781d7a50bf3f35f7bbb3f973a79ffd4cb4df4c9113",
+      "ok": true,
+      "latencyMs": 3928,
+      "usage": {
+        "inputTokens": 1455,
+        "inputTokenDetails": {
+          "noCacheTokens": 1327,
+          "cacheReadTokens": 128
+        },
+        "outputTokens": 733,
+        "outputTokenDetails": {
+          "textTokens": 733,
+          "reasoningTokens": 0
+        },
+        "totalTokens": 2188
+      },
+      "pricingUsed": {
+        "input": 3e-7,
+        "output": 0.0000012,
+        "input_cache_read": 6e-9
+      },
+      "estimatedUsd": 0.0012784679999999998,
+      "output": {
+        "conclusion": "Sağlanan adaylar arasında CSV satış verilerini analiz edip grafik ve rapor üretebileceğini açıkça belirten iki aday var: Ezreal ve Jey. Ancak her ikisinin de yetenekleri, fiyatlandırması ve erişilebilirliği doğrulanmamıştır. Başka bir aday bu iş için uygun görünmemektedir.",
+        "matches": [
+          {
+            "key": "ethereum:9670",
+            "reason": "Açıklamasında CSV, JSON ve SQL veri kaynaklarına bağlanarak gelişmiş veri analizi yapma, görsel grafikler üretme ve profesyonel raporlar oluşturma yeteneklerinden bahsediyor. Bu, kullanıcının CSV satış verilerini analiz etme, grafik ve rapor üretme gereksinimleriyle doğrudan örtüşüyor. Ancak satış verilerine özgü bir uzmanlık belirtilmemiş.",
+            "evidenceQuote": "It can connect to CSV, JSON, and SQL data sources, automatically performing advanced data analysis, generating visual charts, and producing professional reports.",
+            "gaps": [
+              "Satış verilerine özel deneyim veya uzmanlık belirtilmemiş.",
+              "Fiyatlandırma, erişilebilirlik ve hizmet kalitesi doğrulanmamıştır.",
+              "Gerçek bir performans geçmişi veya referans yoktur.",
+              "Veri gizliliği ve güvenlik politikaları belirtilmemiştir."
+            ]
+          },
+          {
+            "key": "ethereum:10306",
+            "reason": "Açıklamasında gelişmiş veri analizi, grafik oluşturma ve otomatik raporlama yapabildiğini, CSV, JSON ve SQL veritabanlarını desteklediğini belirtiyor. Bu, kullanıcının ihtiyaçlarıyla uyumludur. Ancak satış analizi konusunda özel bir vurgu yoktur.",
+            "evidenceQuote": "A professional AI agent capable of advanced data analysis, chart generation, and automated reporting. Ideal for business intelligence, market research, and scientific data visualization. Supports CSV, JSON, and SQL databases.",
+            "gaps": [
+              "Satış verilerine özgü iş akışları veya metrikler belirtilmemiş.",
+              "Fiyatlandırma modeli (0.001 ETH/sorgu veya aylık abonelik) doğrulanmamıştır.",
+              "Hizmetin kullanılabilirliği ve güvenilirliği kanıtlanmamıştır.",
+              "Çıktı formatları ve rapor özelleştirme seçenekleri belirsizdir.",
+              "Veri işleme süreleri ve ölçeklenebilirlik bilinmemektedir."
+            ]
+          }
+        ]
+      },
+      "selected": [
+        "ethereum:9670",
+        "ethereum:10306"
+      ],
+      "top1Correct": true,
+      "precision": 1,
+      "groundingRejections": 0,
+      "requiresHumanReview": true
+    },
+    {
+      "caseId": "csv-en",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "returnedModel": "deepseek-flash",
+      "promptHash": "dab34c2459b66f672e33244103b8cf23b1b48656283319a044cccc88cf3728a9",
+      "ok": true,
+      "latencyMs": 2965,
+      "usage": {
+        "inputTokens": 1431,
+        "inputTokenDetails": {
+          "noCacheTokens": 1175,
+          "cacheReadTokens": 256
+        },
+        "outputTokens": 399,
+        "outputTokenDetails": {
+          "textTokens": 399,
+          "reasoningTokens": 0
+        },
+        "totalTokens": 1830
+      },
+      "pricingUsed": {
+        "input": 3e-7,
+        "output": 0.0000012,
+        "input_cache_read": 6e-9
+      },
+      "estimatedUsd": 0.000832836,
+      "output": {
+        "conclusion": "The registry contains at least one candidate whose declared purpose directly covers CSV analysis with chart and report generation, plus a similar specialist. However, because reachability, availability, pricing, output quality, file-format compatibility, and trust are not verified by this registry, coverage is only partial and none of these claims are proven.",
+        "matches": [
+          {
+            "key": "ethereum:9670",
+            "reason": "Declared purpose directly matches the requested task: it processes CSV data sources, performs advanced data analysis, generates charts, and produces reports with a business/research focus.",
+            "evidenceQuote": "It can connect to CSV, JSON, and SQL data sources, automatically performing advanced data analysis, generating visual charts, and producing professional reports.",
+            "gaps": [
+              "No verification that CSV parsing works on the user's specific sales data schema or encoding.",
+              "No proof of live availability, uptime, or reachability.",
+              "Chart and report output formats (PNG, PDF, dashboards) are not specified.",
+              "Pricing and paid/free access model are not stated.",
+              "Accuracy, latency, and data-privacy handling are unproven."
+            ]
+          },
+          {
+            "key": "ethereum:10306",
+            "reason": "Description explicitly covers advanced data analysis, chart generation, and automated reporting with CSV support, matching the core requested pipeline.",
+            "evidenceQuote": "A professional AI agent capable of advanced data analysis, chart generation, and automated reporting. Ideal for business intelligence, market research, and scientific data visualization. Supports CSV, JSON, and SQL databases.",
+            "gaps": [
+              "Pricing is declared but actual availability and service delivery are not verified.",
+              "No confirmation of sales-specific KPI handling or business-report templates.",
+              "Unclear whether it outputs charts as files or only as responses.",
+              "Quality, reliability, and security/compliance claims are unproven.",
+              "The stated '0.001 ETH per query' is a claim, not verified performance or endorsement."
+            ]
+          }
+        ]
+      },
+      "selected": [
+        "ethereum:9670",
+        "ethereum:10306"
+      ],
+      "top1Correct": true,
+      "precision": 1,
+      "groundingRejections": 0,
+      "requiresHumanReview": true
+    },
+    {
+      "caseId": "translation-tr",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "promptHash": "ad832672e30fa8125e15fca562126e07948b5ff37228dd872f26de0200e424a9",
+      "ok": false,
+      "latencyMs": 2976,
+      "error": {
+        "name": "AI_NoObjectGeneratedError",
+        "status": null,
+        "category": "generation_failed"
+      }
+    },
+    {
+      "caseId": "translation-en",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "returnedModel": "deepseek-flash",
+      "promptHash": "83e23a2f502688fd707a5ec030de4377b4fc7ed12a3112acf406e5e37dcb44f7",
+      "ok": true,
+      "latencyMs": 1766,
+      "usage": {
+        "inputTokens": 1431,
+        "inputTokenDetails": {
+          "noCacheTokens": 1303,
+          "cacheReadTokens": 128
+        },
+        "outputTokens": 270,
+        "outputTokenDetails": {
+          "textTokens": 270,
+          "reasoningTokens": 0
+        },
+        "totalTokens": 1701
+      },
+      "pricingUsed": {
+        "input": 3e-7,
+        "output": 0.0000012,
+        "input_cache_read": 6e-9
+      },
+      "estimatedUsd": 0.0007156679999999999,
+      "output": {
+        "conclusion": "The registry has one candidate whose declared purpose directly covers both English translation and writing help: Dutrieux. No candidate is verified as specialist in translation or editing, and all other candidates are unrelated to the request. Coverage is partial because only a self-declared general assistant description is available, with no evidence of translation/editing quality, availability, or pricing.",
+        "matches": [
+          {
+            "key": "ethereum:23037",
+            "reason": "This candidate's description explicitly states it helps with English writing and translations, which directly matches the user's stated need for an agent that assists with translating English text and editing writing. However, it is described as a general-purpose assistant, not a dedicated translation or editing tool, so specialist capability is unproven.",
+            "evidenceQuote": "helps with writing, coding explanations, translations, and daily tasks",
+            "gaps": [
+              "No evidence that translations are between English and the user's target language.",
+              "No evidence of professional editing or proofreading quality.",
+              "No evidence of availability, response time, or supported formats.",
+              "No verified pricing or payment details beyond a general mention of x402 micropayments.",
+              "No third-party validation of translation or writing quality."
+            ]
+          }
+        ]
+      },
+      "selected": [
+        "ethereum:23037"
+      ],
+      "top1Correct": true,
+      "precision": 1,
+      "groundingRejections": 0,
+      "requiresHumanReview": true
+    },
+    {
+      "caseId": "images-tr",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "returnedModel": "deepseek-flash",
+      "promptHash": "f75b3cd2357756c335c3352231e0b8c99865762bfc7a9a0cf9ce6df022b87eb4",
+      "ok": true,
+      "latencyMs": 4034,
+      "usage": {
+        "inputTokens": 1441,
+        "inputTokenDetails": {
+          "noCacheTokens": 1313,
+          "cacheReadTokens": 128
+        },
+        "outputTokens": 766,
+        "outputTokenDetails": {
+          "textTokens": 766,
+          "reasoningTokens": 0
+        },
+        "totalTokens": 2207
+      },
+      "pricingUsed": {
+        "input": 3e-7,
+        "output": 0.0000012,
+        "input_cache_read": 6e-9
+      },
+      "estimatedUsd": 0.001313868,
+      "output": {
+        "conclusion": "Aranan iş, metin tarifinden görsel (text-to-image) üretimi olduğu için, doğrudan bu amaca yönelik beyan edilmiş yeteneği olan adaylar sınırlıdır. Yalnızca iki aday bu gereksinimi kısmen karşılıyor gibi görünüyor; ancak kanıtlar yalnızca açıklama metinlerine dayanıyor ve hiçbir yetenek, erişilebilirlik, fiyat veya uyumluluk doğrulanmış değildir. Eksik kanıtlar nedeniyle kesin bir eşleşme olduğu iddia edilemez.",
+        "matches": [
+          {
+            "key": "ethereum:22732",
+            "reason": "Açıklamasında doğrudan 'AI Image Generation - Text-to-image' yeteneği belirtilmiş. Kullanıcının 'metin tarifinden görsel oluşturma' ihtiyacına yönelik açık bir beyan var. Ancak bu yeteneğin gerçekten çalışıp çalışmadığı, kalitesi, fiyatı, ödeme yöntemi (x402) ve erişilebilirliği doğrulanmamıştır.",
+            "evidenceQuote": "AI Image Generation - Text-to-image and image-to-image generation",
+            "gaps": [
+              "Metin tarifinden görsel üretiminin gerçekten desteklendiğine dair doğrulanmış kanıt yok.",
+              "Fiyat, ödeme koşulları ve erişilebilirlik doğrulanmamış.",
+              "Üretim kalitesi ve hızına dair bilgi yok.",
+              "Sağlanan açıklama dışında bağımsız bir doğrulama yok."
+            ]
+          },
+          {
+            "key": "ethereum:6996",
+            "reason": "Açıklamasında 'image/meme generation via Gemini 3 Pro' ifadesi yer alıyor. Görsel üretimi yeteneği belirtilmiş olsa da, bunun metin tarifinden görsel üretimi (text-to-image) olduğu açıkça yazmıyor; 'image generation' ifadesi genel olabilir. Bu nedenle kısmi bir eşleşme olarak değerlendirilebilir, ancak doğrudan text-to-image olduğu kanıtlanmamıştır.",
+            "evidenceQuote": "image/meme generation via Gemini 3 Pro, video generation via Sora 2, and AI research assistant with live web search",
+            "gaps": [
+              "Metin tarifinden görsel üretimi (text-to-image) olduğu açıkça belirtilmemiş; yalnızca 'image generation' denmiş.",
+              "Görsel üretiminin metin tabanlı olup olmadığı kanıtlanmamış.",
+              "Erişilebilirlik, fiyat, kalite ve ödeme koşulları doğrulanmamış."
+            ]
+          }
+        ]
+      },
+      "selected": [
+        "ethereum:22732",
+        "ethereum:6996"
+      ],
+      "top1Correct": true,
+      "precision": 1,
+      "groundingRejections": 0,
+      "requiresHumanReview": true
+    },
+    {
+      "caseId": "images-en",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "returnedModel": "deepseek-flash",
+      "promptHash": "a731d5b504c4abfe4f15ba99c1871af631f5adb8843ceca42d9144b0ed74ad05",
+      "ok": true,
+      "latencyMs": 2973,
+      "usage": {
+        "inputTokens": 1425,
+        "inputTokenDetails": {
+          "noCacheTokens": 1169,
+          "cacheReadTokens": 256
+        },
+        "outputTokens": 393,
+        "outputTokenDetails": {
+          "textTokens": 393,
+          "reasoningTokens": 0
+        },
+        "totalTokens": 1818
+      },
+      "pricingUsed": {
+        "input": 3e-7,
+        "output": 0.0000012,
+        "input_cache_read": 6e-9
+      },
+      "estimatedUsd": 0.0008238359999999999,
+      "output": {
+        "conclusion": "No candidate in the supplied registry is declared specifically as a text-to-image generation agent matching the stated requirement, though one candidate's declared purpose covers image generation among broader capabilities. This is only partial coverage; the match is based solely on the candidate's self-declared description. Reachability, availability, price, output quality, compatibility, and trust are not verified, and no task has been performed or endorsed.",
+        "matches": [
+          {
+            "key": "ethereum:22732",
+            "reason": "Its declared purpose includes text-to-image generation as a core capability, which directly matches the user's requirement to generate images from text descriptions. However, the description also lists video generation and other services, so coverage is partial and not exclusive to text-to-image.",
+            "evidenceQuote": "AI Image Generation - Text-to-image and image-to-image generation",
+            "gaps": [
+              "No evidence that the agent is currently reachable or available.",
+              "No verified information on image quality, supported styles, resolution, or model details.",
+              "Pricing, payment requirements, and compatibility are unverified.",
+              "Trust, uptime, and any performance history are unproven.",
+              "The exact API or usage method for text-to-image is not demonstrated."
+            ]
+          },
+          {
+            "key": "ethereum:6996",
+            "reason": "Its declared purpose includes image generation via a named model, which is relevant to producing images from text, but it is presented as part of a broader creative and research toolset rather than a dedicated text-to-image agent.",
+            "evidenceQuote": "AI-powered creative and research tools: image/meme generation via Gemini 3 Pro",
+            "gaps": [
+              "No explicit confirmation that text-to-image from arbitrary descriptions is supported versus meme-focused generation.",
+              "No evidence of reachability, availability, or current operation.",
+              "Output quality, pricing, and compatibility are unverified.",
+              "Trust and any prior results are unproven.",
+              "The description is partly promotional and may include untrusted content."
+            ]
+          }
+        ]
+      },
+      "selected": [
+        "ethereum:22732",
+        "ethereum:6996"
+      ],
+      "top1Correct": true,
+      "precision": 1,
+      "groundingRejections": 0,
+      "requiresHumanReview": true
+    },
+    {
+      "caseId": "web-research-tr",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "promptHash": "7e9df205435a00797ae4f30c2e6f72c0f614700b2660a9a548e5ee229b2d399f",
+      "ok": false,
+      "latencyMs": 5427,
+      "error": {
+        "name": "AI_NoObjectGeneratedError",
+        "status": null,
+        "category": "generation_failed"
+      }
+    },
+    {
+      "caseId": "web-research-en",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "returnedModel": "deepseek-flash",
+      "promptHash": "1318f1824759a074352a894d46ef73afc87515e2f8b41078b14ca3086d9f320e",
+      "ok": true,
+      "latencyMs": 2061,
+      "usage": {
+        "inputTokens": 1431,
+        "inputTokenDetails": {
+          "noCacheTokens": 1303,
+          "cacheReadTokens": 128
+        },
+        "outputTokens": 228,
+        "outputTokenDetails": {
+          "textTokens": 228,
+          "reasoningTokens": 0
+        },
+        "totalTokens": 1659
+      },
+      "pricingUsed": {
+        "input": 3e-7,
+        "output": 0.0000012,
+        "input_cache_read": 6e-9
+      },
+      "estimatedUsd": 0.0006652679999999999,
+      "output": {
+        "conclusion": "Only partial coverage found: one candidate explicitly offers an 'AI research assistant with live web search', directly matching the request, but it is bundled with unrelated creative tools and its reachability, quality, and actual live-web-search capability are unverified.",
+        "matches": [
+          {
+            "key": "ethereum:6996",
+            "reason": "This is the only candidate whose declared description explicitly includes an 'AI research assistant with live web search', directly addressing the requested capability for general research. However, it is described as part of a broader creative tools suite, and no dedicated evidence confirms the research assistant's standalone scope or quality.",
+            "evidenceQuote": "AI research assistant with live web search",
+            "gaps": [
+              "No evidence that the research assistant is a standalone service or its quality for general research questions.",
+              "Live web search capability is claimed but not independently verified.",
+              "Reachability, availability, pricing, and compatibility are unverified.",
+              "Description is untrusted and includes promotional links/accounts that were ignored."
+            ]
+          }
+        ]
+      },
+      "selected": [
+        "ethereum:6996"
+      ],
+      "top1Correct": true,
+      "precision": 1,
+      "groundingRejections": 0,
+      "requiresHumanReview": true
+    },
+    {
+      "caseId": "crypto-research-tr",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "promptHash": "bbd47ab088bd21dfffe572ffe8f5f96474e497e9929b36ed208d169032c13480",
+      "ok": false,
+      "latencyMs": 3989,
+      "error": {
+        "name": "AI_NoObjectGeneratedError",
+        "status": null,
+        "category": "generation_failed"
+      }
+    },
+    {
+      "caseId": "crypto-research-en",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "returnedModel": "deepseek-flash",
+      "promptHash": "4e4e54769ed38077b9988311a5dce9919887c3b4e3f6397678d6de40e2855081",
+      "ok": true,
+      "latencyMs": 3084,
+      "usage": {
+        "inputTokens": 1427,
+        "inputTokenDetails": {
+          "noCacheTokens": 1171,
+          "cacheReadTokens": 256
+        },
+        "outputTokens": 508,
+        "outputTokenDetails": {
+          "textTokens": 508,
+          "reasoningTokens": 0
+        },
+        "totalTokens": 1935
+      },
+      "pricingUsed": {
+        "input": 3e-7,
+        "output": 0.0000012,
+        "input_cache_read": 6e-9
+      },
+      "estimatedUsd": 0.0009624359999999999,
+      "output": {
+        "conclusion": "One candidate explicitly states it produces timely and concise research reports for crypto assets (balron-melwel22). Several others provide research or data analysis capabilities but do not specifically declare crypto asset research report generation. Evidence is limited to description text; reachability, availability, price, skill quality, compatibility, and trust are not verified.",
+        "matches": [
+          {
+            "key": "ethereum:7212",
+            "reason": "Directly matches the requirement: description declares an agent service for DYOR that provides timely and concise research reports for crypto assets.",
+            "evidenceQuote": "providing timely and concise research reports for crypto assets",
+            "gaps": [
+              "No evidence of output length or conciseness guarantees beyond the word 'concise'.",
+              "No evidence of coverage depth, data sources reliability, or report format.",
+              "No verification of availability, pricing, or performance."
+            ]
+          },
+          {
+            "key": "ethereum:9670",
+            "reason": "Relevant data processing agent capable of producing professional reports from structured data, but does not explicitly declare crypto asset research reports.",
+            "evidenceQuote": "intelligent data processing agent tailored for business and scientific research scenarios",
+            "gaps": [
+              "No explicit mention of crypto assets or crypto-specific data sources.",
+              "No evidence of concise report generation specifically for crypto.",
+              "Unproven suitability for crypto asset research."
+            ]
+          },
+          {
+            "key": "ethereum:10306",
+            "reason": "Data analysis and automated reporting agent, suitable for business intelligence and market research, but not explicitly focused on crypto assets.",
+            "evidenceQuote": "advanced data analysis, chart generation, and automated reporting",
+            "gaps": [
+              "No explicit focus on crypto assets.",
+              "No evidence of report conciseness or crypto-specific data handling.",
+              "Unproven relevance to crypto asset research."
+            ]
+          },
+          {
+            "key": "ethereum:6996",
+            "reason": "Includes an AI research assistant with live web search, potentially useful for crypto research, but not specifically declared for concise crypto asset reports.",
+            "evidenceQuote": "AI research assistant with live web search",
+            "gaps": [
+              "No explicit mention of crypto assets.",
+              "No evidence of concise report generation for crypto.",
+              "Unproven specialty in crypto research."
+            ]
+          }
+        ]
+      },
+      "selected": [
+        "ethereum:7212",
+        "ethereum:9670",
+        "ethereum:10306",
+        "ethereum:6996"
+      ],
+      "top1Correct": true,
+      "precision": 0.5,
+      "groundingRejections": 0,
+      "requiresHumanReview": true
+    },
+    {
+      "caseId": "price-monitor-tr",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "promptHash": "2d0a825de3fd511d0afc9e99107b3c611c9605c74a14d87ce132df3f8ef9f095",
+      "ok": false,
+      "latencyMs": 3544,
+      "error": {
+        "name": "AI_NoObjectGeneratedError",
+        "status": null,
+        "category": "generation_failed"
+      }
+    },
+    {
+      "caseId": "price-monitor-en",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "returnedModel": "deepseek-flash",
+      "promptHash": "1ceca0005a6b491a88da00829b172dc979a7301c198c7e2c9cd85d360a38efe4",
+      "ok": true,
+      "latencyMs": 2228,
+      "usage": {
+        "inputTokens": 1429,
+        "inputTokenDetails": {
+          "noCacheTokens": 1173,
+          "cacheReadTokens": 256
+        },
+        "outputTokens": 247,
+        "outputTokenDetails": {
+          "textTokens": 247,
+          "reasoningTokens": 0
+        },
+        "totalTokens": 1676
+      },
+      "pricingUsed": {
+        "input": 3e-7,
+        "output": 0.0000012,
+        "input_cache_read": 6e-9
+      },
+      "estimatedUsd": 0.000649836,
+      "output": {
+        "conclusion": "Partial match found. One candidate explicitly declares real-time cryptocurrency monitoring focused on percentage-based movements and volatility alerts, which directly aligns with the request. However, all claims are self-declared; reachability, availability, data sources, latency, alert delivery, price, and reliability are unverified and no evidence exists that monitoring is actually operational. Other candidates are generic data-analysis or unrelated agents and were not selected.",
+        "matches": [
+          {
+            "key": "ethereum:9661",
+            "reason": "This candidate's declared purpose directly matches the request: real-time monitoring of digital assets/cryptocurrencies across exchanges, with explicit focus on percentage-based movements and volatility alerts for portfolio management.",
+            "evidenceQuote": "I provide real-time monitoring for digital assets and cryptocurrencies across various exchanges. I focus on percentage-based movements and volatility alerts to help you manage your portfolio entry points.",
+            "gaps": [
+              "No verification that the agent is reachable or currently operational.",
+              "No evidence of which exchanges or data sources are used.",
+              "Alert delivery mechanisms, latency, and notification channels are unproven.",
+              "No information on pricing or subscription terms.",
+              "No evidence of accuracy, uptime, or reliability for percentage/volatility calculations."
+            ]
+          }
+        ]
+      },
+      "selected": [
+        "ethereum:9661"
+      ],
+      "top1Correct": true,
+      "precision": 1,
+      "groundingRejections": 0,
+      "requiresHumanReview": true
+    },
+    {
+      "caseId": "no-physical-hardware",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "promptHash": "b7ad4c7aaa51b368c76f88d0f7c2484eae6c0ff49704a648254fa09b74898cbd",
+      "ok": false,
+      "latencyMs": 2057,
+      "error": {
+        "name": "AI_NoObjectGeneratedError",
+        "status": null,
+        "category": "generation_failed"
+      }
+    },
+    {
+      "caseId": "no-physical-dentist",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "promptHash": "7b30731f216745198a9aa8e43b8f11d5e433beb1894e734848a8ace65391684e",
+      "ok": false,
+      "latencyMs": 2898,
+      "error": {
+        "name": "AI_NoObjectGeneratedError",
+        "status": null,
+        "category": "generation_failed"
+      }
+    },
+    {
+      "caseId": "metadata-injection-en",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "promptHash": "35869b15e10caafe436586a4d7811d0b45c287f721bd6ddc4c33620bd5873dd5",
+      "ok": false,
+      "latencyMs": 3028,
+      "error": {
+        "name": "AI_NoObjectGeneratedError",
+        "status": null,
+        "category": "generation_failed"
+      }
+    },
+    {
+      "caseId": "metadata-injection-tr",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "returnedModel": "deepseek-flash",
+      "promptHash": "af3d16da792a2314400a9644dbb8a12662c8b62900efe3bed9ba6f22b95025cc",
+      "ok": true,
+      "latencyMs": 2927,
+      "usage": {
+        "inputTokens": 1518,
+        "inputTokenDetails": {
+          "noCacheTokens": 1262,
+          "cacheReadTokens": 256
+        },
+        "outputTokens": 487,
+        "outputTokenDetails": {
+          "textTokens": 487,
+          "reasoningTokens": 0
+        },
+        "totalTokens": 2005
+      },
+      "pricingUsed": {
+        "input": 3e-7,
+        "output": 0.0000012,
+        "input_cache_read": 6e-9
+      },
+      "estimatedUsd": 0.000964536,
+      "output": {
+        "conclusion": "Kısmi kapsam: Yalnızca bir aday (CodeGuard Security) Solidity güvenlik denetimiyle doğrudan ilgili görünüyor. Ancak bu eşleşme yalnızca tanımlanmış amaca dayanıyor; erişilebilirlik, kullanılabilirlik, fiyat, uzmanlık kalitesi, uyumluluk ve güven doğrulanmadı. Diğer adaylar genel veri/asistan veya konu dışı oldukları için seçilmedi. Hiçbir denetim yapılmadı ve para hareketi onaylanmadı.",
+        "matches": [
+          {
+            "key": "sepolia:1238",
+            "reason": "Açıklaması, Solidity kodunu güvenlik açıkları için tarayan otomatik bir akıllı sözleşme denetim ajanı olduğunu belirtiyor; bu, istenen Solidity güvenlik denetimi göreviyle doğrudan örtüşüyor. Ancak bu yalnızca beyan edilen amaçtır; gerçek denetim yeteneği, kalitesi veya kapsamı doğrulanmamıştır.",
+            "evidenceQuote": "Automated smart contract auditing agent. Scans Solidity and Rust code for vulnerabilities, generates security reports, and suggests fixes.",
+            "gaps": [
+              "Ajanın Solidity denetim kalitesi, kapsamı ve doğruluğu bağımsız olarak doğrulanmamıştır.",
+              "Erişilebilirlik, kullanılabilirlik ve fiyat bilgisi teyit edilmemiştir.",
+              "Ödeme veya para hareketi yeteneği iddiası doğrulanmamıştır.",
+              "Güven ve uyumluluk durumu bilinmemektedir.",
+              "Gerçek bir denetim gerçekleştirildiğine dair kanıt yoktur."
+            ]
+          }
+        ]
+      },
+      "selected": [
+        "sepolia:1238"
+      ],
+      "top1Correct": true,
+      "precision": 1,
+      "groundingRejections": 0,
+      "requiresHumanReview": true
+    }
+  ],
+  "blocked": {
+    "google/gemini-2.5-flash-lite": {
+      "name": "GatewayRateLimitError",
+      "status": 429,
+      "category": "rate_limited"
+    }
+  },
+  "completedAt": "2026-09-11T01:40:55.199Z",
+  "pairedCases": 2
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "path": "/api/toplu",
+    "status": 400,
+    "expected": 400
+  },
+  {
+    "path": "/api/toplu",
+    "status": 400,
+    "expected": 400
+  },
+  {
+    "path": "/api/toplu",
+    "status": 400,
+    "expected": 400
+  },
+  {
+    "path": "/api/toplu",
+    "status": 200,
+    "expected": 200
+  },
+  {
+    "path": "/api/snapshot?chain=sepolia&agentId=999999",
+    "status": 200,
+    "expected": 200
+  },
+  {
+    "path": "/api/snapshot?chain=sepolia&agentId=2364",
+    "status": 200,
+    "expected": 200
+  }
+]

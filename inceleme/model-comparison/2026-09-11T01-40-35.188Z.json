@@ -1,0 +1,164 @@
+{
+  "createdAt": "2026-09-11T01:40:35.189Z",
+  "scope": "Controlled ranking, not end-to-end retrieval or executed-task quality. Expected sets are manually authored from these descriptions and not exhaustive directory judgments. One run per language/task. No overall winner without paired successful results. Latency includes provider/transport differences; it is not pure model compute time.",
+  "candidateHash": "b4af346ae7793f4298a0330f47310a659a2fc5b229c3e5646d01735c602b97bc",
+  "systemHash": "926004fe35e35c88a78dbb46785dfa076900985de5f146b4125b9c0ab3debda4",
+  "models": [
+    "deepseek/deepseek-v4.1-flash"
+  ],
+  "transports": {
+    "deepseek/deepseek-v4.1-flash": "DeepSeek direct API"
+  },
+  "settings": {
+    "maxOutputTokens": 2800,
+    "maxRetries": 0,
+    "timeoutMs": 45000,
+    "reasoning": "none"
+  },
+  "catalogPricing": {
+    "deepseek/deepseek-v4.1-flash": {
+      "input": "0.0000003",
+      "output": "0.0000012",
+      "input_cache_read": "0.00000003",
+      "varies_by_provider": true,
+      "regional": {
+        "us": {
+          "input": "0.0000003",
+          "output": "0.0000012",
+          "input_cache_read": "0.00000003"
+        }
+      }
+    }
+  },
+  "directPricingSource": "https://api-docs.deepseek.com/quick_start/pricing/ (checked 2026-09-11; estimate based on request start time, not invoice)",
+  "candidates": [
+    {
+      "key": "sepolia:1238",
+      "chain": "sepolia",
+      "agentId": 1238,
+      "name": "CodeGuard Security",
+      "description": "Automated smart contract auditing agent. Scans Solidity and Rust code for vulnerabilities, generates security reports, and suggests fixes. Powered by ML pattern detection.",
+      "category": "Altyapı/Servis",
+      "serviceCount": 2
+    },
+    {
+      "key": "ethereum:22817",
+      "chain": "ethereum",
+      "agentId": 22817,
+      "name": "weather-intel-agent",
+      "description": "Multi-source weather intelligence for AI agents. Real-time conditions, forecasts, air quality, and alerts via x402 micropayments. 1 free + 5 paid endpoints.",
+      "category": "Veri/Araştırma",
+      "serviceCount": 2
+    },
+    {
+      "key": "ethereum:22739",
+      "chain": "ethereum",
+      "agentId": 22739,
+      "name": "geo-intel-agent",
+      "description": "Geolocation intelligence: IP lookup, geocoding, weather, country data. 1 free + 5 paid endpoints via x402.",
+      "category": "Veri/Araştırma",
+      "serviceCount": 2
+    },
+    {
+      "key": "ethereum:9670",
+      "chain": "ethereum",
+      "agentId": 9670,
+      "name": "Ezreal",
+      "description": "Ezreal is an intelligent data processing agent tailored for business and scientific research scenarios. It can connect to CSV, JSON, and SQL data sources, automatically performing advanced data analysis, generating visual charts, and producing professional reports. It empowers you to quickly uncover business insights, validate market trends, and reveal patterns in scientific research data—no compl",
+      "category": "Veri/Araştırma",
+      "serviceCount": 0
+    },
+    {
+      "key": "ethereum:10306",
+      "chain": "ethereum",
+      "agentId": 10306,
+      "name": "Jey",
+      "description": "A professional AI agent capable of advanced data analysis, chart generation, and automated reporting. Ideal for business intelligence, market research, and scientific data visualization. Supports CSV, JSON, and SQL databases. Pricing: 0.001 ETH per query, or optional monthly subscription.\n",
+      "category": "Veri/Araştırma",
+      "serviceCount": 1
+    },
+    {
+      "key": "ethereum:23037",
+      "chain": "ethereum",
+      "agentId": 23037,
+      "name": "Dutrieux",
+      "description": "A helpful general-purpose AI assistant that speaks fluent English, helps with writing, coding explanations, translations, and daily tasks. Supports A2A protocol v0.3+ and x402 micropayments.",
+      "category": "Asistan",
+      "serviceCount": 0
+    },
+    {
+      "key": "ethereum:22732",
+      "chain": "ethereum",
+      "agentId": 22732,
+      "name": "Genbase",
+      "description": "Genbase is an autonomous AI agent that provides pay-per-use AI content generation services through blockchain-based micropayments. The agent specializes in creating images and videos using state-of-the-art AI models, accepting payments via the x402 protocol without requiring user accounts or subscriptions.\n\nCore Capabilities\nAI Image Generation - Text-to-image and image-to-image generation\nAI Vide",
+      "category": "Sosyal/İçerik",
+      "serviceCount": 1
+    },
+    {
+      "key": "ethereum:6996",
+      "chain": "ethereum",
+      "agentId": 6996,
+      "name": "Otto AI - Tools Agent",
+      "description": "AI-powered creative and research tools: image/meme generation via Gemini 3 Pro, video generation via Sora 2, and AI research assistant with live web search. Website: https://useotto.xyz | X: @useOttoAI",
+      "category": "Veri/Araştırma",
+      "serviceCount": 5
+    },
+    {
+      "key": "ethereum:7212",
+      "chain": "ethereum",
+      "agentId": 7212,
+      "name": "balron-melwel22 by Olas",
+      "description": "An agent service for DYOR agent, providing timely and concise research reports for crypto assets, leveraging Trendmoon APIs and associated data sources.",
+      "category": "Veri/Araştırma",
+      "serviceCount": 1
+    },
+    {
+      "key": "ethereum:9661",
+      "chain": "ethereum",
+      "agentId": 9661,
+      "name": "Crypto & Digital Asset Monitor (Focus: Precision/Math)",
+      "description": "I provide real-time monitoring for digital assets and cryptocurrencies across various exchanges. I focus on percentage-based movements and volatility alerts to help you manage your portfolio entry points.",
+      "category": "Veri/Araştırma",
+      "serviceCount": 0
+    },
+    {
+      "key": "ethereum:34149",
+      "chain": "ethereum",
+      "agentId": 34149,
+      "name": "Exquisite #1230",
+      "description": "An Exquisite Agent — a deterministic AI art critic. Lens: Moral Weather. Source Bitcoin inscription: d04ab8ab5b9d019f2208214e5e937971c109536f8df5ffde8b75a54c6e5ce80ci181. Identity bound to ERC-8004 via Adapter8004 (RFC 0007).",
+      "category": "NFT/Karakter",
+      "serviceCount": 0
+    }
+  ],
+  "cases": [
+    {
+      "id": "translation-tr",
+      "request": "İngilizce metin çevirisi ve yazı düzenlemede yardımcı olacak bir ajan arıyorum.",
+      "expected": [
+        "ethereum:23037"
+      ],
+      "kind": "relevance"
+    }
+  ],
+  "results": [
+    {
+      "caseId": "translation-tr",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "promptHash": "ad832672e30fa8125e15fca562126e07948b5ff37228dd872f26de0200e424a9",
+      "ok": false,
+      "latencyMs": 4096,
+      "error": {
+        "name": "AI_NoObjectGeneratedError",
+        "status": null,
+        "category": "generation_failed",
+        "validationCause": "Type validation failed: Value: {\"conclusion\":\"Talebiniz İngilizce metin çevirisi ve yazı düzenleme yardımı için bir ajan bulmaktır. Sağlanan adaylar arasında yalnızca bir tanesi (Dutrieux) açıklamasında çeviri ve yazma yardımından doğrudan söz etmektedir; ancak bu ajanın genel amaçlı olduğu belirtilmiş ve uzman bir çeviri/düzenleme aracı olduğu kanıtlanmamıştır. Diğer adayların açıklamaları veri analizi, güvenlik, hava durumu, jeolojik konum, kripto araştırması, görsel/video üretimi veya sanat eleştirisi gibi farklı alanlara yöneliktir; talebinizle doğrudan ilgili değildir. Bu nedenle yalnızca Dutrieux kısmi bir eşleşme olarak sunulmuştur; ancak çeviri ve düzenleme kalitesi, fiyat, kullanılabilirlik, güvenilirlik ve erişilebilirlik doğrulanmamıştır. Başka bir aday uygun değildir. Kanıt eksikliği nedeniyle kesin bir eşleşme olduğu iddia edilemez.\",\"matches\":[{\"key\":\"ethereum:23037\",\"reason\":\"Bu ajan, açıklamasında 'translations' (çeviriler) ve 'writing' (yazma) konularında yardımcı olduğunu belirtmektedir. Bu, İngilizce metin çevirisi ve yazı düzenleme talebinizle doğrudan ilgilidir. Ancak ajan 'genel amaçlı' olarak tanımlanmıştır ve özel bir çeviri veya düzenleme uzmanlığı kanıtlanmamıştır.\",\"evidenceQuote\":\"helps with writing, coding explanations, translations, and daily tasks\",\"gaps\":[\"Ajanın çeviri ve yazı düzenleme konusundaki uzmanlık düzeyi, doğruluğu ve kalitesi kanıtlanmamıştır.\",\"Hizmetin fiyatı, kullanılabilirliği, erişilebilirliği ve güvenilirliği doğrulanmamıştır.\",\"Ajanın İngilizce metin çevirisi ve düzenleme için özel yetenekleri veya referansları hakkında bilgi yoktur.\",\"Açıklamada belirtilen çeviri ve yazma yeteneklerinin tam olarak neyi kapsadığı (örneğin, düzenleme, proofreading) açık değildir.\"]}]}.\nError message: [\n  {\n    \"origin\": \"string\",\n    \"code\": \"too_big\",\n    \"maximum\": 500,\n    \"inclusive\": true,\n    \"path\": [\n      \"conclusion\"\n    ],\n    \"message\": \"Too big: expected string to have <=500 characters\"\n  }\n]",
+        "generatedText": "{\"conclusion\":\"Talebiniz İngilizce metin çevirisi ve yazı düzenleme yardımı için bir ajan bulmaktır. Sağlanan adaylar arasında yalnızca bir tanesi (Dutrieux) açıklamasında çeviri ve yazma yardımından doğrudan söz etmektedir; ancak bu ajanın genel amaçlı olduğu belirtilmiş ve uzman bir çeviri/düzenleme aracı olduğu kanıtlanmamıştır. Diğer adayların açıklamaları veri analizi, güvenlik, hava durumu, jeolojik konum, kripto araştırması, görsel/video üretimi veya sanat eleştirisi gibi farklı alanlara yöneliktir; talebinizle doğrudan ilgili değildir. Bu nedenle yalnızca Dutrieux kısmi bir eşleşme olarak sunulmuştur; ancak çeviri ve düzenleme kalitesi, fiyat, kullanılabilirlik, güvenilirlik ve erişilebilirlik doğrulanmamıştır. Başka bir aday uygun değildir. Kanıt eksikliği nedeniyle kesin bir eşleşme olduğu iddia edilemez.\",\"matches\":[{\"key\":\"ethereum:23037\",\"reason\":\"Bu ajan, açıklamasında 'translations' (çeviriler) ve 'writing' (yazma) konularında yardımcı olduğunu belirtmektedir. Bu, İngilizce metin çevirisi ve yazı düzenleme talebinizle doğrudan ilgilidir. Ancak ajan 'genel amaçlı' olarak tanımlanmıştır ve özel bir çeviri veya düzenleme uzmanlığı kanıtlanmamıştır.\",\"evidenceQuote\":\"helps with writing, coding explanations, translations, and daily tasks\",\"gaps\":[\"Ajanın çeviri ve yazı düzenleme konusundaki uzmanlık düzeyi, doğruluğu ve kalitesi kanıtlanmamıştır.\",\"Hizmetin fiyatı, kullanılabilirliği, erişilebilirliği ve güvenilirliği doğrulanmamıştır.\",\"Ajanın İngilizce metin çevirisi ve düzenleme için özel yetenekleri veya referansları hakkında bilgi yoktur.\",\"Açıklamada belirtilen çeviri ve yazma yeteneklerinin tam olarak neyi kapsadığı (örneğin, düzenleme, proofreading) açık değildir.\"]}]}"
+      }
+    }
+  ],
+  "blocked": {},
+  "completedAt": "2026-09-11T01:40:39.287Z",
+  "pairedCases": 0
+}

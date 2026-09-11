@@ -1,0 +1,19 @@
+{
+  "checkedAt": "2026-09-11T10:32:31.309Z",
+  "chainId": 5042002,
+  "head": 61551826,
+  "deployments": [
+    {
+      "address": "0x8004A818BFB912233c491871b3d84c89A494BD9e",
+      "startBlock": 29241340
+    },
+    {
+      "address": "0x8004B663056A597Dffe9eCcC1965A193B7388713",
+      "startBlock": 29241344
+    },
+    {
+      "address": "0x8004Cb1BF31DAf7788923b405b754f57acEB4272",
+      "startBlock": 29241349
+    }
+  ]
+}

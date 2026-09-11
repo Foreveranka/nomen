@@ -1,0 +1,26 @@
+{
+  "agentId": 10226,
+  "owner": "0xD7256e7a20368bAc505A738CC1C2cbc8d0648849",
+  "identity": "0x8004A818BFB912233c491871b3d84c89A494BD9e",
+  "chainId": 11155111,
+  "transaction": "0x18aa70b16831e38d8c08a928ded65e99c67cb1d77236759e5b629758c1844968",
+  "block": 11679005,
+  "uri": "data:application/json;base64,eyJ0eXBlIjoiaHR0cHM6Ly9laXBzLmV0aGVyZXVtLm9yZy9FSVBTL2VpcC04MDA0I3JlZ2lzdHJhdGlvbi12MSIsIm5hbWUiOiJOT01FTiBzbmFwc2hvdCByZWFkZXIiLCJkZXNjcmlwdGlvbiI6IlRlc3RuZXQgZGVtb25zdHJhdGlvbiBvZiB0aGUgTk9NRU4gQVBJOiByZXR1cm5zIHB1Ymxpc2hlZCBFUkMtODAwNCBtZXRhZGF0YSBjaGVja3MgYW5kIHJlYXNvbnMgZm9yIGEgc3VwcGxpZWQgY2hhaW4gYW5kIGFnZW50IElELiBJdCBkb2VzIG5vdCBleGVjdXRlIGpvYnMgb3IgY2VydGlmeSBzZXJ2aWNlIHF1YWxpdHkuIiwic2VydmljZXMiOlt7Im5hbWUiOiJ3ZWIiLCJlbmRwb2ludCI6Imh0dHBzOi8vbm9tZW4tYmV0YS52ZXJjZWwuYXBwL2RvY3MvYXBpIn0seyJuYW1lIjoid2ViIiwiZW5kcG9pbnQiOiJodHRwczovL25vbWVuLWJldGEudmVyY2VsLmFwcC9hcGkvc25hcHNob3Q/Y2hhaW49ZXRoZXJldW0mYWdlbnRJZD0yMjgxNyJ9XSwiYWN0aXZlIjp0cnVlLCJ4NDAyU3VwcG9ydCI6dHJ1ZX0=",
+  "metadata": {
+    "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
+    "name": "NOMEN snapshot reader",
+    "description": "Testnet demonstration of the NOMEN API: returns published ERC-8004 metadata checks and reasons for a supplied chain and agent ID. It does not execute jobs or certify service quality.",
+    "services": [
+      {
+        "name": "web",
+        "endpoint": "https://nomen-beta.vercel.app/docs/api"
+      },
+      {
+        "name": "web",
+        "endpoint": "https://nomen-beta.vercel.app/api/snapshot?chain=ethereum&agentId=22817"
+      }
+    ],
+    "active": true,
+    "x402Support": true
+  }
+}

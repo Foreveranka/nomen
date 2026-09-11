@@ -1,0 +1,30 @@
+# Secrets and machine-local configuration
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+.vercel/
+**/.vercel/
+node_modules/
+**/node_modules/
+**/.next/
+**/out/
+**/cache/
+**/broadcast/
+**/__pycache__/
+*.pyc
+*.tsbuildinfo
+.DS_Store
+tarayici/snapshots/
+**/raw/
+subgraph/build/
+subgraph/generated/
+tarayici/veri/*
+!tarayici/veri/kategori_sozluk.jsonl
+*.log
+inceleme/*.zip
+
+# Local scanner staging pointer
+inceleme/arc-refresh-location.json

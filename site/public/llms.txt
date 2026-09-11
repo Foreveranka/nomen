@@ -1,0 +1,14 @@
+# NOMEN
+
+NOMEN inspects ERC-8004 registry snapshots. Passing is a metadata-rule result, not a safety endorsement.
+
+- Docs: /docs
+- Free single lookup: /api/snapshot?chain=sepolia&agentId=2364
+- Bulk lookup: POST /api/toplu with JSON {"chain":"sepolia","agentIds":[2364,6815]}; at most 2000 positive safe integers, body <=64 KiB.
+- Provenance: /veri/ozet.json
+- Published Merkle proofs: /veri/sepolia/merkle.json
+- Live Graph activity: /api/activity?agentId=2364 (503 when not configured)
+
+Supported chains: ethereum, sepolia, arc. not_scanned and rpc_error mean unknown. HTTP metadata was observed at scan time, not verified live. Legacy Ethereum scan timestamps are unverified. The 249 listed Arc records were refreshed September 11, 2026 at block 61552064; non-listed Arc records retain legacy observations. Naming is Sepolia-only under nomen-demo.eth. Replacement contracts and a real claim were verified on September 11, 2026. GET /api/activity?chain=sepolia&agentId=10226 returns Graph-indexed events with explicit freshness; indexing delays are not evidence of absence.
+
+AI discovery: POST /api/discover with an English request of 15–500 characters and chain sepolia or arc. Requires fresh Graph owner and metadata-URI continuity against the snapshot block before AI ranking. Includes registry coverage and AI-selected registrySignals. Stale/unavailable evidence withholds candidates on the affected network. Arc is scoped to the 249 listed catalog IDs. registry.networks reports each network separately; Ethereum is snapshot-only. No feedback count establishes performance.

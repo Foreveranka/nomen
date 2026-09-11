@@ -1,0 +1,42 @@
+{
+  "checkedAt": "2026-09-11T02:31:52.858Z",
+  "chain": "sepolia",
+  "chainId": 11155111,
+  "registrar": "0x481d5fbd6f7B955D34Dbe3069B30dFFd3C15E81C",
+  "resolver": "0x8443a2C263e770C5180E533B7B571BA6eED029f7",
+  "registry": "0x01F0e0F27F30C445C3F5e48Fc9873849e06B76c8",
+  "parent": "nomen-demo.eth",
+  "operator": "0xD7256e7a20368bAc505A738CC1C2cbc8d0648849",
+  "agentId": 10226,
+  "name": "reader.nomen-demo.eth",
+  "expiry": 1820629908,
+  "root": "0x785fc008eff6fa12c77909d57df358ba0a26d1682d011efae3c2d7462b10a6c0",
+  "source": "/veri/sepolia/merkle-785fc008.json",
+  "transactions": [
+    {
+      "function": "publishRoot",
+      "hash": "0x347542752824d84530e47e2d215f2dc776f78e6830dae3259c09dc1bd5ddac67",
+      "block": 11679022
+    },
+    {
+      "function": "claim",
+      "hash": "0x29904930ef63e6c79cf99aa6b9da4fe007e0d2261d5f54a691cbcb8c65570139",
+      "block": 11679023
+    }
+  ],
+  "verified": {
+    "bytecode": true,
+    "immutableConfiguration": true,
+    "parentLink": true,
+    "roles": true,
+    "ownership": true,
+    "proof": true,
+    "claim": true,
+    "nonTransferable": true,
+    "registrationText": true,
+    "contextText": true,
+    "unauthorizedOwnerRejected": true,
+    "unauthorizedAdminRejected": true,
+    "unauthorizedResolverWriteRejected": true
+  }
+}

@@ -1,0 +1,63 @@
+import { defineChain } from "viem";
+import { mainnet, sepolia } from "viem/chains";
+
+export const arcTestnet = defineChain({
+  id: 5042002,
+  name: "Arc Testnet",
+  nativeCurrency: { name: "USDC", symbol: "USDC", decimals: 18 },
+  rpcUrls: { default: { http: ["https://rpc.testnet.arc.network"] } },
+  blockExplorers: { default: { name: "ArcScan", url: "https://testnet.arcscan.app" } },
+  testnet: true,
+});
+
+export type AgAnahtar = "ethereum" | "sepolia" | "arc";
+
+export const AGLAR: Record<AgAnahtar, {
+  anahtar: AgAnahtar; ad: string; kisa: string; chainId: number; testnet: boolean;
+  identity: `0x${string}`; reputation: `0x${string}`; tarayici: string; nftYolu: string;
+  /** NomenRegistrar adresi; deploy edilmediyse boş. */
+  registrar: `0x${string}` | null;
+  /** nomen.eth'in ENSv2 alt registry'si ve isimlerin çözücüsü (yalnız isim talebi olan ağda). */
+  altRegistry: `0x${string}` | null;
+  resolver: `0x${string}` | null;
+  /** NomenRegistrar'ın dağıtıldığı blok; isim listesi bu bloktan itibaren olayları okur. */
+  registrarBlok: bigint;
+  /** İsim talebi bu ağda mümkün mü (ENSv2 + ERC-8004 aynı zincirde). */
+  isimTalebi: boolean;
+}> = {
+  ethereum: {
+    anahtar: "ethereum", ad: "Ethereum", kisa: "ETH", chainId: mainnet.id, testnet: false,
+    identity: "0x8004A169FB4a3325136EB29fA0ceB6D2e539a432",
+    reputation: "0x8004BAa17C55a88189AE136b182e5fdA19dE9b63",
+    tarayici: "https://etherscan.io",
+    nftYolu: "https://etherscan.io/nft/0x8004A169FB4a3325136EB29fA0ceB6D2e539a432/",
+    registrar: null, altRegistry: null, resolver: null, registrarBlok: BigInt(0), isimTalebi: false,
+  },
+  sepolia: {
+    anahtar: "sepolia", ad: "Sepolia", kisa: "SEP", chainId: sepolia.id, testnet: true,
+    identity: "0x8004A818BFB912233c491871b3d84c89A494BD9e",
+    reputation: "0x8004B663056A597Dffe9eCcC1965A193B7388713",
+    tarayici: "https://sepolia.etherscan.io",
+    nftYolu: "https://sepolia.etherscan.io/nft/0x8004A818BFB912233c491871b3d84c89A494BD9e/",
+    registrar: process.env.NEXT_PUBLIC_ENABLE_CLAIMS === "true" ? (process.env.NEXT_PUBLIC_REGISTRAR_SEPOLIA as `0x${string}`) || null : null,
+    altRegistry: (process.env.NEXT_PUBLIC_SUBREGISTRY_SEPOLIA as `0x${string}`) || null, resolver: (process.env.NEXT_PUBLIC_RESOLVER_SEPOLIA as `0x${string}`) || null,
+    registrarBlok: BigInt(process.env.NEXT_PUBLIC_REGISTRAR_BLOCK || "0"), isimTalebi: true,
+  },
+  arc: {
+    anahtar: "arc", ad: "Arc Testnet", kisa: "ARC", chainId: arcTestnet.id, testnet: true,
+    identity: "0x8004A818BFB912233c491871b3d84c89A494BD9e",
+    reputation: "0x8004B663056A597Dffe9eCcC1965A193B7388713",
+    tarayici: "https://testnet.arcscan.app",
+    nftYolu: "https://testnet.arcscan.app/token/0x8004A818BFB912233c491871b3d84c89A494BD9e/instance/",
+    registrar: null, altRegistry: null, resolver: null, registrarBlok: BigInt(0), isimTalebi: false,
+  },
+};
+
+export const AG_SIRASI: AgAnahtar[] = ["ethereum", "sepolia", "arc"];
+
+export function agFromChainId(id?: number): AgAnahtar | null {
+  const b = AG_SIRASI.find((k) => AGLAR[k].chainId === id);
+  return b ?? null;
+}
+
+export const VIEM_ZINCIRLER = [mainnet, sepolia, arcTestnet] as const;

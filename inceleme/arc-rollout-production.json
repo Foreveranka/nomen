@@ -1,0 +1,312 @@
+{
+  "checkedAt": "2026-09-11T10:44:19.144Z",
+  "base": "https://nomen-beta.vercel.app",
+  "/": {
+    "status": 200,
+    "bytes": 24786
+  },
+  "/workbench": {
+    "status": 200,
+    "bytes": 20671
+  },
+  "/docs/subgraph": {
+    "status": 200,
+    "bytes": 27846
+  },
+  "/docs/evaluate": {
+    "status": 200,
+    "bytes": 29444
+  },
+  "/veri/arc/catalog-refresh.json": {
+    "status": 200,
+    "bytes": 3287
+  },
+  "/api/activity?chain=arc&agentId=40": {
+    "status": 200,
+    "body": {
+      "chain": "arc",
+      "chainId": 5042002,
+      "scope": "NOMEN's explicitly listed Arc catalog; other IDs are outside this index scope.",
+      "source": "the-graph",
+      "indexedBlock": 29241339,
+      "freshness": {
+        "indexedAt": "2026-02-27T14:16:20.000Z",
+        "lagSeconds": 16921681,
+        "stale": true
+      },
+      "nameSemantics": "Indexed registration events only. Use registrar.isNamed for current endorsement.",
+      "agent": null
+    }
+  },
+  "discovery": {
+    "status": 200,
+    "body": {
+      "request": "Find an agent for vendor payouts, invoice review and scheduled USDC payments on Arc Testnet.",
+      "brief": {
+        "summary": "",
+        "requirements": [
+          "Vendor payouts",
+          "Invoice review",
+          "Scheduled USDC payments",
+          "Compatible with Arc Testnet"
+        ],
+        "searchTerms": [
+          "vendor payout automation",
+          "invoice review",
+          "scheduled payments",
+          "USDC payments",
+          "Arc Testnet",
+          "bulk vendor payments",
+          "invoice verification",
+          "recurring USDC transfers"
+        ],
+        "questions": [],
+        "cautions": [],
+        "sampleTask": "",
+        "acceptance": []
+      },
+      "matches": [],
+      "conclusion": "No recommendation passed the available task and registry evidence checks. Review the withheld records or retry when live evidence is available.",
+      "searched": 249,
+      "considered": 0,
+      "generatedAt": "2026-09-11T10:44:22.961Z",
+      "model": "deepseek-flash",
+      "registry": {
+        "status": "stale",
+        "checked": 26,
+        "eligible": 0,
+        "withheld": [
+          {
+            "key": "arc:40",
+            "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+          },
+          {
+            "key": "arc:39",
+            "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+          },
+          {
+            "key": "arc:882138",
+            "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+          },
+          {
+            "key": "arc:1017",
+            "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+          },
+          {
+            "key": "arc:11576",
+            "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+          },
+          {
+            "key": "arc:14128",
+            "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+          },
+          {
+            "key": "arc:29377",
+            "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+          },
+          {
+            "key": "arc:2972",
+            "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+          },
+          {
+            "key": "arc:844457",
+            "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+          },
+          {
+            "key": "arc:845038",
+            "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+          },
+          {
+            "key": "arc:850076",
+            "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+          },
+          {
+            "key": "arc:851566",
+            "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+          },
+          {
+            "key": "arc:851595",
+            "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+          },
+          {
+            "key": "arc:851620",
+            "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+          },
+          {
+            "key": "arc:867388",
+            "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+          },
+          {
+            "key": "arc:873876",
+            "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+          },
+          {
+            "key": "arc:884418",
+            "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+          },
+          {
+            "key": "arc:884483",
+            "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+          },
+          {
+            "key": "arc:886193",
+            "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+          },
+          {
+            "key": "arc:886497",
+            "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+          },
+          {
+            "key": "arc:886498",
+            "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+          },
+          {
+            "key": "arc:886972",
+            "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+          },
+          {
+            "key": "arc:887818",
+            "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+          },
+          {
+            "key": "arc:888097",
+            "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+          },
+          {
+            "key": "arc:888921",
+            "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+          },
+          {
+            "key": "arc:850988",
+            "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+          }
+        ],
+        "message": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes).",
+        "indexedBlock": 29241339,
+        "indexedAt": "2026-02-27T14:16:20.000Z",
+        "chain": "arc",
+        "chainId": 5042002,
+        "scope": "NOMEN's explicitly listed Arc catalog; other IDs are outside this index scope.",
+        "networks": [
+          {
+            "status": "stale",
+            "checked": 26,
+            "eligible": 0,
+            "withheld": [
+              {
+                "key": "arc:40",
+                "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+              },
+              {
+                "key": "arc:39",
+                "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+              },
+              {
+                "key": "arc:882138",
+                "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+              },
+              {
+                "key": "arc:1017",
+                "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+              },
+              {
+                "key": "arc:11576",
+                "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+              },
+              {
+                "key": "arc:14128",
+                "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+              },
+              {
+                "key": "arc:29377",
+                "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+              },
+              {
+                "key": "arc:2972",
+                "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+              },
+              {
+                "key": "arc:844457",
+                "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+              },
+              {
+                "key": "arc:845038",
+                "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+              },
+              {
+                "key": "arc:850076",
+                "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+              },
+              {
+                "key": "arc:851566",
+                "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+              },
+              {
+                "key": "arc:851595",
+                "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+              },
+              {
+                "key": "arc:851620",
+                "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+              },
+              {
+                "key": "arc:867388",
+                "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+              },
+              {
+                "key": "arc:873876",
+                "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+              },
+              {
+                "key": "arc:884418",
+                "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+              },
+              {
+                "key": "arc:884483",
+                "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+              },
+              {
+                "key": "arc:886193",
+                "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+              },
+              {
+                "key": "arc:886497",
+                "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+              },
+              {
+                "key": "arc:886498",
+                "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+              },
+              {
+                "key": "arc:886972",
+                "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+              },
+              {
+                "key": "arc:887818",
+                "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+              },
+              {
+                "key": "arc:888097",
+                "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+              },
+              {
+                "key": "arc:888921",
+                "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+              },
+              {
+                "key": "arc:850988",
+                "reason": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes)."
+              }
+            ],
+            "message": "Arc Testnet recommendations are paused until The Graph has fresh registry data (within 15 minutes).",
+            "indexedBlock": 29241339,
+            "indexedAt": "2026-02-27T14:16:20.000Z",
+            "chain": "arc",
+            "chainId": 5042002,
+            "scope": "NOMEN's explicitly listed Arc catalog; other IDs are outside this index scope."
+          }
+        ]
+      }
+    }
+  }
+}

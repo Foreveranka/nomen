@@ -1,0 +1,40 @@
+{
+  "checkedAt": "2026-09-11T02:52:29.191Z",
+  "status": 200,
+  "body": {
+    "data": {
+      "registries": [
+        {
+          "id": "sepolia",
+          "agents": "3188",
+          "feedbackTotal": "7070",
+          "validationsRequested": "36"
+        }
+      ],
+      "agents": [
+        {
+          "agentId": "3187",
+          "owner": "0x92aae0857979a139344f5b6f008e71f27a507522",
+          "registeredIn": "10665447"
+        },
+        {
+          "agentId": "3186",
+          "owner": "0x92aae0857979a139344f5b6f008e71f27a507522",
+          "registeredIn": "10665311"
+        },
+        {
+          "agentId": "3185",
+          "owner": "0x92aae0857979a139344f5b6f008e71f27a507522",
+          "registeredIn": "10665184"
+        }
+      ],
+      "_meta": {
+        "block": {
+          "number": 10665486,
+          "timestamp": 1776265860
+        },
+        "hasIndexingErrors": false
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "checkedAt": "2026-09-11T02:48:12.031Z",
+  "deployment": "QmZX3cEsqTLDFphp5GnKBFT44UUbLnvVTsDPHceoVwKACi",
+  "version": "v0.2.0",
+  "queryEndpoint": "https://api.studio.thegraph.com/query/1760110/nomen/v0.2.0",
+  "productionActivity": {
+    "status": 200,
+    "chain": "sepolia",
+    "source": "the-graph",
+    "indexedBlock": 8999999,
+    "freshness": {
+      "indexedAt": "2025-08-16T23:22:48.000Z",
+      "lagSeconds": 33708323,
+      "stale": true
+    },
+    "nameSemantics": "Indexed registration events only. Use registrar.isNamed for current endorsement.",
+    "agent": null
+  },
+  "claimBlockRequired": 11679023,
+  "verificationComplete": false
+}
