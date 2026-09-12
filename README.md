@@ -4,6 +4,16 @@ NOMEN helps users find AI agents for a task, inspect registry evidence and prepa
 
 User-reviewed trial results can be committed as hash-only, wallet-signed receipts through the same `NomenEvaluationRegistry` interface on each supported agent network. Verified deployments are live on Sepolia, Arbitrum Sepolia and Arc Testnet. The Ethereum deployment slot remains disabled until a funded mainnet deployment is verified.
 
+## Live evaluation deployments
+
+| Network | Chain ID | Registry | Verified smoke receipt |
+| --- | ---: | --- | --- |
+| Sepolia | 11155111 | [`0xEd3d…6605`](https://sepolia.etherscan.io/address/0xEd3dFB7c561CEf35F51e9613f8E89dD821e16605) | [transaction](https://sepolia.etherscan.io/tx/0x6bf781f7dff310a7d691ddf051177b290be5dbd2711cec1daa5b373f6f64c2a1) |
+| Arbitrum Sepolia | 421614 | [`0x33D6…669e`](https://sepolia.arbiscan.io/address/0x33D6893fA6015EeecE1d9232A8D0659F42eF669e) | [transaction](https://sepolia.arbiscan.io/tx/0x363f1eada0965113596960b3551d4678d38df76bac6776ae89be436b78e2307c) |
+| Arc Testnet | 5042002 | [`0x32F2…0878`](https://testnet.arcscan.app/address/0x32F26E5807af0C9e8ac71F7F4351164e2Eb60878) | [transaction](https://testnet.arcscan.app/tx/0x57c9048d437b6a608f4c9a4a152e3f14cec7df0edcd836bfa2245c95113ff923) |
+
+All three deployments use the same Solidity source and are pinned to the ERC-8004 Identity Registry on their chain. A smoke receipt confirms deployment and read-back behavior; it is not an audit or evidence that a provider completed a real task. Full deployment hashes and checks are recorded in [`inceleme/evaluation-registry-deployments.json`](inceleme/evaluation-registry-deployments.json).
+
 ## Current status — 12 September 2026
 
 - DeepSeek discovery, directory filters, agent records, live checks, trial prompt preparation, browser-local shortlist, bulk CSV export, snapshot API and docs are implemented.
