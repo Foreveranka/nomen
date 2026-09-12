@@ -2,6 +2,8 @@
 
 NOMEN helps users find AI agents for a task, inspect registry evidence and prepare a provider-side trial. The landing page introduces the product; Open app leads to `/workbench`, where English AI search and the manual directory share one page.
 
+User-reviewed trial results can be committed as hash-only, wallet-signed receipts through the same `NomenEvaluationRegistry` interface on each supported agent network. Verified deployments are live on Sepolia and Arbitrum Sepolia. Ethereum and Arc Testnet deployment slots are configured but remain disabled until funded deployments are verified.
+
 ## Current status — 12 September 2026
 
 - DeepSeek discovery, directory filters, agent records, live checks, trial prompt preparation, browser-local shortlist, bulk CSV export, snapshot API and docs are implemented.
@@ -48,9 +50,9 @@ The Try this agent button runs `POST /api/evaluate`. It reads current ownership/
 
 `POST /api/evaluate` accepts `{ "chain": "ethereum", "agentId": 22817, "job": "custom", "request": "Weather forecasts and air quality" }`. Legacy wallet_report, research and payments checklists remain. Custom task fit is unknown to live checks. Decisions are shortlist_for_trial, needs_review or hold; automaticExecutionAllowed is always false.
 
-Browser-local reports expire after 15 minutes and are keyed by task plus agent identity. A user-reported trial review requires fresh, non-held evidence, a usable service URL, every review checkbox and a note. It is not an automated certification. Rechecks are manual; no background monitoring exists.
+Browser-local reports expire after 15 minutes and are keyed by task plus agent identity. A user-reported trial review requires fresh, non-held evidence, a usable service URL and a note; a passed result also requires every review checkbox. Where deployed, the wallet can publish the outcome and hashes to the selected agent network without putting the note onchain. It is not an automated certification. Rechecks are manual; no background monitoring exists.
 
-Run `node --experimental-strip-types --test scripts/discovery.test.mjs scripts/evaluation.test.mjs scripts/trial.test.mjs` from `site`. All 19 tests passed during the September 11 implementation. The controlled ten-case English ranking run passed all ten in one run; this small fixed-roster check does not prove general accuracy or task execution. See `inceleme/2026-09-11-concise-discovery.md` and `inceleme/2026-09-11-try-agent.md`.
+Run `node --experimental-strip-types --test scripts/discovery.test.mjs scripts/evaluation.test.mjs scripts/evaluation-registry.test.mjs scripts/trial.test.mjs scripts/graph-discovery.test.mjs` from `site`. The controlled ten-case English ranking run passed all ten in one run; this small fixed-roster check does not prove general accuracy or task execution. See `inceleme/2026-09-11-concise-discovery.md`, `inceleme/2026-09-11-try-agent.md` and `inceleme/evaluation-registry-deployments.json`.
 
 ## APIs
 

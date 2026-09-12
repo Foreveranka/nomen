@@ -15,6 +15,8 @@ export type AgAnahtar = "ethereum" | "sepolia" | "arbitrum" | "arc";
 export const AGLAR: Record<AgAnahtar, {
   anahtar: AgAnahtar; ad: string; kisa: string; chainId: number; testnet: boolean;
   identity: `0x${string}`; reputation: `0x${string}`; tarayici: string; nftYolu: string;
+  /** User-signed trial receipt registry; null until a verified deployment is enabled. */
+  evaluationRegistry: `0x${string}` | null;
   /** NomenRegistrar adresi; deploy edilmediyse boş. */
   registrar: `0x${string}` | null;
   /** nomen.eth'in ENSv2 alt registry'si ve isimlerin çözücüsü (yalnız isim talebi olan ağda). */
@@ -31,6 +33,7 @@ export const AGLAR: Record<AgAnahtar, {
     reputation: "0x8004BAa17C55a88189AE136b182e5fdA19dE9b63",
     tarayici: "https://etherscan.io",
     nftYolu: "https://etherscan.io/nft/0x8004A169FB4a3325136EB29fA0ceB6D2e539a432/",
+    evaluationRegistry: (process.env.NEXT_PUBLIC_EVALUATION_REGISTRY_ETHEREUM as `0x${string}`) || null,
     registrar: null, altRegistry: null, resolver: null, registrarBlok: BigInt(0), isimTalebi: false,
   },
   sepolia: {
@@ -39,6 +42,7 @@ export const AGLAR: Record<AgAnahtar, {
     reputation: "0x8004B663056A597Dffe9eCcC1965A193B7388713",
     tarayici: "https://sepolia.etherscan.io",
     nftYolu: "https://sepolia.etherscan.io/nft/0x8004A818BFB912233c491871b3d84c89A494BD9e/",
+    evaluationRegistry: "0xEd3dFB7c561CEf35F51e9613f8E89dD821e16605",
     registrar: process.env.NEXT_PUBLIC_ENABLE_CLAIMS === "true" ? (process.env.NEXT_PUBLIC_REGISTRAR_SEPOLIA as `0x${string}`) || null : null,
     altRegistry: (process.env.NEXT_PUBLIC_SUBREGISTRY_SEPOLIA as `0x${string}`) || null, resolver: (process.env.NEXT_PUBLIC_RESOLVER_SEPOLIA as `0x${string}`) || null,
     registrarBlok: BigInt(process.env.NEXT_PUBLIC_REGISTRAR_BLOCK || "0"), isimTalebi: true,
@@ -49,6 +53,7 @@ export const AGLAR: Record<AgAnahtar, {
     reputation: "0x8004B663056A597Dffe9eCcC1965A193B7388713",
     tarayici: "https://sepolia.arbiscan.io",
     nftYolu: "https://sepolia.arbiscan.io/nft/0x8004A818BFB912233c491871b3d84c89A494BD9e/",
+    evaluationRegistry: "0x33D6893fA6015EeecE1d9232A8D0659F42eF669e",
     registrar: null, altRegistry: null, resolver: null, registrarBlok: BigInt(0), isimTalebi: false,
   },
   arc: {
@@ -57,6 +62,7 @@ export const AGLAR: Record<AgAnahtar, {
     reputation: "0x8004B663056A597Dffe9eCcC1965A193B7388713",
     tarayici: "https://testnet.arcscan.app",
     nftYolu: "https://testnet.arcscan.app/token/0x8004A818BFB912233c491871b3d84c89A494BD9e/instance/",
+    evaluationRegistry: (process.env.NEXT_PUBLIC_EVALUATION_REGISTRY_ARC as `0x${string}`) || null,
     registrar: null, altRegistry: null, resolver: null, registrarBlok: BigInt(0), isimTalebi: false,
   },
 };

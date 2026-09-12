@@ -2,6 +2,8 @@
 
 Next.js App Router application. `/` introduces NOMEN. `/workbench` contains English AI discovery, catalog filters, live evidence checks, provider-side trial preparation and the browser-local shortlist. `/docs` describes the deployed behavior and current limitations.
 
+The workbench can publish a user-reviewed trial as a hash-only receipt to `NomenEvaluationRegistry` on the agent's own network. The note remains local or in the exported JSON. The transaction stores the reviewer wallet, agent id, outcome, observation block and report/evidence hashes. Sepolia and Arbitrum Sepolia deployments are enabled in `lib/aglar.ts`; Ethereum and Arc Testnet accept public deployment addresses through environment variables after verification.
+
 ## Run locally
 
 ```sh
@@ -16,7 +18,7 @@ Keep secrets server-only. Do not overwrite an existing `.env.local` or commit it
 
 ```sh
 npm run lint
-node --experimental-strip-types --test scripts/discovery.test.mjs scripts/evaluation.test.mjs scripts/trial.test.mjs
+node --experimental-strip-types --test scripts/discovery.test.mjs scripts/evaluation.test.mjs scripts/evaluation-registry.test.mjs scripts/trial.test.mjs scripts/graph-discovery.test.mjs
 npm run build
 npm start
 ```

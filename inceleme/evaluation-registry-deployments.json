@@ -1,0 +1,43 @@
+{
+  "checkedAt": "2026-09-12T01:05:30Z",
+  "contract": "NomenEvaluationRegistry",
+  "source": "kontratlar/src/NomenEvaluationRegistry.sol",
+  "identityRegistry": "0x8004A818BFB912233c491871b3d84c89A494BD9e",
+  "deployments": [
+    {
+      "network": "Sepolia",
+      "chainId": 11155111,
+      "address": "0xEd3dFB7c561CEf35F51e9613f8E89dD821e16605",
+      "deploymentTransaction": "0x70bfea6556fde359c8dfd60b5812853e1dbf644b7d3fe24bdff0148d4a5b8071",
+      "smokeTestTransaction": "0x6bf781f7dff310a7d691ddf051177b290be5dbd2711cec1daa5b373f6f64c2a1",
+      "smokeTestEvaluationId": "0x5ef290a22a8bd5b7187238faabcad77ba32ac25d0a3d8c664ac83016ce0bb291",
+      "smokeTestAgentId": 10226,
+      "smokeTestOutcome": "inconclusive"
+    },
+    {
+      "network": "Arbitrum Sepolia",
+      "chainId": 421614,
+      "address": "0x33D6893fA6015EeecE1d9232A8D0659F42eF669e",
+      "deploymentTransaction": "0x92397d568e56d7be4c889dc0613d6d6ec0ad132fa876503262f1715d772c0c03",
+      "smokeTestTransaction": "0x363f1eada0965113596960b3551d4678d38df76bac6776ae89be436b78e2307c",
+      "smokeTestEvaluationId": "0x03e5814e42ad6145ececeaeb0307098e32699f52039e425bd5c7d254e06ce3d7",
+      "smokeTestAgentId": 205,
+      "smokeTestOutcome": "inconclusive"
+    }
+  ],
+  "pending": [
+    { "network": "Ethereum", "chainId": 1, "reason": "deployment wallet has no mainnet ETH" },
+    { "network": "Arc Testnet", "chainId": 5042002, "reason": "deployment wallet has no Arc Testnet gas token" }
+  ],
+  "superseded": [
+    { "network": "Sepolia", "address": "0x75C1A7296c6284a8e35A25aC30a186D7F8E1C7B0", "reason": "first version compared an RPC block number with the EVM BLOCKNUMBER opcode" },
+    { "network": "Arbitrum Sepolia", "address": "0x1940748404e64De0A7f0EBf256a8d6965b134a04", "reason": "first version compared an RPC block number with the EVM BLOCKNUMBER opcode" }
+  ],
+  "verification": {
+    "identityRegistryRead": true,
+    "evaluationCountAfterSmokeTest": 1,
+    "storedReceiptReadBack": true,
+    "notesStoredOnchain": false,
+    "deployerHasAdminAuthority": false
+  }
+}

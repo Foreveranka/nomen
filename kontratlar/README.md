@@ -19,3 +19,11 @@ Run `forge test` and `forge build`. The live verification script is `../site/scr
 5. Prove an actual claim and ENS text read before enabling the app's claim environment variables.
 
 The old `nomen.eth` namespace and old registrar are retired from this app. They are not migrated or controlled by the new wallet. Testnet deployment checks are not an independent audit or a guarantee of service quality.
+
+## Multi-chain evaluation receipts
+
+`NomenEvaluationRegistry` stores append-only hashes of user-reviewed agent trials. Each deployment is pinned to that chain's ERC-8004 Identity Registry and rejects unknown agent IDs. The receipt records the reviewer wallet, agent ID, RPC observation block, outcome, report hash and evidence hash. It never stores the trial note or claims that NOMEN certified the result. The contract does not compare the RPC block number with the EVM `BLOCKNUMBER` opcode because those values use different domains on Arbitrum.
+
+Deploy the same source on a supported chain with `script/DeployEvaluation.s.sol`. Set `EXPECTED_CHAIN_ID` and `IDENTITY_REGISTRY` for the target network and provide the deployer key through the environment. Verify the deployment before adding its public address to the application.
+
+The evaluation registry has no owner, administrator, upgrade path or withdrawal function. Its deployer receives no authority over receipts. Use a securely held, funded wallet for future deployments so the deployment provenance is clear.

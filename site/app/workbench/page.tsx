@@ -4,6 +4,7 @@ import Link from "next/link";
 import JobDiscovery from "./JobDiscovery";
 import AgentDirectory from "@/components/AgentDirectory";
 import AgentActivity from "@/components/AgentActivity";
+import OnchainEvaluation from "@/components/OnchainEvaluation";
 import TryAgent from "./TryAgent";
 import { trialAccess } from "@/lib/trial";
 import { useAg } from "@/app/providers";
@@ -15,12 +16,15 @@ import {
   type Evaluation,
   type Job,
 } from "@/lib/evaluation";
+import { evaluationReceipt, type TrialOutcome } from "@/lib/evaluation-registry";
 
 type Saved = {
   report: Evaluation;
   history: Evaluation[];
   reviewedFingerprint?: string;
   trialNotes?: string;
+  trialChecks?: string[];
+  trialOutcome?: TrialOutcome;
   recheckFailed?: boolean;
 };
 const STORAGE = "nomen-workbench-v1";
@@ -46,6 +50,7 @@ export default function Workbench() {
     [now, setNow] = useState(0);
   const [checked, setChecked] = useState<string[]>([]),
     [notes, setNotes] = useState("");
+  const [trialOutcome, setTrialOutcome] = useState<TrialOutcome>("inconclusive");
   useEffect(() => {
     queueMicrotask(() => {
       setNow(Date.now());
@@ -110,6 +115,7 @@ export default function Workbench() {
     setReport(null);
     setChecked([]);
     setNotes("");
+    setTrialOutcome("inconclusive");
     setChanges([]);
     try {
       const res = await fetch("/api/evaluate", {
@@ -137,6 +143,8 @@ export default function Workbench() {
                       ? prior.reviewedFingerprint
                       : undefined,
                   trialNotes: prior.trialNotes,
+                  trialChecks: prior.trialChecks,
+                  trialOutcome: prior.trialOutcome,
                 }
               : s,
           ),
@@ -190,7 +198,11 @@ export default function Workbench() {
               comparison: changes,
               trialNotes: notes,
               trialChecks: checked,
+              trialOutcome,
               trialEvidence: "user reported; not independently verified",
+              onchainReceipt: report
+                ? evaluationReceipt(report, trialOutcome, notes, checked)
+                : undefined,
             },
             null,
             2,
@@ -224,8 +236,8 @@ export default function Workbench() {
     !!report &&
     trialAccess(report, now) &&
     !expired &&
-    requirements.every((r) => checked.includes(r)) &&
-    notes.trim().length >= 20;
+    notes.trim().length >= 20 &&
+    (trialOutcome !== "passed" || requirements.every((r) => checked.includes(r)));
   function recordTrial() {
     if (!report || !trialReady) return;
     const entry = saved.find((s) => keyOf(s.report) === keyOf(report));
@@ -234,6 +246,8 @@ export default function Workbench() {
       history: entry?.history ?? [],
       reviewedFingerprint: report.fingerprint,
       trialNotes: notes,
+      trialChecks: [...checked].sort(),
+      trialOutcome,
     };
     if (
       persist(
@@ -534,6 +548,14 @@ export default function Workbench() {
                     placeholder="What did you ask, what came back, and how did you verify it?"
                   />
                 </label>
+                <label className="mt-4 block text-sm">
+                  Trial outcome
+                  <select className="girdi mt-2 w-full" value={trialOutcome} onChange={(e) => setTrialOutcome(e.target.value as TrialOutcome)}>
+                    <option value="inconclusive">Inconclusive</option>
+                    <option value="passed">Passed my review</option>
+                    <option value="failed">Failed my review</option>
+                  </select>
+                </label>
                 <button
                   disabled={!trialReady}
                   onClick={recordTrial}
@@ -542,9 +564,23 @@ export default function Workbench() {
                   Record my trial review
                 </button>
                 <p className="mt-2 text-xs text-[var(--soluk)]">
-                  Requires fresh evidence, a usable provider link, no failed or changed checks, all review boxes and a result note. This records your review only; it never authorizes execution.
+                  Requires fresh evidence, a usable provider link and a result note. A passing result also requires every review box. This records your review only; it never authorizes execution.
                 </p>
               </details>
+              <OnchainEvaluation
+                key={`${report.fingerprint}:${trialOutcome}:${notes}:${[...checked].sort().join("\u001f")}`}
+                report={report}
+                outcome={trialOutcome}
+                notes={notes}
+                checked={checked}
+                recorded={saved.some((s) =>
+                  keyOf(s.report) === keyOf(report) &&
+                  s.reviewedFingerprint === report.fingerprint &&
+                  s.trialNotes === notes &&
+                  s.trialOutcome === trialOutcome &&
+                  JSON.stringify(s.trialChecks ?? []) === JSON.stringify([...checked].sort())
+                )}
+              />
               <details className="mt-5 text-sm text-[var(--soluk)]">
                 <summary className="cursor-pointer">
                   What this report cannot establish
@@ -597,6 +633,7 @@ export default function Workbench() {
                   now < Date.parse(s.report.expiresAt)
                     ? "Trial reviewed by you for this evidence version"
                     : "Trial requires review"}{" "}
+                  {s.trialOutcome ? `· ${s.trialOutcome}` : ""}{" "}
                   · {s.history.length} previous checks
                 </p>
                 <div className="mt-4 flex gap-3">
@@ -624,8 +661,9 @@ export default function Workbench() {
                       setJob(s.report.job);
                       setScope(s.report.request ?? "");
                       setChanges([]);
-                      setChecked([]);
+                      setChecked(s.trialChecks ?? []);
                       setNotes(s.trialNotes ?? "");
+                      setTrialOutcome(s.trialOutcome ?? "inconclusive");
                     }}
                   >
                     View
