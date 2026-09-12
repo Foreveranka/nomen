@@ -9,8 +9,8 @@ const A = {
   resolver: "0xe7b9A25607E02da8145E4EB1836CA539E53f11f7",
   identityMain: "0x8004A169FB4a3325136EB29fA0ceB6D2e539a432",
 };
-function Adr({ a, agi = "sepolia" }: { a: string; agi?: "sepolia" | "mainnet" | "arc" }) {
-  const taban = agi === "sepolia" ? "https://sepolia.etherscan.io/address/" : agi === "mainnet" ? "https://etherscan.io/address/" : "https://testnet.arcscan.app/address/";
+function Adr({ a, agi = "sepolia" }: { a: string; agi?: "sepolia" | "mainnet" | "arbitrum" | "arc" }) {
+  const taban = agi === "sepolia" ? "https://sepolia.etherscan.io/address/" : agi === "mainnet" ? "https://etherscan.io/address/" : agi === "arbitrum" ? "https://sepolia.arbiscan.io/address/" : "https://testnet.arcscan.app/address/";
   return <a className="mono text-[13px]" href={taban + a} target="_blank" rel="noopener">{a}</a>;
 }
 
@@ -47,10 +47,11 @@ export default function Kontratlar() {
         <tbody>
           <tr><td>Ethereum mainnet</td><td><Adr a={A.identityMain} agi="mainnet" /></td><td className="mono text-[13px]">0x8004BAa17C55a88189AE136b182e5fdA19dE9b63</td></tr>
           <tr><td>Sepolia</td><td><Adr a={A.identity} /></td><td><Adr a={A.reputation} /></td></tr>
+          <tr><td>Arbitrum Sepolia</td><td><Adr a={A.identity} agi="arbitrum" /></td><td><Adr a={A.reputation} agi="arbitrum" /></td></tr>
           <tr><td>Arc testnet</td><td><Adr a={A.identity} agi="arc" /></td><td><Adr a={A.reputation} agi="arc" /></td></tr>
         </tbody>
       </table>
-      <p>Sepolia and Arc share addresses because the registries were deployed deterministically.</p>
+      <p>Sepolia, Arbitrum Sepolia and Arc share addresses because the testnet registries were deployed deterministically.</p>
 
       <h2>Registrar interface</h2>
       <pre><code>{`function claim(string label, uint256 agentId, bytes32[] proof) returns (uint256 tokenId);

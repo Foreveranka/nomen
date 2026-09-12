@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {keccak256, encodeAbiParameters, concatHex} from 'viem';
 const summary=JSON.parse(fs.readFileSync('public/veri/ozet.json'));
 let total=0;
-for (const chain of ['ethereum','sepolia','arc']) {
+for (const chain of ['ethereum','sepolia','arbitrum','arc']) {
  const list=JSON.parse(fs.readFileSync(`public/veri/${chain}/dizin.json`));
  const proof=JSON.parse(fs.readFileSync(`public/veri/${chain}/merkle.json`));
  const api=JSON.parse(fs.readFileSync(`veri/${chain}_gorunur.json`));

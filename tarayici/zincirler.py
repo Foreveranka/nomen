@@ -1,4 +1,4 @@
-"""NOMEN tarayıcısı: zincir tanımları. Ethereum mainnet + Arc testnet ERC-8004."""
+"""NOMEN tarayıcısı: desteklenen ERC-8004 ağ tanımları."""
 ZINCIRLER = {
     "ethereum": {
         "ad": "Ethereum",
@@ -19,6 +19,15 @@ ZINCIRLER = {
         "reputation": "0x8004B663056A597Dffe9eCcC1965A193B7388713",
         "validation": "0x8004Cb1BF31DAf7788923b405b754f57acEB4272",
         "tarayici_url": "https://sepolia.etherscan.io/token/0x8004A818BFB912233c491871b3d84c89A494BD9e?a=",
+    },
+    "arbitrum": {
+        "ad": "Arbitrum Sepolia",
+        "chain_id": 421614,
+        "rpc": ["https://arbitrum-sepolia-rpc.publicnode.com", "https://sepolia-rollup.arbitrum.io/rpc"],
+        "identity": "0x8004A818BFB912233c491871b3d84c89A494BD9e",
+        "reputation": "0x8004B663056A597Dffe9eCcC1965A193B7388713",
+        "validation": "0x8004Cb1BF31DAf7788923b405b754f57acEB4272",
+        "tarayici_url": "https://sepolia.arbiscan.io/token/0x8004A818BFB912233c491871b3d84c89A494BD9e?a=",
     },
     "arc": {
         "ad": "Arc testnet",

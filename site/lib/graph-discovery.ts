@@ -108,7 +108,7 @@ async function enrichSingleNetwork(candidates: Candidate[], chain: GraphChain, o
   const supported = candidates.filter(c => c.chain === chain);
   const other = candidates.filter(c => c.chain !== chain);
   const coverage: GraphCoverage = { status: "not_applicable", checked: supported.length, eligible: 0, withheld: [],
-    message: "Live Graph evidence is available for Sepolia and the listed Arc catalog. Ethereum uses published descriptions only." };
+    message: "Live Graph evidence is available for Sepolia and the listed Arc catalog. Ethereum and Arbitrum Sepolia use published descriptions only." };
   if (!supported.length) return { candidates, coverage };
   if (candidates.length > 48) throw new Error("Too many discovery candidates");
   const reject = (status: "stale" | "unavailable", message: string) => ({ candidates: other,
@@ -186,7 +186,7 @@ export async function enrichFromGraph(candidates: Candidate[], options: GraphOpt
       : networks.some(n => n.status === "live") ? "partial" : networks.every(n => n.status === "stale") ? "stale" : "unavailable",
     checked: networks.reduce((n, r) => n + r.checked, 0), eligible: networks.reduce((n, r) => n + r.eligible, 0),
     withheld: networks.flatMap(n => n.withheld), networks,
-    message: "Live evidence is checked separately for Sepolia and Arc Testnet. A paused network contributes no recommendations. Ethereum matches use published snapshots.",
+    message: "Live evidence is checked separately for Sepolia and Arc Testnet. A paused network contributes no recommendations. Ethereum and Arbitrum Sepolia matches use published snapshots.",
   };
   return { candidates: candidates.flatMap(c => retained.has(c.key) ? [retained.get(c.key)!] : []), coverage };
 }

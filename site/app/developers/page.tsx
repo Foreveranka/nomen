@@ -78,7 +78,7 @@ const { matches } = await result.json(); // May be empty.
       <section className="kart-cizgili mt-10 p-6">
         <h2 className="text-[13px] uppercase tracking-[0.14em] text-[var(--cok-soluk)]">Endpoint</h2>
         <pre className="mono mt-3 overflow-x-auto rounded-lg bg-[var(--yuzey)] p-4 text-[13px]">GET /api/snapshot?chain={ag}&amp;agentId=&lt;id&gt;</pre>
-        <p className="ince mt-3 text-[14px] text-[var(--soluk)]">chain is one of ethereum, sepolia, arc. Response is JSON.</p>
+        <p className="ince mt-3 text-[14px] text-[var(--soluk)]">chain is one of ethereum, sepolia, arbitrum, arc. Response is JSON.</p>
         <div className="mt-4 flex flex-wrap items-center gap-2">
           <input value={id} onChange={(e) => setId(e.target.value.replace(/\D/g, ""))} className="girdi max-w-[180px]" inputMode="numeric" />
           <button onClick={dene} className="dugme dugme-koyu">try it on {z.ad}</button>

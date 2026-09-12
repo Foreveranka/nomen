@@ -2,7 +2,7 @@
 const [base, chain, job, ...ids] = process.argv.slice(2);
 if (
   !base ||
-  !["ethereum", "sepolia", "arc"].includes(chain) ||
+  !["ethereum", "sepolia", "arbitrum", "arc"].includes(chain) ||
   !["wallet_report", "research", "payments"].includes(job) ||
   !ids.length ||
   ids.length > 5 ||

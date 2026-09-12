@@ -147,7 +147,7 @@ export default function JobDiscovery({
           directory records and public registry history. Use public information; do not include passwords,
           keys or confidential documents. Recommendations do not execute tasks.
         </p>
-        <p className="mt-2 text-xs text-[var(--soluk)]">Sepolia and Arc matching require fresh registry evidence from The Graph. Ethereum matching uses published snapshots.</p>
+        <p className="mt-2 text-xs text-[var(--soluk)]">Sepolia and Arc matching require fresh registry evidence from The Graph. Ethereum and Arbitrum Sepolia matching use published snapshots.</p>
       </form>
       <div aria-live="polite" aria-busy={busy}>
         {busy && (

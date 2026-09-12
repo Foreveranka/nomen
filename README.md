@@ -2,12 +2,12 @@
 
 NOMEN helps users find AI agents for a task, inspect registry evidence and prepare a provider-side trial. The landing page introduces the product; Open app leads to `/workbench`, where English AI search and the manual directory share one page.
 
-## Current status — 11 September 2026
+## Current status — 12 September 2026
 
 - DeepSeek discovery, directory filters, agent records, live checks, trial prompt preparation, browser-local shortlist, bulk CSV export, snapshot API and docs are implemented.
-- Published eligible records: Ethereum 3,709; Sepolia 1,421; Arc testnet 249. These are snapshot counts, not current registry totals. Legacy Ethereum timestamps remain unverified. The 249 listed Arc records were refreshed September 11, 2026, at block 61552064; non-listed Arc records retain legacy observations.
+- Published eligible records: Ethereum 3,709; Sepolia 1,421; Arbitrum Sepolia 44; Arc testnet 249. These are snapshot counts, not current registry totals. The Arbitrum Sepolia snapshot covers all 205 registered IDs observed at block 307,933,498 on September 12, 2026. Legacy Ethereum timestamps remain unverified. The 249 listed Arc records were refreshed September 11, 2026, at block 61552064; non-listed Arc records retain legacy observations.
 - Sepolia naming is deployed under nomen-demo.eth. A real claim for the NOMEN-owned test agent #10226, runtime bytecode, roles, resolver records, non-transferability and authorization boundaries were verified. Evidence: inceleme/ens-live-evidence.json.
-- Graph Studio v0.3.0 is deployed and configured for the replacement registrar. Sepolia and Arc AI matching require fresh Graph data and compares owner/URI against the snapshot block before ranking. DeepSeek receives feedback and change history and cites supplied registry facts. Unavailable or stale Graph evidence withholds candidates on the affected network. Ethereum stays explicitly snapshot-only. Arc uses a separate index scoped to the 249 listed IDs, configured through NOMEN_ARC_SUBGRAPH_URL. Check the activity response for current synchronization; deployment alone is not proof of a complete index.
+- Graph Studio v0.3.0 is deployed and configured for the replacement registrar. Sepolia and Arc AI matching require fresh Graph data and compare owner/URI against the snapshot block before ranking. DeepSeek receives feedback and change history and cites supplied registry facts. Unavailable or stale Graph evidence withholds candidates on the affected network. Ethereum and Arbitrum Sepolia stay explicitly snapshot-only; Try this agent still reads Arbitrum ownership and metadata live from chain 421614. Arc uses a separate index scoped to the 249 listed IDs, configured through NOMEN_ARC_SUBGRAPH_URL. Check the activity response for current synchronization; deployment alone is not proof of a complete index.
 - Optional x402 uses Base Sepolia USDC, not Arc. Local and production resource-server tests verified a 0.001 USDC transfer, HTTP 402/200, invalid-signature rejection and replay rejection (inceleme/x402-production-evidence.json). The free testnet facilitator also produced intermittent transaction failures; those attempts returned 402, not success. The snapshot endpoint stays free.
 
 ## Run and verify
@@ -38,7 +38,7 @@ python3 -m unittest discover -s tests -v
 ./tazele.sh sepolia 10105
 ```
 
-The scanner creates an isolated snapshot. Inspect unresolved reads, the manifest, archived documents, dictionary and eligibility differences before exporting with `adim5_dizin.py` and `adim6_api_veri.py`. Run both exporters with all three chains and a reviewed `NOMEN_SCAN_DIR`. A root proves membership, not correctness of offchain classification. Exact replay requires the archived input bytes and matching rule dictionary; legacy archives may be incomplete.
+The scanner creates an isolated snapshot. Inspect unresolved reads, the manifest, archived documents, dictionary and eligibility differences before exporting with `adim5_dizin.py` and `adim6_api_veri.py`. Run both exporters with all four chains and a reviewed `NOMEN_SCAN_DIR`. A root proves membership, not correctness of offchain classification. Exact replay requires the archived input bytes and matching rule dictionary; legacy archives may be incomplete.
 
 ## Job workbench — 11 September 2026
 

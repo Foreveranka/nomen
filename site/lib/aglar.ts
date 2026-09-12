@@ -1,5 +1,5 @@
 import { defineChain } from "viem";
-import { mainnet, sepolia } from "viem/chains";
+import { arbitrumSepolia, mainnet, sepolia } from "viem/chains";
 
 export const arcTestnet = defineChain({
   id: 5042002,
@@ -10,7 +10,7 @@ export const arcTestnet = defineChain({
   testnet: true,
 });
 
-export type AgAnahtar = "ethereum" | "sepolia" | "arc";
+export type AgAnahtar = "ethereum" | "sepolia" | "arbitrum" | "arc";
 
 export const AGLAR: Record<AgAnahtar, {
   anahtar: AgAnahtar; ad: string; kisa: string; chainId: number; testnet: boolean;
@@ -43,6 +43,14 @@ export const AGLAR: Record<AgAnahtar, {
     altRegistry: (process.env.NEXT_PUBLIC_SUBREGISTRY_SEPOLIA as `0x${string}`) || null, resolver: (process.env.NEXT_PUBLIC_RESOLVER_SEPOLIA as `0x${string}`) || null,
     registrarBlok: BigInt(process.env.NEXT_PUBLIC_REGISTRAR_BLOCK || "0"), isimTalebi: true,
   },
+  arbitrum: {
+    anahtar: "arbitrum", ad: "Arbitrum Sepolia", kisa: "ARB SEP", chainId: arbitrumSepolia.id, testnet: true,
+    identity: "0x8004A818BFB912233c491871b3d84c89A494BD9e",
+    reputation: "0x8004B663056A597Dffe9eCcC1965A193B7388713",
+    tarayici: "https://sepolia.arbiscan.io",
+    nftYolu: "https://sepolia.arbiscan.io/nft/0x8004A818BFB912233c491871b3d84c89A494BD9e/",
+    registrar: null, altRegistry: null, resolver: null, registrarBlok: BigInt(0), isimTalebi: false,
+  },
   arc: {
     anahtar: "arc", ad: "Arc Testnet", kisa: "ARC", chainId: arcTestnet.id, testnet: true,
     identity: "0x8004A818BFB912233c491871b3d84c89A494BD9e",
@@ -53,11 +61,11 @@ export const AGLAR: Record<AgAnahtar, {
   },
 };
 
-export const AG_SIRASI: AgAnahtar[] = ["ethereum", "sepolia", "arc"];
+export const AG_SIRASI: AgAnahtar[] = ["ethereum", "sepolia", "arbitrum", "arc"];
 
 export function agFromChainId(id?: number): AgAnahtar | null {
   const b = AG_SIRASI.find((k) => AGLAR[k].chainId === id);
   return b ?? null;
 }
 
-export const VIEM_ZINCIRLER = [mainnet, sepolia, arcTestnet] as const;
+export const VIEM_ZINCIRLER = [mainnet, sepolia, arbitrumSepolia, arcTestnet] as const;

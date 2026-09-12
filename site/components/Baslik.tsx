@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { useAccount, useConnect, useDisconnect } from "wagmi";
+import { useAccount, useConnect, useDisconnect, useSwitchChain } from "wagmi";
 import { useAg } from "@/app/providers";
 import { AGLAR, AG_SIRASI } from "@/lib/aglar";
 
@@ -45,6 +45,8 @@ export default function Baslik() {
 
 function AgSecici() {
   const { ag, sec } = useAg();
+  const { chainId, isConnected } = useAccount();
+  const { switchChain } = useSwitchChain();
   const [acik, setAcik] = useState(false);
   const kutu = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -68,7 +70,11 @@ function AgSecici() {
               <li key={k}>
                 <button
                   role="option" aria-selected={k === ag}
-                  onClick={() => { sec(k); setAcik(false); }}
+                  onClick={() => {
+                    sec(k);
+                    setAcik(false);
+                    if (isConnected && chainId !== z.chainId) switchChain({ chainId: z.chainId });
+                  }}
                   className={`flex w-full items-center justify-between rounded-lg px-3 py-2 text-left text-[14px] hover:bg-[var(--yuzey)] ${k === ag ? "bg-[var(--yuzey)]" : ""}`}
                 >
                   <span className="flex items-center gap-2">

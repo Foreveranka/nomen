@@ -1,0 +1,248 @@
+{
+ "erisilemez": [
+  {
+   "zincir": "arbitrum",
+   "id": 1,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "arbitrum",
+   "id": 2,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "arbitrum",
+   "id": 13,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "arbitrum",
+   "id": 37,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "arbitrum",
+   "id": 38,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "arbitrum",
+   "id": 39,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  }
+ ],
+ "bos_metadata": [
+  {
+   "zincir": "arbitrum",
+   "id": 3,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "arbitrum",
+   "id": 4,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "arbitrum",
+   "id": 5,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "arbitrum",
+   "id": 6,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "arbitrum",
+   "id": 7,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "arbitrum",
+   "id": 8,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  }
+ ],
+ "gecersiz_json": [
+  {
+   "zincir": "arbitrum",
+   "id": 46,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "arbitrum",
+   "id": 47,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "arbitrum",
+   "id": 48,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "arbitrum",
+   "id": 49,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "arbitrum",
+   "id": 51,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  },
+  {
+   "zincir": "arbitrum",
+   "id": 52,
+   "name": null,
+   "desc": "",
+   "etiketler": []
+  }
+ ],
+ "anlamsiz": [
+  {
+   "zincir": "arbitrum",
+   "id": 70,
+   "name": "testing_again",
+   "desc": "Testing",
+   "etiketler": [
+    "kendi_beyani_test"
+   ]
+  },
+  {
+   "zincir": "arbitrum",
+   "id": 81,
+   "name": "tesst",
+   "desc": "test",
+   "etiketler": [
+    "kendi_beyani_test"
+   ]
+  },
+  {
+   "zincir": "arbitrum",
+   "id": 83,
+   "name": "2242026",
+   "desc": "test",
+   "etiketler": [
+    "ulasim_adresi_yok",
+    "kendi_beyani_test"
+   ]
+  },
+  {
+   "zincir": "arbitrum",
+   "id": 84,
+   "name": "248-224",
+   "desc": "test",
+   "etiketler": [
+    "ulasim_adresi_yok",
+    "kendi_beyani_test"
+   ]
+  },
+  {
+   "zincir": "arbitrum",
+   "id": 186,
+   "name": "efgweFGwegefgweFGwegefgweFGwegefgweFGwegefgweFGweg",
+   "desc": "efgweFGwegefgweFGwegefgweFGwegefgweFGwegefgweFGwegefgweFGwegefgweFGwegefgweFGwegefgweFGwegefgweFGwegefgweFGweg",
+   "etiketler": [
+    "ulasim_adresi_yok"
+   ]
+  },
+  {
+   "zincir": "arbitrum",
+   "id": 187,
+   "name": "aweqwwqeqw",
+   "desc": "weqweqweqweweqweqweqweweqweqweqweweqweqweqweweqweqweqwe",
+   "etiketler": [
+    "ulasim_adresi_yok"
+   ]
+  }
+ ],
+ "eksik_alan": [
+  {
+   "zincir": "arbitrum",
+   "id": 73,
+   "name": "",
+   "desc": "",
+   "etiketler": [
+    "eksik:type,name,description,image"
+   ]
+  },
+  {
+   "zincir": "arbitrum",
+   "id": 74,
+   "name": "",
+   "desc": "",
+   "etiketler": [
+    "eksik:type,name,description,image"
+   ]
+  },
+  {
+   "zincir": "arbitrum",
+   "id": 75,
+   "name": "",
+   "desc": "",
+   "etiketler": [
+    "eksik:type,name,description,image"
+   ]
+  },
+  {
+   "zincir": "arbitrum",
+   "id": 76,
+   "name": "",
+   "desc": "",
+   "etiketler": [
+    "eksik:type,name,description,image"
+   ]
+  },
+  {
+   "zincir": "arbitrum",
+   "id": 77,
+   "name": "",
+   "desc": "",
+   "etiketler": [
+    "eksik:type,name,description,image"
+   ]
+  },
+  {
+   "zincir": "arbitrum",
+   "id": 78,
+   "name": "",
+   "desc": "",
+   "etiketler": [
+    "eksik:type,name,description,image"
+   ]
+  }
+ ]
+}

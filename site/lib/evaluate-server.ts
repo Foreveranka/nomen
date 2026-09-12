@@ -15,6 +15,7 @@ import { publicGet } from "./public-http";
 const RPC = {
   ethereum: "https://ethereum-rpc.publicnode.com",
   sepolia: "https://ethereum-sepolia-rpc.publicnode.com",
+  arbitrum: "https://sepolia-rollup.arbitrum.io/rpc",
   arc: "https://rpc.testnet.arc.network",
 };
 const ABI = parseAbi([
