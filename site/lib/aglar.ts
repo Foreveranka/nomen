@@ -67,7 +67,7 @@ export const AGLAR: Record<AgAnahtar, {
   },
 };
 
-export const AG_SIRASI: AgAnahtar[] = ["ethereum", "sepolia", "arbitrum", "arc"];
+export const AG_SIRASI: AgAnahtar[] = ["sepolia", "arbitrum", "arc"];
 
 export function agFromChainId(id?: number): AgAnahtar | null {
   const b = AG_SIRASI.find((k) => AGLAR[k].chainId === id);

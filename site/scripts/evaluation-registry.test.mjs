@@ -39,3 +39,14 @@ test("outcome and note changes produce different evidence hashes", () => {
   assert.equal(OUTCOME_CODE.passed, 1);
   assert.equal(OUTCOME_CODE.failed, 2);
 });
+
+test("rating is optional, preserves legacy hashes, and commits an exact 1–10 score", () => {
+  const legacy = evaluationReceipt(report, "passed", "Public trial passed.", []);
+  const omitted = evaluationReceipt(report, "passed", "Public trial passed.", [], null);
+  assert.equal(legacy.evidenceHash, omitted.evidenceHash);
+  const rated = evaluationReceipt(report, "passed", "Public trial passed.", [], 8);
+  assert.equal(rated.evidence.rating, 8);
+  assert.notEqual(rated.evidenceHash, legacy.evidenceHash);
+  assert.notEqual(rated.evidenceHash, evaluationReceipt(report, "passed", "Public trial passed.", [], 9).evidenceHash);
+  for (const invalid of [0, 11, 5.5, NaN, Infinity]) assert.throws(() => evaluationReceipt(report, "passed", "Public trial passed.", [], invalid));
+});

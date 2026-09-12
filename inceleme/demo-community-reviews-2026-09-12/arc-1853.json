@@ -1,0 +1,84 @@
+{
+  "chain": "arc",
+  "transactionHash": "0x58b4bc7c4c8ebc88db149c175b26a751b9d50294526acbeb4a6337aa1448de14",
+  "report": {
+    "version": 1,
+    "chain": "arc",
+    "agentId": 1853,
+    "job": "custom",
+    "request": "TEST: prepare a synthetic community review to inspect NOMEN rating and comment display. No agent task will be executed.",
+    "name": "Document Digest Agent",
+    "checkedAt": "2026-09-12T20:20:27.311Z",
+    "expiresAt": "2026-09-12T20:35:27.311Z",
+    "block": "61784791",
+    "owner": "0xafe6DD950Dc2CF561e8daBA1725e0e6840f70549",
+    "metadataHash": "4bc5aac418472d0e797c96a433399d0110ced0c00fdefce6941e58c4eb692015",
+    "fingerprint": "5a39594c20f50717116c84bc7911afd48a6dbff94cd09afae95f4e6c8ddddbaf",
+    "checks": [
+      {
+        "key": "snapshot",
+        "title": "Published metadata rules",
+        "status": "pass",
+        "detail": "Snapshot result: passes. This is not a live service certification."
+      },
+      {
+        "key": "owner",
+        "title": "Current ownership",
+        "status": "pass",
+        "detail": "Read at block 61784791. Matches the published owner."
+      },
+      {
+        "key": "metadata",
+        "title": "Current metadata",
+        "status": "pass",
+        "detail": "Full document hash matches the published scan."
+      },
+      {
+        "key": "services",
+        "title": "Live service response",
+        "status": "unknown",
+        "detail": "0 of 1 probed URLs responded successfully. At most 3 of 1 declared URLs checked. A web response is not a completed task."
+      },
+      {
+        "key": "interface",
+        "title": "Discoverable agent interface",
+        "status": "unknown",
+        "detail": "No A2A-shaped card was confirmed. A website or schema reference is not an agent interface; MCP execution/discovery is not tested by this check."
+      },
+      {
+        "key": "job",
+        "title": "Declared fit for this job",
+        "status": "unknown",
+        "detail": "AI matching uses published descriptions. Completing your specific task still requires a controlled trial; live checks alone cannot confirm task fit."
+      }
+    ],
+    "services": [
+      {
+        "url": "https://gigawork.xyz/api/agents/0xCE116cd5595359629dD10fF45fb05488Db8BEdf0",
+        "status": "unavailable",
+        "httpStatus": 405,
+        "latencyMs": 97,
+        "protocol": "HTTP response",
+        "skills": []
+      }
+    ],
+    "declaredMatch": [],
+    "decision": "needs_review",
+    "automaticExecutionAllowed": false,
+    "nextAction": "Resolve the missing evidence before selecting this agent. No live task has been completed by this check.",
+    "limitations": [
+      "No task execution or output-quality test was performed.",
+      "Price, data retention and execution permissions must be confirmed with the provider.",
+      "This is a 15-minute observation window, not guaranteed availability or an onchain ENS endorsement.",
+      "Saved reports and trial notes stay in this browser; they are not signed attestations."
+    ]
+  },
+  "evidence": {
+    "version": 1,
+    "reportFingerprint": "5a39594c20f50717116c84bc7911afd48a6dbff94cd09afae95f4e6c8ddddbaf",
+    "outcome": "inconclusive",
+    "checklist": [],
+    "note": "TEST — Mixed-feedback sample. A real reviewer could describe what worked, what was unclear and what they would try next. This comment and score are synthetic.",
+    "rating": 6
+  }
+}

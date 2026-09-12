@@ -40,7 +40,7 @@ export const EVALUATION_REGISTRY_ABI = [
   },
 ] as const;
 
-function canonicalJson(value: unknown): string {
+export function canonicalJson(value: unknown): string {
   if (value === null || typeof value !== "object") return JSON.stringify(value);
   if (Array.isArray(value)) return `[${value.map(canonicalJson).join(",")}]`;
   const object = value as Record<string, unknown>;
@@ -56,13 +56,16 @@ export function evaluationReceipt(
   outcome: TrialOutcome,
   notes: string,
   checked: string[],
+  rating?: number | null,
 ) {
+  if (rating != null && (!Number.isInteger(rating) || rating < 1 || rating > 10)) throw new Error("Rating must be an integer from 1 to 10.");
   const evidence = {
     version: 1,
     reportFingerprint: report.fingerprint,
     outcome,
     checklist: [...checked].sort(),
     note: notes.trim(),
+    ...(rating != null ? { rating } : {}),
   };
   return {
     reportHash: keccak256(toBytes(canonicalJson(report))),

@@ -14,17 +14,27 @@ export type EvaluationHistoryReceipt = {
   logIndex: number;
 };
 
-export function summarizeEvaluationReceipts(receipts: EvaluationHistoryReceipt[]) {
-  const counts = { passed: 0, failed: 0, inconclusive: 0 };
-  const reviewers = new Set<string>();
+export function latestEvaluationReceipts(receipts: EvaluationHistoryReceipt[]) {
+  const latest = new Map<string, EvaluationHistoryReceipt>();
   for (const receipt of receipts) {
-    counts[receipt.outcome]++;
-    reviewers.add(receipt.reviewer.toLowerCase());
+    const key = `${receipt.agentId}:${receipt.reviewer.toLowerCase()}`;
+    const previous = latest.get(key);
+    if (!previous || BigInt(receipt.blockNumber) > BigInt(previous.blockNumber) ||
+      (receipt.blockNumber === previous.blockNumber && receipt.logIndex > previous.logIndex)) latest.set(key, receipt);
   }
+  return [...latest.values()].sort((a, b) => BigInt(a.blockNumber) === BigInt(b.blockNumber)
+    ? b.logIndex - a.logIndex : BigInt(a.blockNumber) > BigInt(b.blockNumber) ? -1 : 1);
+}
+
+export function summarizeEvaluationReceipts(receipts: EvaluationHistoryReceipt[]) {
+  const latest = latestEvaluationReceipts(receipts);
+  const counts = { passed: 0, failed: 0, inconclusive: 0 };
+  for (const receipt of latest) counts[receipt.outcome]++;
   return {
     total: receipts.length,
-    distinctReviewers: reviewers.size,
+    distinctReviewers: new Set(receipts.map(r => r.reviewer.toLowerCase())).size,
+    superseded: receipts.length - latest.length,
     ...counts,
-    latestRecordedAt: receipts[0]?.recordedAt ?? null,
+    latestRecordedAt: latest[0]?.recordedAt ?? null,
   };
 }

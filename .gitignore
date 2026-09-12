@@ -28,3 +28,7 @@ inceleme/*.zip
 
 # Local scanner staging pointer
 inceleme/arc-refresh-location.json
+
+# Provider-installed local assistant guidance
+site/.agents/
+site/skills-lock.json

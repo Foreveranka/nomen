@@ -2,12 +2,15 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { useAccount, useConnect, useDisconnect, useSwitchChain } from "wagmi";
+import { useAccount, useDisconnect, useSwitchChain } from "wagmi";
 import { useAg } from "@/app/providers";
+import { WalletConnect } from "@/components/WalletConnect";
 import { AGLAR, AG_SIRASI } from "@/lib/aglar";
 
 const MENU = [
   ["/workbench", "Find an agent"],
+  ["/orders", "Orders"],
+  ["/claim", "Claim a name"],
   ["/workbench#shortlist", "My shortlist"],
   ["/developers", "Developers"],
   ["/docs", "Docs"],
@@ -58,12 +61,12 @@ function AgSecici() {
   return (
     <div ref={kutu} className="relative">
       <button onClick={() => setAcik((v) => !v)} className="dugme flex items-center gap-2" aria-haspopup="listbox" aria-expanded={acik}>
-        <span className={`h-2 w-2 rounded-full ${a.testnet ? "bg-[var(--sari)]" : "bg-[var(--yesil)]"}`} />
+        <span className="rounded bg-[var(--yuzey)] px-1.5 py-0.5 text-[10px] text-[var(--soluk)]">TESTNET</span>
         <span>{a.ad}</span>
         <svg width="12" height="12" viewBox="0 0 12 12" className="text-[var(--cok-soluk)]"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" strokeWidth="1.5" /></svg>
       </button>
       {acik && (
-        <ul role="listbox" className="absolute right-0 mt-2 w-56 overflow-hidden rounded-xl border border-[var(--cizgi)] bg-white p-1 shadow-lg">
+        <ul aria-label="Test networks" role="listbox" className="absolute right-0 mt-2 w-56 overflow-hidden rounded-xl border border-[var(--cizgi)] bg-white p-1 shadow-lg">
           {AG_SIRASI.map((k) => {
             const z = AGLAR[k];
             return (
@@ -78,7 +81,7 @@ function AgSecici() {
                   className={`flex w-full items-center justify-between rounded-lg px-3 py-2 text-left text-[14px] hover:bg-[var(--yuzey)] ${k === ag ? "bg-[var(--yuzey)]" : ""}`}
                 >
                   <span className="flex items-center gap-2">
-                    <span className={`h-2 w-2 rounded-full ${z.testnet ? "bg-[var(--sari)]" : "bg-[var(--yesil)]"}`} />
+                    <span className="w-3 text-[var(--lacivert)]" aria-hidden="true">{k === ag ? "✓" : ""}</span>
                     {z.ad}
                   </span>
                   <span className="mono text-[11px] text-[var(--cok-soluk)]">{z.chainId}</span>
@@ -94,7 +97,6 @@ function AgSecici() {
 
 function Cuzdan() {
   const { address, isConnected } = useAccount();
-  const { connect, connectors, isPending } = useConnect();
   const { disconnect } = useDisconnect();
   if (isConnected && address) {
     return (
@@ -106,10 +108,5 @@ function Cuzdan() {
       </span>
     );
   }
-  const c = connectors[0];
-  return (
-    <button onClick={() => c && connect({ connector: c })} disabled={!c || isPending} className="dugme dugme-koyu">
-      {isPending ? "Connecting…" : "Connect wallet"}
-    </button>
-  );
+  return <WalletConnect />;
 }

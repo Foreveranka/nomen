@@ -1,26 +1,52 @@
 # NOMEN web app
 
-Next.js App Router application. `/` introduces NOMEN. `/workbench` contains English AI discovery, catalog filters, live evidence checks, provider-side trial preparation and the browser-local shortlist. `/docs` describes the deployed behavior and current limitations.
+Next.js App Router application with English UI. The root introduces NOMEN; the app lives on separate routes.
 
-The workbench can publish a user-reviewed trial as a hash-only receipt to `NomenEvaluationRegistry` on the agent's own network. The note remains local or in the exported JSON. The transaction stores the reviewer wallet, agent id, outcome, observation block and report/evidence hashes. Sepolia, Arbitrum Sepolia and Arc Testnet deployments are enabled in `lib/aglar.ts`; Ethereum accepts a public deployment address through an environment variable after verification.
+| Route | Purpose |
+| --- | --- |
+| `/` | Product introduction and Open app |
+| `/workbench` | English AI agent matching, manual catalog, live checks and private trial notes |
+| `/orders` | Signed complaints, Arc publication payment, provider responses and resolution history |
+| `/claim` | ENSv2 names under nomen-demo.eth on Sepolia |
+| `/names` | Registered test names |
+| `/profile` | Connected wallet’s agents |
+| `/agent/arbitrum/205/trust` | Historical Arbitrum trial receipts |
+| `/evaluations/evidence` | Verify an exported historical evidence file against receipt hashes |
+| `/docs` | Product, API, contract and reproducibility documentation |
 
-## Run locally
+## Setup
+
+Use a current Node.js version supporting native TypeScript stripping (the validation environment uses Node 25).
 
 ```sh
 npm ci
-# Add DEEPSEEK_API_KEY to .env.local; use .env.example as a reference.
+# Add server-only values to .env.local using .env.example as a reference.
+# Never overwrite an existing environment file or commit secrets.
 npm run dev
 ```
 
-Keep secrets server-only. Do not overwrite an existing `.env.local` or commit it. Production uses a sensitive Vercel `DEEPSEEK_API_KEY`. Default model: `deepseek-flash`. `NOMEN_DISCOVERY_MODEL` is an optional override; alternative provider IDs use Vercel AI Gateway authentication.
+DeepSeek discovery requires DEEPSEEK_API_KEY. The default model is deepseek-flash. The separate Sepolia and Arc Graph endpoints supply live owner/URI continuity checks before ranking; stale or unavailable evidence withholds candidates. Arbitrum matching uses published capabilities and live historical trial receipts. Ethereum mainnet is not selectable. Trial execution remains with the provider.
 
-## Verify
+For Orders, export DATABASE_URL in the shell and initialize both schemas:
+
+```sh
+node scripts/migrate-reviews.mjs
+node scripts/migrate-complaints.mjs
+```
+
+The first migration supports the historical review archive. New rating publication is retired (POST /api/reviews returns 410). New public complaints use signed /api/complaints actions and exactly 5 native test USDC on Arc Testnet (18-decimal native units). The initial payment commits the original draft. Free later updates and provider replies are signed and versioned in Neon. Only the author resolves or reopens. No purchase or task-success verification is claimed. The workbench’s 1–10 score and note remain private to the browser.
+
+Wallet selection uses EIP-6963 discovery instead of a generic first injected provider. Full reloads require a new explicit connection; app navigation preserves the session. No QR/mobile wallet bridge is configured.
+
+## Validation
 
 ```sh
 npm run lint
-node --experimental-strip-types --test scripts/discovery.test.mjs scripts/evaluation.test.mjs scripts/evaluation-registry.test.mjs scripts/trial.test.mjs scripts/graph-discovery.test.mjs
+node --test scripts/*.test.mjs
 npm run build
 npm start
 ```
 
-Discovery retrieves published descriptions, requires live Graph owner/URI continuity for Sepolia and Arc candidates, and includes indexed registry history in AI ranking. Ethereum and Arbitrum Sepolia are labeled snapshot-only. Arbitrum Sepolia uses the official chain RPC and ERC-8004 testnet registries; wallet switching is enabled for chain 421614. Arc indexes only the 249 listed catalog IDs, refreshed September 11 at block 61552064; per-network coverage is explicit. The trial prompt is assembled locally; the selected agent runs only when the user uses its provider. Sepolia ENS naming is verified under nomen-demo.eth. Base Sepolia x402 settlement passed local and production end-to-end tests; public transaction evidence is at /x402-evidence.json. Graph Studio v0.3.0 is deployed and connected through NOMEN_SUBGRAPH_URL; configure the separate Arc deployment through NOMEN_ARC_SUBGRAPH_URL; the activity panel reports unavailable or stale data explicitly. See the repository README and `/docs` for details.
+Two database tests skip without DATABASE_URL. With it, they exercise isolated transaction fixtures. Build and test output is not a security audit or evidence of real customer use.
+
+Sepolia naming is verified under nomen-demo.eth. The optional legacy x402 API uses Base Sepolia, separate from Arc complaint payments. See ../README.md and ../inceleme/2026-09-13-submission-readiness.md for evidence, current event fit and outstanding submission work.

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@ai-sdk/deepseek": "^3.0.42",
+    "@neondatabase/serverless": "^1.1.0",
     "@tanstack/react-query": "^5.102.8",
     "@x402/core": "^2.25.0",
     "@x402/evm": "^2.25.0",

@@ -1,0 +1,92 @@
+{
+  "chain": "arc",
+  "transactionHash": "0x399d8927fad4d40fd7003c333bfd1d04382a2ea89aa9332616e3931c46f68a43",
+  "report": {
+    "version": 1,
+    "chain": "arc",
+    "agentId": 842439,
+    "job": "custom",
+    "request": "TEST: prepare a synthetic community review to inspect NOMEN rating and comment display. No agent task will be executed.",
+    "name": "Lens AI",
+    "checkedAt": "2026-09-12T20:20:18.385Z",
+    "expiresAt": "2026-09-12T20:35:18.385Z",
+    "block": "61784773",
+    "owner": "0xF1Bb837c16bf4b066A22a59b8F11B9Cc077Fa6ba",
+    "metadataHash": "3c2f707af2bb273f6a2c7ca09562b8a319118c5665155bc515f6177b45a7000b",
+    "fingerprint": "d7f5d6ff797231399046a5a0cc04047f0901bd61ab12ab7b1326df942785e84c",
+    "checks": [
+      {
+        "key": "snapshot",
+        "title": "Published metadata rules",
+        "status": "pass",
+        "detail": "Snapshot result: passes. This is not a live service certification."
+      },
+      {
+        "key": "owner",
+        "title": "Current ownership",
+        "status": "pass",
+        "detail": "Read at block 61784773. Matches the published owner."
+      },
+      {
+        "key": "metadata",
+        "title": "Current metadata",
+        "status": "pass",
+        "detail": "Full document hash matches the published scan."
+      },
+      {
+        "key": "services",
+        "title": "Live service response",
+        "status": "pass",
+        "detail": "2 of 2 probed URLs responded successfully. At most 3 of 2 declared URLs checked. A web response is not a completed task."
+      },
+      {
+        "key": "interface",
+        "title": "Discoverable agent interface",
+        "status": "unknown",
+        "detail": "No A2A-shaped card was confirmed. A website or schema reference is not an agent interface; MCP execution/discovery is not tested by this check."
+      },
+      {
+        "key": "job",
+        "title": "Declared fit for this job",
+        "status": "unknown",
+        "detail": "AI matching uses published descriptions. Completing your specific task still requires a controlled trial; live checks alone cannot confirm task fit."
+      }
+    ],
+    "services": [
+      {
+        "url": "https://arclenz.xyz/api/agent",
+        "status": "reachable",
+        "httpStatus": 200,
+        "latencyMs": 84,
+        "protocol": "JSON document",
+        "skills": []
+      },
+      {
+        "url": "https://arclenz.xyz/lens",
+        "status": "reachable",
+        "httpStatus": 200,
+        "latencyMs": 79,
+        "protocol": "HTTP response",
+        "skills": []
+      }
+    ],
+    "declaredMatch": [],
+    "decision": "needs_review",
+    "automaticExecutionAllowed": false,
+    "nextAction": "Resolve the missing evidence before selecting this agent. No live task has been completed by this check.",
+    "limitations": [
+      "No task execution or output-quality test was performed.",
+      "Price, data retention and execution permissions must be confirmed with the provider.",
+      "This is a 15-minute observation window, not guaranteed availability or an onchain ENS endorsement.",
+      "Saved reports and trial notes stay in this browser; they are not signed attestations."
+    ]
+  },
+  "evidence": {
+    "version": 1,
+    "reportFingerprint": "d7f5d6ff797231399046a5a0cc04047f0901bd61ab12ab7b1326df942785e84c",
+    "outcome": "inconclusive",
+    "checklist": [],
+    "note": "TEST — Maximum-score sample. Used to check the 10/10 display, wallet attribution and saved review text. Not a real endorsement.",
+    "rating": 10
+  }
+}

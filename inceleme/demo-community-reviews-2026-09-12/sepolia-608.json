@@ -1,0 +1,69 @@
+{
+  "chain": "sepolia",
+  "transactionHash": "0x16780114d8f0f9616e179c4723d9969c41baf7ec542ad7734ba6bd69e19f9c1b",
+  "report": {
+    "version": 1,
+    "chain": "sepolia",
+    "agentId": 608,
+    "job": "custom",
+    "request": "TEST: prepare a synthetic community review to inspect NOMEN rating and comment display. No agent task will be executed.",
+    "name": "Minara AI",
+    "checkedAt": "2026-09-12T20:19:29.014Z",
+    "expiresAt": "2026-09-12T20:34:29.014Z",
+    "block": "11691198",
+    "owner": "0xe69D9CE25F2FE3B2Ff3A3C2edF9Fd9d8fC01b228",
+    "metadataHash": null,
+    "fingerprint": "db19b36c321632c5b04c90726d407b28176102b448d3026593e58ccca67e1a22",
+    "checks": [
+      {
+        "key": "snapshot",
+        "title": "Published metadata rules",
+        "status": "pass",
+        "detail": "Snapshot result: passes. This is not a live service certification."
+      },
+      {
+        "key": "owner",
+        "title": "Current ownership",
+        "status": "pass",
+        "detail": "Read at block 11691198. Matches the published owner."
+      },
+      {
+        "key": "metadata",
+        "title": "Current metadata",
+        "status": "unknown",
+        "detail": "Could not read a bounded JSON document from the current URI. Only public HTTPS and JSON data URIs are checked."
+      },
+      {
+        "key": "interface",
+        "title": "Discoverable agent interface",
+        "status": "unknown",
+        "detail": "No A2A-shaped card was confirmed. A website or schema reference is not an agent interface; MCP execution/discovery is not tested by this check."
+      },
+      {
+        "key": "job",
+        "title": "Declared fit for this job",
+        "status": "unknown",
+        "detail": "AI matching uses published descriptions. Completing your specific task still requires a controlled trial; live checks alone cannot confirm task fit."
+      }
+    ],
+    "services": [],
+    "declaredMatch": [],
+    "decision": "needs_review",
+    "automaticExecutionAllowed": false,
+    "nextAction": "Resolve the missing evidence before selecting this agent. No live task has been completed by this check.",
+    "limitations": [
+      "No task execution or output-quality test was performed.",
+      "Price, data retention and execution permissions must be confirmed with the provider.",
+      "This is a 15-minute observation window, not guaranteed availability or an onchain ENS endorsement.",
+      "Saved reports and trial notes stay in this browser; they are not signed attestations."
+    ]
+  },
+  "evidence": {
+    "version": 1,
+    "reportFingerprint": "db19b36c321632c5b04c90726d407b28176102b448d3026593e58ccca67e1a22",
+    "outcome": "inconclusive",
+    "checklist": [],
+    "note": "TEST — Excellent-score layout sample. A real review could describe clear instructions and useful output here. This is synthetic text; no task was run.",
+    "rating": 9
+  }
+}

@@ -10,20 +10,20 @@ const evaluationRecorded = parseAbiItem(
   "event EvaluationRecorded(bytes32 indexed evaluationId, address indexed reviewer, uint256 indexed agentId, bytes32 reportHash, bytes32 evidenceHash, uint64 observedBlock, uint64 recordedAt, uint8 outcome)",
 );
 
-export async function readArbitrumEvaluationHistory(agentId: number) {
+export async function readArbitrumEvaluationHistories(agentIds: number[]) {
   const address = AGLAR.arbitrum.evaluationRegistry;
   if (!address) throw new Error("Arbitrum evaluation registry is not configured");
   const client = createPublicClient({
     chain: arbitrumSepolia,
     transport: http(
       process.env.ARBITRUM_SEPOLIA_RPC_URL || "https://sepolia-rollup.arbitrum.io/rpc",
-      { timeout: 8_000, retryCount: 1 },
+      { timeout: 5_000, retryCount: 0 },
     ),
   });
   const logs = await client.getLogs({
     address,
     event: evaluationRecorded,
-    args: { agentId: BigInt(agentId) },
+    args: { agentId: agentIds.map(BigInt) },
     fromBlock: ARBITRUM_EVALUATION_DEPLOYMENT_BLOCK,
     toBlock: "latest",
   });
@@ -42,14 +42,21 @@ export async function readArbitrumEvaluationHistory(agentId: number) {
       logIndex: log.logIndex,
     }))
     .sort((a, b) => Number(BigInt(b.recordedAt) - BigInt(a.recordedAt)));
-  return {
+  return agentIds.map(agentId => {
+    const agentReceipts = receipts.filter(r => r.agentId === agentId);
+    return {
     chain: "arbitrum" as const,
     chainId: arbitrumSepolia.id,
     agentId,
     registry: address,
     deploymentBlock: ARBITRUM_EVALUATION_DEPLOYMENT_BLOCK.toString(),
     checkedAt: new Date().toISOString(),
-    summary: summarizeEvaluationReceipts(receipts),
-    receipts,
+    summary: summarizeEvaluationReceipts(agentReceipts),
+    receipts: agentReceipts,
   };
+  });
+}
+
+export async function readArbitrumEvaluationHistory(agentId: number) {
+  return (await readArbitrumEvaluationHistories([agentId]))[0];
 }

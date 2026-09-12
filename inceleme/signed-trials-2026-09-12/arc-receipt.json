@@ -1,0 +1,12 @@
+{
+  "chain": "arc",
+  "chainId": 5042002,
+  "transactionHash": "0x06bf1136eeaeb4580d954224c0bd712d1ff783e0b93a495bb307070ba791e1dd",
+  "evaluationId": "0xa327a120c69f1bcb8684b32e151f1ff94027162bf03da9326d3ebcc3ec8de0e0",
+  "signer": "0xD7256e7a20368bAc505A738CC1C2cbc8d0648849",
+  "registry": "0x32F26E5807af0C9e8ac71F7F4351164e2Eb60878",
+  "status": "success",
+  "blockNumber": "61755321",
+  "verified": true,
+  "explorer": "https://testnet.arcscan.app/tx/0x06bf1136eeaeb4580d954224c0bd712d1ff783e0b93a495bb307070ba791e1dd"
+}

@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createHash } from "node:crypto";
 import { discover } from "@/lib/discover-server";
-import { AGLAR } from "@/lib/aglar";
+import { AG_SIRASI, type AgAnahtar } from "@/lib/aglar";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -47,7 +47,7 @@ export async function POST(req: NextRequest) {
     request.length > 500 ||
     (chain !== undefined &&
       chain !== "all" &&
-      (typeof chain !== "string" || !Object.hasOwn(AGLAR, chain)))
+      (typeof chain !== "string" || !AG_SIRASI.includes(chain as AgAnahtar)))
   )
     return reply(
       {

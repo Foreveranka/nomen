@@ -1,0 +1,69 @@
+{
+  "chain": "sepolia",
+  "transactionHash": "0xa8fb5057059c50b9a12fa838274432a95c86b8fa1d8d52a42055ed52d6471992",
+  "report": {
+    "version": 1,
+    "chain": "sepolia",
+    "agentId": 1194,
+    "job": "custom",
+    "request": "Validate NOMEN review publication and evidence integrity on a test network. This is not an agent performance trial.",
+    "name": "AlphaShark42",
+    "checkedAt": "2026-09-12T16:09:06.587Z",
+    "expiresAt": "2026-09-12T16:24:06.587Z",
+    "block": "11689980",
+    "owner": "0xb702F862d5140aC3f801e6b95B144e8479F30f0A",
+    "metadataHash": null,
+    "fingerprint": "42855707c17c167c63277fa61b7dcb4c77eb870d36e65847723b149ce7e25ce2",
+    "checks": [
+      {
+        "key": "snapshot",
+        "title": "Published metadata rules",
+        "status": "pass",
+        "detail": "Snapshot result: passes. This is not a live service certification."
+      },
+      {
+        "key": "owner",
+        "title": "Current ownership",
+        "status": "pass",
+        "detail": "Read at block 11689980. Matches the published owner."
+      },
+      {
+        "key": "metadata",
+        "title": "Current metadata",
+        "status": "unknown",
+        "detail": "Could not read a bounded JSON document from the current URI. Only public HTTPS and JSON data URIs are checked."
+      },
+      {
+        "key": "interface",
+        "title": "Discoverable agent interface",
+        "status": "unknown",
+        "detail": "No A2A-shaped card was confirmed. A website or schema reference is not an agent interface; MCP execution/discovery is not tested by this check."
+      },
+      {
+        "key": "job",
+        "title": "Declared fit for this job",
+        "status": "unknown",
+        "detail": "AI matching uses published descriptions. Completing your specific task still requires a controlled trial; live checks alone cannot confirm task fit."
+      }
+    ],
+    "services": [],
+    "declaredMatch": [],
+    "decision": "needs_review",
+    "automaticExecutionAllowed": false,
+    "nextAction": "Resolve the missing evidence before selecting this agent. No live task has been completed by this check.",
+    "limitations": [
+      "No task execution or output-quality test was performed.",
+      "Price, data retention and execution permissions must be confirmed with the provider.",
+      "This is a 15-minute observation window, not guaranteed availability or an onchain ENS endorsement.",
+      "Saved reports and trial notes stay in this browser; they are not signed attestations."
+    ]
+  },
+  "evidence": {
+    "version": 1,
+    "reportFingerprint": "42855707c17c167c63277fa61b7dcb4c77eb870d36e65847723b149ce7e25ce2",
+    "outcome": "inconclusive",
+    "checklist": [],
+    "note": "NOMEN publication smoke test only. Rating 8/10 is synthetic test input, not a real assessment of this agent. No agent task was completed. Outcome is intentionally inconclusive. Checks cover receipt publication and evidence integrity only.",
+    "rating": 8
+  }
+}

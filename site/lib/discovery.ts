@@ -11,6 +11,8 @@ export type Candidate = {
   snapshotOwner?: string | null;
   snapshotBlock?: number;
   registryEvidence?: GraphEvidence;
+  trialHistory?: { status: "live"; checkedAt: string; total: number; distinctReviewers: number; superseded: number; passed: number; failed: number; inconclusive: number; latestRecordedAt: string | null } | { status: "unavailable" };
+
 };
 export type Brief = {
   summary: string;
@@ -27,6 +29,7 @@ export type RankedMatch = {
   evidenceQuote: string;
   gaps: string[];
   registrySignals?: GraphSignalId[];
+  trialHistoryConsidered?: boolean;
 };
 export type Discovery = {
   request: string;
@@ -91,6 +94,8 @@ export function groundMatches(ranked: RankedMatch[], candidates: Candidate[]) {
       const signals = [...new Set(m.registrySignals ?? [])];
       if (c.registryEvidence && (!signals.length || signals.some(id => !c.registryEvidence!.signals.some(s => s.id === id)))) return [];
       if (!c.registryEvidence && signals.length) return [];
+      if (c.trialHistory && m.trialHistoryConsidered !== true) return [];
+      if (!c.trialHistory && m.trialHistoryConsidered) return [];
       seen.add(m.key);
       return [{ ...m, ...c, evidenceQuote: quote, registrySignals: signals }];
     })

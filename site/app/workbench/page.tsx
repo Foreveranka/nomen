@@ -4,11 +4,10 @@ import Link from "next/link";
 import JobDiscovery from "./JobDiscovery";
 import AgentDirectory from "@/components/AgentDirectory";
 import AgentActivity from "@/components/AgentActivity";
-import OnchainEvaluation from "@/components/OnchainEvaluation";
 import TryAgent from "./TryAgent";
-import { trialAccess } from "@/lib/trial";
+import { trialReviewAccess } from "@/lib/trial";
 import { useAg } from "@/app/providers";
-import { AGLAR, type AgAnahtar } from "@/lib/aglar";
+import { AGLAR, AG_SIRASI, type AgAnahtar } from "@/lib/aglar";
 import {
   JOBS,
   compareEvaluations,
@@ -25,6 +24,7 @@ type Saved = {
   trialNotes?: string;
   trialChecks?: string[];
   trialOutcome?: TrialOutcome;
+  trialRating?: number | null;
   recheckFailed?: boolean;
 };
 const STORAGE = "nomen-workbench-v1";
@@ -51,11 +51,12 @@ export default function Workbench() {
   const [checked, setChecked] = useState<string[]>([]),
     [notes, setNotes] = useState("");
   const [trialOutcome, setTrialOutcome] = useState<TrialOutcome>("inconclusive");
+  const [rating, setRating] = useState<number | null>(null);
   useEffect(() => {
     queueMicrotask(() => {
       setNow(Date.now());
       const p = new URLSearchParams(location.search);
-      if (p.get("chain") && Object.hasOwn(AGLAR, p.get("chain")!))
+      if (p.get("chain") && AG_SIRASI.includes(p.get("chain") as AgAnahtar))
         setChain(p.get("chain") as AgAnahtar);
       if (/^\d+$/.test(p.get("agentId") ?? "")) setId(p.get("agentId")!);
       try {
@@ -115,6 +116,7 @@ export default function Workbench() {
     setReport(null);
     setChecked([]);
     setNotes("");
+    setRating(null);
     setTrialOutcome("inconclusive");
     setChanges([]);
     try {
@@ -145,6 +147,7 @@ export default function Workbench() {
                   trialNotes: prior.trialNotes,
                   trialChecks: prior.trialChecks,
                   trialOutcome: prior.trialOutcome,
+                  trialRating: prior.trialRating,
                 }
               : s,
           ),
@@ -199,9 +202,10 @@ export default function Workbench() {
               trialNotes: notes,
               trialChecks: checked,
               trialOutcome,
+              trialRating: rating,
               trialEvidence: "user reported; not independently verified",
               onchainReceipt: report
-                ? evaluationReceipt(report, trialOutcome, notes, checked)
+                ? evaluationReceipt(report, trialOutcome, notes, checked, rating)
                 : undefined,
             },
             null,
@@ -234,10 +238,16 @@ export default function Workbench() {
     : [];
   const trialReady =
     !!report &&
-    trialAccess(report, now) &&
+    trialReviewAccess(report, now, trialOutcome) &&
     !expired &&
     notes.trim().length >= 20 &&
     (trialOutcome !== "passed" || requirements.every((r) => checked.includes(r)));
+  const trialSaved = !!report && saved.some((s) =>
+    keyOf(s.report) === keyOf(report) &&
+    s.reviewedFingerprint === report.fingerprint &&
+    s.trialNotes === notes && s.trialOutcome === trialOutcome && (s.trialRating ?? null) === rating &&
+    JSON.stringify(s.trialChecks ?? []) === JSON.stringify([...checked].sort())
+  );
   function recordTrial() {
     if (!report || !trialReady) return;
     const entry = saved.find((s) => keyOf(s.report) === keyOf(report));
@@ -248,6 +258,7 @@ export default function Workbench() {
       trialNotes: notes,
       trialChecks: [...checked].sort(),
       trialOutcome,
+      trialRating: rating,
     };
     if (
       persist(
@@ -258,7 +269,7 @@ export default function Workbench() {
       )
     )
       setNotice(
-        "Trial review recorded by you. Changes to the evidence invalidate this review; it is not a NOMEN certification.",
+        "Saved on this device. Your result has not been published.",
       );
   }
   return (
@@ -341,7 +352,7 @@ export default function Workbench() {
                 value={chain}
                 onChange={(e) => setChain(e.target.value as AgAnahtar)}
               >
-                {Object.entries(AGLAR).map(([k, v]) => (
+                {AG_SIRASI.map(k => [k, AGLAR[k]] as const).map(([k, v]) => (
                   <option key={k} value={k}>
                     {v.ad}
                   </option>
@@ -505,82 +516,57 @@ export default function Workbench() {
                   Registry evidence →
                 </Link>
               </div>
-              <details className="kart-cizgili p-5" open>
-                <summary className="cursor-pointer text-lg">
-                  Record your trial result
-                </summary>
-                <p className="mt-4 text-sm leading-relaxed">
-                  {JOBS[report.job].sample}
-                </p>
-                <p className="mt-3 text-xs text-[var(--soluk)]">
-                  Complete this with the provider in your own environment. These
-                  checkboxes are your review, not an automated test result. Do
-                  not paste confidential output.
-                </p>
-                <div className="mt-4 space-y-3">
-                  {requirements.map((item) => (
-                    <label
-                      className="flex items-start gap-3 text-sm"
-                      key={item}
-                    >
-                      <input
-                        type="checkbox"
-                        checked={checked.includes(item)}
-                        onChange={(e) =>
-                          setChecked((v) =>
-                            e.target.checked
-                              ? [...v, item]
-                              : v.filter((i) => i !== item),
-                          )
-                        }
-                      />
-                      {item}
-                    </label>
-                  ))}
+              <section className="kart-cizgili p-5 sm:p-6" aria-labelledby="trial-review-title">
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <h2 id="trial-review-title" className="text-xl">How did your trial go?</h2>
+                  <span className="rounded-full bg-[var(--yuzey)] px-3 py-1 text-xs">Private · saved on this device</span>
                 </div>
-                <label className="mt-5 block text-sm">
-                  Trial result and public evidence
-                  <textarea
-                    className="girdi mt-2 min-h-24 w-full"
-                    maxLength={2000}
-                    value={notes}
-                    onChange={(e) => setNotes(e.target.value)}
-                    placeholder="What did you ask, what came back, and how did you verify it?"
-                  />
-                </label>
-                <label className="mt-4 block text-sm">
-                  Trial outcome
-                  <select className="girdi mt-2 w-full" value={trialOutcome} onChange={(e) => setTrialOutcome(e.target.value as TrialOutcome)}>
-                    <option value="inconclusive">Inconclusive</option>
-                    <option value="passed">Passed my review</option>
-                    <option value="failed">Failed my review</option>
-                  </select>
-                </label>
-                <button
-                  disabled={!trialReady}
-                  onClick={recordTrial}
-                  className="dugme dugme-koyu mt-4"
-                >
-                  Record my trial review
-                </button>
-                <p className="mt-2 text-xs text-[var(--soluk)]">
-                  Requires fresh evidence, a usable provider link and a result note. A passing result also requires every review box. This records your review only; it never authorizes execution.
-                </p>
-              </details>
-              <OnchainEvaluation
-                key={`${report.fingerprint}:${trialOutcome}:${notes}:${[...checked].sort().join("\u001f")}`}
-                report={report}
-                outcome={trialOutcome}
-                notes={notes}
-                checked={checked}
-                recorded={saved.some((s) =>
-                  keyOf(s.report) === keyOf(report) &&
-                  s.reviewedFingerprint === report.fingerprint &&
-                  s.trialNotes === notes &&
-                  s.trialOutcome === trialOutcome &&
-                  JSON.stringify(s.trialChecks ?? []) === JSON.stringify([...checked].sort())
-                )}
-              />
+                <p className="mt-2 text-sm text-[var(--soluk)]">Keep private trial notes, an optional score and a result on this device. Public complaints are managed separately in Orders.</p>
+                <fieldset className="mt-6">
+                  <legend className="text-sm font-medium">How would you rate this agent? <span className="font-normal text-[var(--soluk)]">Optional</span></legend>
+                  <div className="mt-3 grid grid-cols-5 gap-2 sm:grid-cols-10">{Array.from({ length: 10 }, (_, i) => i + 1).map(score => (
+                    <label key={score} className={`flex min-h-12 cursor-pointer items-center justify-center rounded-xl border font-medium focus-within:ring-2 focus-within:ring-offset-2 ${rating === score ? "border-[var(--lacivert)] bg-[var(--lacivert)] text-white" : "border-[var(--cizgi)] hover:bg-[var(--yuzey)]"}`}>
+                      <input className="sr-only" type="radio" name="trial-rating" value={score} aria-label={`${score} out of 10`} checked={rating === score} onChange={() => setRating(score)} />{score}
+                    </label>
+                  ))}</div>
+                  <div className="mt-2 flex justify-between text-xs text-[var(--soluk)]"><span>1 · Poor</span><span>5 · Mixed</span><span>10 · Excellent</span></div>
+                  {rating !== null && <p className="mt-3 text-sm" role="status">Your rating: <strong>{rating}/10</strong><button type="button" className="ml-3 text-xs underline" onClick={() => setRating(null)}>Clear rating</button></p>}
+                  <p className="mt-2 text-xs text-[var(--soluk)]">Your overall experience. A high score does not mean every requirement was met.</p>
+                </fieldset>
+                <fieldset className="mt-6">
+                  <legend className="text-sm font-medium">Did it do what you needed?</legend>
+                  <div className="mt-3 grid gap-3 sm:grid-cols-3">
+                    {([
+                      ["passed", "It worked", "Met all my review criteria"],
+                      ["failed", "It didn’t work", "Missed what I needed"],
+                      ["inconclusive", "Not sure yet", "I need more evidence"],
+                    ] as const).map(([value, title, hint]) => (
+                      <label key={value} className={`cursor-pointer rounded-xl border p-4 transition-colors focus-within:ring-2 focus-within:ring-[var(--lacivert)] ${trialOutcome === value ? "border-[var(--lacivert)] bg-[var(--yuzey)]" : "border-[var(--cizgi)]"}`}>
+                        <span className="flex items-center gap-2 text-sm font-medium"><input type="radio" name="trial-outcome" value={value} checked={trialOutcome === value} onChange={() => setTrialOutcome(value)} />{title}</span>
+                        <span className="mt-2 block text-xs text-[var(--soluk)]">{hint}</span>
+                      </label>
+                    ))}
+                  </div>
+                </fieldset>
+                <label htmlFor="trial-note" className="mt-6 block text-sm font-medium">What happened?</label>
+                <p id="trial-note-help" className="mt-1 text-xs text-[var(--soluk)]">A sentence or two is enough. Describe what you tried and the result. Leave out sensitive information.</p>
+                <textarea id="trial-note" aria-describedby="trial-note-help trial-note-count" className="girdi mt-3 min-h-28 w-full" maxLength={2000} value={notes} onChange={(e) => setNotes(e.target.value)} placeholder="I asked it to compare three sources. Two were accurate, but the third link did not open." />
+                <p id="trial-note-count" className="mt-1 text-right text-xs text-[var(--soluk)]">{notes.trim().length < 20 ? `${20 - notes.trim().length} more characters to save · ` : ""}{notes.length.toLocaleString("en")} / 2,000</p>
+                <div className="mt-5 rounded-xl bg-[var(--yuzey)] p-4">
+                  <h3 className="text-sm font-medium">{trialOutcome === "passed" ? "Confirm what worked" : "What did you check?"}</h3>
+                  <p className="mt-1 text-xs text-[var(--soluk)]">{trialOutcome === "passed" ? "Check every item to record “It worked”. Otherwise choose “Not sure yet” or “It didn’t work”." : "Mark only the items you confirmed. You can leave these unchecked."}</p>
+                  <div className="mt-4 space-y-3">{requirements.map(item => (
+                    <label key={item} className="flex cursor-pointer items-start gap-3 text-sm"><input className="mt-0.5 h-4 w-4 shrink-0" type="checkbox" checked={checked.includes(item)} onChange={e => setChecked(v => e.target.checked ? [...v, item] : v.filter(i => i !== item))} />{item}</label>
+                  ))}</div>
+                </div>
+                <details className="mt-4 text-sm text-[var(--soluk)]"><summary className="cursor-pointer">Need a sample task?</summary><p className="mt-2">{JOBS[report.job].sample}</p><p className="mt-2">Run the trial with the provider. These are your observations, not automated test results.</p></details>
+                <div className="mt-6 flex flex-wrap items-center gap-3">
+                  <button disabled={!trialReady || trialSaved} onClick={recordTrial} className="dugme dugme-koyu">{trialSaved ? "Saved on this device" : "Save my result"}</button>
+                  <p className="text-xs text-[var(--soluk)]">Nothing is published by saving here.</p>
+                </div>
+                <p role="status" className="mt-3 text-sm text-[var(--soluk)]">{trialSaved ? "Your result is saved. You can stop here, or share the result below." : expired ? "This agent check has expired. Recheck the agent before saving a new result." : !trialReviewAccess(report, now, trialOutcome) ? "A fresh ownership check is required. “It worked” also needs a usable provider link; failed or inconclusive attempts can be saved when the service is unavailable." : notes.trim().length < 20 ? "Add a short note of at least 20 characters to save." : trialOutcome === "passed" && !requirements.every(r => checked.includes(r)) ? "Confirm every checklist item, or choose a different result." : "Ready to save on this device."}</p>
+              </section>
+              <section className="mt-5 rounded-xl border border-[var(--cizgi)] p-5"><h3 className="font-medium">Need to report a problem?</h3><p className="mt-2 text-sm text-[var(--soluk)]">Your trial notes stay on this device. Public complaints are filed in Orders for a one-time 5 test USDC publication fee. Updates and provider replies are free.</p><a className="dugme mt-4" href={`/orders?chain=${report.chain}&agentId=${report.agentId}`}>Open complaint in Orders →</a></section>
               <details className="mt-5 text-sm text-[var(--soluk)]">
                 <summary className="cursor-pointer">
                   What this report cannot establish
@@ -633,7 +619,7 @@ export default function Workbench() {
                   now < Date.parse(s.report.expiresAt)
                     ? "Trial reviewed by you for this evidence version"
                     : "Trial requires review"}{" "}
-                  {s.trialOutcome ? `· ${s.trialOutcome}` : ""}{" "}
+                  {s.trialOutcome ? `· ${s.trialOutcome}` : ""}{s.trialRating != null ? ` · ${s.trialRating}/10` : ""}{" "}
                   · {s.history.length} previous checks
                 </p>
                 <div className="mt-4 flex gap-3">
@@ -663,6 +649,7 @@ export default function Workbench() {
                       setChanges([]);
                       setChecked(s.trialChecks ?? []);
                       setNotes(s.trialNotes ?? "");
+                      setRating(Number.isInteger(s.trialRating) && s.trialRating! >= 1 && s.trialRating! <= 10 ? s.trialRating! : null);
                       setTrialOutcome(s.trialOutcome ?? "inconclusive");
                     }}
                   >

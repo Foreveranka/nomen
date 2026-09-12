@@ -19,14 +19,15 @@ const base = {
 test("summarizes outcomes while counting a wallet once", () => {
   const summary = summarizeEvaluationReceipts([
     base,
-    { ...base, evaluationId: `0x${"5".repeat(64)}`, outcome: "failed", recordedAt: "1789190000" },
+    { ...base, evaluationId: `0x${"5".repeat(64)}`, outcome: "failed", blockNumber: "307944700", recordedAt: "1789190000" },
     { ...base, evaluationId: `0x${"6".repeat(64)}`, reviewer: "0x2222222222222222222222222222222222222222", outcome: "inconclusive", recordedAt: "1789180000" },
   ]);
   assert.deepEqual(summary, {
     total: 3,
+    superseded: 1,
     distinctReviewers: 2,
     passed: 1,
-    failed: 1,
+    failed: 0,
     inconclusive: 1,
     latestRecordedAt: "1789200000",
   });
@@ -35,10 +36,23 @@ test("summarizes outcomes while counting a wallet once", () => {
 test("empty live result stays distinct from an RPC failure", () => {
   assert.deepEqual(summarizeEvaluationReceipts([]), {
     total: 0,
+    superseded: 0,
     distinctReviewers: 0,
     passed: 0,
     failed: 0,
     inconclusive: 0,
     latestRecordedAt: null,
   });
+});
+
+test("latest block and log wins regardless of input order or address case", () => {
+  const old = { ...base, reviewer: "0x" + "aB".repeat(20) };
+  const latest = { ...old, reviewer: old.reviewer.toLowerCase(), outcome: "failed", logIndex: 2 };
+  for (const receipts of [[old, latest], [latest, old]]) {
+    const summary = summarizeEvaluationReceipts(receipts);
+    assert.equal(summary.passed, 0);
+    assert.equal(summary.failed, 1);
+    assert.equal(summary.distinctReviewers, 1);
+    assert.equal(summary.superseded, 1);
+  }
 });

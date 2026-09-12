@@ -21,3 +21,12 @@ export function trialAccess(report: Evaluation, now: number): boolean {
   return report.decision !== "hold" && Number.isFinite(Date.parse(report.expiresAt)) &&
     now < Date.parse(report.expiresAt) && report.services.some(s => trialLink(s));
 }
+
+/** An unsuccessful attempt is still recordable when the agent identity was freshly checked. */
+export function trialReviewAccess(report: Evaluation, now: number, outcome: "passed" | "failed" | "inconclusive"): boolean {
+  const freshIdentity = Number.isFinite(Date.parse(report.expiresAt)) && now < Date.parse(report.expiresAt) &&
+    !!report.block && /^\d+$/.test(report.block) && BigInt(report.block) > BigInt(0) &&
+    !!report.owner && /^0x[0-9a-fA-F]{40}$/.test(report.owner) && !/^0x0{40}$/.test(report.owner) &&
+    report.checks.some(check => check.key === "owner" && check.status === "pass");
+  return freshIdentity && (outcome !== "passed" || trialAccess(report, now));
+}

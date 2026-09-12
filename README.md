@@ -2,7 +2,7 @@
 
 NOMEN helps users find AI agents for a task, inspect registry evidence and prepare a provider-side trial. The landing page introduces the product; Open app leads to `/workbench`, where English AI search and the manual directory share one page.
 
-User-reviewed trial results can be committed as hash-only, wallet-signed receipts through the same `NomenEvaluationRegistry` interface on each supported agent network. Verified deployments are live on Sepolia, Arbitrum Sepolia and Arc Testnet. The Ethereum deployment slot remains disabled until a funded mainnet deployment is verified.
+The current public feedback flow is **Orders**: structured complaints published after a 5 test USDC payment on Arc Testnet. Statements, signed updates and provider responses are stored in Neon Postgres. Older ratings and onchain trial receipts remain readable; the workbench no longer offers new public rating or trial-receipt publication. ENSv2 naming remains available at **Claim a name** on Sepolia. Only testnets are selectable.
 
 - Live application: [nomen-beta.vercel.app](https://nomen-beta.vercel.app)
 - Arbitrum Sepolia contract: [`0x33D6893fA6015EeecE1d9232A8D0659F42eF669e`](https://sepolia.arbiscan.io/address/0x33D6893fA6015EeecE1d9232A8D0659F42eF669e)
@@ -13,23 +13,29 @@ User-reviewed trial results can be committed as hash-only, wallet-signed receipt
 1. A user describes the job they need an agent to perform and selects a network.
 2. NOMEN searches its reviewed ERC-8004 snapshot and ranks eligible agents against that request.
 3. The user inspects current ownership, metadata and public service evidence before running a provider-side trial.
-4. The user reviews the result and can publish a hash-only, wallet-signed receipt to the selected network.
-5. Anyone can independently read the receipt, its reviewer, agent identity and outcome from the chain without exposing the trial note.
+4. The user saves private trial notes and an optional 1–10 score in this browser.
+5. To publish a complaint, the user signs a draft in Orders, pays 5 test USDC on Arc, and verifies the payment. Current registered agent owners can reply; only the author can resolve or reopen the complaint.
+6. An eligible agent owner can claim an expiring, non-transferable ENSv2 subname under nomen-demo.eth on Sepolia.
 
-NOMEN does not execute tasks, hold user funds or certify providers. It makes discovery evidence and user-submitted trial receipts easier to inspect.
+NOMEN does not execute agent tasks or certify providers. It receives a publication fee, not escrow or payment for the provider’s service. Payment proves publication payment, not service purchase or the truth of a complaint. No complaints does not imply good performance. Synthetic demo records are labeled and excluded from counts.
 
 ```mermaid
 flowchart LR
-    U[User] --> W[NOMEN workbench]
-    W --> S[Reviewed ERC-8004 snapshot]
-    W --> L[Live identity and service checks]
-    U --> P[Provider-side trial]
-    P --> R[Wallet-signed receipt]
-    R --> A[NomenEvaluationRegistry<br/>Arbitrum Sepolia]
-    A --> H[Public agent trust history]
+    U[User] --> W[Find an agent]
+    W --> S[Published ERC-8004 snapshot]
+    G[Live Graph owner / URI evidence] --> W
+    D[DeepSeek task matching] --> W
+    W --> T[Provider-side trial / private notes]
+    U --> O[Orders: signed complaint]
+    O --> A[5 test USDC payment on Arc]
+    A --> V[Server verifies canonical payment and draft commitment]
+    V --> DB[Neon: public complaint and signed history]
+    P[Current registered provider owner] --> DB
+    U --> E[Claim a name: ENSv2 on Sepolia]
+    H[Historical Arbitrum trial receipts] --> W
 ```
 
-## Live evaluation deployments
+## Historical trial-receipt deployments
 
 | Network | Chain ID | Registry | Verified smoke receipt |
 | --- | ---: | --- | --- |
@@ -43,14 +49,14 @@ All three deployments use the same Solidity source and are pinned to the ERC-800
 
 NOMEN existed before the buildathon. The public pre-buildathon baseline is preserved in the annotated tag [`arbitrum-open-house-baseline-2026-09-12`](https://github.com/Foreveranka/nomen/tree/arbitrum-open-house-baseline-2026-09-12). Work attributed to the buildathon will begin after the official event start and will be documented through normal commits. The Arbitrum scope and its timing are described in [`inceleme/arbitrum-open-house-feature-plan.md`](inceleme/arbitrum-open-house-feature-plan.md).
 
-The Arbitrum Sepolia integration is already functional in the baseline: the catalog includes eligible ERC-8004 identities, live trials read current identity data, and users can record review receipts on chain. A public, independently readable trust history was added on September 12 as a pre-event extension and will not be presented as buildathon-period work.
+The Arbitrum Sepolia integration is already functional in the baseline: the catalog includes eligible ERC-8004 identities, live trial checks read current identity data, and deployed receipt contracts remain independently readable. New receipt publication has since been removed from the workbench in favor of Orders on Arc. A public, independently readable trust history was added on September 12 as a pre-event extension and will not be presented as buildathon-period work.
 
-## Current status — 12 September 2026
+## Current status — 13 September 2026 (Türkiye)
 
 - DeepSeek discovery, directory filters, agent records, live checks, trial prompt preparation, browser-local shortlist, bulk CSV export, snapshot API and docs are implemented.
 - Published eligible records: Ethereum 3,709; Sepolia 1,421; Arbitrum Sepolia 44; Arc testnet 249. These are snapshot counts, not current registry totals. The Arbitrum Sepolia snapshot covers all 205 registered IDs observed at block 307,933,498 on September 12, 2026. Legacy Ethereum timestamps remain unverified. The 249 listed Arc records were refreshed September 11, 2026, at block 61552064; non-listed Arc records retain legacy observations.
 - Sepolia naming is deployed under nomen-demo.eth. A real claim for the NOMEN-owned test agent #10226, runtime bytecode, roles, resolver records, non-transferability and authorization boundaries were verified. Evidence: inceleme/ens-live-evidence.json.
-- Graph Studio v0.3.0 is deployed and configured for the replacement registrar. Sepolia and Arc AI matching require fresh Graph data and compare owner/URI against the snapshot block before ranking. DeepSeek receives feedback and change history and cites supplied registry facts. Unavailable or stale Graph evidence withholds candidates on the affected network. Ethereum and Arbitrum Sepolia stay explicitly snapshot-only; Try this agent still reads Arbitrum ownership and metadata live from chain 421614. Arc uses a separate index scoped to the 249 listed IDs, configured through NOMEN_ARC_SUBGRAPH_URL. Check the activity response for current synchronization; deployment alone is not proof of a complete index.
+- Graph Studio v0.3.0 is deployed and configured for the replacement registrar. Sepolia and Arc AI matching require fresh Graph data and compare owner/URI against the snapshot block before ranking. DeepSeek receives feedback and change history and cites supplied registry facts. Unavailable or stale Graph evidence withholds candidates on the affected network. Ethereum is excluded from app matching. Arbitrum Sepolia uses snapshot capabilities with live historical trial context; Try this agent still reads Arbitrum ownership and metadata live from chain 421614. Arc uses a separate index scoped to the 249 listed IDs, configured through NOMEN_ARC_SUBGRAPH_URL. Check the activity response for current synchronization; deployment alone is not proof of a complete index.
 - Optional x402 uses Base Sepolia USDC, not Arc. Local and production resource-server tests verified a 0.001 USDC transfer, HTTP 402/200, invalid-signature rejection and replay rejection (inceleme/x402-production-evidence.json). The free testnet facilitator also produced intermittent transaction failures; those attempts returned 402, not success. The snapshot endpoint stays free.
 
 ## Run and verify
@@ -89,11 +95,11 @@ The scanner creates an isolated snapshot. Inspect unresolved reads, the manifest
 
 The Try this agent button runs `POST /api/evaluate`. It reads current ownership/metadata and at most three public HTTPS services. The guide labels service documents separately, exposes usable observed links and prepares a local trial template from the original task and a public/synthetic sample. Nothing is sent to the agent automatically. The user runs the task with the provider and reviews its result.
 
-`POST /api/evaluate` accepts `{ "chain": "ethereum", "agentId": 22817, "job": "custom", "request": "Weather forecasts and air quality" }`. Legacy wallet_report, research and payments checklists remain. Custom task fit is unknown to live checks. Decisions are shortlist_for_trial, needs_review or hold; automaticExecutionAllowed is always false.
+`POST /api/evaluate` accepts `{ "chain": "sepolia", "agentId": 1194, "job": "custom", "request": "Weather forecasts and air quality" }`. Legacy wallet_report, research and payments checklists remain. Custom task fit is unknown to live checks. Decisions are shortlist_for_trial, needs_review or hold; automaticExecutionAllowed is always false.
 
-Browser-local reports expire after 15 minutes and are keyed by task plus agent identity. A user-reported trial review requires fresh, non-held evidence, a usable service URL and a note; a passed result also requires every review checkbox. Where deployed, the wallet can publish the outcome and hashes to the selected agent network without putting the note onchain. It is not an automated certification. Rechecks are manual; no background monitoring exists.
+Browser-local reports expire after 15 minutes and are keyed by task plus agent identity. A user-reported trial review requires fresh, non-held evidence, a usable service URL and a note; a passed result also requires every review checkbox. The current UI saves notes privately; new public statements go through Orders. Legacy receipt contracts and evidence verification remain available for historical records. It is not an automated certification. Rechecks are manual; no background monitoring exists.
 
-Run `node --experimental-strip-types --test scripts/discovery.test.mjs scripts/evaluation.test.mjs scripts/evaluation-registry.test.mjs scripts/trial.test.mjs scripts/graph-discovery.test.mjs` from `site`. The controlled ten-case English ranking run passed all ten in one run; this small fixed-roster check does not prove general accuracy or task execution. See `inceleme/2026-09-11-concise-discovery.md`, `inceleme/2026-09-11-try-agent.md` and `inceleme/evaluation-registry-deployments.json`.
+Run `node --test scripts/*.test.mjs` from `site` with a current Node version supporting TypeScript stripping. Two transaction-isolated database tests require DATABASE_URL and otherwise skip. The controlled ten-case English ranking run passed all ten in one run; this small fixed-roster check does not prove general accuracy or task execution. See `inceleme/2026-09-11-concise-discovery.md`, `inceleme/2026-09-11-try-agent.md` and `inceleme/evaluation-registry-deployments.json`.
 
 ## APIs
 
@@ -101,6 +107,8 @@ Run `node --experimental-strip-types --test scripts/discovery.test.mjs scripts/e
 - `POST /api/toplu`: `{ "chain": "sepolia", "agentIds": [2364, 6815] }`, maximum 2,000 positive safe integers and 64 KiB body.
 - `GET /api/activity?agentId=2364`: live Graph activity if configured; otherwise 503.
 - `GET /api/evaluations?chain=arbitrum&agentId=205`: live Arbitrum Sepolia trial-receipt history and wallet-level aggregate counts.
+- `GET /api/complaints`: paginated public complaints, counts and signed history; `POST` accepts signed prepare/publish/edit/reply/status actions.
+- `GET /api/reviews`: archived ratings; `POST` returns 410.
 - `/api/dogrula`: optional x402 demonstration when `NOMEN_PAY_TO` is configured; otherwise free.
 
 `not_scanned` and `rpc_error` are unknown states, not evidence that an agent does not exist. A failed HTTP fetch means unreachable at observation time, not permanently dead.
@@ -115,7 +123,7 @@ Do not reuse the old deployer credential. Configure a new operator wallet extern
 
 ## Submission
 
-See `inceleme/submission-draft.md` and `inceleme/demo-script.md`. These are drafts, not a submitted entry. The owner must confirm From Scratch versus Continuity, disclose pre-event work and AI assistance, record a human-narrated demo, and publish a reviewed source repository. No fabricated historical commits are supplied.
+See `inceleme/submission-draft.md` and `inceleme/demo-script.md`. These are drafts, not a submitted entry. For ETHOnline, the owner confirmed that NOMEN-specific code/design began after September 4, 2026; Building from Scratch is selected. Preserve genuine work artifacts, disclose reused libraries and AI assistance, record a human-narrated demo, and submit the public source repository and final video. Arbitrum starts later and must treat this implementation as pre-existing. See [current readiness review](inceleme/2026-09-13-submission-readiness.md). No fabricated historical commits are supplied.
 
 ## September 11 test record addition
 
@@ -128,3 +136,11 @@ The original September 9 Sepolia snapshot is retained. The separately checked, N
 The model receives only surviving candidates, with indexed feedback, distinct-wallet and change counters. Its `registrySignals` must reference server-supplied facts; unsupported citations are rejected. Task capability remains the primary matching criterion. Feedback, including withdrawn records, is not proof of completed work or independent users.
 
 Run `node --test scripts/graph-discovery.test.mjs` in `site` for stale data, ownership/URI changes, pruned history, provider failures, mixed-network scope and fabricated citations. Run `node scripts/test-graph.mjs` for the real Sepolia claim. With the site running, run `NOMEN_TEST_BASE_URL=https://nomen-beta.vercel.app node scripts/test-graph-ai.mjs` for two real DeepSeek searches; every result is checked against independent Graph queries, including its immutable identity baseline. `/docs/evaluate` describes the user-facing flow.
+
+## Orders setup and wallet connection
+
+Set server-only `DATABASE_URL` for Neon. Apply both schemas using `node scripts/migrate-reviews.mjs` and `node scripts/migrate-complaints.mjs` from `site` with the variable exported. The first preserves the archived reviews model; the second enables Orders. The exact signed action schemas and draft commitment are in `site/lib/complaints.ts`. Fee sender, recipient, native value, draft commitment and successful canonical receipt must match. Editing, responses and status changes use signed, versioned database events and do not require another payment. One wallet can publish one record per agent/network. Burst and duplicate-text flags do not establish abuse or independent identity.
+
+Connect wallet offers separately discovered browser extensions. Select Rabby, MetaMask or another detected wallet and approve there. Connections persist during app navigation, but a full page reload requires choosing the wallet again; stale wallet sessions are not automatically restored. No WalletConnect QR pairing is configured; mobile users need a compatible wallet browser. See `site/.env.example` for configuration and `site/README.md` for the route map.
+
+No Circle Agent Stack, autonomous Arc settlement, mainnet service or verified-purchase scoring is claimed. Historical audit reports describe the version tested on their date; current behavior is described here and in the deployed docs.

@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import type { Discovery } from "@/lib/discovery";
-import { AGLAR, type AgAnahtar } from "@/lib/aglar";
+import { AGLAR, AG_SIRASI, type AgAnahtar } from "@/lib/aglar";
 
 const examples = [
   {
@@ -122,8 +122,8 @@ export default function JobDiscovery({
               }}
               className="girdi mt-2 block w-full sm:w-52"
             >
-              <option value="all">All networks · mixed evidence</option>
-              {Object.entries(AGLAR).map(([k, v]) => (
+              <option value="all">All test networks · mixed evidence</option>
+              {AG_SIRASI.map(k => [k, AGLAR[k]] as const).map(([k, v]) => (
                 <option key={k} value={k}>
                   {v.ad}{(k === "sepolia" || k === "arc") ? " · live Graph evidence" : " · snapshot only"}
                 </option>
@@ -147,7 +147,7 @@ export default function JobDiscovery({
           directory records and public registry history. Use public information; do not include passwords,
           keys or confidential documents. Recommendations do not execute tasks.
         </p>
-        <p className="mt-2 text-xs text-[var(--soluk)]">Sepolia and Arc matching require fresh registry evidence from The Graph. Ethereum and Arbitrum Sepolia matching use published snapshots.</p>
+        <p className="mt-2 text-xs text-[var(--soluk)]">Sepolia and Arc matching require fresh registry evidence from The Graph. Arbitrum Sepolia uses published snapshots and available trial history.</p>
       </form>
       <div aria-live="polite" aria-busy={busy}>
         {busy && (
@@ -210,6 +210,7 @@ export default function JobDiscovery({
                   <p className="mt-3 text-sm leading-relaxed">{m.reason}</p>
                   <p className="mt-3 text-xs text-[var(--soluk)]">{m.registryEvidence ? "Task fit + live Graph evidence" : "Snapshot match · no live registry check"}</p>
                   {m.registryEvidence && <div className="mt-3 text-sm"><p className="font-medium">Registry facts considered by AI</p><ul className="mt-2 list-disc space-y-1 pl-4 text-[var(--soluk)]">{m.registrySignals?.map(id => <li key={id}>{m.registryEvidence!.signals.find(s => s.id === id)?.text}</li>)}</ul><Link className="mt-2 inline-block text-xs underline" href={`/api/activity?chain=${m.chain}&agentId=${m.agentId}`}>View current indexed evidence →</Link></div>}
+                  {m.trialHistory && <div className="mt-3 text-sm"><p className="font-medium">Trial history considered by AI</p><p className="mt-1 text-[var(--soluk)]">{m.trialHistory.status === "live" ? `${m.trialHistory.passed} passed · ${m.trialHistory.failed} failed · ${m.trialHistory.inconclusive} inconclusive, using each wallet's latest receipt. ${m.trialHistory.superseded} older receipts excluded from totals. Self-reported, not verified task performance.` : "Trial history could not be read; this is not zero reviews."}</p><Link className="mt-2 inline-block underline" href={`/agent/arbitrum/${m.agentId}/trust`}>Inspect trial history →</Link></div>}
                   <details className="mt-4 text-sm text-[var(--soluk)]">
                     <summary className="cursor-pointer">Evidence &amp; unknowns</summary>
                     <blockquote className="mt-3 border-l-2 border-[var(--cizgi)] pl-3">“{m.evidenceQuote}”</blockquote>

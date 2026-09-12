@@ -1,0 +1,11 @@
+{
+  "requested": "TEST — Production smoke test for a synthetic Arc Pay Agent complaint.",
+  "happened": "TEST — No agent service was purchased. A test USDC publication fee exercises the live NOMEN API.",
+  "problem": "TEST — Simulated support issue used to check the public open-record layout and fee receipt.",
+  "evidence": "TEST ONLY — no customer purchase evidence.",
+  "id": "21d6caeb-fe97-4952-ab2c-a163c21c7643",
+  "author": "0xd2d4fa800cab149a0ee1af8f26f1faa80b3c10b1",
+  "chain": "arc",
+  "agentId": 39,
+  "demo": true
+}

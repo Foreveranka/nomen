@@ -47,3 +47,11 @@ Create a public Arbitrum trust page for each ERC-8004 agent. The page will turn 
 - At least one real end-to-end evaluation receipt created through the public UI.
 - Test output and production verification notes.
 - Two-to-three-minute demo video showing discovery, trial review, wallet signature and public trust history.
+
+## September 13 readiness update — supersedes the proposed flow above
+
+The current workbench no longer publishes new trial receipts. Public feedback now uses structured Orders complaints, paid on Arc and stored with signed updates in Neon. Historical Arbitrum trial receipts remain readable and inform matching. The earlier six-step flow is historical, not a complete current write flow.
+
+The authenticated dashboard shows registration complete but no project created. The official prize tab accepts Arbitrum Sepolia. The schedule displays submissions from Sep 13 20:01 through Oct 4 18:59 without a timezone label; confirm the official build-start cutoff before assigning work to the event. See 2026-09-13-submission-readiness.md for source links and exact observations.
+
+Recommended new feature after the start: Arbitrum-native complaint commitments and resolution history, linked to the agent identity and usable as honestly labeled comparison evidence. Preserve current Arc records and avoid charging again for existing publication. This proposal is not implemented. Retain both the original baseline tag and the later pre-window commits; the older tag alone no longer captures all pre-existing work.

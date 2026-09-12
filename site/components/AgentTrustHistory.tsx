@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useQuery } from "@tanstack/react-query";
 import { AGLAR } from "@/lib/aglar";
-import type { EvaluationHistoryReceipt } from "@/lib/evaluation-history-summary";
+import { latestEvaluationReceipts, type EvaluationHistoryReceipt } from "@/lib/evaluation-history-summary";
 
 type HistoryResponse = {
   status: "live";
@@ -41,6 +41,7 @@ export default function AgentTrustHistory({ agentId, full = false }: { agentId: 
     retry: false,
   });
   const history = query.data;
+  const counted = new Set(latestEvaluationReceipts(history?.receipts ?? []).map(r => r.evaluationId));
   const explorer = AGLAR.arbitrum.tarayici;
 
   if (query.isPending) {
@@ -68,7 +69,7 @@ export default function AgentTrustHistory({ agentId, full = false }: { agentId: 
 
       <dl className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
         {[
-          ["Total", history.summary.total],
+          ["All receipts", history.summary.total],
           ["Review wallets", history.summary.distinctReviewers],
           ["Passed", history.summary.passed],
           ["Failed", history.summary.failed],
@@ -76,6 +77,7 @@ export default function AgentTrustHistory({ agentId, full = false }: { agentId: 
         ].map(([label, value]) => <div key={label} className="rounded-xl bg-[var(--yuzey)] p-4"><dt className="text-xs text-[var(--cok-soluk)]">{label}</dt><dd className="mt-1 text-2xl font-light">{value}</dd></div>)}
       </dl>
 
+      <p className="mt-4 text-sm text-[var(--soluk)]">Outcome totals count only each wallet&apos;s latest receipt. Older receipts remain visible below. Multiple wallets may belong to one person.</p>
       {history.receipts.length === 0 ? (
         <p className="mt-6 rounded-xl bg-[var(--yuzey)] p-4 text-sm text-[var(--soluk)]">No receipts were returned by the live contract read for this agent.</p>
       ) : (
@@ -85,11 +87,11 @@ export default function AgentTrustHistory({ agentId, full = false }: { agentId: 
             <tbody className="divide-y divide-[var(--cizgi)]">
               {history.receipts.map((receipt) => (
                 <tr key={receipt.evaluationId}>
-                  <td className="py-3 capitalize">{receipt.outcome}</td>
+                  <td className="py-3 capitalize">{receipt.outcome}<span className="block text-xs text-[var(--soluk)]">{counted.has(receipt.evaluationId) ? "Latest from wallet" : "Superseded"}</span></td>
                   <td className="mono py-3 text-xs"><a className="underline decoration-[var(--cizgi)] underline-offset-4" href={`${explorer}/address/${receipt.reviewer}`} target="_blank" rel="noopener">{short(receipt.reviewer)}</a></td>
                   <td className="py-3 text-[var(--soluk)]">{time(receipt.recordedAt)} UTC</td>
                   <td className="mono py-3 text-xs">{receipt.observedBlock}</td>
-                  <td className="mono py-3 text-xs" title={receipt.evidenceHash}>{short(receipt.evidenceHash)}</td>
+                  <td className="mono py-3 text-xs" title={receipt.evidenceHash}><Link className="underline" href={`/evaluations/evidence?chain=arbitrum&agentId=${agentId}&id=${receipt.evaluationId}`}>Verify evidence →</Link></td>
                   <td className="py-3"><a className="underline decoration-[var(--cizgi)] underline-offset-4" href={`${explorer}/tx/${receipt.transactionHash}`} target="_blank" rel="noopener">Arbiscan →</a></td>
                 </tr>
               ))}

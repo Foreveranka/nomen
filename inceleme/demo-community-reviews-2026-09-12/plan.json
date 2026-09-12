@@ -1,0 +1,44 @@
+[
+  {
+    "chain": "sepolia",
+    "agentId": 608,
+    "name": "Minara AI",
+    "rating": 9,
+    "note": "TEST \u2014 Excellent-score layout sample. A real review could describe clear instructions and useful output here. This is synthetic text; no task was run."
+  },
+  {
+    "chain": "sepolia",
+    "agentId": 1740,
+    "name": "Phantom",
+    "rating": 4,
+    "note": "TEST \u2014 Low-score layout sample. This placeholder shows how a reviewer might describe confusing setup or missing instructions. It is not a claim about this agent."
+  },
+  {
+    "chain": "sepolia",
+    "agentId": 1739,
+    "name": "Wraith",
+    "rating": 7,
+    "note": "TEST \u2014 Mid-range review sample with a short comment. Synthetic score for UI testing only; agent performance was not tested."
+  },
+  {
+    "chain": "arc",
+    "agentId": 842439,
+    "name": "Lens AI",
+    "rating": 10,
+    "note": "TEST \u2014 Maximum-score sample. Used to check the 10/10 display, wallet attribution and saved review text. Not a real endorsement."
+  },
+  {
+    "chain": "arc",
+    "agentId": 1331,
+    "name": "Crypto Project Scanner",
+    "rating": 2,
+    "note": "TEST \u2014 Minimum-range sample. This longer placeholder checks how critical feedback wraps across several lines on a small screen. No service failure was observed; the score is invented for display testing."
+  },
+  {
+    "chain": "arc",
+    "agentId": 1853,
+    "name": "Document Digest Agent",
+    "rating": 6,
+    "note": "TEST \u2014 Mixed-feedback sample. A real reviewer could describe what worked, what was unclear and what they would try next. This comment and score are synthetic."
+  }
+]

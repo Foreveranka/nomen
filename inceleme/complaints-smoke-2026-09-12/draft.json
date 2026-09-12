@@ -1,0 +1,11 @@
+{
+  "requested": "TEST — A synthetic report request for the NOMEN snapshot reader.",
+  "happened": "TEST — No service was actually purchased or run. This record exercises paid complaint publication.",
+  "problem": "TEST — Simulated missing report section for UI and resolution testing, not a real allegation.",
+  "evidence": "TEST fixture only. No customer purchase evidence.",
+  "id": "2e55e112-65a8-4d59-abbe-5b268c5a7fd0",
+  "author": "0xd2d4fa800cab149a0ee1af8f26f1faa80b3c10b1",
+  "chain": "sepolia",
+  "agentId": 10226,
+  "demo": true
+}

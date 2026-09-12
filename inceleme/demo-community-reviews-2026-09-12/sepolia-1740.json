@@ -1,0 +1,83 @@
+{
+  "chain": "sepolia",
+  "transactionHash": "0x5c09a92637062c25bbc7eb398d7d3736f14ecc3362f41c89416b9dd0bf5a735d",
+  "report": {
+    "version": 1,
+    "chain": "sepolia",
+    "agentId": 1740,
+    "job": "custom",
+    "request": "TEST: prepare a synthetic community review to inspect NOMEN rating and comment display. No agent task will be executed.",
+    "name": "Phantom",
+    "checkedAt": "2026-09-12T20:19:40.630Z",
+    "expiresAt": "2026-09-12T20:34:40.630Z",
+    "block": "11691199",
+    "owner": "0x311e26702ABa231c321C633d1ff6ecB4445f2308",
+    "metadataHash": "1faa3e62e5b4f4121c601e1dbbd23a38a126d1def2a030d86963f6a324d07a82",
+    "fingerprint": "c65f111b67b494d5c37239edd35cf0d050aa45ee7b62d4ecda2fdb35abeabe0f",
+    "checks": [
+      {
+        "key": "snapshot",
+        "title": "Published metadata rules",
+        "status": "pass",
+        "detail": "Snapshot result: passes. This is not a live service certification."
+      },
+      {
+        "key": "owner",
+        "title": "Current ownership",
+        "status": "pass",
+        "detail": "Read at block 11691199. Matches the published owner."
+      },
+      {
+        "key": "metadata",
+        "title": "Current metadata",
+        "status": "pass",
+        "detail": "Full document hash matches the published scan."
+      },
+      {
+        "key": "services",
+        "title": "Live service response",
+        "status": "unknown",
+        "detail": "0 of 1 probed URLs responded successfully. At most 3 of 1 declared URLs checked. A web response is not a completed task."
+      },
+      {
+        "key": "interface",
+        "title": "Discoverable agent interface",
+        "status": "unknown",
+        "detail": "No A2A-shaped card was confirmed. A website or schema reference is not an agent interface; MCP execution/discovery is not tested by this check."
+      },
+      {
+        "key": "job",
+        "title": "Declared fit for this job",
+        "status": "unknown",
+        "detail": "AI matching uses published descriptions. Completing your specific task still requires a controlled trial; live checks alone cannot confirm task fit."
+      }
+    ],
+    "services": [
+      {
+        "url": "http://localhost:8080/oracle/agent/4",
+        "status": "unsupported",
+        "latencyMs": 0,
+        "protocol": "unconfirmed",
+        "skills": []
+      }
+    ],
+    "declaredMatch": [],
+    "decision": "needs_review",
+    "automaticExecutionAllowed": false,
+    "nextAction": "Resolve the missing evidence before selecting this agent. No live task has been completed by this check.",
+    "limitations": [
+      "No task execution or output-quality test was performed.",
+      "Price, data retention and execution permissions must be confirmed with the provider.",
+      "This is a 15-minute observation window, not guaranteed availability or an onchain ENS endorsement.",
+      "Saved reports and trial notes stay in this browser; they are not signed attestations."
+    ]
+  },
+  "evidence": {
+    "version": 1,
+    "reportFingerprint": "c65f111b67b494d5c37239edd35cf0d050aa45ee7b62d4ecda2fdb35abeabe0f",
+    "outcome": "inconclusive",
+    "checklist": [],
+    "note": "TEST — Low-score layout sample. This placeholder shows how a reviewer might describe confusing setup or missing instructions. It is not a claim about this agent.",
+    "rating": 4
+  }
+}

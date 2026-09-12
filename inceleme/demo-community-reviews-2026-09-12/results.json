@@ -1,0 +1,62 @@
+[
+  {
+    "chain": "sepolia",
+    "agentId": 608,
+    "name": "Minara AI",
+    "rating": 9,
+    "note": "TEST — Excellent-score layout sample. A real review could describe clear instructions and useful output here. This is synthetic text; no task was run.",
+    "id": "0xee888d12b5011de812813b4764eee25ef66c2713d00d65e7bcfb38ddb9c7ea40",
+    "transactionHash": "0x16780114d8f0f9616e179c4723d9969c41baf7ec542ad7734ba6bd69e19f9c1b",
+    "url": "https://nomen-beta.vercel.app/agent/sepolia/608"
+  },
+  {
+    "chain": "sepolia",
+    "agentId": 1740,
+    "name": "Phantom",
+    "rating": 4,
+    "note": "TEST — Low-score layout sample. This placeholder shows how a reviewer might describe confusing setup or missing instructions. It is not a claim about this agent.",
+    "id": "0xfc84f55e29e98250a0a44f7958e49c8a1276a04e151c43b656222db3830975d4",
+    "transactionHash": "0x5c09a92637062c25bbc7eb398d7d3736f14ecc3362f41c89416b9dd0bf5a735d",
+    "url": "https://nomen-beta.vercel.app/agent/sepolia/1740"
+  },
+  {
+    "chain": "sepolia",
+    "agentId": 1739,
+    "name": "Wraith",
+    "rating": 7,
+    "note": "TEST — Mid-range review sample with a short comment. Synthetic score for UI testing only; agent performance was not tested.",
+    "id": "0x7f022e3360d9ef648d7337457ca601fd78658b01c78b984eedddc6b32b48ef99",
+    "transactionHash": "0xd02a64f66a5d3875f027ff436e39984ae8ef33c4bb9a01bb45427a0092ddc95c",
+    "url": "https://nomen-beta.vercel.app/agent/sepolia/1739"
+  },
+  {
+    "chain": "arc",
+    "agentId": 842439,
+    "name": "Lens AI",
+    "rating": 10,
+    "note": "TEST — Maximum-score sample. Used to check the 10/10 display, wallet attribution and saved review text. Not a real endorsement.",
+    "id": "0xc220e9410a0d3c8a9327d4ceca27cf60d152f0c96b5aae83ec30f96e88b72f42",
+    "transactionHash": "0x399d8927fad4d40fd7003c333bfd1d04382a2ea89aa9332616e3931c46f68a43",
+    "url": "https://nomen-beta.vercel.app/agent/arc/842439"
+  },
+  {
+    "chain": "arc",
+    "agentId": 1331,
+    "name": "Crypto Project Scanner",
+    "rating": 2,
+    "note": "TEST — Minimum-range sample. This longer placeholder checks how critical feedback wraps across several lines on a small screen. No service failure was observed; the score is invented for display testing.",
+    "id": "0xad5b768363bcbb7e1c5e19972ef9995fdd4fa479723b95926dd018cea309459d",
+    "transactionHash": "0x492c83e4c2c2f78dfd5f6d58997562cda218db973bb300fd574ec0c22838c055",
+    "url": "https://nomen-beta.vercel.app/agent/arc/1331"
+  },
+  {
+    "chain": "arc",
+    "agentId": 1853,
+    "name": "Document Digest Agent",
+    "rating": 6,
+    "note": "TEST — Mixed-feedback sample. A real reviewer could describe what worked, what was unclear and what they would try next. This comment and score are synthetic.",
+    "id": "0x7a9f3c27b11dea79ac687af8133d8c2dab0749a5fbb62239ea089a5bd291ed9c",
+    "transactionHash": "0x58b4bc7c4c8ebc88db149c175b26a751b9d50294526acbeb4a6337aa1448de14",
+    "url": "https://nomen-beta.vercel.app/agent/arc/1853"
+  }
+]
