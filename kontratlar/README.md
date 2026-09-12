@@ -24,6 +24,8 @@ The old `nomen.eth` namespace and old registrar are retired from this app. They 
 
 `NomenEvaluationRegistry` stores append-only hashes of user-reviewed agent trials. Each deployment is pinned to that chain's ERC-8004 Identity Registry and rejects unknown agent IDs. The receipt records the reviewer wallet, agent ID, RPC observation block, outcome, report hash and evidence hash. It never stores the trial note or claims that NOMEN certified the result. The contract does not compare the RPC block number with the EVM `BLOCKNUMBER` opcode because those values use different domains on Arbitrum.
 
-Deploy the same source on a supported chain with `script/DeployEvaluation.s.sol`. Set `EXPECTED_CHAIN_ID` and `IDENTITY_REGISTRY` for the target network and provide the deployer key through the environment. Verify the deployment before adding its public address to the application.
+Deploy the same source on a supported chain with `script/DeployEvaluation.s.sol`. Set `EXPECTED_CHAIN_ID` and `IDENTITY_REGISTRY` for the target network and provide `DEPLOYER_PRIVATE_KEY` through the environment. The script rejects the retired test credential. Verify the deployment before adding its public address to the application.
 
 The evaluation registry has no owner, administrator, upgrade path or withdrawal function. Its deployer receives no authority over receipts. Use a securely held, funded wallet for future deployments so the deployment provenance is clear.
+
+After deployment, `script/RecordEvaluationSmoke.s.sol` writes one explicit inconclusive test receipt using environment-provided hashes, agent id and observation block. Read the stored receipt back before enabling the address in the application.

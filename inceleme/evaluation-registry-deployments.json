@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-12T01:05:30Z",
+  "checkedAt": "2026-09-12T01:20:41Z",
   "contract": "NomenEvaluationRegistry",
   "source": "kontratlar/src/NomenEvaluationRegistry.sol",
   "identityRegistry": "0x8004A818BFB912233c491871b3d84c89A494BD9e",
@@ -23,11 +23,20 @@
       "smokeTestEvaluationId": "0x03e5814e42ad6145ececeaeb0307098e32699f52039e425bd5c7d254e06ce3d7",
       "smokeTestAgentId": 205,
       "smokeTestOutcome": "inconclusive"
+    },
+    {
+      "network": "Arc Testnet",
+      "chainId": 5042002,
+      "address": "0x32F26E5807af0C9e8ac71F7F4351164e2Eb60878",
+      "deploymentTransaction": "0x96735be6c7fc6ab1e9c742f9dbb24aab32f5c92b0090ec3618b28a5638631057",
+      "smokeTestTransaction": "0x57c9048d437b6a608f4c9a4a152e3f14cec7df0edcd836bfa2245c95113ff923",
+      "smokeTestEvaluationId": "0xeaac7cd068940935fc7d22d1a0381b75f4d6c8db9e2a8466f24f5b1219f81974",
+      "smokeTestAgentId": 10226,
+      "smokeTestOutcome": "inconclusive"
     }
   ],
   "pending": [
-    { "network": "Ethereum", "chainId": 1, "reason": "deployment wallet has no mainnet ETH" },
-    { "network": "Arc Testnet", "chainId": 5042002, "reason": "deployment wallet has no Arc Testnet gas token" }
+    { "network": "Ethereum", "chainId": 1, "reason": "deployment wallet has no mainnet ETH" }
   ],
   "superseded": [
     { "network": "Sepolia", "address": "0x75C1A7296c6284a8e35A25aC30a186D7F8E1C7B0", "reason": "first version compared an RPC block number with the EVM BLOCKNUMBER opcode" },

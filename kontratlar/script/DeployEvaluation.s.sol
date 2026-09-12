@@ -13,7 +13,8 @@ contract DeployEvaluation is Script {
         address identityRegistry = vm.envAddress("IDENTITY_REGISTRY");
         require(identityRegistry.code.length > 0, "identity registry missing");
 
-        uint256 key = vm.envUint("DAGITICI_KEY");
+        uint256 key = vm.envUint("DEPLOYER_PRIVATE_KEY");
+        require(vm.addr(key) != 0x922D05Af2e9535bfe6fDEEB713ea33088b7412CC, "rotate compromised deployer");
         vm.startBroadcast(key);
         registry = new NomenEvaluationRegistry(identityRegistry);
         vm.stopBroadcast();

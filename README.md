@@ -2,7 +2,7 @@
 
 NOMEN helps users find AI agents for a task, inspect registry evidence and prepare a provider-side trial. The landing page introduces the product; Open app leads to `/workbench`, where English AI search and the manual directory share one page.
 
-User-reviewed trial results can be committed as hash-only, wallet-signed receipts through the same `NomenEvaluationRegistry` interface on each supported agent network. Verified deployments are live on Sepolia and Arbitrum Sepolia. Ethereum and Arc Testnet deployment slots are configured but remain disabled until funded deployments are verified.
+User-reviewed trial results can be committed as hash-only, wallet-signed receipts through the same `NomenEvaluationRegistry` interface on each supported agent network. Verified deployments are live on Sepolia, Arbitrum Sepolia and Arc Testnet. The Ethereum deployment slot remains disabled until a funded mainnet deployment is verified.
 
 ## Current status — 12 September 2026
 

@@ -26,7 +26,7 @@ export default function Kontratlar() {
         <tr><td>Sepolia</td><td><Adr a="0xEd3dFB7c561CEf35F51e9613f8E89dD821e16605" /></td><td><a href="https://sepolia.etherscan.io/tx/0x6bf781f7dff310a7d691ddf051177b290be5dbd2711cec1daa5b373f6f64c2a1" target="_blank" rel="noopener">test receipt confirmed</a></td></tr>
         <tr><td>Arbitrum Sepolia</td><td><Adr a="0x33D6893fA6015EeecE1d9232A8D0659F42eF669e" agi="arbitrum" /></td><td><a href="https://sepolia.arbiscan.io/tx/0x363f1eada0965113596960b3551d4678d38df76bac6776ae89be436b78e2307c" target="_blank" rel="noopener">test receipt confirmed</a></td></tr>
         <tr><td>Ethereum</td><td>Pending gas funding</td><td>interface ready</td></tr>
-        <tr><td>Arc Testnet</td><td>Pending gas funding</td><td>interface ready</td></tr>
+        <tr><td>Arc Testnet</td><td><Adr a="0x32F26E5807af0C9e8ac71F7F4351164e2Eb60878" agi="arc" /></td><td><a href="https://testnet.arcscan.app/tx/0x57c9048d437b6a608f4c9a4a152e3f14cec7df0edcd836bfa2245c95113ff923" target="_blank" rel="noopener">test receipt confirmed</a></td></tr>
       </tbody></table>
       <table>
         <thead><tr><th>Contract</th><th>Address</th><th>Notes</th></tr></thead>

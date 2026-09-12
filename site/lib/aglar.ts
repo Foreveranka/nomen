@@ -62,7 +62,7 @@ export const AGLAR: Record<AgAnahtar, {
     reputation: "0x8004B663056A597Dffe9eCcC1965A193B7388713",
     tarayici: "https://testnet.arcscan.app",
     nftYolu: "https://testnet.arcscan.app/token/0x8004A818BFB912233c491871b3d84c89A494BD9e/instance/",
-    evaluationRegistry: (process.env.NEXT_PUBLIC_EVALUATION_REGISTRY_ARC as `0x${string}`) || null,
+    evaluationRegistry: "0x32F26E5807af0C9e8ac71F7F4351164e2Eb60878",
     registrar: null, altRegistry: null, resolver: null, registrarBlok: BigInt(0), isimTalebi: false,
   },
 };
