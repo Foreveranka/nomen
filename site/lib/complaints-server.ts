@@ -1,17 +1,17 @@
 import { createPublicClient, http, fallback, verifyMessage, type Hex } from "viem";
 import { sepolia, arbitrumSepolia } from "viem/chains";
 import { AGLAR, arcTestnet } from "./aglar";
-import { actionSigner, complaintMessage, assertFreshAction, assertPayment, type ComplaintAction, type ComplaintDraft, type ComplaintRecord } from "./complaints";
+import { complaintPayment, actionSigner, complaintMessage, assertFreshAction, assertPayment, type ComplaintAction, type ComplaintDraft, type ComplaintRecord } from "./complaints";
 export class ComplaintError extends Error { constructor(message: string, public status = 400) { super(message); } }
 export function complaintClient(chain: "sepolia" | "arbitrum" | "arc") {
   const urls = chain === "arc" ? ["https://rpc.testnet.arc.network"] : chain === "arbitrum" ? ["https://sepolia-rollup.arbitrum.io/rpc"] : ["https://ethereum-sepolia-rpc.publicnode.com", "https://sepolia.drpc.org"];
   return createPublicClient({ chain: chain === "arc" ? arcTestnet : chain === "sepolia" ? sepolia : arbitrumSepolia, transport: fallback(urls.map(url => http(url, { timeout: 8000, retryCount: 0 })), { retryCount: 0 }) });
 }
-export async function authenticateComplaint(action: ComplaintAction, signature: Hex) {
+export async function authenticateComplaint(action: ComplaintAction, signature: Hex, signatureChain: ComplaintDraft["chain"]) {
   try { assertFreshAction(action); } catch (e) { throw new ComplaintError((e as Error).message, 401); }
   const proof = { address: actionSigner(action) as Hex, message: complaintMessage(action), signature };
-  // Complaint signatures and payments use Arc, including EIP-1271 smart wallets.
-  if (!await verifyMessage(proof) && !await complaintClient("arc").verifyMessage(proof)) throw new ComplaintError("The wallet signature is invalid.", 401);
+  // Contract-wallet signatures are checked on the persisted payment network (provider replies on the agent network).
+  if (!await verifyMessage(proof) && !await complaintClient(signatureChain).verifyMessage(proof)) throw new ComplaintError("The wallet signature is invalid.", 401);
 }
 const ownerAbi = [{ type: "function", name: "ownerOf", stateMutability: "view", inputs: [{ type: "uint256", name: "tokenId" }], outputs: [{ type: "address" }] }] as const;
 export async function currentAgentOwner(chain: ComplaintDraft["chain"], agentId: number) {
@@ -23,11 +23,12 @@ export async function currentAgentOwner(chain: ComplaintDraft["chain"], agentId:
   } catch { throw new ComplaintError("Could not confirm this agent's current registry owner. Retry before paying or replying.", 503); }
 }
 export async function validateComplaintPayment(draft: ComplaintDraft, hash: Hex) {
-  const client = complaintClient("arc");
-  if (await client.getChainId() !== arcTestnet.id) throw new ComplaintError("Payment network is unavailable.", 503);
+  const policy = complaintPayment(draft);
+  const client = complaintClient(policy.chain);
+  if (await client.getChainId() !== policy.chainId) throw new ComplaintError("Payment network is unavailable.", 503);
   const [tx, receipt] = await Promise.all([client.getTransaction({ hash }), client.getTransactionReceipt({ hash })]);
   const canonical = await client.getBlock({ blockNumber: receipt.blockNumber });
-  try { assertPayment(draft, tx, receipt, canonical.hash); } catch (e) { throw new ComplaintError((e as Error).message, 422); }
+  try { assertPayment(draft, tx, receipt, canonical.hash, policy.chainId); } catch (e) { throw new ComplaintError((e as Error).message, 422); }
   return { block: receipt.blockNumber.toString() };
 }
 export function publicComplaint(row: Record<string, unknown>): ComplaintRecord {

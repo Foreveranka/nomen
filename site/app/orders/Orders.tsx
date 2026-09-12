@@ -1,11 +1,12 @@
 "use client";
+import { erc20Abi } from "viem";
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { useAccount, useSendTransaction, useSignMessage, useSwitchChain } from "wagmi";
+import { usePublicClient, useAccount, useSendTransaction, useSignMessage, useSwitchChain } from "wagmi";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { AGLAR, AG_SIRASI } from "@/lib/aglar";
-import { complaintDraft, complaintFields, complaintAction, complaintMessage, COMPLAINT_PAYMENT_CHAIN, COMPLAINT_FEE, COMPLAINT_TREASURY, type ComplaintAction, type ComplaintDraft, type ComplaintFields, type ComplaintRecord } from "@/lib/complaints";
+import { complaintDraft, complaintFields, complaintAction, complaintMessage, complaintPayment, complaintTransaction, COMPLAINT_TREASURY, type ComplaintAction, type ComplaintDraft, type ComplaintFields, type ComplaintRecord } from "@/lib/complaints";
 import { ComplaintCard, type ComplaintList } from "@/components/ComplaintRecords";
 import ComplaintDetail from "./ComplaintDetail";
 const blank: ComplaintFields = { requested:"",happened:"",problem:"",evidence:"" };
@@ -42,12 +43,14 @@ export default function Orders() {
     const p=new URLSearchParams({status:filter,page:String(page)});if(mine&&address)p.set("author",address);if(params.get("chain"))p.set("chain",params.get("chain")!);if(params.get("agentId"))p.set("agentId",params.get("agentId")!);
     const r=await fetch(`/api/complaints?${p}`);if(!r.ok)throw new Error();return r.json();
   },retry:false});
-  const sign=(message:string)=>signer.signMessageAsync({message,account:address});
+  const payment=complaintPayment(prepared?.initialDraft ?? {chain,paymentVersion:2});
+  const paymentClient=usePublicClient({chainId:payment.chainId});
+  const sign=async(message:string)=>{if(chainId!==payment.chainId)await switching.switchChainAsync({chainId:payment.chainId});return signer.signMessageAsync({message,account:address});};
   function saveRecovery(record:ComplaintRecord, hash:string){try{localStorage.setItem(`nomen-complaint-recovery:${record.author}`,JSON.stringify({record,tx:hash}));}catch{setNotice("Browser recovery is unavailable. Keep the payment hash before closing this page.");}}
   async function prepare(){
     if(!address)return;setError("");setBusy("Confirm the draft in your wallet…");
     try {
-      const draft=complaintDraft.parse({...fields,id:crypto.randomUUID(),author:address,chain,agentId:Number(agentId),demo});
+      const draft=complaintDraft.parse({...fields,id:crypto.randomUUID(),author:address,chain,agentId:Number(agentId),demo,paymentVersion:2});
       const {record}=await sendComplaintAction({type:"prepare",draft,timestamp:Date.now()},sign);
       if(record.paymentTx){router.push(`/orders?id=${record.id}`);return;}
       setPrepared(record);setTx("");saveRecovery(record,"");setNotice("Your reserved draft is shown below. If this wallet already had a draft for this agent, that existing draft is restored. Review it before paying.");
@@ -63,17 +66,24 @@ export default function Orders() {
       const refreshed=await sendComplaintAction({type:"prepare",draft:prepared.initialDraft,timestamp:Date.now()},sign);
       if(refreshed.record.paymentTx){router.push(`/orders?id=${refreshed.record.id}`);return;}
       if(refreshed.record.commitment!==prepared.commitment){setPrepared(refreshed.record);saveRecovery(refreshed.record,"");setNotice("The reserved draft was restored from the server. Review it before paying.");return;}
-      const hash=await sending.sendTransactionAsync({account:prepared.author as `0x${string}`,chainId:COMPLAINT_PAYMENT_CHAIN,to:COMPLAINT_TREASURY,value:BigInt(COMPLAINT_FEE),data:refreshed.record.commitment as `0x${string}`});setTx(hash);saveRecovery(prepared,hash);setNotice("Payment sent. Wait for confirmation, then choose Verify payment & publish. Keep this hash if you close the page.");}catch(e){setError(e instanceof Error?e.message:"Payment was not sent.");}finally{setBusy("");}
+      if(!paymentClient)throw new Error("Payment network unavailable. Retry without paying.");
+      const nativeBalance=await paymentClient.getBalance({address:prepared.author as `0x${string}`});
+      if(payment.token){
+        const balance=await paymentClient.readContract({address:payment.token,abi:erc20Abi,functionName:"balanceOf",args:[prepared.author as `0x${string}`]});
+        if(balance<BigInt(payment.amount))throw new Error(`You need 5 Circle test USDC on ${payment.name}. Use faucet.circle.com to get test tokens.`);
+        if(nativeBalance===BigInt(0))throw new Error(`You need some test ETH on ${payment.name} for gas.`);
+      }else if(nativeBalance<=BigInt(payment.amount))throw new Error("You need 5 test USDC plus a little extra for gas on Arc Testnet.");
+      const hash=await sending.sendTransactionAsync({account:prepared.author as `0x${string}`,...complaintTransaction(refreshed.record.initialDraft)});setTx(hash);saveRecovery(prepared,hash);setNotice("Payment sent. Wait for confirmation, then choose Verify payment & publish. Keep this hash if you close the page.");}catch(e){setError(e instanceof Error?e.message:"Payment was not sent.");}finally{setBusy("");}
   }
   if(id)return <ComplaintDetail id={id}/>;
   return <main className="mx-auto max-w-6xl px-5 py-10">
     <p className="text-xs uppercase tracking-widest text-[var(--soluk)]">Orders · publication records</p><h1 className="mt-3 text-4xl tracking-tight">Make an issue visible.<br/>Keep the resolution visible, too.</h1>
     <p className="mt-5 max-w-3xl text-[var(--soluk)]">File one complaint per wallet and agent. The publication fee covers future edits, provider replies and resolution updates. These are complaint publication orders, not orders for an agent’s service.</p>
-    <div className="mt-6 rounded-xl bg-amber-50 p-5 text-sm text-amber-950"><strong>Testnet only · 5 test USDC on Arc Testnet, plus gas.</strong><p className="mt-2">No real dollars are charged. Payment discourages casual spam; it does not prove a purchase, service use or the truth of a claim. No complaints does not mean good performance.</p></div>
+    <div className="mt-6 rounded-xl bg-amber-50 p-5 text-sm text-amber-950"><strong>Testnet only · 5 test USDC on the agent’s network, plus gas.</strong><p className="mt-2">No real dollars are charged. Payment discourages casual spam; it does not prove a purchase, service use or the truth of a claim. No complaints does not mean good performance.</p></div>
     <div className="mt-10 grid items-start gap-8 lg:grid-cols-[1.05fr_1fr]">
       <section className="rounded-2xl border border-[var(--cizgi)] p-5 sm:p-7"><h2 className="text-xl font-medium">{prepared?"Your reserved publication":"File a complaint"}</h2>
         {!prepared?<><div className="my-5 grid gap-4 sm:grid-cols-2"><label className="text-sm">Agent network<select className="girdi mt-2 w-full" value={chain} onChange={e=>setChain(e.target.value as ComplaintDraft["chain"])}>{AG_SIRASI.map(k=><option key={k} value={k}>{AGLAR[k].ad}</option>)}</select></label><label className="text-sm">Agent ID<input className="girdi mt-2 w-full" inputMode="numeric" value={agentId} onChange={e=>setAgentId(e.target.value.replace(/\D/g,""))}/></label></div>
-        <ComplaintInputs fields={fields} setFields={setFields} disabled={!!busy}/><p className="mt-3 text-xs text-[var(--soluk)]">Evidence references are user-supplied and unverified. Do not include private messages, personal information, passwords or API keys.</p>
+        <p className="mb-5 text-sm">Payment on {payment.name}: 5 test USDC + gas in {payment.gas}.</p><ComplaintInputs fields={fields} setFields={setFields} disabled={!!busy}/><p className="mt-3 text-xs text-[var(--soluk)]">Evidence references are user-supplied and unverified. Do not include private messages, personal information, passwords or API keys.</p>
         <label className="mt-5 flex items-start gap-2 text-sm"><input type="checkbox" checked={demo} onChange={e=>setDemo(e.target.checked)}/>This is a synthetic TEST record, not a real complaint.</label>
         <label className="mt-4 flex items-start gap-2 text-sm"><input type="checkbox" checked={consent} onChange={e=>setConsent(e.target.checked)}/>I agree to publish these statements and evidence references publicly. The publication fee is non-refundable and is not a donation.</label>
         <button className="dugme dugme-koyu mt-5" disabled={!address||!consent||!!busy||!complaintFields.safeParse(fields).success||!Number.isSafeInteger(Number(agentId))||Number(agentId)<1} onClick={prepare}>Sign & prepare · no fee yet</button>
@@ -81,11 +91,12 @@ export default function Orders() {
           <p className="mt-3 text-sm">{AGLAR[prepared.chain].ad} · Agent #{prepared.agentId}{prepared.demo?" · TEST":""}</p>
           <div className="mt-5 space-y-4 text-sm">{(["requested","happened","problem","evidence"] as const).map(key=>[key,prepared.fields[key]] as const).map(([key,value])=>value&&<div key={key}><h3 className="font-medium">{key==="requested"?"What you requested":key==="happened"?"What happened":key==="problem"?"The problem":"Evidence reference (unverified)"}</h3><p className="mt-1 whitespace-pre-wrap break-words leading-6">{value}</p></div>)}</div>
           <p className="mt-5 text-xs text-[var(--soluk)]">This draft is reserved for your wallet. The payment binds this original text; later signed edits stay in the record history. Your fee covers updates.</p>
-          <p className="mt-3 break-all text-xs">Recipient: {COMPLAINT_TREASURY}</p>
-          {chainId!==COMPLAINT_PAYMENT_CHAIN?<button className="dugme mt-4" disabled={!!busy||switching.isPending} onClick={()=>switching.switchChain({chainId:COMPLAINT_PAYMENT_CHAIN})}>Switch to Arc Testnet</button>:<button className="dugme dugme-koyu mt-4" disabled={!!busy||!!tx||prepared.author!==address?.toLowerCase()} onClick={pay}>Pay 5 test USDC publication fee</button>}
-          <label className="mt-5 block text-sm">Already paid? Restore your Arc transaction hash<input className="girdi mt-2 w-full font-mono text-xs" value={tx} onChange={e=>{setTx(e.target.value);saveRecovery(prepared,e.target.value);}} placeholder="0x…"/></label>
+          <p className="mt-3 break-all text-xs">Payment network: {payment.name} · Gas: {payment.gas}<br/>Recipient: {COMPLAINT_TREASURY}</p>
+          {prepared.initialDraft.paymentVersion!==2&&prepared.chain!=="arc"&&<p className="mt-3 text-sm">This older reservation keeps its original Arc Testnet payment. New reservations use the agent’s network.</p>}
+          {chainId!==payment.chainId?<button className="dugme mt-4" disabled={!!busy||switching.isPending} onClick={()=>switching.switchChain({chainId:payment.chainId})}>Switch to {payment.name}</button>:<button className="dugme dugme-koyu mt-4" disabled={!!busy||!!tx||prepared.author!==address?.toLowerCase()} onClick={pay}>Pay 5 test USDC publication fee</button>}
+          <label className="mt-5 block text-sm">Already paid? Restore your {payment.name} transaction hash<input className="girdi mt-2 w-full font-mono text-xs" value={tx} onChange={e=>{setTx(e.target.value);saveRecovery(prepared,e.target.value);}} placeholder="0x…"/></label>
           <button className="dugme mt-3" disabled={!!busy||!/^0x[0-9a-fA-F]{64}$/.test(tx)||prepared.author!==address?.toLowerCase()} onClick={()=>publish(tx)}>Verify payment & publish</button>
-          {/^0x[0-9a-fA-F]{64}$/.test(tx)&&<a className="mt-3 block text-sm underline" href={`https://testnet.arcscan.app/tx/${tx}`} target="_blank" rel="noopener noreferrer">Check payment confirmation ↗</a>}
+          {/^0x[0-9a-fA-F]{64}$/.test(tx)&&<a className="mt-3 block text-sm underline" href={`${payment.explorer}/tx/${tx}`} target="_blank" rel="noopener noreferrer">Check payment confirmation ↗</a>}
         </>}
         {busy&&<p className="mt-4 text-sm" role="status">{busy}</p>}{notice&&<p className="mt-4 text-sm" role="status">{notice}</p>}{(error||switching.error)&&<p className="mt-4 break-words text-sm text-red-700" role="alert">{error||"Network switch failed. Try again in your wallet."}</p>}
       </section>

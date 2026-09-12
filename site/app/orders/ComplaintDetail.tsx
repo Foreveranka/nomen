@@ -1,26 +1,26 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { useAccount, useReadContract, useSignMessage } from "wagmi";
+import { useAccount, useReadContract, useSignMessage, useSwitchChain } from "wagmi";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { AGLAR } from "@/lib/aglar";
-import { complaintFields, type ComplaintFields, type ComplaintRecord, type ComplaintAction } from "@/lib/complaints";
+import { complaintFields, complaintPayment, type ComplaintFields, type ComplaintRecord, type ComplaintAction } from "@/lib/complaints";
 import { AgentRecordName } from "@/components/ComplaintRecords";
 import { ComplaintInputs, sendComplaintAction } from "./Orders";
 const ownerAbi=[{type:"function",name:"ownerOf",stateMutability:"view",inputs:[{name:"tokenId",type:"uint256"}],outputs:[{type:"address"}]}] as const;
 export default function ComplaintDetail({id}:{id:string}) {
-  const {address}=useAccount();const signer=useSignMessage();const cache=useQueryClient();
+  const {address,chainId}=useAccount();const switching=useSwitchChain();const signer=useSignMessage();const cache=useQueryClient();
   const [eventPage,setEventPage]=useState(1);const [editing,setEditing]=useState(false);const [fields,setFields]=useState<ComplaintFields>({requested:"",happened:"",problem:"",evidence:""});const [message,setMessage]=useState("");const [busy,setBusy]=useState(false);const [error,setError]=useState("");
   const query=useQuery<{record:ComplaintRecord}>({queryKey:["complaints","detail",id,eventPage],queryFn:async()=>{const r=await fetch(`/api/complaints?id=${encodeURIComponent(id)}&eventPage=${eventPage}`);const data=await r.json();if(!r.ok)throw new Error(data.error);return data;},retry:false});
   const record=query.data?.record;
   const owner=useReadContract({address:record?AGLAR[record.chain].identity:undefined,abi:ownerAbi,functionName:"ownerOf",args:[BigInt(record?.agentId||0)],chainId:record?AGLAR[record.chain].chainId:undefined,query:{enabled:!!record&&!!address}});
   const isAuthor=!!address&&record?.author===address.toLowerCase();const isProvider=!!address&&owner.data?.toLowerCase()===address.toLowerCase();
-  async function submit(action:ComplaintAction){setBusy(true);setError("");try{await sendComplaintAction(action,m=>signer.signMessageAsync({message:m,account:address}));setEditing(false);setMessage("");setEventPage(1);await cache.invalidateQueries({queryKey:["complaints"]});}catch(e){setError(e instanceof Error?e.message:"Update failed.");}finally{setBusy(false);}}
+  async function submit(action:ComplaintAction){setBusy(true);setError("");try{if(!record)throw new Error("Record unavailable.");const target=action.type==="reply"?AGLAR[record.chain].chainId:complaintPayment(record.initialDraft).chainId;if(chainId!==target)await switching.switchChainAsync({chainId:target});await sendComplaintAction(action,m=>signer.signMessageAsync({message:m,account:address}));setEditing(false);setMessage("");setEventPage(1);await cache.invalidateQueries({queryKey:["complaints"]});}catch(e){setError(e instanceof Error?e.message:"Update failed.");}finally{setBusy(false);}}
   return <main className="mx-auto max-w-4xl px-5 py-10"><Link className="text-sm underline" href="/orders">← Orders & complaint records</Link>
     {query.isPending&&<p className="mt-8" role="status">Loading record…</p>}{query.isError&&<p className="mt-8" role="alert">{query.error.message} <button className="underline" onClick={()=>query.refetch()}>Retry</button></p>}
     {record&&<><div className="mt-8 flex flex-wrap items-center gap-3 text-sm"><span className="rounded-full bg-[var(--yuzey)] px-4 py-2">{record.status==="resolved"?"Resolved by author":"Open complaint"}</span>{record.demo&&<span className="rounded-full bg-amber-50 px-4 py-2 text-amber-900">TEST · Demo record</span>}</div>
     <h1 className="mt-5 text-3xl"><AgentRecordName chain={record.chain} agentId={record.agentId}/></h1><p className="mt-2 text-sm text-[var(--soluk)]">{AGLAR[record.chain].ad} · #{record.agentId}</p><Link className="mt-3 inline-block text-sm underline" href={`/agent/${record.chain}/${record.agentId}`}>View agent →</Link>
-    <div className="mt-6 rounded-xl bg-[var(--yuzey)] p-5 text-sm leading-6"><strong>Publication fee paid · 5 test USDC</strong><p className="mt-2">This verifies a payment to NOMEN for publication. Purchase, service use and the statements below are not independently verified. Responses and updates are free. This record is not a rating or a safety verdict.</p><a className="mt-3 inline-block underline" href={`https://testnet.arcscan.app/tx/${record.paymentTx}`} target="_blank" rel="noopener noreferrer">View Arc Testnet payment ↗</a></div>
+    <div className="mt-6 rounded-xl bg-[var(--yuzey)] p-5 text-sm leading-6"><strong>Publication fee paid · 5 test USDC</strong><p className="mt-2">This verifies a payment to NOMEN for publication. Purchase, service use and the statements below are not independently verified. Responses and updates are free. This record is not a rating or a safety verdict.</p><a className="mt-3 inline-block underline" href={`${complaintPayment(record.initialDraft).explorer}/tx/${record.paymentTx}`} target="_blank" rel="noopener noreferrer">View {complaintPayment(record.initialDraft).name} payment ↗</a></div>
     {record.flags.length>0&&<div className="mt-5 rounded-xl border border-amber-300 p-4 text-sm text-amber-900">Automatic pattern flag: {record.flags.map(f=>f==="activity_spike"?"a burst of publications for this agent":"text repeated by another wallet").join("; ")}. This needs review and does not prove abuse.</div>}
     <p className="mt-5 break-all text-xs text-[var(--soluk)]">Author: {record.author} · Record {record.id} · Version {record.version}</p>
     <section className="mt-6 space-y-6 rounded-2xl border border-[var(--cizgi)] p-6">{(["requested","happened","problem","evidence"] as const).map(key=>[key,record.fields[key]] as const).map(([key,value])=><div key={key}><h2 className="font-medium">{key==="requested"?"What was requested":key==="happened"?"What happened":key==="problem"?"The reported problem":"Evidence reference · unverified"}</h2><p className="mt-2 whitespace-pre-wrap break-words text-sm leading-7">{value||"No evidence reference supplied."}</p></div>)}</section>

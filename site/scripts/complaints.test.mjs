@@ -25,3 +25,27 @@ test('schemas reject mainnet, malformed agent IDs, unknown fields and empty comp
  assert.equal(complaintAction.safeParse({type:'status',id:draft.id,author:draft.author,version:0,timestamp:Date.now(),status:'resolved',message:'Resolved in test.'}).success,false);
  assert.equal(complaintTextHash(draft),complaintTextHash({...draft,problem:draft.problem.toUpperCase().replaceAll(' ','  ')}));
 });
+
+test('v2 payments require the configured network and exact transfer evidence; v1 stays Arc', async()=>{
+ const {complaintPayment,complaintTransaction}=await import('../lib/complaints.ts');
+ const {encodeEventTopics,encodeAbiParameters,erc20Abi}=await import('viem');
+ for(const chain of ['sepolia','arbitrum','arc']) {
+  const d=complaintDraft.parse({...draft,chain,paymentVersion:2});const p=complaintPayment(d);const built=complaintTransaction(d);
+  assert.equal(complaintPayment({...draft,chain}).chain,'arc');
+  assert.notEqual(complaintCommitment(d),complaintCommitment({...draft,chain}));
+  const tx={from:d.author,to:built.to,value:built.value,input:built.data};
+  const log={address:p.token,topics:encodeEventTopics({abi:erc20Abi,eventName:'Transfer',args:{from:d.author,to:COMPLAINT_TREASURY}}),data:encodeAbiParameters([{type:'uint256'}],[BigInt(p.amount)])};
+  const receipt={status:'success',blockHash:'0xabc',logs:p.token?[log]:[]};
+  const check=(t=tx,r=receipt,c=p.chainId)=>assertPayment(d,t,r,'0xabc',c);
+  assert.doesNotThrow(()=>check());assert.throws(()=>check(tx,receipt,1));
+  for(const change of [{from:'0x'+'22'.repeat(20)},{to:'0x'+'22'.repeat(20)},{value:built.value+1n},{input:built.data.slice(0,-2)+'ff'}])assert.throws(()=>check({...tx,...change}));
+  assert.throws(()=>check(tx,{...receipt,status:'reverted'}));
+  assert.throws(()=>assertPayment(d,tx,receipt,'0xdef',p.chainId));
+  if(p.token){
+   assert.equal(built.data.length,202);assert.equal(built.value,0n);
+   assert.throws(()=>check(tx,{...receipt,logs:[]}));
+   for(const change of [{address:COMPLAINT_TREASURY},{data:encodeAbiParameters([{type:'uint256'}],[4999999n])},{topics:encodeEventTopics({abi:erc20Abi,eventName:'Transfer',args:{from:COMPLAINT_TREASURY,to:d.author}})},{data:'0x'}])assert.throws(()=>check(tx,{...receipt,logs:[{...log,...change}]}));
+  }
+ }
+ assert.equal(complaintDraft.safeParse({...draft,paymentVersion:3}).success,false);
+});

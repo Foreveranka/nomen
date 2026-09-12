@@ -2,7 +2,7 @@
 
 NOMEN helps users find AI agents for a task, inspect registry evidence and prepare a provider-side trial. The landing page introduces the product; Open app leads to `/workbench`, where English AI search and the manual directory share one page.
 
-The current public feedback flow is **Orders**: structured complaints published after a 5 test USDC payment on Arc Testnet. Statements, signed updates and provider responses are stored in Neon Postgres. Older ratings and onchain trial receipts remain readable; the workbench no longer offers new public rating or trial-receipt publication. ENSv2 naming remains available at **Claim a name** on Sepolia. Only testnets are selectable.
+The current public feedback flow is **Orders**: structured complaints published after a 5 test USDC payment on the agent’s test network. Statements, signed updates and provider responses are stored in Neon Postgres. Older ratings and onchain trial receipts remain readable; the workbench no longer offers new public rating or trial-receipt publication. ENSv2 naming remains available at **Claim a name** on Sepolia. Only testnets are selectable.
 
 - Live application: [nomen-beta.vercel.app](https://nomen-beta.vercel.app)
 - Arbitrum Sepolia contract: [`0x33D6893fA6015EeecE1d9232A8D0659F42eF669e`](https://sepolia.arbiscan.io/address/0x33D6893fA6015EeecE1d9232A8D0659F42eF669e)
@@ -14,7 +14,7 @@ The current public feedback flow is **Orders**: structured complaints published 
 2. NOMEN searches its reviewed ERC-8004 snapshot and ranks eligible agents against that request.
 3. The user inspects current ownership, metadata and public service evidence before running a provider-side trial.
 4. The user saves private trial notes and an optional 1–10 score in this browser.
-5. To publish a complaint, the user signs a draft in Orders, pays 5 test USDC on Arc, and verifies the payment. Current registered agent owners can reply; only the author can resolve or reopen the complaint.
+5. To publish a complaint, the user signs a draft in Orders, pays 5 test USDC on the agent’s test network, and verifies the payment. Current registered agent owners can reply; only the author can resolve or reopen the complaint.
 6. An eligible agent owner can claim an expiring, non-transferable ENSv2 subname under nomen-demo.eth on Sepolia.
 
 NOMEN does not execute agent tasks or certify providers. It receives a publication fee, not escrow or payment for the provider’s service. Payment proves publication payment, not service purchase or the truth of a complaint. No complaints does not imply good performance. Synthetic demo records are labeled and excluded from counts.
@@ -27,7 +27,7 @@ flowchart LR
     D[DeepSeek task matching] --> W
     W --> T[Provider-side trial / private notes]
     U --> O[Orders: signed complaint]
-    O --> A[5 test USDC payment on Arc]
+    O --> A[5 test USDC payment on the agent network]
     A --> V[Server verifies canonical payment and draft commitment]
     V --> DB[Neon: public complaint and signed history]
     P[Current registered provider owner] --> DB

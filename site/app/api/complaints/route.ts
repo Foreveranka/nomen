@@ -1,13 +1,13 @@
 import { COMPLAINT_PUBLISH_QUERY } from "@/lib/complaint-publish-query";
 import { z } from "zod";
 import { reviewDb } from "@/lib/reviews-server";
-import { complaintAction, complaintFields, complaintCommitment, complaintTextHash, actionSigner, COMPLAINT_FEE, COMPLAINT_PAYMENT_CHAIN, COMPLAINT_TREASURY } from "@/lib/complaints";
+import { complaintAction, complaintFields, complaintCommitment, complaintTextHash, actionSigner, complaintPayment, COMPLAINT_NETWORKS, COMPLAINT_TREASURY } from "@/lib/complaints";
 import { authenticateComplaint, currentAgentOwner, validateComplaintPayment, publicComplaint, ComplaintError } from "@/lib/complaints-server";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 export const maxDuration = 60;
 const envelope = z.object({ action: complaintAction, signature: z.string().regex(/^0x[0-9a-fA-F]+$/).max(16000) }).strict();
-const fee = { amount: COMPLAINT_FEE, chainId: COMPLAINT_PAYMENT_CHAIN, treasury: COMPLAINT_TREASURY, label: "5 test USDC", testnet: true };
+const fee = { networks: COMPLAINT_NETWORKS, treasury: COMPLAINT_TREASURY, label: "5 test USDC", testnet: true };
 const headers = { "Cache-Control": "no-store" };
 async function readBody(request: Request) {
   const reader = request.body?.getReader(); if (!reader) throw new ComplaintError("Missing request body.");
@@ -21,8 +21,12 @@ export async function POST(request: Request) {
   if (origin && origin !== new URL(request.url).origin) return Response.json({ error: "Cross-origin request rejected." }, { status: 403 });
   try {
     const { action, signature } = await readBody(request);
-    await authenticateComplaint(action, signature as `0x${string}`);
     const sql = reviewDb(); const actor = actionSigner(action);
+    const found = action.type === "prepare" ? [] : await sql`SELECT * FROM nomen_complaints WHERE id=${action.id}`;
+    const row = found[0];
+    if (action.type !== "prepare" && !row) throw new ComplaintError("Record not found.", 404);
+    const signatureChain = action.type === "prepare" ? complaintPayment(action.draft).chain : action.type === "reply" ? row.chain : complaintPayment(row.initial_draft).chain;
+    await authenticateComplaint(action, signature as `0x${string}`, signatureChain);
     if (action.type === "prepare") {
       // A signed reservation avoids charging twice when another tab has already prepared this wallet/agent pair.
       await currentAgentOwner(action.draft.chain, action.draft.agentId);
@@ -38,8 +42,6 @@ export async function POST(request: Request) {
       const row = result[2][0]; if (!row) throw new ComplaintError("Draft ID conflict. Start a new draft.", 409);
       return Response.json({ record: publicComplaint(row), fee }, { headers });
     }
-    const found = await sql`SELECT * FROM nomen_complaints WHERE id=${action.id}`;
-    const row = found[0]; if (!row) throw new ComplaintError("Record not found.", 404);
     if (action.type !== "reply" && row.author !== actor) throw new ComplaintError("Only the author can change this record.", 403);
     if (action.type === "publish") {
       if (row.payment_tx) {

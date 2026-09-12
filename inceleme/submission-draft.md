@@ -18,7 +18,7 @@ A Python scanner produces bounded, reproducible ERC-8004 snapshots and Merkle pr
 
 The Sepolia ENSv2 registrar checks current agent ownership and Merkle eligibility to issue expiring, non-transferable names under nomen-demo.eth. The resolver exposes current endorsement records; administrator revocation and renewal are explicit trust assumptions. The real reader.nomen-demo.eth claim demonstrates the deployed system.
 
-Orders accepts signed structured drafts. A 5 native test USDC payment on Arc commits the original draft; the server checks sender, destination, exact amount, commitment and canonical receipt before publication in Neon. Signed edits and provider replies are versioned. Only the complaint author resolves/reopens. Payment is not purchase verification. Demo records are labeled and excluded from counts. Private 1–10 trial notes remain browser-local; older public ratings and onchain receipts are historical archives.
+Orders accepts signed structured drafts. A 5 test USDC payment on the agent’s test network commits the original draft; the server checks sender, destination, exact amount, commitment and canonical receipt before publication in Neon. Signed edits and provider replies are versioned. Only the complaint author resolves/reopens. Payment is not purchase verification. Demo records are labeled and excluded from counts. Private 1–10 trial notes remain browser-local; older public ratings and onchain receipts are historical archives.
 
 ## Partner explanations
 

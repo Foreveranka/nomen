@@ -1,0 +1,16 @@
+[
+  {
+    "chain": "sepolia",
+    "id": "62dc4fb4-0587-403b-9862-a1c13f4661ec",
+    "paymentNetwork": "Sepolia",
+    "version": 2,
+    "status": 200
+  },
+  {
+    "chain": "arbitrum",
+    "id": "4477e8df-fe7a-466f-a932-710493082900",
+    "paymentNetwork": "Arbitrum Sepolia",
+    "version": 2,
+    "status": 200
+  }
+]

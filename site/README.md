@@ -6,7 +6,7 @@ Next.js App Router application with English UI. The root introduces NOMEN; the a
 | --- | --- |
 | `/` | Product introduction and Open app |
 | `/workbench` | English AI agent matching, manual catalog, live checks and private trial notes |
-| `/orders` | Signed complaints, Arc publication payment, provider responses and resolution history |
+| `/orders` | Signed complaints, publication payments on three testnets, provider responses and resolution history |
 | `/claim` | ENSv2 names under nomen-demo.eth on Sepolia |
 | `/names` | Registered test names |
 | `/profile` | Connected wallet’s agents |
@@ -34,7 +34,7 @@ node scripts/migrate-reviews.mjs
 node scripts/migrate-complaints.mjs
 ```
 
-The first migration supports the historical review archive. New rating publication is retired (POST /api/reviews returns 410). New public complaints use signed /api/complaints actions and exactly 5 native test USDC on Arc Testnet (18-decimal native units). The initial payment commits the original draft. Free later updates and provider replies are signed and versioned in Neon. Only the author resolves or reopens. No purchase or task-success verification is claimed. The workbench’s 1–10 score and note remain private to the browser.
+The first migration supports the historical review archive. New rating publication is retired (POST /api/reviews returns 410). New public complaints use signed /api/complaints actions and exactly 5 test USDC on the agent’s network: Circle ERC-20 USDC (6 decimals) on Sepolia and Arbitrum Sepolia, or native USDC (18 decimals) on Arc Testnet. The initial payment commits the original draft. Free later updates and provider replies are signed and versioned in Neon. Only the author resolves or reopens. No purchase or task-success verification is claimed. The workbench’s 1–10 score and note remain private to the browser.
 
 Wallet selection uses EIP-6963 discovery instead of a generic first injected provider. Full reloads require a new explicit connection; app navigation preserves the session. No QR/mobile wallet bridge is configured.
 

@@ -3,14 +3,14 @@ import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
 import { AGLAR, type AgAnahtar } from "@/lib/aglar";
 import { useDizin } from "@/lib/veri";
-import type { ComplaintRecord } from "@/lib/complaints";
+import { complaintPayment, type ComplaintRecord } from "@/lib/complaints";
 export type ComplaintList = { records: ComplaintRecord[]; open: number; resolved: number; flagged: number; total: number; page: number; pages: number };
 export function AgentRecordName({chain,agentId}:{chain:AgAnahtar;agentId:number}) {
   const {veri}=useDizin(chain);return <>{veri?.find(a=>a.id===agentId)?.n||`Agent #${agentId}`}</>;
 }
 export function ComplaintCard({ record }: { record: ComplaintRecord }) {
   return <article className="rounded-xl border border-[var(--cizgi)] p-5">
-    <div className="flex flex-wrap items-center gap-2 text-xs"><span className="rounded-full bg-[var(--yuzey)] px-3 py-1">{record.status === "resolved" ? "Resolved by author" : "Open"}</span>{record.demo && <span className="rounded-full bg-amber-50 px-3 py-1 text-amber-800">TEST · Demo record</span>}<span className="text-[var(--soluk)]">Publication fee paid · testnet</span></div>
+    <div className="flex flex-wrap items-center gap-2 text-xs"><span className="rounded-full bg-[var(--yuzey)] px-3 py-1">{record.status === "resolved" ? "Resolved by author" : "Open"}</span>{record.demo && <span className="rounded-full bg-amber-50 px-3 py-1 text-amber-800">TEST · Demo record</span>}<span className="text-[var(--soluk)]">Publication fee paid · {complaintPayment(record.initialDraft).name}</span></div>
     <Link href={`/orders?id=${record.id}`} className="mt-3 block font-medium"><AgentRecordName chain={record.chain} agentId={record.agentId}/> →</Link>
     <p className="mt-1 text-xs text-[var(--soluk)]">{AGLAR[record.chain].ad} · #{record.agentId}</p>
     <p className="mt-2 line-clamp-3 whitespace-pre-wrap break-words text-sm leading-6">{record.fields.problem}</p>
