@@ -25,7 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <div><h2 className="font-medium">How NOMEN works</h2><a className="mt-2 block text-[var(--soluk)]" href="/rules">Listing rules</a><a className="mt-2 block text-[var(--soluk)]" href="/docs">Documentation</a></div>
             </nav>
             <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-5 py-8 text-[13px] text-[var(--cok-soluk)]">
-              <span>NOMEN · built for ETHOnline 2026</span>
+              <span>NOMEN</span>
               <span className="flex gap-5">
                 <a className="hover:text-[var(--yazi)]" href="https://eips.ethereum.org/EIPS/eip-8004" target="_blank" rel="noopener">ERC-8004</a>
                 <a className="hover:text-[var(--yazi)]" href="https://docs.ens.domains/ensv2/overview" target="_blank" rel="noopener">ENSv2</a>
