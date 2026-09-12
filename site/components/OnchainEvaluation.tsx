@@ -88,6 +88,7 @@ export default function OnchainEvaluation({
       {write.error && <p role="alert" className="mt-3 text-sm text-red-700">{write.error.message}</p>}
       {receipt.error && <p role="alert" className="mt-3 text-sm text-red-700">{receipt.error.message}</p>}
       {explorer && <a className="mt-3 block text-sm underline" href={explorer} target="_blank" rel="noopener">View transaction on {network.ad} explorer →</a>}
+      {receipt.isSuccess && report.chain === "arbitrum" && <a className="mt-3 block text-sm underline" href={`/agent/arbitrum/${report.agentId}/trust`}>Open this agent&apos;s public trust history →</a>}
     </div>
   );
 }

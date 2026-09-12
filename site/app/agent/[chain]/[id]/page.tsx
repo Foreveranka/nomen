@@ -9,6 +9,7 @@ import { useDizin, useOzet, KAT_EN, ELEME_EN, etiketMetni, type Ajan } from "@/l
 import { Rozet } from "@/components/AjanKart";
 import { REGISTRAR_ABI } from "@/lib/registrar";
 import { useAg } from "@/app/providers";
+import AgentTrustHistory from "@/components/AgentTrustHistory";
 
 type ApiCevap = { status: string; passes: boolean; reason: string; agent: null | { name?: string } };
 
@@ -96,6 +97,7 @@ export default function AjanSayfasi({ params }: { params: Promise<{ chain: strin
       {ag === "sepolia" && <p className="mt-4 text-[13px] text-[var(--soluk)]">{activity.data ? `Live index · block ${activity.data.indexedBlock} · ${activity.data.agent?.feedbackCount ?? "0"} feedback records` : activity.isError ? "Live activity unavailable. The checks below use the published snapshot." : "Loading live activity…"}</p>}
       {apiQuery.isError && <p role="alert">Could not load the scan result. Please retry.</p>}
       <div className="mt-6 rounded-xl border border-[var(--cizgi)] bg-[var(--yuzey)] p-5"><h2 className="text-lg">Can you use this agent for your job?</h2><p className="mt-2 text-sm text-[var(--soluk)]">Check current ownership, metadata and service responses, then review a small trial.</p><Link className="dugme dugme-koyu mt-4 inline-block" href={`/workbench?chain=${ag}&agentId=${agentId}`}>Evaluate for a job →</Link></div>
+      {ag === "arbitrum" && <AgentTrustHistory agentId={agentId} />}
       {a ? <Gecerli a={a} ag={ag} durum={api?.status ?? "passes"} /> : api && !api.passes ? <Gizli api={api} ag={ag} agentId={agentId} /> : <p className="mt-8 text-[var(--soluk)]">loading…</p>}
     </main>
   );

@@ -11,6 +11,21 @@ export const OUTCOME_CODE: Record<TrialOutcome, number> = {
 
 export const EVALUATION_REGISTRY_ABI = [
   {
+    type: "event",
+    name: "EvaluationRecorded",
+    anonymous: false,
+    inputs: [
+      { name: "evaluationId", type: "bytes32", indexed: true },
+      { name: "reviewer", type: "address", indexed: true },
+      { name: "agentId", type: "uint256", indexed: true },
+      { name: "reportHash", type: "bytes32", indexed: false },
+      { name: "evidenceHash", type: "bytes32", indexed: false },
+      { name: "observedBlock", type: "uint64", indexed: false },
+      { name: "recordedAt", type: "uint64", indexed: false },
+      { name: "outcome", type: "uint8", indexed: false },
+    ],
+  },
+  {
     type: "function",
     name: "recordEvaluation",
     stateMutability: "nonpayable",

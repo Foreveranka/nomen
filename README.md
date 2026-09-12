@@ -1,8 +1,33 @@
-# NOMEN
+# NOMEN — verifiable AI agent discovery
 
 NOMEN helps users find AI agents for a task, inspect registry evidence and prepare a provider-side trial. The landing page introduces the product; Open app leads to `/workbench`, where English AI search and the manual directory share one page.
 
 User-reviewed trial results can be committed as hash-only, wallet-signed receipts through the same `NomenEvaluationRegistry` interface on each supported agent network. Verified deployments are live on Sepolia, Arbitrum Sepolia and Arc Testnet. The Ethereum deployment slot remains disabled until a funded mainnet deployment is verified.
+
+- Live application: [nomen-beta.vercel.app](https://nomen-beta.vercel.app)
+- Arbitrum Sepolia contract: [`0x33D6893fA6015EeecE1d9232A8D0659F42eF669e`](https://sepolia.arbiscan.io/address/0x33D6893fA6015EeecE1d9232A8D0659F42eF669e)
+- License: [MIT](LICENSE)
+
+## How it works
+
+1. A user describes the job they need an agent to perform and selects a network.
+2. NOMEN searches its reviewed ERC-8004 snapshot and ranks eligible agents against that request.
+3. The user inspects current ownership, metadata and public service evidence before running a provider-side trial.
+4. The user reviews the result and can publish a hash-only, wallet-signed receipt to the selected network.
+5. Anyone can independently read the receipt, its reviewer, agent identity and outcome from the chain without exposing the trial note.
+
+NOMEN does not execute tasks, hold user funds or certify providers. It makes discovery evidence and user-submitted trial receipts easier to inspect.
+
+```mermaid
+flowchart LR
+    U[User] --> W[NOMEN workbench]
+    W --> S[Reviewed ERC-8004 snapshot]
+    W --> L[Live identity and service checks]
+    U --> P[Provider-side trial]
+    P --> R[Wallet-signed receipt]
+    R --> A[NomenEvaluationRegistry<br/>Arbitrum Sepolia]
+    A --> H[Public agent trust history]
+```
 
 ## Live evaluation deployments
 
@@ -13,6 +38,12 @@ User-reviewed trial results can be committed as hash-only, wallet-signed receipt
 | Arc Testnet | 5042002 | [`0x32F2…0878`](https://testnet.arcscan.app/address/0x32F26E5807af0C9e8ac71F7F4351164e2Eb60878) | [transaction](https://testnet.arcscan.app/tx/0x57c9048d437b6a608f4c9a4a152e3f14cec7df0edcd836bfa2245c95113ff923) |
 
 All three deployments use the same Solidity source and are pinned to the ERC-8004 Identity Registry on their chain. A smoke receipt confirms deployment and read-back behavior; it is not an audit or evidence that a provider completed a real task. Full deployment hashes and checks are recorded in [`inceleme/evaluation-registry-deployments.json`](inceleme/evaluation-registry-deployments.json).
+
+## Arbitrum Open House Singapore 2026
+
+NOMEN existed before the buildathon. The public pre-buildathon baseline is preserved in the annotated tag [`arbitrum-open-house-baseline-2026-09-12`](https://github.com/Foreveranka/nomen/tree/arbitrum-open-house-baseline-2026-09-12). Work attributed to the buildathon will begin after the official event start and will be documented through normal commits. The Arbitrum scope and its timing are described in [`inceleme/arbitrum-open-house-feature-plan.md`](inceleme/arbitrum-open-house-feature-plan.md).
+
+The Arbitrum Sepolia integration is already functional in the baseline: the catalog includes eligible ERC-8004 identities, live trials read current identity data, and users can record review receipts on chain. A public, independently readable trust history was added on September 12 as a pre-event extension and will not be presented as buildathon-period work.
 
 ## Current status — 12 September 2026
 
@@ -69,6 +100,7 @@ Run `node --experimental-strip-types --test scripts/discovery.test.mjs scripts/e
 - `GET /api/snapshot?chain=sepolia&agentId=2364`: free published result and provenance.
 - `POST /api/toplu`: `{ "chain": "sepolia", "agentIds": [2364, 6815] }`, maximum 2,000 positive safe integers and 64 KiB body.
 - `GET /api/activity?agentId=2364`: live Graph activity if configured; otherwise 503.
+- `GET /api/evaluations?chain=arbitrum&agentId=205`: live Arbitrum Sepolia trial-receipt history and wallet-level aggregate counts.
 - `/api/dogrula`: optional x402 demonstration when `NOMEN_PAY_TO` is configured; otherwise free.
 
 `not_scanned` and `rpc_error` are unknown states, not evidence that an agent does not exist. A failed HTTP fetch means unreachable at observation time, not permanently dead.

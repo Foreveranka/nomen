@@ -47,6 +47,17 @@
     "evaluationCountAfterSmokeTest": 1,
     "storedReceiptReadBack": true,
     "notesStoredOnchain": false,
-    "deployerHasAdminAuthority": false
+    "deployerHasAdminAuthority": false,
+    "arbitrumSepoliaSource": {
+      "provider": "Sourcify",
+      "match": "exact_match",
+      "creationMatch": "exact_match",
+      "runtimeMatch": "exact_match",
+      "verifiedAt": "2026-09-12T09:19:22Z",
+      "matchId": "49823260",
+      "repository": "https://repo.sourcify.dev/421614/0x33D6893fA6015EeecE1d9232A8D0659F42eF669e"
+    },
+    "arbiscanSourcePublished": false,
+    "arbiscanStatus": "Manual Arbiscan form prepared; Sourcify's external Etherscan submission hit its shared daily limit."
   }
 }
