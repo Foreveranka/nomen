@@ -48,3 +48,5 @@ Scope: NOMEN production at https://nomen-beta.vercel.app, chain 421614. This is 
 ## Deployment correction
 
 Post-deploy API checks caught an overbroad `api/` exclusion matching `site/app/api`, causing HTML 404 responses. The rule was removed and other root exclusions anchored. The two in-progress faulty deployments were removed, and the known working deployment was restored to the public alias before the corrected build. This incident is recorded rather than counted as a pass. Final post-deploy results are saved separately.
+
+Final corrected production: `nomen-os9fsso97` (`05fe8fb`), READY. Protected-deployment snapshot and complaint calls returned JSON before alias assignment. After assigning `nomen-beta.vercel.app`, all 8 checks in `post-deploy.json` returned expected JSON: snapshot, complaint, history, owner, archived reviews, AI discovery, bulk, evaluate. AI returned Arbitrum #205; evaluator retained unknown service availability. Browser confirmed inherited Arbitrum payment, explicit Sepolia link override, manual Arc override, and free snapshot link. No data was lost during the temporary routing incident.

@@ -1,0 +1,552 @@
+{
+  "checkedAt": "2026-09-13T21:13:05.668Z",
+  "deployment": "nomen-os9fsso97",
+  "commit": "05fe8fb",
+  "results": [
+    {
+      "name": "snapshot",
+      "status": 200,
+      "pass": true,
+      "data": {
+        "chain": "arbitrum",
+        "agentId": 205,
+        "status": "passes",
+        "passes": true,
+        "reason": "Passes every check in the published rule set.",
+        "agent": {
+          "name": "Orbital Oracle",
+          "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
+          "description": "Sells verified satellite RF observations: a software-defined radio receives a live satellite downlink, its Doppler signature is measured, and the measurement is checked against independent SGP4 orbit propagation before being sold. Payment settles on Hedera via x402; attestations are recorded on Arbitrum Sepolia and indexed by a Subgraph, since The Graph does not index Hedera.",
+          "owner": "0x04274c7be78c3a0e7493122e12a97edc11c2ea9e",
+          "endpoints": [
+            "https://color-ctrl-occur-monday.trycloudflare.com/observations",
+            "https://color-ctrl-occur-monday.trycloudflare.com/observations/{id}",
+            "https://color-ctrl-occur-monday.trycloudflare.com/verify"
+          ],
+          "category": null,
+          "metadata_source": "uzak",
+          "metadata_hash": "b45f86e7d39494a6c047175b9c7752ef1a2e7f1130777046a94254401861903b",
+          "notes": []
+        },
+        "scan": {
+          "data_kind": "published_snapshot",
+          "live_check": false,
+          "provenance": {
+            "chain": "arbitrum",
+            "block": "0x125ab13a",
+            "started_at": "2026-09-12T00:17:49.347713+00:00",
+            "highest_requested_id": 205,
+            "coverage": "explicit_id_range",
+            "successful_ids": 205,
+            "unresolved_ids": 0
+          },
+          "highest_agent_id_seen": 205,
+          "agents_passing_on_this_chain": 44,
+          "rules": "https://nomen-beta.vercel.app/rules"
+        }
+      }
+    },
+    {
+      "name": "complaint",
+      "status": 200,
+      "pass": true,
+      "data": {
+        "record": {
+          "id": "dce0898c-312e-4dbb-85ba-1e4246d79aae",
+          "chain": "arbitrum",
+          "agentId": 206,
+          "author": "0xb422a67e72bc398bba7d19a558493be4df739af2",
+          "demo": true,
+          "fields": {
+            "problem": "TEST ONLY: simulated issue for owner reply, edit and resolution checks.",
+            "evidence": "TEST updated reference; original text remains bound to payment.",
+            "happened": "TEST ONLY: no service requested or executed. Synthetic authorization fixture.",
+            "requested": "TEST ONLY: verify Arbitrum publication lifecycle."
+          },
+          "initialDraft": {
+            "id": "dce0898c-312e-4dbb-85ba-1e4246d79aae",
+            "demo": true,
+            "chain": "arbitrum",
+            "author": "0xb422a67e72bc398bba7d19a558493be4df739af2",
+            "agentId": 206,
+            "problem": "TEST ONLY: simulated issue for owner reply, edit and resolution checks.",
+            "evidence": "Synthetic verification; not a purchase.",
+            "happened": "TEST ONLY: no service requested or executed. Synthetic authorization fixture.",
+            "requested": "TEST ONLY: verify Arbitrum publication lifecycle.",
+            "paymentVersion": 2
+          },
+          "commitment": "0x122b34a44d62067cea98986a7d06ef3c3d47a3dc50847b179bd10e407a622d77",
+          "status": "resolved",
+          "version": 6,
+          "paymentTx": "0x5e4e7db83b261587ce56162f15d082c46005ec490bed907aadea780cabdb34aa",
+          "flags": [],
+          "createdAt": "Sun Sep 13 2026 21:06:39 GMT+0000 (Coordinated Universal Time)",
+          "publishedAt": "Sun Sep 13 2026 21:06:57 GMT+0000 (Coordinated Universal Time)",
+          "updatedAt": "Sun Sep 13 2026 21:07:00 GMT+0000 (Coordinated Universal Time)",
+          "events": [
+            {
+              "actor": "0xb422a67e72bc398bba7d19a558493be4df739af2",
+              "kind": "status",
+              "payload": {
+                "id": "dce0898c-312e-4dbb-85ba-1e4246d79aae",
+                "type": "status",
+                "author": "0xb422a67e72bc398bba7d19a558493be4df739af2",
+                "status": "resolved",
+                "message": "TEST lifecycle transition to resolved; synthetic verification only.",
+                "version": 5,
+                "timestamp": 1789333620426
+              },
+              "signature": "0xe7b9d49bce019abba480f024699ac0a2e7e7fd2f773b3f043b0f8bf3d7582e542da1352915f169d62545c54cbc21e239680b5ca6d4803d831f1069696d52aed51b",
+              "owner_block": null,
+              "version": 6,
+              "created_at": "2026-09-13T21:07:00.711Z"
+            },
+            {
+              "actor": "0xb422a67e72bc398bba7d19a558493be4df739af2",
+              "kind": "status",
+              "payload": {
+                "id": "dce0898c-312e-4dbb-85ba-1e4246d79aae",
+                "type": "status",
+                "author": "0xb422a67e72bc398bba7d19a558493be4df739af2",
+                "status": "open",
+                "message": "TEST lifecycle transition to open; synthetic verification only.",
+                "version": 4,
+                "timestamp": 1789333620141
+              },
+              "signature": "0xee5e0c95bb6e9e1f86fe4e631db8722a338510927ca0caa7a2cbf6b26a25e6ec0948da475ca2696c42b3b85254ca906b1ebc5d41f8aa302e13d4f4145a16d3f81c",
+              "owner_block": null,
+              "version": 5,
+              "created_at": "2026-09-13T21:07:00.521Z"
+            },
+            {
+              "actor": "0xb422a67e72bc398bba7d19a558493be4df739af2",
+              "kind": "status",
+              "payload": {
+                "id": "dce0898c-312e-4dbb-85ba-1e4246d79aae",
+                "type": "status",
+                "author": "0xb422a67e72bc398bba7d19a558493be4df739af2",
+                "status": "resolved",
+                "message": "TEST lifecycle transition to resolved; synthetic verification only.",
+                "version": 3,
+                "timestamp": 1789333619953
+              },
+              "signature": "0x487ef1a6bd8a503aeaf7d354388047c45724603be35d6ea841ac77c5cc40db1005349fc73f67740d5c05aaf2f1824710c4595c7eec717faeb2863c2bc3b3d12d1c",
+              "owner_block": null,
+              "version": 4,
+              "created_at": "2026-09-13T21:07:00.233Z"
+            },
+            {
+              "actor": "0xd7256e7a20368bac505a738cc1c2cbc8d0648849",
+              "kind": "reply",
+              "payload": {
+                "id": "dce0898c-312e-4dbb-85ba-1e4246d79aae",
+                "type": "reply",
+                "author": "0xd7256e7a20368bac505a738cc1c2cbc8d0648849",
+                "message": "TEST OWNER RESPONSE: synthetic issue acknowledged; no service or purchase took place.",
+                "version": 2,
+                "timestamp": 1789333619681
+              },
+              "signature": "0x311990308c8f2dedfac220836c4429eb24cfc1aa21743c6289ea6f210a42555d08ea12bde9b787e9b2b8082578b4ca4ba69cc2cdf646ba1835f8bcc5dc4d1d511c",
+              "owner_block": "308579694",
+              "version": 3,
+              "created_at": "2026-09-13T21:07:00.051Z"
+            },
+            {
+              "actor": "0xb422a67e72bc398bba7d19a558493be4df739af2",
+              "kind": "edit",
+              "payload": {
+                "id": "dce0898c-312e-4dbb-85ba-1e4246d79aae",
+                "type": "edit",
+                "author": "0xb422a67e72bc398bba7d19a558493be4df739af2",
+                "fields": {
+                  "problem": "TEST ONLY: simulated issue for owner reply, edit and resolution checks.",
+                  "evidence": "TEST updated reference; original text remains bound to payment.",
+                  "happened": "TEST ONLY: no service requested or executed. Synthetic authorization fixture.",
+                  "requested": "TEST ONLY: verify Arbitrum publication lifecycle."
+                },
+                "version": 1,
+                "timestamp": 1789333619176
+              },
+              "signature": "0xbd57efe024b3f8edabe9bf66ad46a35b483fc0930a8eb253d3344ba522b4e60056b3298381363c0596fa6760aa7adf81975e83b36abde4f894b5935b88137f361c",
+              "owner_block": null,
+              "version": 2,
+              "created_at": "2026-09-13T21:06:59.582Z"
+            },
+            {
+              "actor": "0xb422a67e72bc398bba7d19a558493be4df739af2",
+              "kind": "publish",
+              "payload": {
+                "id": "dce0898c-312e-4dbb-85ba-1e4246d79aae",
+                "type": "publish",
+                "author": "0xb422a67e72bc398bba7d19a558493be4df739af2",
+                "timestamp": 1789333617339,
+                "transaction": "0x5e4e7db83b261587ce56162f15d082c46005ec490bed907aadea780cabdb34aa"
+              },
+              "signature": "0xdd7a16fd09b161750ab760b12ac6da4b1f267dae7802a9488cebff026264e12d7ed867fc7dfd1fd186a22e4a12baaef99d14cb0f6db931a95ea6b8cd2d93745f1c",
+              "owner_block": null,
+              "version": 1,
+              "created_at": "2026-09-13T21:06:57.862Z"
+            },
+            {
+              "actor": "0xb422a67e72bc398bba7d19a558493be4df739af2",
+              "kind": "prepare",
+              "payload": {
+                "type": "prepare",
+                "draft": {
+                  "id": "dce0898c-312e-4dbb-85ba-1e4246d79aae",
+                  "demo": true,
+                  "chain": "arbitrum",
+                  "author": "0xb422a67e72bc398bba7d19a558493be4df739af2",
+                  "agentId": 206,
+                  "problem": "TEST ONLY: simulated issue for owner reply, edit and resolution checks.",
+                  "evidence": "Synthetic verification; not a purchase.",
+                  "happened": "TEST ONLY: no service requested or executed. Synthetic authorization fixture.",
+                  "requested": "TEST ONLY: verify Arbitrum publication lifecycle.",
+                  "paymentVersion": 2
+                },
+                "timestamp": 1789333599056
+              },
+              "signature": "0x6b0fa61098f91c9ab5986c438fbeaed5d092d9f9970181196c518781b546bcbd1264ff5f2c338e9530904e6f3996dc331b940f7437aaca1a3456096fa92ecbe01b",
+              "owner_block": null,
+              "version": 0,
+              "created_at": "2026-09-13T21:06:39.656Z"
+            }
+          ]
+        },
+        "fee": {
+          "networks": {
+            "sepolia": {
+              "chain": "sepolia",
+              "chainId": 11155111,
+              "name": "Sepolia",
+              "token": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+              "amount": "5000000",
+              "decimals": 6,
+              "explorer": "https://sepolia.etherscan.io",
+              "gas": "test ETH"
+            },
+            "arbitrum": {
+              "chain": "arbitrum",
+              "chainId": 421614,
+              "name": "Arbitrum Sepolia",
+              "token": "0x75faf114eafb1BDbe2F0316DF893fd58CE46AA4d",
+              "amount": "5000000",
+              "decimals": 6,
+              "explorer": "https://sepolia.arbiscan.io",
+              "gas": "test ETH"
+            },
+            "arc": {
+              "chain": "arc",
+              "chainId": 5042002,
+              "name": "Arc Testnet",
+              "token": null,
+              "amount": "5000000000000000000",
+              "decimals": 18,
+              "explorer": "https://testnet.arcscan.app",
+              "gas": "test USDC"
+            }
+          },
+          "treasury": "0xD7256e7a20368bAc505A738CC1C2cbc8d0648849",
+          "label": "5 test USDC",
+          "testnet": true
+        }
+      }
+    },
+    {
+      "name": "history",
+      "status": 200,
+      "pass": true,
+      "data": {
+        "status": "live",
+        "chain": "arbitrum",
+        "chainId": 421614,
+        "agentId": 205,
+        "registry": "0x33D6893fA6015EeecE1d9232A8D0659F42eF669e",
+        "deploymentBlock": "307944655",
+        "checkedAt": "2026-09-13T21:13:03.948Z",
+        "summary": {
+          "total": 1,
+          "distinctReviewers": 1,
+          "superseded": 0,
+          "passed": 0,
+          "failed": 0,
+          "inconclusive": 1,
+          "latestRecordedAt": "1789175073"
+        },
+        "receipts": [
+          {
+            "evaluationId": "0x03e5814e42ad6145ececeaeb0307098e32699f52039e425bd5c7d254e06ce3d7",
+            "reviewer": "0x922D05Af2e9535bfe6fDEEB713ea33088b7412CC",
+            "agentId": 205,
+            "reportHash": "0x29170d48295ad95103d3d4b7ba29682cc65aef8a9629e772e786fdc3acfa1aeb",
+            "evidenceHash": "0xa325ad15eeda2edb9a10e8c52e8956f4c38f81f6c966218272187dcccff2022a",
+            "observedBlock": "307935349",
+            "recordedAt": "1789175073",
+            "outcome": "inconclusive",
+            "blockNumber": "307944729",
+            "transactionHash": "0x363f1eada0965113596960b3551d4678d38df76bac6776ae89be436b78e2307c",
+            "logIndex": 25
+          }
+        ]
+      }
+    },
+    {
+      "name": "owner",
+      "status": 200,
+      "pass": true,
+      "data": {
+        "chain": "arbitrum",
+        "address": "0x04274c7be78c3a0e7493122e12a97edc11c2ea9e",
+        "total": 1,
+        "passing": 1,
+        "page": 0,
+        "limit": 100,
+        "hasMore": false,
+        "agents": [
+          {
+            "agentId": 205,
+            "status": "passes",
+            "passes": true,
+            "reason": "Passes every check in the published rule set.",
+            "name": "Orbital Oracle",
+            "description": "Sells verified satellite RF observations: a software-defined radio receives a live satellite downlink, its Doppler signature is measured, and the measurement is checked against independent SGP4 orbit propagation before being sold. Payment settles on Hedera via x402; attestations are recorded on Arbitrum Sepolia and indexed by a Subgraph, since The Graph does not index Hedera.",
+            "category": null,
+            "endpoints": [
+              "https://color-ctrl-occur-monday.trycloudflare.com/observations",
+              "https://color-ctrl-occur-monday.trycloudflare.com/observations/{id}",
+              "https://color-ctrl-occur-monday.trycloudflare.com/verify"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "reviews",
+      "status": 200,
+      "pass": true,
+      "data": {
+        "average": null,
+        "count": 0,
+        "total": 0,
+        "reviews": [],
+        "demos": [],
+        "page": 1,
+        "pages": 0
+      }
+    },
+    {
+      "name": "discover",
+      "status": 200,
+      "pass": true,
+      "data": {
+        "request": "Find an agent offering satellite RF observations with Doppler measurements and orbit verification.",
+        "brief": {
+          "summary": "",
+          "requirements": [
+            "satellite RF observations",
+            "Doppler measurements",
+            "orbit verification"
+          ],
+          "searchTerms": [
+            "satellite RF observation",
+            "Doppler measurement",
+            "orbit verification",
+            "RF signal monitoring",
+            "satellite radio frequency monitoring",
+            "Doppler tracking",
+            "orbit determination",
+            "satellite orbit validation",
+            "RF spectrum analysis",
+            "Doppler shift analysis"
+          ],
+          "questions": [],
+          "cautions": [],
+          "sampleTask": "",
+          "acceptance": []
+        },
+        "matches": [
+          {
+            "key": "arbitrum:205",
+            "reason": "Explicitly declares satellite RF observations, Doppler measurement, and independent SGP4 orbit verification.",
+            "evidenceQuote": "Sells verified satellite RF observations: a software-defined radio receives a live satellite downlink, its Doppler signature is measured, and the measurement is checked against independent SGP4 orbit propagation",
+            "gaps": [
+              "No trial notes; inconclusive self-reported outcome cannot confirm capability.",
+              "No registry evidence provided; verification status unknown."
+            ],
+            "trialHistoryConsidered": true,
+            "registrySignals": [],
+            "chain": "arbitrum",
+            "agentId": 205,
+            "name": "Orbital Oracle",
+            "description": "Sells verified satellite RF observations: a software-defined radio receives a live satellite downlink, its Doppler signature is measured, and the measurement is checked against independent SGP4 orbit propagation before being sold. Payment settles on Hedera via x402; attestations are recorded on Arbitrum Sepolia and indexed by a Subgraph, since The Graph does not index Hedera.",
+            "category": null,
+            "serviceCount": 3,
+            "snapshotOwner": "0x04274c7be78c3a0e7493122e12a97edc11c2ea9e",
+            "snapshotBlock": 307933498,
+            "trialHistory": {
+              "status": "live",
+              "checkedAt": "2026-09-13T21:13:04.598Z",
+              "total": 1,
+              "distinctReviewers": 1,
+              "superseded": 0,
+              "passed": 0,
+              "failed": 0,
+              "inconclusive": 1,
+              "latestRecordedAt": "1789175073"
+            }
+          }
+        ],
+        "conclusion": "Ranked by task fit with the available registry evidence. Try a small sample before committing.",
+        "searched": 44,
+        "considered": 1,
+        "generatedAt": "2026-09-13T21:13:05.768Z",
+        "model": "deepseek-flash",
+        "registry": {
+          "status": "not_applicable",
+          "checked": 0,
+          "eligible": 0,
+          "withheld": [],
+          "networks": [],
+          "message": "Live evidence is checked separately for Sepolia and Arc Testnet. A paused network contributes no recommendations. Arbitrum Sepolia matches use published snapshots with separately checked trial history."
+        }
+      }
+    },
+    {
+      "name": "bulk",
+      "status": 200,
+      "pass": true,
+      "data": {
+        "chain": "arbitrum",
+        "requested": 3,
+        "answered": 3,
+        "limit": 2000,
+        "scan": {
+          "highest_agent_id_seen": 205,
+          "agents_passing_on_this_chain": 44
+        },
+        "results": [
+          {
+            "agentId": 205,
+            "status": "passes",
+            "passes": true,
+            "reason": "Passes every check in the published rule set.",
+            "name": "Orbital Oracle",
+            "category": null,
+            "endpoints": 3,
+            "owner": "0x04274c7be78c3a0e7493122e12a97edc11c2ea9e"
+          },
+          {
+            "agentId": 20,
+            "status": "passes",
+            "passes": true,
+            "reason": "Passes every check in the published rule set.",
+            "name": "Test Agent Arbitrum",
+            "category": null,
+            "endpoints": 0,
+            "owner": "0x8bfffc6ff8cecb5a9bd1afdc82fdfec3b4400d25"
+          },
+          {
+            "agentId": 99999999,
+            "status": "not_scanned",
+            "passes": false,
+            "reason": "No conclusive scan result is available. This does not establish whether the record exists.",
+            "name": null,
+            "category": null,
+            "endpoints": 0,
+            "owner": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "evaluate",
+      "status": 200,
+      "pass": true,
+      "data": {
+        "version": 1,
+        "chain": "arbitrum",
+        "agentId": 205,
+        "job": "custom",
+        "request": "Verify satellite observations.",
+        "name": "Orbital Oracle",
+        "checkedAt": "2026-09-13T21:13:03.637Z",
+        "expiresAt": "2026-09-13T21:28:03.637Z",
+        "block": "308581148",
+        "owner": "0x04274c7bE78c3A0e7493122E12A97edC11c2eA9e",
+        "metadataHash": "b45f86e7d39494a6c047175b9c7752ef1a2e7f1130777046a94254401861903b",
+        "fingerprint": "7b89a49a334c3bc12104bcc517424e80557ef363665f7086d7e5608439c54dec",
+        "checks": [
+          {
+            "key": "snapshot",
+            "title": "Published metadata rules",
+            "status": "pass",
+            "detail": "Snapshot result: passes. This is not a live service certification."
+          },
+          {
+            "key": "owner",
+            "title": "Current ownership",
+            "status": "pass",
+            "detail": "Read at block 308581148. Matches the published owner."
+          },
+          {
+            "key": "metadata",
+            "title": "Current metadata",
+            "status": "pass",
+            "detail": "Full document hash matches the published scan."
+          },
+          {
+            "key": "services",
+            "title": "Live service response",
+            "status": "unknown",
+            "detail": "0 of 3 probed URLs responded successfully. At most 3 of 3 declared URLs checked. A web response is not a completed task."
+          },
+          {
+            "key": "interface",
+            "title": "Discoverable agent interface",
+            "status": "unknown",
+            "detail": "No A2A-shaped card was confirmed. A website or schema reference is not an agent interface; MCP execution/discovery is not tested by this check."
+          },
+          {
+            "key": "job",
+            "title": "Declared fit for this job",
+            "status": "unknown",
+            "detail": "AI matching uses published descriptions. Completing your specific task still requires a controlled trial; live checks alone cannot confirm task fit."
+          }
+        ],
+        "services": [
+          {
+            "url": "https://color-ctrl-occur-monday.trycloudflare.com/observations",
+            "status": "unavailable",
+            "latencyMs": 7,
+            "protocol": "unconfirmed",
+            "skills": []
+          },
+          {
+            "url": "https://color-ctrl-occur-monday.trycloudflare.com/observations/{id}",
+            "status": "unavailable",
+            "latencyMs": 6,
+            "protocol": "unconfirmed",
+            "skills": []
+          },
+          {
+            "url": "https://color-ctrl-occur-monday.trycloudflare.com/verify",
+            "status": "unavailable",
+            "latencyMs": 6,
+            "protocol": "unconfirmed",
+            "skills": []
+          }
+        ],
+        "declaredMatch": [],
+        "decision": "needs_review",
+        "automaticExecutionAllowed": false,
+        "nextAction": "Resolve the missing evidence before selecting this agent. No live task has been completed by this check.",
+        "limitations": [
+          "No task execution or output-quality test was performed.",
+          "Price, data retention and execution permissions must be confirmed with the provider.",
+          "This is a 15-minute observation window, not guaranteed availability or an onchain ENS endorsement.",
+          "Saved reports and trial notes stay in this browser; they are not signed attestations."
+        ]
+      }
+    }
+  ]
+}
