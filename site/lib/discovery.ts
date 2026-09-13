@@ -44,27 +44,38 @@ export type Discovery = {
 };
 
 const normalize = (s: string) => s.normalize("NFKC").toLocaleLowerCase("en-US");
-/** AI expands the request into multilingual concepts; this bounded recall stage is not the AI ranking. */
+const genericRequestWords = new Set("a an the and or with without for from into that this those these should must need needs want find agent agents offering using please help work job task can could would will not only have has give get make use my our your me it its to of in on at by as is are be do does done also plus than then some any all about based supports provide provides service services".split(" "));
+/** Preserve literal capabilities when the model paraphrases them into non-matching phrases. */
+export function requestKeywords(request: string): string[] {
+  return [...new Set((normalize(request).match(/[a-z0-9]+/g) ?? [])
+    .filter(word => word.length >= 3 && !genericRequestWords.has(word)))].slice(0, 48);
+}
+
+/** Bounded recall supplies candidates; the AI still checks every requested capability. */
 export function retrieve(
   candidates: Candidate[],
   terms: string[],
   limit = 48,
+  request = "",
 ): Candidate[] {
   const useful = [
     ...new Set(
       terms.map((t) => normalize(t.trim())).filter((t) => t.length > 2),
     ),
   ].slice(0, 24);
+  const literalWords = requestKeywords(request);
   return candidates
     .map((c) => {
       const description = normalize(c.description);
       const name = normalize(c.name);
+      const words = new Set(`${description} ${name}`.match(/[a-z0-9]+/g) ?? []);
       const score = useful.reduce(
         (n, t) =>
           n + (description.includes(t) ? 3 : 0) + (name.includes(t) ? 1 : 0),
         0,
       );
-      return { c, score };
+      const literalScore = literalWords.reduce((n, word) => n + (words.has(word) ? 1 : 0), 0);
+      return { c, score: score + literalScore };
     })
     .filter((v) => v.score > 0)
     .sort(
