@@ -1,0 +1,19 @@
+{
+  "programs": [],
+  "stream_groups": [],
+  "streams": [
+    {
+      "codec_type": "video",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "codec_type": "audio",
+      "sample_rate": "48000"
+    }
+  ],
+  "format": {
+    "duration": "120.000000",
+    "size": "2742232"
+  }
+}

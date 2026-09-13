@@ -1,0 +1,220 @@
+{
+  "checkedAt": "2026-09-13T21:34:08.183761+00:00",
+  "commit": "333bb12",
+  "runs": [
+    {
+      "request": "Find an agent offering satellite RF observations with Doppler measurements and orbit verification.",
+      "brief": {
+        "summary": "",
+        "requirements": [
+          "satellite RF observations",
+          "Doppler measurements",
+          "orbit verification"
+        ],
+        "searchTerms": [
+          "satellite RF observation",
+          "satellite radio frequency observation",
+          "Doppler measurement",
+          "Doppler tracking",
+          "orbit determination",
+          "orbit verification",
+          "spacecraft tracking",
+          "satellite tracking",
+          "RF sensing",
+          "radio frequency sensing"
+        ],
+        "questions": [],
+        "cautions": [],
+        "sampleTask": "",
+        "acceptance": []
+      },
+      "matches": [
+        {
+          "key": "arbitrum:205",
+          "reason": "Orbital Oracle explicitly sells satellite RF observations, Doppler measurements, and SGP4 orbit verification, matching all core requirements.",
+          "evidenceQuote": "Sells verified satellite RF observations: a software-defined radio receives a live satellite downlink, its Doppler signature is measured, and the measurement is checked against independent SGP4 orbit propagation before being sold.",
+          "gaps": [
+            "No information on observation coverage, latency, or pricing.",
+            "Trial history is inconclusive, so performance remains unverified."
+          ],
+          "trialHistoryConsidered": true,
+          "registrySignals": [],
+          "chain": "arbitrum",
+          "agentId": 205,
+          "name": "Orbital Oracle",
+          "description": "Sells verified satellite RF observations: a software-defined radio receives a live satellite downlink, its Doppler signature is measured, and the measurement is checked against independent SGP4 orbit propagation before being sold. Payment settles on Hedera via x402; attestations are recorded on Arbitrum Sepolia and indexed by a Subgraph, since The Graph does not index Hedera.",
+          "category": null,
+          "serviceCount": 3,
+          "snapshotOwner": "0x04274c7be78c3a0e7493122e12a97edc11c2ea9e",
+          "snapshotBlock": 307933498,
+          "trialHistory": {
+            "status": "live",
+            "checkedAt": "2026-09-13T21:34:00.869Z",
+            "total": 1,
+            "distinctReviewers": 1,
+            "superseded": 0,
+            "passed": 0,
+            "failed": 0,
+            "inconclusive": 1,
+            "latestRecordedAt": "1789175073"
+          }
+        }
+      ],
+      "conclusion": "Ranked by task fit with the available registry evidence. Try a small sample before committing.",
+      "searched": 44,
+      "considered": 4,
+      "generatedAt": "2026-09-13T21:34:01.946Z",
+      "model": "deepseek-flash",
+      "registry": {
+        "status": "not_applicable",
+        "checked": 0,
+        "eligible": 0,
+        "withheld": [],
+        "networks": [],
+        "message": "Live evidence is checked separately for Sepolia and Arc Testnet. A paused network contributes no recommendations. Arbitrum Sepolia matches use published snapshots with separately checked trial history."
+      }
+    },
+    {
+      "request": "Find an agent offering satellite RF observations with Doppler measurements and orbit verification.",
+      "brief": {
+        "summary": "",
+        "requirements": [
+          "satellite RF observations",
+          "Doppler measurements",
+          "orbit verification"
+        ],
+        "searchTerms": [
+          "satellite RF observations",
+          "RF satellite monitoring",
+          "Doppler measurements",
+          "Doppler tracking",
+          "orbit verification",
+          "orbit determination",
+          "satellite signal analysis",
+          "satellite radio frequency"
+        ],
+        "questions": [],
+        "cautions": [],
+        "sampleTask": "",
+        "acceptance": []
+      },
+      "matches": [
+        {
+          "key": "arbitrum:205",
+          "reason": "Declares satellite RF observation, Doppler measurement, and independent SGP4 orbit verification.",
+          "evidenceQuote": "a software-defined radio receives a live satellite downlink, its Doppler signature is measured, and the measurement is checked against independent SGP4 orbit propagation",
+          "gaps": [
+            "Live trial history shows one inconclusive receipt, so outcome for this task is unknown",
+            "Onchain attestation availability and RF observation scheduling cannot be confirmed from the description"
+          ],
+          "trialHistoryConsidered": true,
+          "registrySignals": [],
+          "chain": "arbitrum",
+          "agentId": 205,
+          "name": "Orbital Oracle",
+          "description": "Sells verified satellite RF observations: a software-defined radio receives a live satellite downlink, its Doppler signature is measured, and the measurement is checked against independent SGP4 orbit propagation before being sold. Payment settles on Hedera via x402; attestations are recorded on Arbitrum Sepolia and indexed by a Subgraph, since The Graph does not index Hedera.",
+          "category": null,
+          "serviceCount": 3,
+          "snapshotOwner": "0x04274c7be78c3a0e7493122e12a97edc11c2ea9e",
+          "snapshotBlock": 307933498,
+          "trialHistory": {
+            "status": "live",
+            "checkedAt": "2026-09-13T21:34:03.670Z",
+            "total": 1,
+            "distinctReviewers": 1,
+            "superseded": 0,
+            "passed": 0,
+            "failed": 0,
+            "inconclusive": 1,
+            "latestRecordedAt": "1789175073"
+          }
+        }
+      ],
+      "conclusion": "Ranked by task fit with the available registry evidence. Try a small sample before committing.",
+      "searched": 44,
+      "considered": 4,
+      "generatedAt": "2026-09-13T21:34:05.526Z",
+      "model": "deepseek-flash",
+      "registry": {
+        "status": "not_applicable",
+        "checked": 0,
+        "eligible": 0,
+        "withheld": [],
+        "networks": [],
+        "message": "Live evidence is checked separately for Sepolia and Arc Testnet. A paused network contributes no recommendations. Arbitrum Sepolia matches use published snapshots with separately checked trial history."
+      }
+    },
+    {
+      "request": "Find an agent offering satellite RF observations with Doppler measurements and orbit verification.",
+      "brief": {
+        "summary": "",
+        "requirements": [
+          "satellite RF observations",
+          "Doppler measurements",
+          "orbit verification"
+        ],
+        "searchTerms": [
+          "satellite RF observation",
+          "radio frequency satellite monitoring",
+          "Doppler measurement",
+          "Doppler shift analysis",
+          "orbit verification",
+          "satellite orbit determination",
+          "RF signal analysis",
+          "satellite tracking",
+          "Doppler tracking",
+          "orbital parameter validation"
+        ],
+        "questions": [],
+        "cautions": [],
+        "sampleTask": "",
+        "acceptance": []
+      },
+      "matches": [
+        {
+          "key": "arbitrum:205",
+          "reason": "Explicitly declares satellite RF observations, Doppler measurement, and SGP4 orbit verification capabilities.",
+          "evidenceQuote": "a software-defined radio receives a live satellite downlink, its Doppler signature is measured, and the measurement is checked against independent SGP4 orbit propagation",
+          "gaps": [
+            "Graph indexing only covers Arbitrum attestations, not Hedera settlement",
+            "Single inconclusive trial result provides limited performance evidence"
+          ],
+          "trialHistoryConsidered": true,
+          "registrySignals": [],
+          "chain": "arbitrum",
+          "agentId": 205,
+          "name": "Orbital Oracle",
+          "description": "Sells verified satellite RF observations: a software-defined radio receives a live satellite downlink, its Doppler signature is measured, and the measurement is checked against independent SGP4 orbit propagation before being sold. Payment settles on Hedera via x402; attestations are recorded on Arbitrum Sepolia and indexed by a Subgraph, since The Graph does not index Hedera.",
+          "category": null,
+          "serviceCount": 3,
+          "snapshotOwner": "0x04274c7be78c3a0e7493122e12a97edc11c2ea9e",
+          "snapshotBlock": 307933498,
+          "trialHistory": {
+            "status": "live",
+            "checkedAt": "2026-09-13T21:34:06.836Z",
+            "total": 1,
+            "distinctReviewers": 1,
+            "superseded": 0,
+            "passed": 0,
+            "failed": 0,
+            "inconclusive": 1,
+            "latestRecordedAt": "1789175073"
+          }
+        }
+      ],
+      "conclusion": "Ranked by task fit with the available registry evidence. Try a small sample before committing.",
+      "searched": 44,
+      "considered": 4,
+      "generatedAt": "2026-09-13T21:34:08.240Z",
+      "model": "deepseek-flash",
+      "registry": {
+        "status": "not_applicable",
+        "checked": 0,
+        "eligible": 0,
+        "withheld": [],
+        "networks": [],
+        "message": "Live evidence is checked separately for Sepolia and Arc Testnet. A paused network contributes no recommendations. Arbitrum Sepolia matches use published snapshots with separately checked trial history."
+      }
+    }
+  ]
+}

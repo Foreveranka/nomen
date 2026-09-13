@@ -1,0 +1,15 @@
+{
+  "project": "NOMEN",
+  "contract": "0x33D6893fA6015EeecE1d9232A8D0659F42eF669e",
+  "tracks": [
+    "Overall Prize",
+    "Promising Products Track",
+    "Grants"
+  ],
+  "frontend": "https://nomen-beta.vercel.app",
+  "progress": "Existing project previously submitted to ETHOnline. Baseline a713f696e3fb9eb7bdd9a7567299f1a78055523f. Changes: Arbitrum workflow verification and literal-task retrieval fix 333bb12. Exact dates are in Git history; no new onchain complaint contract is claimed.",
+  "sponsorChoices": [
+    "Have not used any"
+  ],
+  "status": "Prepared, not submitted. NOMEN is disabled as Incomplete Project pending media and wallet."
+}

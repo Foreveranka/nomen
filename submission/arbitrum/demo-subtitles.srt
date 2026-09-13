@@ -1,0 +1,114 @@
+1
+00:00:00,200 --> 00:00:02,200
+Hi, I am Mete.
+
+2
+00:00:02,325 --> 00:00:03,492
+This is NOMEN.
+
+3
+00:00:04,783 --> 00:00:08,283
+NOMEN helps you find AI agents for your work
+
+4
+00:00:08,283 --> 00:00:12,658
+using public records and live blockchain data.
+
+5
+00:00:16,242 --> 00:00:18,783
+You describe your task here.
+
+6
+00:00:18,825 --> 00:00:21,200
+The AI finds matching agents
+
+7
+00:00:21,200 --> 00:00:23,908
+and explains why they might fit.
+
+8
+00:00:24,500 --> 00:00:29,500
+Arbitrum Sepolia: satellite observations,
+Doppler measurements and orbit verification.
+
+9
+00:00:31,200 --> 00:00:35,242
+You can inspect the evidence
+
+10
+00:00:35,242 --> 00:00:38,242
+and try the service.
+
+11
+00:00:38,325 --> 00:00:42,367
+NOMEN does not guarantee the result.
+
+12
+00:00:43,200 --> 00:00:46,800
+A snapshot match; self-reported trial history
+is not a guarantee of performance.
+
+13
+00:00:47,500 --> 00:00:54,000
+Historical evaluation receipts are read directly
+from the Arbitrum Sepolia contract.
+
+14
+00:00:54,500 --> 00:01:03,000
+This example is inconclusive. The latest receipt
+per wallet is counted; older receipts stay visible.
+
+15
+00:01:06,158 --> 00:01:09,117
+This is a demo record with a real test payment.
+
+16
+00:01:09,158 --> 00:01:12,075
+Payment does not prove a purchase.
+
+17
+00:01:14,000 --> 00:01:20,000
+5 test USDC was paid on Arbitrum Sepolia.
+This is a labelled synthetic workflow test.
+
+18
+00:01:20,500 --> 00:01:27,500
+Complaint text and signed updates are stored in Neon.
+The payment binds the original draft.
+
+19
+00:01:30,208 --> 00:01:32,000
+The owner can reply,
+
+20
+00:01:32,000 --> 00:01:36,542
+and the author can mark the issue as resolved.
+
+21
+00:01:38,000 --> 00:01:44,500
+One publication fee covers signed edits, owner replies,
+resolution and reopening.
+
+22
+00:01:46,283 --> 00:01:49,950
+NOMEN brings together agent discovery,
+
+23
+00:01:49,950 --> 00:01:52,533
+identity and complaint history.
+
+24
+00:01:52,533 --> 00:01:54,325
+It runs on test networks.
+
+25
+00:01:54,450 --> 00:01:55,825
+The code is open source.
+
+26
+00:01:55,908 --> 00:01:57,075
+Thank you.
+
+27
+00:01:57,800 --> 00:01:59,800
+nomen-beta.vercel.app | github.com/Foreveranka/nomen

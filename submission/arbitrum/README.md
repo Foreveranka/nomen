@@ -1,12 +1,12 @@
 # NOMEN — Arbitrum Open House Singapore submission packet
 
-Prepared September 13, 2026. This is a preparation packet, not a completed event submission.
+Updated September 14, 2026 (Europe/Istanbul). This is a preparation packet, not a completed event submission.
 
 ## Saved project
 
 HackQuest project: https://www.hackquest.io/projects/setup/eff2fe9a-44e3-4046-b08e-08b5d567fe44
 
-Created for Metehan İzal as a solo project. Saved: name, 128-character intro, AI/Infra sectors, React/Next/Node/Python/Solidity tags, live site, public repository, project description and honest pre-event progress. Prize-wallet connection and media remain pending. No final event submission was made.
+Created for Metehan İzal as a solo project. Saved: name, 128-character intro, AI/Infra sectors, React/Next/Node/Python/Solidity tags, live site, public repository, updated verification description, honest pre-event progress and solo-builder introduction. Prize-wallet connection and media upload remain pending. The event form has been prepared in the browser, but NOMEN is disabled as Incomplete Project until readiness requirements are met. No final event submission was made.
 
 ## Copy-ready event fields
 
@@ -27,7 +27,7 @@ NOMEN was previously submitted to ETHOnline 2026 (owner confirmation). All curre
 
 ## Fresh verification
 
-- 47 application tests passed; 2 database tests skipped without DATABASE_URL. Full log: application-tests.log.
+- 49 application/database tests passed without skips in the comprehensive verification run. See verification/tests-with-db.log. The earlier application-tests.log is retained as historical evidence, not the final count. The subsequent recall fix passed all 6 discovery tests, plus build and lint.
 - 30 Foundry contract tests passed, including 5 evaluation-registry tests and registrar fuzz tests.
 - Live /api/evaluations?chain=arbitrum&agentId=205 returned one inconclusive historical receipt. See live-history.json.
 - Public RPC confirmed chain 421614, deployed contract bytecode and successful historical receipt. See live-chain-check.json.
@@ -47,16 +47,16 @@ These checks do not certify agent performance, complaint truth, purchase verific
 
 Project setup requests up to four screenshots at 500x300 or 1280x720, and exposes separate Demo Video and Pitch Video fields. The exact video duration/narration requirements have not been confirmed. Do not copy ETHGlobal restrictions automatically.
 
-Fresh 1280x720 captures: landing.png, trust-history.png, orders.png. These show the actual existing application, not new event work. The Orders capture is not proof of a completed Arbitrum payment. Existing logo is ../nomen-logo.png. Logo upload hit a browser file-chooser timeout; no successful upload is claimed.
+Four upload-ready 1280x720 captures: landing.png, matching.png, trust-history.png, orders.png. Additional search.png and resolution-history.png support the demo. All show the real deployed application. Orders now shows the resolved TEST #206 complaint with its verified payment link. Existing logo is ../nomen-logo.png. Browser file choosers timed out; no successful upload is claimed.
 
-A new Arbitrum demo should show: task search → Arbitrum agent identity → historical receipt → TEST complaint payment → published record → signed resolution. Do not film a successful transfer/resolution until it has really completed. Existing ETHGlobal video is baseline material and is not a demo of the proposed new Arbitrum feature.
+NOMEN-Arbitrum-Demo.mp4 in the desktop submission packet is a 120-second, 1920x1080 screenshot-guided walkthrough with English subtitles and selected excerpts of Mete’s existing human-recorded voice. No cloned/generated voice, music or fabricated transaction is used. It shows the existing application and completed TEST workflow, not a continuous live execution or the proposed onchain extension. See demo-edit-manifest.json for exact source-audio excerpts.
 
 ## Remaining gates
 
 1. Confirm event terms and treatment of a prior ETHGlobal entry. The linked terms PDF returned HTTP 403 in the web reader; do not attest to unseen terms.
 2. COMPLETE: real Arbitrum Sepolia TEST payment, publication and signed resolution verified. Record: https://nomen-beta.vercel.app/orders?id=e9a861ae-5cc8-46db-8835-25cdebd8fd0f
-3. Implement substantive post-start functionality with normal commits. Proposed scope: Arbitrum complaint commitments and resolution history. Not implemented by this preparation.
-4. Connect the owner's prize wallet, finish media upload and final demo, and replace the interim progress field with actual event work.
+3. Existing projects are explicitly allowed on the event page. Preserve provenance and identify any actual dated changes. A substantive onchain complaint-history extension remains a proposal; it is not a verified mandatory entry condition and is not implemented. Do not falsely claim it.
+4. Connect the owner's prize wallet and upload the prepared logo, four screenshots and final demo. Keep progress truthful to actual commits.
 5. Complete the event-specific form and final submission after the above. Project creation alone is not event submission.
 
 Sources: https://www.hackquest.io/hackathons/Arbitrum-Open-House-Singapore-Online-Buildathon and the authenticated project setup/submission forms inspected September 13, 2026.
@@ -64,3 +64,9 @@ Sources: https://www.hackquest.io/hackathons/Arbitrum-Open-House-Singapore-Onlin
 ## Comprehensive verification (14 September 2026 local)
 
 See [verification/README.md](verification/README.md): 49 application/database tests, 30 contract tests, real Arbitrum 5-USDC publication, author edits, registered-owner reply, resolve/reopen, negative authorization and idempotency. ENS/Graph support and wallet-extension UI limitations are explicitly documented. Synthetic test agent #206 and complaint are clearly labeled TEST.
+
+## Submission-session recall regression and fix
+
+The same satellite-search request initially returned a match and then zero candidates. Candidate retrieval matched only complete AI-generated phrases, so paraphrased concepts could miss literal capabilities in a real description. Commit `333bb12` adds bounded literal-request keyword recall, ignores request boilerplate and uses whole words. The model still checks all requested capabilities and must ground its recommendation in the supplied description. No arbitrary fallback recommendation is introduced.
+
+All 6 discovery regression tests passed, including the paraphrasing case and unrelated/substring negatives; build and lint passed. Production `nomen-8n6fjxznb` was deployed to nomen-beta.vercel.app. Three consecutive live API requests all considered four candidates and selected Arbitrum #205; the browser confirmed the same result. See verification/recall-live.json. This is a verified retrieval fix, not a guarantee of deterministic AI ranking for every input.

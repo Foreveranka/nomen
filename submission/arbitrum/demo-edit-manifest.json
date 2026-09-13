@@ -1,0 +1,75 @@
+{
+  "durationSeconds": 120,
+  "kind": "Screenshot-guided walkthrough, not a continuous live recording",
+  "voice": "Selected excerpts of Mete\u2019s existing human-recorded narration; no cloned or generated voice",
+  "sourceFilename": "NOMEN-Demo-Final.mp4",
+  "scenes": [
+    [
+      "landing",
+      15,
+      "NOMEN | Arbitrum Sepolia walkthrough"
+    ],
+    [
+      "search",
+      15,
+      "1. Describe the job"
+    ],
+    [
+      "matching",
+      17,
+      "2. Compare the matching agent"
+    ],
+    [
+      "trust-history",
+      17,
+      "3. Inspect onchain evaluation receipts"
+    ],
+    [
+      "orders",
+      24,
+      "4. Verify a TEST publication payment"
+    ],
+    [
+      "resolution-history",
+      17,
+      "5. Read signed responses and resolution history"
+    ],
+    [
+      "landing",
+      15,
+      "NOMEN | Discovery, identity and complaint history"
+    ]
+  ],
+  "audioClips": [
+    {
+      "sourceStart": 0.3,
+      "sourceEnd": 13.2,
+      "outputStart": 0
+    },
+    {
+      "sourceStart": 15.3,
+      "sourceEnd": 23.5,
+      "outputStart": 16
+    },
+    {
+      "sourceStart": 43.3,
+      "sourceEnd": 54.9,
+      "outputStart": 31
+    },
+    {
+      "sourceStart": 88.8,
+      "sourceEnd": 95.1,
+      "outputStart": 66
+    },
+    {
+      "sourceStart": 101.5,
+      "sourceEnd": 108.3,
+      "outputStart": 90
+    },
+    {
+      "sourceStart": 115.3,
+      "sourceEnd": 126.9,
+      "outputStart": 106
+    }
+  ]
+}
