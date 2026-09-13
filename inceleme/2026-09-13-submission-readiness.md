@@ -2,7 +2,13 @@
 
 This review separates working functionality, event eligibility and uncompleted submission steps. It does not submit either entry or promise a prize. Earlier reports are historical evidence, not the current feature specification.
 
-## Evidence checked now
+## Latest update — multi-network payments and solo entry
+
+The owner is entering alone. GitHub main was verified at 2ee2e05 against the local checkout before this documentation update. New v2 complaint payments follow the agent network; Sepolia and Arbitrum Sepolia use Circle ERC-20 test USDC, while Arc uses native test USDC. Existing v1 reservations remain Arc. The new-network full transfer tests still await funding; real-contract RPC simulations and production signed reservations passed. All 49 Node tests passed including both database fixtures. See [payment verification](2026-09-13-multichain-complaint-payments.md). The latest form-ready materials are in [submission packet](ethonline-submission-packet.md). Video is excluded from this preparation task. The sections below retain earlier point-in-time checks, with superseded payment statements corrected.
+
+Fresh check at 2026-09-13T14:35Z: Sepolia and Arc Graph endpoints returned HTTP 200 with fresh indexed blocks (11-second and 5-second lag respectively). The Sepolia registrar returned isNamed(10226) = true, reader. Evidence: submission-live-check-2026-09-13.json.
+
+## Earlier evidence
 
 - Public GitHub repository exists: https://github.com/Foreveranka/nomen. At the start of this review its HEAD was 3b031d4; Orders, recent trial improvements and wallet fixes were still only local/deployed. The requested publication update includes those changes with their actual commit date.
 - Live Sepolia Graph response: block 11,691,609, indexed 2026-09-12T21:43:12Z, eight seconds behind at observation. Live Arc Graph response: block 61,794,546, indexed 2026-09-12T21:43:18Z, two seconds behind. These are point-in-time observations, not an uptime guarantee.
@@ -38,7 +44,7 @@ Arc source: https://ethglobal.com/events/ethonline2026/prizes/arc. The current a
 
 1. Preserve the owner’s confirmation that NOMEN began after September 4 and retain genuine dated planning/source evidence for the period before the September 11 initial repository import. Building from Scratch is the confirmed intended pool. Disclose reused libraries and AI assistance; never manufacture missing commit history.
 2. Record/upload the final human-narrated demo using demo-script.md. Include Graph matching, the real ENS test name and the current Orders flow. Do not demonstrate the retired rating publication UI.
-3. Fill/verify team and stake, choose the eligible partner/pool options, link public code and live app, include AI/tool disclosure, and click final Submit. The code update is not a form submission.
+3. Verify the sole participant and stake, choose the eligible partner/pool options, link public code and live app, include AI/tool disclosure, and click final Submit. The code update is not a form submission.
 4. Keep the submission description aligned with the current scope. No verified purchases, customer success rate, autonomous agent execution or Agent Stack is claimed.
 
 ## Arbitrum Open House Singapore
@@ -56,7 +62,7 @@ The event overview allows existing projects. Preserve the baseline tag arbitrum-
 
 ### Current technical limitation for Arbitrum
 
-The app reads Arbitrum ownership and historical trial receipts and uses that history in matching. The previous new-receipt UI was replaced by Orders. **Every complaint publication payment currently settles on Arc, even when the agent is on Arbitrum.** Arbitrum therefore has a real deployed/read integration, but the latest core write workflow is not Arbitrum-native. This weakens the submission story; it is not proof of automatic disqualification.
+The app reads Arbitrum ownership and historical trial receipts and uses that history in matching. The previous new-receipt UI was replaced by Orders. **Superseded by the September 13 payment update:** new v2 Arbitrum-agent complaints now settle in Circle test USDC on Arbitrum Sepolia. Older reserved drafts still settle on Arc. Actual Arbitrum payment-to-publication testing awaits funding. This addition predates the buildathon window and must remain part of the disclosed baseline. Complaint bodies and signed follow-up history remain in Neon.
 
 ### Recommended post-start scope (not yet implemented)
 

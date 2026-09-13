@@ -49,4 +49,4 @@ npm start
 
 Two database tests skip without DATABASE_URL. With it, they exercise isolated transaction fixtures. Build and test output is not a security audit or evidence of real customer use.
 
-Sepolia naming is verified under nomen-demo.eth. The optional legacy x402 API uses Base Sepolia, separate from Arc complaint payments. See ../README.md and ../inceleme/2026-09-13-submission-readiness.md for evidence, current event fit and outstanding submission work.
+Sepolia naming is verified under nomen-demo.eth. The optional legacy x402 API uses Base Sepolia, separate from complaint publication payments. See ../README.md and ../inceleme/2026-09-13-submission-readiness.md for evidence, current event fit and outstanding submission work.

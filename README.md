@@ -49,7 +49,7 @@ All three deployments use the same Solidity source and are pinned to the ERC-800
 
 NOMEN existed before the buildathon. The public pre-buildathon baseline is preserved in the annotated tag [`arbitrum-open-house-baseline-2026-09-12`](https://github.com/Foreveranka/nomen/tree/arbitrum-open-house-baseline-2026-09-12). Work attributed to the buildathon will begin after the official event start and will be documented through normal commits. The Arbitrum scope and its timing are described in [`inceleme/arbitrum-open-house-feature-plan.md`](inceleme/arbitrum-open-house-feature-plan.md).
 
-The Arbitrum Sepolia integration is already functional in the baseline: the catalog includes eligible ERC-8004 identities, live trial checks read current identity data, and deployed receipt contracts remain independently readable. New receipt publication has since been removed from the workbench in favor of Orders on Arc. A public, independently readable trust history was added on September 12 as a pre-event extension and will not be presented as buildathon-period work.
+The Arbitrum Sepolia integration is already functional in the baseline: the catalog includes eligible ERC-8004 identities, live trial checks read current identity data, and deployed receipt contracts remain independently readable. New receipt publication has since been removed from the workbench in favor of Orders. Complaint payments now also support Sepolia and Arbitrum Sepolia; these September 13 additions are pre-buildathon work. A public, independently readable trust history was added on September 12 as a pre-event extension and will not be presented as buildathon-period work.
 
 ## Current status — 13 September 2026 (Türkiye)
 
@@ -123,6 +123,8 @@ Do not reuse the old deployer credential. Configure a new operator wallet extern
 
 ## Submission
 
+**Solo ETHOnline entry:** [Copy-ready submission packet](inceleme/ethonline-submission-packet.md), [judge walkthrough](inceleme/judge-walkthrough.md), and [latest payment verification](inceleme/2026-09-13-multichain-complaint-payments.md).
+
 See `inceleme/submission-draft.md` and `inceleme/demo-script.md`. These are drafts, not a submitted entry. For ETHOnline, the owner confirmed that NOMEN-specific code/design began after September 4, 2026; Building from Scratch is selected. Preserve genuine work artifacts, disclose reused libraries and AI assistance, record a human-narrated demo, and submit the public source repository and final video. Arbitrum starts later and must treat this implementation as pre-existing. See [current readiness review](inceleme/2026-09-13-submission-readiness.md). No fabricated historical commits are supplied.
 
 ## September 11 test record addition
@@ -139,7 +141,7 @@ Run `node --test scripts/graph-discovery.test.mjs` in `site` for stale data, own
 
 ## Orders setup and wallet connection
 
-Set server-only `DATABASE_URL` for Neon. Apply both schemas using `node scripts/migrate-reviews.mjs` and `node scripts/migrate-complaints.mjs` from `site` with the variable exported. The first preserves the archived reviews model; the second enables Orders. The exact signed action schemas and draft commitment are in `site/lib/complaints.ts`. Fee sender, recipient, native value, draft commitment and successful canonical receipt must match. Editing, responses and status changes use signed, versioned database events and do not require another payment. One wallet can publish one record per agent/network. Burst and duplicate-text flags do not establish abuse or independent identity.
+Set server-only `DATABASE_URL` for Neon. Apply both schemas using `node scripts/migrate-reviews.mjs` and `node scripts/migrate-complaints.mjs` from `site` with the variable exported. The first preserves the archived reviews model; the second enables Orders. The exact signed action schemas and draft commitment are in `site/lib/complaints.ts`. Fee verification checks the payment network, sender, destination, value, exact draft-bound calldata and successful canonical receipt. ERC-20 payments also require the configured USDC token’s matching Transfer event. Editing, responses and status changes use signed, versioned database events and do not require another payment. One wallet can publish one record per agent/network. Burst and duplicate-text flags do not establish abuse or independent identity.
 
 Connect wallet offers separately discovered browser extensions. Select Rabby, MetaMask or another detected wallet and approve there. Connections persist during app navigation, but a full page reload requires choosing the wallet again; stale wallet sessions are not automatically restored. No WalletConnect QR pairing is configured; mobile users need a compatible wallet browser. See `site/.env.example` for configuration and `site/README.md` for the route map.
 

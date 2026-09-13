@@ -1,0 +1,159 @@
+{
+  "checkedAt": "2026-09-13T14:35:12.022Z",
+  "results": [
+    {
+      "status": "fulfilled",
+      "value": {
+        "check": "Sepolia Graph",
+        "status": 200,
+        "data": {
+          "chain": "sepolia",
+          "chainId": 11155111,
+          "scope": "Registry events since configured deployment blocks.",
+          "source": "the-graph",
+          "indexedBlock": 11696506,
+          "freshness": {
+            "indexedAt": "2026-09-13T14:35:00.000Z",
+            "lagSeconds": 11,
+            "stale": false
+          },
+          "nameSemantics": "Indexed registration events only. Use registrar.isNamed for current endorsement.",
+          "agent": {
+            "agentId": "10226",
+            "owner": "0xd7256e7a20368bac505a738cc1c2cbc8d0648849",
+            "agentURI": "data:application/json;base64,eyJ0eXBlIjoiaHR0cHM6Ly9laXBzLmV0aGVyZXVtLm9yZy9FSVBTL2VpcC04MDA0I3JlZ2lzdHJhdGlvbi12MSIsIm5hbWUiOiJOT01FTiBzbmFwc2hvdCByZWFkZXIiLCJkZXNjcmlwdGlvbiI6IlRlc3RuZXQgZGVtb25zdHJhdGlvbiBvZiB0aGUgTk9NRU4gQVBJOiByZXR1cm5zIHB1Ymxpc2hlZCBFUkMtODAwNCBtZXRhZGF0YSBjaGVja3MgYW5kIHJlYXNvbnMgZm9yIGEgc3VwcGxpZWQgY2hhaW4gYW5kIGFnZW50IElELiBJdCBkb2VzIG5vdCBleGVjdXRlIGpvYnMgb3IgY2VydGlmeSBzZXJ2aWNlIHF1YWxpdHkuIiwic2VydmljZXMiOlt7Im5hbWUiOiJ3ZWIiLCJlbmRwb2ludCI6Imh0dHBzOi8vbm9tZW4tYmV0YS52ZXJjZWwuYXBwL2RvY3MvYXBpIn0seyJuYW1lIjoid2ViIiwiZW5kcG9pbnQiOiJodHRwczovL25vbWVuLWJldGEudmVyY2VsLmFwcC9hcGkvc25hcHNob3Q/Y2hhaW49ZXRoZXJldW0mYWdlbnRJZD0yMjgxNyJ9XSwiYWN0aXZlIjp0cnVlLCJ4NDAyU3VwcG9ydCI6dHJ1ZX0=",
+            "lastUpdatedAt": "1789093692",
+            "feedbackCount": "0",
+            "distinctClients": "0",
+            "feedback": [],
+            "name": {
+              "label": "reader",
+              "live": true,
+              "expiry": "1820629908"
+            }
+          }
+        }
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "check": "Arc Graph",
+        "status": 200,
+        "data": {
+          "chain": "arc",
+          "chainId": 5042002,
+          "scope": "NOMEN's explicitly listed Arc catalog; other IDs are outside this index scope.",
+          "source": "the-graph",
+          "indexedBlock": 61913120,
+          "freshness": {
+            "indexedAt": "2026-09-13T14:35:06.000Z",
+            "lagSeconds": 5,
+            "stale": false
+          },
+          "nameSemantics": "Indexed registration events only. Use registrar.isNamed for current endorsement.",
+          "agent": {
+            "agentId": "39",
+            "owner": "0xa67ce2ea23de0c0d5a061a8774075f7d53d12856",
+            "agentURI": "https://emerald-spotty-boar-761.mypinata.cloud/ipfs/bafkreib7kodg5amcwqrkxtgwgm3j5nla7qv6l3v3qz7j4mpbc77nho6oam",
+            "lastUpdatedAt": "1773766644",
+            "feedbackCount": "25",
+            "distinctClients": "25",
+            "feedback": [
+              {
+                "value": "85",
+                "valueDecimals": 0,
+                "tag1": "response_speed",
+                "tag2": "",
+                "revoked": false,
+                "createdAt": "1786496637"
+              },
+              {
+                "value": "85",
+                "valueDecimals": 0,
+                "tag1": "response_speed",
+                "tag2": "",
+                "revoked": false,
+                "createdAt": "1786457872"
+              },
+              {
+                "value": "85",
+                "valueDecimals": 0,
+                "tag1": "payment_reliability",
+                "tag2": "",
+                "revoked": false,
+                "createdAt": "1786414999"
+              },
+              {
+                "value": "85",
+                "valueDecimals": 0,
+                "tag1": "response_speed",
+                "tag2": "",
+                "revoked": false,
+                "createdAt": "1786414955"
+              },
+              {
+                "value": "85",
+                "valueDecimals": 0,
+                "tag1": "payment_reliability",
+                "tag2": "",
+                "revoked": false,
+                "createdAt": "1786376648"
+              },
+              {
+                "value": "85",
+                "valueDecimals": 0,
+                "tag1": "trade_execution",
+                "tag2": "",
+                "revoked": false,
+                "createdAt": "1786295453"
+              },
+              {
+                "value": "85",
+                "valueDecimals": 0,
+                "tag1": "payment_reliability",
+                "tag2": "",
+                "revoked": false,
+                "createdAt": "1786252201"
+              },
+              {
+                "value": "85",
+                "valueDecimals": 0,
+                "tag1": "response_speed",
+                "tag2": "",
+                "revoked": false,
+                "createdAt": "1786163331"
+              },
+              {
+                "value": "85",
+                "valueDecimals": 0,
+                "tag1": "trade_execution",
+                "tag2": "",
+                "revoked": false,
+                "createdAt": "1786163314"
+              },
+              {
+                "value": "85",
+                "valueDecimals": 0,
+                "tag1": "trade_execution",
+                "tag2": "",
+                "revoked": false,
+                "createdAt": "1786071637"
+              }
+            ],
+            "name": null
+          }
+        }
+      }
+    },
+    {
+      "status": "fulfilled",
+      "value": {
+        "check": "ENS reader",
+        "live": true,
+        "label": "reader",
+        "expiry": "1820629908"
+      }
+    }
+  ]
+}

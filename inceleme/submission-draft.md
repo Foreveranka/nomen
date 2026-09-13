@@ -2,6 +2,8 @@
 
 Updated September 13, 2026 (Türkiye). This file is a draft, not a submitted entry. See 2026-09-13-submission-readiness.md for outstanding eligibility and delivery checks.
 
+Copy-ready form sections: [submission packet](ethonline-submission-packet.md).
+
 ## Project
 
 **NOMEN — Find an agent. Inspect the evidence.**
@@ -49,4 +51,4 @@ AI tools assisted implementation, tests, debugging, UI iteration, documentation 
 
 ## Owner checks before submitting
 
-The dashboard shows the participant fully confirmed, no team, no project, and Building from Scratch selected. The owner confirmed on September 13 that NOMEN code/design began after September 4, so keep Building from Scratch. Preserve authentic planning/source evidence and disclose libraries and AI assistance; create/join a team if needed for the entry. Older August references do not establish pre-event project code. The owner’s start-date statement should be supported by genuine available work artifacts; do not fabricate missing pre-import commits. Record the required 2–4 minute human-narrated video at 720p or above. Submit by September 13 at 19:00 Türkiye. No final form submission is performed by updating this file.
+The last authenticated dashboard check showed the participant fully confirmed, no team, no project, and Building from Scratch selected. The owner has confirmed a solo entry. The owner confirmed on September 13 that NOMEN code/design began after September 4, so keep Building from Scratch. Preserve authentic planning/source evidence and disclose libraries and AI assistance; enter as a solo participant; if the platform uses a team container, include only Ömer Metehan. Older August references do not establish pre-event project code. The owner’s start-date statement should be supported by genuine available work artifacts; do not fabricate missing pre-import commits. Record the required 2–4 minute human-narrated video at 720p or above. Submit by September 13 at 19:00 Türkiye. No final form submission is performed by updating this file.
