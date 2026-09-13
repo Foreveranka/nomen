@@ -1,0 +1,78 @@
+
+> site@0.1.0 build
+> next build --webpack
+
+▲ Next.js 16.3.4 (webpack)
+- Environments: .env.local
+✓ Running next.config.ts took 100ms
+
+  Creating an optimized production build ...
+⚠ Compiled with warnings in 4.6s
+
+./node_modules/ox/_esm/tempo/internal/virtualMasterPool.js
+Critical dependency: the request of a dependency is an expression
+
+Import trace for requested module:
+./node_modules/ox/_esm/tempo/internal/virtualMasterPool.js
+./node_modules/ox/_esm/tempo/VirtualMaster.js
+./node_modules/ox/_esm/tempo/index.js
+./node_modules/viem/_esm/tempo/chainConfig.js
+./node_modules/viem/_esm/chains/definitions/tempo.js
+./node_modules/viem/_esm/chains/index.js
+./app/api/evaluations/receipt/route.ts
+
+✓ Compiled successfully in 6.1s
+  Running TypeScript ...
+  Finished TypeScript in 3.4s ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/23) ...
+  Generating static pages using 7 workers (5/23) 
+  Generating static pages using 7 workers (11/23) 
+  Generating static pages using 7 workers (17/23) 
+✓ Generating static pages using 7 workers (23/23) in 374ms
+  Finalizing page optimization ...
+  Collecting build traces ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /agent/[chain]/[id]
+├ ƒ /agent/arbitrum/[id]/trust
+├ ƒ /api/activity
+├ ƒ /api/complaints
+├ ƒ /api/discover
+├ ƒ /api/dogrula
+├ ƒ /api/elenen
+├ ƒ /api/evaluate
+├ ƒ /api/evaluations
+├ ƒ /api/evaluations/receipt
+├ ƒ /api/reviews
+├ ƒ /api/sahip
+├ ƒ /api/snapshot
+├ ƒ /api/toplu
+├ ○ /bulk
+├ ○ /claim
+├ ○ /developers
+├ ○ /docs
+├ ○ /docs/api
+├ ○ /docs/checks
+├ ○ /docs/contracts
+├ ○ /docs/evaluate
+├ ○ /docs/names
+├ ○ /docs/reproduce
+├ ○ /docs/subgraph
+├ ○ /evaluations/evidence
+├ ○ /filtered
+├ ○ /icon.svg
+├ ƒ /name/[label]
+├ ○ /names
+├ ○ /orders
+├ ƒ /owner/[chain]/[address]
+├ ○ /profile
+├ ○ /rules
+└ ○ /workbench
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
