@@ -4,6 +4,10 @@ This review separates working functionality, event eligibility and uncompleted s
 
 ## Latest update — multi-network payments and solo entry
 
+An authenticated ETHGlobal project draft named NOMEN has now been created in Artificial Intelligence. Project details, live app, AI disclosure, Foreveranka/nomen repository (Monorepo) and the technology selections were saved with Save & Continue. This supersedes earlier observations of an empty project form. A square logo and three actual application screenshots are in submission/. Upload remains blocked by the Chrome extension's file-access setting. Prize and Future Opportunities steps are disabled until images and the real demo video are present. Partner texts are prepared in the packet but have not been saved as prize selections. Creation is not submission.
+
+Current documentation deployment: dpl_23iTrkeWqQUCtEdq72YnpKAU2EBH, aliased to https://nomen-beta.vercel.app. Build, TypeScript and ESLint passed; the live docs include the multi-network and legacy-reservation payment policy. Source/docs were pushed in e90a56f; the following asset/status commit adds the remaining preparation materials.
+
 The owner is entering alone. GitHub main was verified at 2ee2e05 against the local checkout before this documentation update. New v2 complaint payments follow the agent network; Sepolia and Arbitrum Sepolia use Circle ERC-20 test USDC, while Arc uses native test USDC. Existing v1 reservations remain Arc. The new-network full transfer tests still await funding; real-contract RPC simulations and production signed reservations passed. All 49 Node tests passed including both database fixtures. See [payment verification](2026-09-13-multichain-complaint-payments.md). The latest form-ready materials are in [submission packet](ethonline-submission-packet.md). Video is excluded from this preparation task. The sections below retain earlier point-in-time checks, with superseded payment statements corrected.
 
 Fresh check at 2026-09-13T14:35Z: Sepolia and Arc Graph endpoints returned HTTP 200 with fresh indexed blocks (11-second and 5-second lag respectively). The Sepolia registrar returned isNamed(10226) = true, reader. Evidence: submission-live-check-2026-09-13.json.
@@ -70,6 +74,7 @@ Build complaint commitment and resolution history on Arbitrum Sepolia: bind the 
 
 ### Arbitrum remaining steps
 
+- Resolve the ETHGlobal final-form statement against submitting the same project to another hackathon before proceeding. A disclosed baseline or new feature does not itself establish permission under that statement. Do not make an inaccurate final attestation.
 - Create the NOMEN project in the dashboard and connect it to the registered buildathon.
 - Confirm terms/timezone and document pre-existing work.
 - Implement and demonstrate a substantive post-start Arbitrum feature; do not count this readiness update as that feature.

@@ -6,7 +6,7 @@ Prepared September 13, 2026. Solo builder: Ömer Metehan. Pool: Building from Sc
 NOMEN
 
 ## Short description
-Find AI agents for your task using live registry evidence, ENSv2 identities, and transparent complaint records.
+Find AI agents with live registry evidence, ENSv2 identities and transparent complaint records.
 
 ## Project description
 NOMEN helps people answer a practical question: which AI agent should I try for this job?
@@ -76,17 +76,25 @@ Scope: this is a user-initiated payment application. It does not use Circle Agen
 - Architecture: https://github.com/Foreveranka/nomen#how-it-works
 - Judge walkthrough: https://github.com/Foreveranka/nomen/blob/main/inceleme/judge-walkthrough.md
 - Product specification: https://github.com/Foreveranka/nomen/blob/main/inceleme/product-specification.md
-- Brand icon: submission/nomen-logo.svg (same artwork as the application icon).
+- Brand icon: submission/nomen-logo.png (512×512) and submission/nomen-logo.svg; same artwork as the application icon.
+- Screenshots: submission/landing.png, submission/ens-name.png and submission/orders.png. These are actual application screenshots; Orders shows an explicitly labeled synthetic test record.
+- Cover: submission/landing.png can also be used for the cover field.
 
 ## Honest verification status
 Arc payment-to-publication is verified with a real testnet transaction. Sepolia and Arbitrum's newly added payment paths have passed unit tests, live 5-USDC eth_call simulations and signed production draft reservations; complete funded payment-to-publication tests remain pending. Do not describe those simulations as completed payments. The existing ENS claim and Graph/AI checks have dated evidence in inceleme/; public endpoints should be checked at judging time for current availability.
 
 ## Form settings and remaining delivery
+Authenticated form status on September 13: NOMEN was created under Artificial Intelligence. Project details, public repository (Foreveranka/nomen, Monorepo), live website, technology selections and the AI contribution disclosure were saved. Logo, cover and screenshots are prepared locally; automated upload was blocked by the Chrome extension's file-access setting. They have not been confirmed uploaded.
+
+The form requires a short description of at most 100 characters, a square logo (512×512 suggested), a cover (16:9 preferred), and at least three screenshots. Prize selection and Future Opportunities remain disabled until those images and the real demo video are provided. The partner texts above are prepared content, not saved prize selections. Final Submit has not been clicked.
+
 Solo entry: only Ömer Metehan. Keep Building from Scratch. The owner's stated start date is provenance, not a replacement for genuine source history. Preserve actual Git dates and planning evidence. If the form requires a team container, it should contain only the solo participant.
 
 Finalist + Partner Prizes versus Partner Prizes Only is a remaining user choice: the former requires availability for live judging if shortlisted. Prepared content does not choose or submit that preference.
 
 Video is not supplied in this packet. Do not enter a fake video URL or mark the project as submitted. After the real video is attached, verify all fields and complete final Submit before the official deadline.
+
+The final form also states that this project will not be submitted to another hackathon. Do not attest to that statement while planning a duplicate submission of this same entry. Any subsequent Arbitrum buildathon proposal needs its eligibility and distinct scope resolved with the organizers; a later Git baseline alone does not override ETHGlobal's terms.
 
 ## Official references
 - https://ethglobal.com/events/ethonline2026/info/details
