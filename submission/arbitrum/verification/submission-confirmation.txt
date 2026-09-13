@@ -1,0 +1,97 @@
+- banner:
+  - img "hackquest"
+  - button "Exit":
+    - generic: Exit
+- main:
+  - heading "Submit Project" [level=1]
+  - paragraph: "Arbitrum Open House Singapore: Online Buildathon"
+  - generic: Select the Project to Submit*
+  - paragraph
+  - button "NOMEN":
+    - generic: NOMEN
+  - generic: What is your contract address?*
+  - paragraph: To qualify, your project must be deployed on the corresponding ecosystem.
+  - textbox "What is your contract address?*":
+    - /placeholder: Contract address
+    - text: "0x33D6893fA6015EeecE1d9232A8D0659F42eF669e"
+  - generic: Which Prize Track Do You Belong To (Please select all that apply)*
+  - button:
+  - checkbox "Overall Prize" [checked]:
+    - paragraph: Overall Prize
+  - checkbox [checked]
+  - checkbox "Promising Products Track" [checked]:
+    - paragraph: Promising Products Track
+  - checkbox [checked]
+  - checkbox "Grants" [checked]:
+    - paragraph: Grants
+  - checkbox [checked]
+  - generic: Link to frontend/UI/website of your project*
+  - button:
+  - generic: 29 / 300
+  - textbox "Link to frontend/UI/website of your project*":
+    - /placeholder: Link to frontend/UI/website of your project
+    - text: https://nomen-beta.vercel.app
+  - generic: List your Core Protocol/ Smart Contract Addresses*
+  - button:
+  - generic: 181 / 300
+  - textbox "List your Core Protocol/ Smart Contract Addresses*":
+    - /placeholder: List your Core Protocol/ Smart Contract Addresses
+    - text: "NomenEvaluationRegistry, Arbitrum Sepolia (421614): 0x33D6893fA6015EeecE1d9232A8D0659F42eF669e. ERC-8004 identity registry (third party): 0x8004A818BFB912233c491871b3d84c89A494BD9e."
+  - generic: List your Factory/Pool Contracts (if applicable)*
+  - button:
+  - generic: 66 / 300
+  - textbox "List your Factory/Pool Contracts (if applicable)*":
+    - /placeholder: List your Factory/Pool Contracts (if applicable)
+    - text: Not applicable. NOMEN does not deploy a factory or liquidity pool.
+  - generic: List your Token Contract Address (if applicable)*
+  - button:
+  - generic: 129 / 300
+  - textbox "List your Token Contract Address (if applicable)*":
+    - /placeholder: List your Token Contract Address (if applicable)
+    - text: "No project-issued token. Fees use Circle test USDC on Arbitrum Sepolia: 0x75faf114eafb1BDbe2F0316DF893fd58CE46AA4d (third party)."
+  - generic: Which parts of your code have been produced during the Buildathon?*
+  - button:
+  - generic: 260 / 300
+  - textbox "Which parts of your code have been produced during the Buildathon?*":
+    - /placeholder: Which parts of your code have been produced during the Buildathon?
+    - text: "Existing project previously submitted to ETHOnline. Baseline a713f696e3fb9eb7bdd9a7567299f1a78055523f. Changes: Arbitrum workflow verification and literal-task retrieval fix 333bb12. Exact dates are in Git history; no new onchain complaint contract is claimed."
+  - generic: Which sponsor/partner technologies have you used as part of your project?*
+  - button:
+  - checkbox "Have not used any" [checked]:
+    - paragraph: Have not used any
+  - checkbox [checked]
+  - checkbox "GMX":
+    - paragraph: GMX
+  - checkbox
+  - checkbox "Robinhood Chain":
+    - paragraph: Robinhood Chain
+  - checkbox
+  - checkbox "Dune Analytics":
+    - paragraph: Dune Analytics
+  - checkbox
+  - checkbox "ZeroDev":
+    - paragraph: ZeroDev
+  - checkbox
+  - checkbox "Fhenix":
+    - paragraph: Fhenix
+  - checkbox
+  - checkbox "Alchemy":
+    - paragraph: Alchemy
+  - checkbox
+  - checkbox "AWS":
+    - paragraph: AWS
+  - checkbox
+  - checkbox "OpenZeppelin":
+    - paragraph: OpenZeppelin
+  - checkbox
+  - button "Submit":
+    - text: Submit
+  - heading "Successfully Submit Project" [level=1]
+  - paragraph: "Arbitrum Open House Singapore: Online Buildathon"
+  - button "Submission another project":
+    - generic: Submission another project
+  - link "Back to my hackathon":
+    - /url: /my-hackathon
+    - button "Back to my hackathon":
+      - generic: Back to my hackathon
+- alert: Project Submission - HackQuest

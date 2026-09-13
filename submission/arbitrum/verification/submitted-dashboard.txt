@@ -1,0 +1,140 @@
+- generic: Welcome aboard! Currently, the platform does not have any airdrop events. Please feel free to participate in tasks as needed.
+- complementary:
+  - link "Back to home":
+    - /url: /home
+    - img "hackquest logo"
+  - button "Switch Website":
+  - list:
+    - link "Home":
+      - /url: /home
+      - generic: Home
+    - generic: Learn
+    - link "Learning Progress":
+      - /url: /learning-progress
+      - generic: Learning Progress
+    - link "Explore Course":
+      - /url: /learning-track
+      - generic: Explore Course
+    - generic: Build
+    - link "My Hackathon":
+      - /url: /my-hackathon
+      - generic: My Hackathon
+    - link "Explore Hackathon":
+      - /url: /hackathons
+      - generic: Explore Hackathon
+    - link "Project Archive":
+      - /url: /projects
+      - generic: Project Archive
+    - generic: Community
+    - link "Forum":
+      - /url: /forum
+      - generic: Forum
+    - link "Global Event":
+      - /url: /events
+      - generic: Global Event
+    - link "My Community":
+      - /url: /my-community
+      - generic: My Community
+    - link "Co-learning":
+      - /url: /co-learning
+      - generic: Co-learning
+    - link "Organization Hub":
+      - /url: /hub-organization
+      - generic: Organization Hub
+    - generic: More
+    - list:
+      - link "Glossary":
+        - /url: /glossary
+        - generic: Glossary
+      - link "Blog":
+        - /url: /blog
+        - generic: Blog
+      - link "Faucet":
+        - /url: /faucets
+        - generic: Faucet
+      - link "Job Station":
+        - /url: /jobs
+        - generic: Job Station
+      - link "Press Kit":
+        - /url: /press-kit
+        - generic: Press Kit
+      - link "Founder":
+        - /url: https://founder.hackquest.io
+        - generic: Founder
+- banner:
+  - textbox "Search for hackathon keywords, topics, etc..."
+  - link "coin 0":
+    - /url: /home
+    - img "coin"
+    - generic: "0"
+  - button "Notification":
+  - button "User Avatar":
+    - img "Metehan İzal"
+- main:
+  - region:
+    - heading "My Project" [level=3]
+    - button "Previous slide" [disabled]:
+      - generic: Previous slide
+    - button "Next slide" [disabled]:
+      - generic: Next slide
+    - img "project"
+    - generic: Create Project/Join Team
+    - link "80 NOMEN Find AI agents for your work, inspect public identity evidence, and review wallet-signed complaint history across test networks. Last Edit 2026-09-14 Builder Metehan İzal Infra AI":
+      - /url: /projects/NOMEN
+      - button "80":
+        - progressbar:
+          - generic: "80"
+      - button:
+      - heading "NOMEN" [level=1]
+      - paragraph: Find AI agents for your work, inspect public identity evidence, and review wallet-signed complaint history across test networks.
+      - generic: Last Edit
+      - generic: 2026-09-14
+      - generic: Builder
+      - button:
+      - generic: Metehan İzal
+      - generic: Infra
+      - generic: AI
+  - paragraph: My Hackathon
+  - tablist:
+    - tab "Hackathon" [selected]
+    - tab "Voting Hackathon"
+    - tab "Past Hackathon"
+  - 'link "Arbitrum Open House Singapore: Online Buildathon Build what''s next Submit Another Project To Do Join Community Registration Close 18 days left Schedule Registration Arbitrum Open House Singapore: Online Buildathon"':
+    - /url: /hackathons/Arbitrum-Open-House-Singapore-Online-Buildathon
+    - 'heading "Arbitrum Open House Singapore: Online Buildathon" [level=2]'
+    - generic: Build what's next
+    - link "Submit Another Project":
+      - /url: /hackathon/17bfad43-fdef-4432-a8d7-7595b7538c41/null/submit
+      - button "Submit Another Project":
+        - text: Submit Another Project
+    - generic: To Do
+    - generic: Join Community
+    - text: Registration Close
+    - paragraph: 18 days left
+    - text: Schedule
+    - paragraph: Registration
+    - 'img "Arbitrum Open House Singapore: Online Buildathon"'
+  - link "NOMEN NOMEN Find AI agents for your work, inspect public identity evidence, and review wallet-signed complaint history across test networks. Prize Track Overall PrizePromising Products TrackGrants":
+    - /url: /projects/NOMEN
+    - img "NOMEN"
+    - heading "NOMEN" [level=2]
+    - paragraph: Find AI agents for your work, inspect public identity evidence, and review wallet-signed complaint history across test networks.
+    - paragraph: Prize Track
+    - paragraph: Overall PrizePromising Products TrackGrants
+  - link "Edit Submission":
+    - /url: /hackathon/17bfad43-fdef-4432-a8d7-7595b7538c41/eff2fe9a-44e3-4046-b08e-08b5d567fe44/submit
+    - button "Edit Submission":
+      - text: Edit Submission
+  - button:
+  - button:
+  - paragraph: My Voting
+  - paragraph: User
+  - paragraph: Advocate
+  - paragraph: Judge
+  - tablist:
+    - tab "Voting Hackathon" [selected]
+    - tab "Past Hackathon"
+  - link "Explore Hackathon":
+    - /url: /hackathons
+    - generic: Explore Hackathon
+- alert: My Hackathon - HackQuest

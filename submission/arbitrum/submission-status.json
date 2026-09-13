@@ -1,0 +1,26 @@
+{
+  "status": "submitted",
+  "verifiedAt": "2026-09-13T21:43:42.535305+00:00",
+  "event": "Arbitrum Open House Singapore: Online Buildathon",
+  "project": "NOMEN",
+  "projectId": "eff2fe9a-44e3-4046-b08e-08b5d567fe44",
+  "eventId": "17bfad43-fdef-4432-a8d7-7595b7538c41",
+  "tracks": [
+    "Overall Prize",
+    "Promising Products Track",
+    "Grants"
+  ],
+  "confirmation": "Successfully Submit Project",
+  "independentReadback": "My Hackathon lists NOMEN under this event with all three tracks and an Edit Submission link.",
+  "video": "https://raw.githubusercontent.com/Foreveranka/nomen/6b8c226/submission/arbitrum/demo.mp4",
+  "videoReadback": {
+    "duration": 120,
+    "readyState": 4
+  },
+  "readiness": "80 Meets Entry Standard",
+  "remainingOptionalProfileItems": [
+    "Logo and screenshot uploads",
+    "Prize wallet connection"
+  ],
+  "awardStatus": "Not awarded; submission receipt only"
+}

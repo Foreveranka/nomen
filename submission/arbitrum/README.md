@@ -1,12 +1,14 @@
 # NOMEN — Arbitrum Open House Singapore submission packet
 
-Updated September 14, 2026 (Europe/Istanbul). This is a preparation packet, not a completed event submission.
+Updated September 14, 2026 (Europe/Istanbul). **Submitted successfully to the event.** HackQuest showed “Successfully Submit Project”; My Hackathon independently lists NOMEN with Overall Prize, Promising Products Track and Grants. See submission-status.json and verification/submitted-dashboard.png. This is a submission receipt, not an award or eligibility decision.
 
 ## Saved project
 
 HackQuest project: https://www.hackquest.io/projects/setup/eff2fe9a-44e3-4046-b08e-08b5d567fe44
 
-Created for Metehan İzal as a solo project. Saved: name, 128-character intro, AI/Infra sectors, React/Next/Node/Python/Solidity tags, live site, public repository, updated verification description, honest pre-event progress and solo-builder introduction. Prize-wallet connection and media upload remain pending. The event form has been prepared in the browser, but NOMEN is disabled as Incomplete Project until readiness requirements are met. No final event submission was made.
+Submitted as a solo project by Metehan İzal. The demo was added through HackQuest’s direct Video Link field and verified to load as a 120-second video. Saving brought readiness to **80 / Meets Entry Standard**; the official Go submit flow accepted NOMEN. All required event fields and three prize tracks were submitted, and the account now offers Edit Submission. Earlier assumptions that logo/screenshots or wallet connection necessarily blocked submission were disproved by this successful submission. Those optional profile improvements remain available.
+
+Demo: https://raw.githubusercontent.com/Foreveranka/nomen/6b8c226/submission/arbitrum/demo.mp4
 
 ## Copy-ready event fields
 
@@ -51,13 +53,12 @@ Four upload-ready 1280x720 captures: landing.png, matching.png, trust-history.pn
 
 NOMEN-Arbitrum-Demo.mp4 in the desktop submission packet is a 120-second, 1920x1080 screenshot-guided walkthrough with English subtitles and selected excerpts of Mete’s existing human-recorded voice. No cloned/generated voice, music or fabricated transaction is used. It shows the existing application and completed TEST workflow, not a continuous live execution or the proposed onchain extension. See demo-edit-manifest.json for exact source-audio excerpts.
 
-## Remaining gates
+## Optional follow-up after submission
 
-1. Confirm event terms and treatment of a prior ETHGlobal entry. The linked terms PDF returned HTTP 403 in the web reader; do not attest to unseen terms.
-2. COMPLETE: real Arbitrum Sepolia TEST payment, publication and signed resolution verified. Record: https://nomen-beta.vercel.app/orders?id=e9a861ae-5cc8-46db-8835-25cdebd8fd0f
-3. Existing projects are explicitly allowed on the event page. Preserve provenance and identify any actual dated changes. A substantive onchain complaint-history extension remains a proposal; it is not a verified mandatory entry condition and is not implemented. Do not falsely claim it.
-4. Connect the owner's prize wallet and upload the prepared logo, four screenshots and final demo. Keep progress truthful to actual commits.
-5. Complete the event-specific form and final submission after the above. Project creation alone is not event submission.
+- Add the prepared logo and four screenshots when the file chooser is usable. These were not required for the accepted submission flow.
+- Connect the owner’s prize wallet before any future reward claim; it was not required to submit.
+- Continue genuine dated development and update the existing submission rather than creating a duplicate. Existing projects are allowed; preserve the ETHOnline disclosure and baseline.
+- Any future award or grant conditions must be reviewed at that stage. No grant or prize is claimed as awarded.
 
 Sources: https://www.hackquest.io/hackathons/Arbitrum-Open-House-Singapore-Online-Buildathon and the authenticated project setup/submission forms inspected September 13, 2026.
 
