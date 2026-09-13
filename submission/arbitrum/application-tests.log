@@ -1,0 +1,101 @@
+(node:50522) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/mete/nomen/site/lib/complaint-publish-query.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/mete/nomen/site/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+﹣ publication flags bursts/repeated text, excludes demos, and records exactly one payment event (0.702292ms) # SKIP
+(node:50523) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/mete/nomen/site/lib/complaints.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/mete/nomen/site/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ fee is exactly 5 native Arc test USDC and bound to the original complaint (2.282542ms)
+✔ wallet authorization binds action, ID, version, content and actor (20.426ms)
+✔ schemas reject mainnet, malformed agent IDs, unknown fields and empty complaints (1.653167ms)
+✔ v2 payments require the configured network and exact transfer evidence; v1 stays Arc (6.6795ms)
+(node:50524) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/mete/nomen/site/lib/discovery.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/mete/nomen/site/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ retrieval supports needs outside the old presets (1.490416ms)
+✔ empty or unrelated retrieval never returns arbitrary fallback agents (0.774916ms)
+✔ model cannot invent a registry record or evidence (0.144208ms)
+✔ network identity and duplicate results are preserved correctly (0.069708ms)
+(node:50525) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/mete/nomen/site/lib/evaluation-registry.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/mete/nomen/site/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ evidence roundtrip preserves committed data and verifies both hashes (3.015708ms)
+✔ altered notes, report, agent, chain, block and outcome cannot verify (0.225792ms)
+✔ malformed and oversized files are rejected (0.564917ms)
+✔ ranking must acknowledge supplied history and cannot invent it (0.160167ms)
+✔ rating roundtrip verifies and changed scores fail verification (0.979959ms)
+(node:50526) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/mete/nomen/site/lib/evaluation-history-summary.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/mete/nomen/site/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ summarizes outcomes while counting a wallet once (2.33825ms)
+✔ empty live result stays distinct from an RPC failure (0.098875ms)
+✔ latest block and log wins regardless of input order or address case (0.117792ms)
+(node:50527) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/mete/nomen/site/lib/evaluation-registry.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/mete/nomen/site/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ receipt hashes are deterministic across object key and checklist order (7.721208ms)
+✔ outcome and note changes produce different evidence hashes (0.659333ms)
+✔ rating is optional, preserves legacy hashes, and commits an exact 1–10 score (1.40225ms)
+(node:50528) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/mete/nomen/site/lib/evaluation.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/mete/nomen/site/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ observed gates only allow a trial, never execution (1.584667ms)
+✔ missing observations cannot pass (0.089916ms)
+✔ changed owner and metadata suspend selection (0.081625ms)
+✔ RPC failures require review (0.065042ms)
+✔ payments never get approved from metadata and HTTP alone (0.055291ms)
+✔ a working website without a discovered agent interface needs review (0.069ms)
+✔ ownership, content and endpoint changes invalidate saved evidence (0.100417ms)
+✔ latency alone does not invalidate evidence (0.748291ms)
+✔ different free-text requests cannot share a trial comparison (0.128417ms)
+✔ reports expire at the deadline (4.38925ms)
+✔ SSRF address and URL variants fail closed (9.173334ms)
+✔ private targets rejected before HTTP (0.417375ms)
+(node:50529) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/mete/nomen/site/lib/graph-discovery.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/mete/nomen/site/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ fresh Graph evidence gates the exact candidates sent onward to AI (42.514583ms)
+✔ a changed URI, burned owner, unknown baseline or missing agent cannot pass (0.10175ms)
+✔ stale, future-dated and indexing-error responses never silently become Sepolia snapshot matches (0.82925ms)
+✔ pruned history, HTTP failure and malformed upstream data fail closed (0.8235ms)
+✔ immutable checkpoint reads use the separate cutoff for a later snapshot addition (0.651583ms)
+✔ AI cannot invent Graph citations or attach live evidence to a snapshot-only match (0.180875ms)
+✔ Graph outage leaves explicitly unsupported networks as snapshot-only candidates (0.211167ms)
+✔ abort, oversized responses and missing block time cannot produce recommendations (1.279583ms)
+✔ same numeric IDs on Arc and Sepolia have separate evidence and pinned blocks (0.712ms)
+✔ one network outage preserves the other live network but never falls back for Arc (1.565708ms)
+✔ a misconfigured Arc endpoint cannot substitute Sepolia identities (0.367708ms)
+(node:50530) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/mete/nomen/site/lib/review-list-query.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/mete/nomen/site/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+﹣ database keeps latest wallet review, excludes demos, sorts and scopes agents/networks (0.678458ms) # SKIP
+(node:50532) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/mete/nomen/site/lib/reviews.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/mete/nomen/site/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ publication signature binds every public field, chain, transaction and demo consent (20.757666ms)
+(node:50533) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///Users/mete/nomen/site/lib/trial.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to /Users/mete/nomen/site/package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ trial links reject unsafe and unobserved destinations (0.986125ms)
+✔ trial access requires fresh non-held evidence and a usable link (0.111791ms)
+✔ trial copy preserves exact task and sample without executing it (0.113959ms)
+✔ unreachable services allow negative or inconclusive reviews but never a passing review (0.188333ms)
+ℹ tests 49
+ℹ suites 0
+ℹ pass 47
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 2
+ℹ todo 0
+ℹ duration_ms 703.382375
