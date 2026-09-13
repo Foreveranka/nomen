@@ -1,0 +1,91 @@
+[
+  {
+    "name": "history",
+    "status": 200,
+    "expected": 200,
+    "pass": true,
+    "data": {
+      "status": "live",
+      "chain": "arbitrum",
+      "chainId": 421614,
+      "agentId": 205,
+      "registry": "0x33D6893fA6015EeecE1d9232A8D0659F42eF669e",
+      "deploymentBlock": "307944655",
+      "checkedAt": "2026-09-13T21:07:40.954Z",
+      "summary": {
+        "total": 1,
+        "distinctReviewers": 1,
+        "superseded": 0,
+        "passed": 0,
+        "failed": 0,
+        "inconclusive": 1,
+        "latestRecordedAt": "1789175073"
+      },
+      "receipts": [
+        {
+          "evaluationId": "0x03e5814e42ad6145ececeaeb0307098e32699f52039e425bd5c7d254e06ce3d7",
+          "reviewer": "0x922D05Af2e9535bfe6fDEEB713ea33088b7412CC",
+          "agentId": 205,
+          "reportHash": "0x29170d48295ad95103d3d4b7ba29682cc65aef8a9629e772e786fdc3acfa1aeb",
+          "evidenceHash": "0xa325ad15eeda2edb9a10e8c52e8956f4c38f81f6c966218272187dcccff2022a",
+          "observedBlock": "307935349",
+          "recordedAt": "1789175073",
+          "outcome": "inconclusive",
+          "blockNumber": "307944729",
+          "transactionHash": "0x363f1eada0965113596960b3551d4678d38df76bac6776ae89be436b78e2307c",
+          "logIndex": 25
+        }
+      ]
+    }
+  },
+  {
+    "name": "missing filter reason rejected",
+    "status": 400,
+    "expected": 400,
+    "pass": true,
+    "data": {
+      "error": "reason must be one of the filter statuses",
+      "reasons": [
+        "not_scanned",
+        "no_metadata_uri",
+        "metadata_unreachable",
+        "duplicate_of_earlier_record",
+        "required_field_missing",
+        "metadata_not_json",
+        "no_describable_purpose",
+        "rpc_error"
+      ]
+    }
+  },
+  {
+    "name": "x402-challenge",
+    "status": 402,
+    "expected": 402,
+    "pass": true,
+    "data": {}
+  },
+  {
+    "name": "bad-discovery",
+    "status": 400,
+    "expected": 400,
+    "pass": true,
+    "data": {
+      "error": "Describe your task in 15–500 characters and choose a supported network."
+    }
+  },
+  {
+    "name": "filtered records with valid reason",
+    "status": 200,
+    "expected": 200,
+    "pass": true,
+    "data": {
+      "chain": "arbitrum",
+      "reason": "not_scanned",
+      "explanation": "No conclusive scan result is available. This does not establish whether the record exists.",
+      "toplam": 0,
+      "sayfa": 0,
+      "boy": 100,
+      "kayitlar": []
+    }
+  }
+]

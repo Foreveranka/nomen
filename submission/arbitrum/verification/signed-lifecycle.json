@@ -1,0 +1,172 @@
+{
+  "tests": [
+    {
+      "name": "Correct chain",
+      "pass": true
+    },
+    {
+      "name": "Controlled TEST agent owner",
+      "pass": true
+    },
+    {
+      "name": "Signed prepare/recovery",
+      "pass": true
+    },
+    {
+      "name": "Unpaid draft hidden",
+      "pass": true
+    },
+    {
+      "name": "Correct chain",
+      "pass": true
+    },
+    {
+      "name": "Controlled TEST agent owner",
+      "pass": true
+    },
+    {
+      "name": "Signed prepare/recovery",
+      "pass": true
+    },
+    {
+      "name": "Unpaid draft hidden",
+      "pass": true
+    },
+    {
+      "name": "Another draft payment rejected",
+      "pass": true
+    },
+    {
+      "name": "Exact payment and canonical receipt",
+      "pass": true
+    },
+    {
+      "name": "Published",
+      "pass": true
+    },
+    {
+      "name": "Publication idempotent",
+      "pass": true
+    },
+    {
+      "name": "Non-author edit rejected",
+      "pass": true
+    },
+    {
+      "name": "Non-owner reply rejected",
+      "pass": true
+    },
+    {
+      "name": "Forged author rejected",
+      "pass": true
+    },
+    {
+      "name": "Expired signature rejected",
+      "pass": true
+    },
+    {
+      "name": "Cross-origin rejected",
+      "pass": true
+    },
+    {
+      "name": "Free author edit",
+      "pass": true
+    },
+    {
+      "name": "Stale version rejected",
+      "pass": true
+    },
+    {
+      "name": "Real owner reply",
+      "pass": true
+    },
+    {
+      "name": "Author status resolved",
+      "pass": true
+    },
+    {
+      "name": "Author status open",
+      "pass": true
+    },
+    {
+      "name": "Author status resolved",
+      "pass": true
+    },
+    {
+      "name": "Signed owner history includes owner block",
+      "pass": true
+    },
+    {
+      "name": "Exactly one payment event",
+      "pass": true
+    },
+    {
+      "name": "Demo excluded from counts",
+      "pass": true
+    }
+  ],
+  "started": "2026-09-13T21:06:35.142Z",
+  "registrationTx": "0x6d284ce9ad10a80384f69a2dd6f19bb56142aaec5c6cd2ca8131447796a6bcf5",
+  "agentId": 206,
+  "owner": "0xD7256e7a20368bAc505A738CC1C2cbc8d0648849",
+  "buyer": "0xb422a67E72Bc398BbA7d19a558493be4DF739AF2",
+  "draft": {
+    "requested": "TEST ONLY: verify Arbitrum publication lifecycle.",
+    "happened": "TEST ONLY: no service requested or executed. Synthetic authorization fixture.",
+    "problem": "TEST ONLY: simulated issue for owner reply, edit and resolution checks.",
+    "evidence": "Synthetic verification; not a purchase.",
+    "id": "dce0898c-312e-4dbb-85ba-1e4246d79aae",
+    "author": "0xb422a67e72bc398bba7d19a558493be4df739af2",
+    "chain": "arbitrum",
+    "agentId": 206,
+    "demo": true,
+    "paymentVersion": 2
+  },
+  "fundingTx": "0xbd43068549ecad29d8dbd225d0f0d48ba687e0f3d73c396671634e00305385b3",
+  "paymentTx": "0x5e4e7db83b261587ce56162f15d082c46005ec490bed907aadea780cabdb34aa",
+  "lifecycleDone": true,
+  "final": {
+    "id": "dce0898c-312e-4dbb-85ba-1e4246d79aae",
+    "status": "resolved",
+    "version": 6,
+    "events": [
+      {
+        "kind": "status",
+        "version": 6,
+        "ownerBlock": null
+      },
+      {
+        "kind": "status",
+        "version": 5,
+        "ownerBlock": null
+      },
+      {
+        "kind": "status",
+        "version": 4,
+        "ownerBlock": null
+      },
+      {
+        "kind": "reply",
+        "version": 3,
+        "ownerBlock": "308579694"
+      },
+      {
+        "kind": "edit",
+        "version": 2,
+        "ownerBlock": null
+      },
+      {
+        "kind": "publish",
+        "version": 1,
+        "ownerBlock": null
+      },
+      {
+        "kind": "prepare",
+        "version": 0,
+        "ownerBlock": null
+      }
+    ],
+    "url": "https://nomen-beta.vercel.app/orders?id=dce0898c-312e-4dbb-85ba-1e4246d79aae"
+  },
+  "completed": "2026-09-13T21:07:01.106Z"
+}

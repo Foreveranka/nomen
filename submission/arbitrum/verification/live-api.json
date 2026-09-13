@@ -1,0 +1,351 @@
+{
+  "checkedAt": "2026-09-13T21:02:29.731Z",
+  "result": [
+    {
+      "name": "bulk",
+      "path": "/api/toplu",
+      "status": 200,
+      "data": {
+        "chain": "arbitrum",
+        "requested": 3,
+        "answered": 3,
+        "limit": 2000,
+        "scan": {
+          "highest_agent_id_seen": 205,
+          "agents_passing_on_this_chain": 44
+        },
+        "results": [
+          {
+            "agentId": 205,
+            "status": "passes",
+            "passes": true,
+            "reason": "Passes every check in the published rule set.",
+            "name": "Orbital Oracle",
+            "category": null,
+            "endpoints": 3,
+            "owner": "0x04274c7be78c3a0e7493122e12a97edc11c2ea9e"
+          },
+          {
+            "agentId": 20,
+            "status": "passes",
+            "passes": true,
+            "reason": "Passes every check in the published rule set.",
+            "name": "Test Agent Arbitrum",
+            "category": null,
+            "endpoints": 0,
+            "owner": "0x8bfffc6ff8cecb5a9bd1afdc82fdfec3b4400d25"
+          },
+          {
+            "agentId": 99999999,
+            "status": "not_scanned",
+            "passes": false,
+            "reason": "No conclusive scan result is available. This does not establish whether the record exists.",
+            "name": null,
+            "category": null,
+            "endpoints": 0,
+            "owner": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "snapshot",
+      "path": "/api/snapshot?chain=arbitrum&agentId=205",
+      "status": 200,
+      "data": {
+        "chain": "arbitrum",
+        "agentId": 205,
+        "status": "passes",
+        "passes": true,
+        "reason": "Passes every check in the published rule set.",
+        "agent": {
+          "name": "Orbital Oracle",
+          "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
+          "description": "Sells verified satellite RF observations: a software-defined radio receives a live satellite downlink, its Doppler signature is measured, and the measurement is checked against independent SGP4 orbit propagation before being sold. Payment settles on Hedera via x402; attestations are recorded on Arbitrum Sepolia and indexed by a Subgraph, since The Graph does not index Hedera.",
+          "owner": "0x04274c7be78c3a0e7493122e12a97edc11c2ea9e",
+          "endpoints": [
+            "https://color-ctrl-occur-monday.trycloudflare.com/observations",
+            "https://color-ctrl-occur-monday.trycloudflare.com/observations/{id}",
+            "https://color-ctrl-occur-monday.trycloudflare.com/verify"
+          ],
+          "category": null,
+          "metadata_source": "uzak",
+          "metadata_hash": "b45f86e7d39494a6c047175b9c7752ef1a2e7f1130777046a94254401861903b",
+          "notes": []
+        },
+        "scan": {
+          "data_kind": "published_snapshot",
+          "live_check": false,
+          "provenance": {
+            "chain": "arbitrum",
+            "block": "0x125ab13a",
+            "started_at": "2026-09-12T00:17:49.347713+00:00",
+            "highest_requested_id": 205,
+            "coverage": "explicit_id_range",
+            "successful_ids": 205,
+            "unresolved_ids": 0
+          },
+          "highest_agent_id_seen": 205,
+          "agents_passing_on_this_chain": 44,
+          "rules": "https://nomen-beta.vercel.app/rules"
+        }
+      }
+    },
+    {
+      "name": "owner",
+      "path": "/api/sahip?chain=arbitrum&address=0x04274c7be78c3a0e7493122e12a97edc11c2ea9e",
+      "status": 200,
+      "data": {
+        "chain": "arbitrum",
+        "address": "0x04274c7be78c3a0e7493122e12a97edc11c2ea9e",
+        "total": 1,
+        "passing": 1,
+        "page": 0,
+        "limit": 100,
+        "hasMore": false,
+        "agents": [
+          {
+            "agentId": 205,
+            "status": "passes",
+            "passes": true,
+            "reason": "Passes every check in the published rule set.",
+            "name": "Orbital Oracle",
+            "description": "Sells verified satellite RF observations: a software-defined radio receives a live satellite downlink, its Doppler signature is measured, and the measurement is checked against independent SGP4 orbit propagation before being sold. Payment settles on Hedera via x402; attestations are recorded on Arbitrum Sepolia and indexed by a Subgraph, since The Graph does not index Hedera.",
+            "category": null,
+            "endpoints": [
+              "https://color-ctrl-occur-monday.trycloudflare.com/observations",
+              "https://color-ctrl-occur-monday.trycloudflare.com/observations/{id}",
+              "https://color-ctrl-occur-monday.trycloudflare.com/verify"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "receipt",
+      "path": "/api/evaluations/receipt?chain=arbitrum&tx=0x363f1eada0965113596960b3551d4678d38df76bac6776ae89be436b78e2307c",
+      "status": 200,
+      "data": {
+        "receipts": [
+          {
+            "evaluationId": "0x03e5814e42ad6145ececeaeb0307098e32699f52039e425bd5c7d254e06ce3d7",
+            "reviewer": "0x922D05Af2e9535bfe6fDEEB713ea33088b7412CC",
+            "agentId": 205,
+            "reportHash": "0x29170d48295ad95103d3d4b7ba29682cc65aef8a9629e772e786fdc3acfa1aeb",
+            "evidenceHash": "0xa325ad15eeda2edb9a10e8c52e8956f4c38f81f6c966218272187dcccff2022a",
+            "observedBlock": "307935349",
+            "recordedAt": "1789175073",
+            "outcome": "inconclusive"
+          }
+        ],
+        "registry": "0x33D6893fA6015EeecE1d9232A8D0659F42eF669e",
+        "checkedAt": "2026-09-13T21:02:28.478Z"
+      }
+    },
+    {
+      "name": "invalid-evaluate",
+      "path": "/api/evaluate",
+      "status": 400,
+      "data": {
+        "error": "Provide chain, a positive integer agentId, and job: custom, wallet_report, research or payments"
+      }
+    },
+    {
+      "name": "evaluate",
+      "path": "/api/evaluate",
+      "status": 200,
+      "data": {
+        "version": 1,
+        "chain": "arbitrum",
+        "agentId": 205,
+        "job": "custom",
+        "request": "Read satellite RF observations and verify Doppler measurements.",
+        "name": "Orbital Oracle",
+        "checkedAt": "2026-09-13T21:02:29.343Z",
+        "expiresAt": "2026-09-13T21:17:29.343Z",
+        "block": "308578607",
+        "owner": "0x04274c7bE78c3A0e7493122E12A97edC11c2eA9e",
+        "metadataHash": "b45f86e7d39494a6c047175b9c7752ef1a2e7f1130777046a94254401861903b",
+        "fingerprint": "604f62524ca9a13b7abfbeaf6f290e93d22e97f90e5ec0bc5eda0bc45b136bb9",
+        "checks": [
+          {
+            "key": "snapshot",
+            "title": "Published metadata rules",
+            "status": "pass",
+            "detail": "Snapshot result: passes. This is not a live service certification."
+          },
+          {
+            "key": "owner",
+            "title": "Current ownership",
+            "status": "pass",
+            "detail": "Read at block 308578607. Matches the published owner."
+          },
+          {
+            "key": "metadata",
+            "title": "Current metadata",
+            "status": "pass",
+            "detail": "Full document hash matches the published scan."
+          },
+          {
+            "key": "services",
+            "title": "Live service response",
+            "status": "unknown",
+            "detail": "0 of 3 probed URLs responded successfully. At most 3 of 3 declared URLs checked. A web response is not a completed task."
+          },
+          {
+            "key": "interface",
+            "title": "Discoverable agent interface",
+            "status": "unknown",
+            "detail": "No A2A-shaped card was confirmed. A website or schema reference is not an agent interface; MCP execution/discovery is not tested by this check."
+          },
+          {
+            "key": "job",
+            "title": "Declared fit for this job",
+            "status": "unknown",
+            "detail": "AI matching uses published descriptions. Completing your specific task still requires a controlled trial; live checks alone cannot confirm task fit."
+          }
+        ],
+        "services": [
+          {
+            "url": "https://color-ctrl-occur-monday.trycloudflare.com/observations",
+            "status": "unavailable",
+            "latencyMs": 8,
+            "protocol": "unconfirmed",
+            "skills": []
+          },
+          {
+            "url": "https://color-ctrl-occur-monday.trycloudflare.com/observations/{id}",
+            "status": "unavailable",
+            "latencyMs": 8,
+            "protocol": "unconfirmed",
+            "skills": []
+          },
+          {
+            "url": "https://color-ctrl-occur-monday.trycloudflare.com/verify",
+            "status": "unavailable",
+            "latencyMs": 8,
+            "protocol": "unconfirmed",
+            "skills": []
+          }
+        ],
+        "declaredMatch": [],
+        "decision": "needs_review",
+        "automaticExecutionAllowed": false,
+        "nextAction": "Resolve the missing evidence before selecting this agent. No live task has been completed by this check.",
+        "limitations": [
+          "No task execution or output-quality test was performed.",
+          "Price, data retention and execution permissions must be confirmed with the provider.",
+          "This is a 15-minute observation window, not guaranteed availability or an onchain ENS endorsement.",
+          "Saved reports and trial notes stay in this browser; they are not signed attestations."
+        ]
+      }
+    },
+    {
+      "name": "complaints",
+      "path": "/api/complaints?chain=arbitrum&agentId=205",
+      "status": 200,
+      "data": {
+        "records": [
+          {
+            "id": "e9a861ae-5cc8-46db-8835-25cdebd8fd0f",
+            "chain": "arbitrum",
+            "agentId": 205,
+            "author": "0xb422a67e72bc398bba7d19a558493be4df739af2",
+            "demo": true,
+            "fields": {
+              "problem": "TEST — Simulated missing report section. Resolve this record after verifying the test payment and persistence.",
+              "evidence": "",
+              "happened": "TEST — This scenario only exercises the payment and public record workflow; no agent task was executed.",
+              "requested": "TEST — Verify a synthetic Arbitrum complaint publication, with no provider service purchased."
+            },
+            "initialDraft": {
+              "id": "e9a861ae-5cc8-46db-8835-25cdebd8fd0f",
+              "demo": true,
+              "chain": "arbitrum",
+              "author": "0xb422a67e72bc398bba7d19a558493be4df739af2",
+              "agentId": 205,
+              "problem": "TEST — Simulated missing report section. Resolve this record after verifying the test payment and persistence.",
+              "evidence": "",
+              "happened": "TEST — This scenario only exercises the payment and public record workflow; no agent task was executed.",
+              "requested": "TEST — Verify a synthetic Arbitrum complaint publication, with no provider service purchased.",
+              "paymentVersion": 2
+            },
+            "commitment": "0x8ae83820283c31896f86f61eeec134a666f69d94102f20357705852b15cf4040",
+            "status": "resolved",
+            "version": 2,
+            "paymentTx": "0x768f77028f561e0cf4ba4790b282a5062b4a30c7ae9c5abb47e8d34c7f2561cf",
+            "flags": [],
+            "createdAt": "2026-09-13T20:53:39.671559+00:00",
+            "publishedAt": "2026-09-13T20:53:48.722715+00:00",
+            "updatedAt": "2026-09-13T20:53:49.123732+00:00"
+          }
+        ],
+        "open": 0,
+        "resolved": 0,
+        "flagged": 0,
+        "total": 1,
+        "page": 1,
+        "pages": 1,
+        "fee": {
+          "networks": {
+            "sepolia": {
+              "chain": "sepolia",
+              "chainId": 11155111,
+              "name": "Sepolia",
+              "token": "0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238",
+              "amount": "5000000",
+              "decimals": 6,
+              "explorer": "https://sepolia.etherscan.io",
+              "gas": "test ETH"
+            },
+            "arbitrum": {
+              "chain": "arbitrum",
+              "chainId": 421614,
+              "name": "Arbitrum Sepolia",
+              "token": "0x75faf114eafb1BDbe2F0316DF893fd58CE46AA4d",
+              "amount": "5000000",
+              "decimals": 6,
+              "explorer": "https://sepolia.arbiscan.io",
+              "gas": "test ETH"
+            },
+            "arc": {
+              "chain": "arc",
+              "chainId": 5042002,
+              "name": "Arc Testnet",
+              "token": null,
+              "amount": "5000000000000000000",
+              "decimals": 18,
+              "explorer": "https://testnet.arcscan.app",
+              "gas": "test USDC"
+            }
+          },
+          "treasury": "0xD7256e7a20368bAc505A738CC1C2cbc8d0648849",
+          "label": "5 test USDC",
+          "testnet": true
+        }
+      }
+    },
+    {
+      "name": "activity-unsupported",
+      "path": "/api/activity?chain=arbitrum&agentId=205",
+      "status": 400,
+      "data": {
+        "error": "Indexed activity supports Sepolia and Arc Testnet"
+      }
+    },
+    {
+      "name": "reviews",
+      "path": "/api/reviews?chain=arbitrum&agentId=205",
+      "status": 200,
+      "data": {
+        "average": null,
+        "count": 0,
+        "total": 0,
+        "reviews": [],
+        "demos": [],
+        "page": 1,
+        "pages": 0
+      }
+    }
+  ]
+}

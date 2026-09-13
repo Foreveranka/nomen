@@ -1,0 +1,16 @@
+# Only the web application is required by the Vercel project (rootDirectory: site).
+tarayici/
+kontratlar/
+subgraph/
+submission/
+inceleme/
+api/
+**/node_modules/
+**/.next/
+**/.agents/
+**/.vercel/
+**/.env*
+!**/.env.example
+**/*.tsbuildinfo
+**/*.log
+.git/

@@ -165,8 +165,8 @@ function Gecerli({ a, ag, durum }: { a: Ajan; ag: AgAnahtar; durum: string }) {
             <h2 className="text-[13px] uppercase tracking-[0.14em] text-[var(--cok-soluk)]">Onchain</h2>
             <div className="mt-4 flex flex-col gap-2 text-[14px]">
               <a className="dugme text-center" href={`${z.nftYolu}${a.id}`} target="_blank" rel="noopener">view the registry record</a>
-              <a className="dugme text-center" href={`/api/dogrula?chain=${ag}&agentId=${a.id}`} target="_blank">what the API returns</a>
-              <div className="flex items-center justify-between rounded-lg bg-[var(--yuzey)] px-3 py-2"><span className="mono truncate text-[11px] text-[var(--soluk)]">/api/dogrula?chain={ag}&agentId={a.id}</span><Kopyala metin={`${typeof location !== "undefined" ? location.origin : ""}/api/dogrula?chain=${ag}&agentId=${a.id}`} /></div>
+              <a className="dugme text-center" href={`/api/snapshot?chain=${ag}&agentId=${a.id}`} target="_blank">what the API returns</a>
+              <div className="flex items-center justify-between rounded-lg bg-[var(--yuzey)] px-3 py-2"><span className="mono truncate text-[11px] text-[var(--soluk)]">/api/snapshot?chain={ag}&agentId={a.id}</span><Kopyala metin={`${typeof location !== "undefined" ? location.origin : ""}/api/snapshot?chain=${ag}&agentId=${a.id}`} /></div>
               {z.isimTalebi && <Link className="dugme dugme-birincil text-center" href={`/claim?agent=${a.id}`}>claim a name for this agent</Link>}
             </div>
           </div>

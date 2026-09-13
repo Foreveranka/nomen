@@ -9,6 +9,7 @@ import { AGLAR, AG_SIRASI } from "@/lib/aglar";
 import { complaintDraft, complaintFields, complaintAction, complaintMessage, complaintPayment, complaintTransaction, COMPLAINT_TREASURY, type ComplaintAction, type ComplaintDraft, type ComplaintFields, type ComplaintRecord } from "@/lib/complaints";
 import { ComplaintCard, type ComplaintList } from "@/components/ComplaintRecords";
 import ComplaintDetail from "./ComplaintDetail";
+import { useAg } from "@/app/providers";
 const blank: ComplaintFields = { requested:"",happened:"",problem:"",evidence:"" };
 export function ComplaintInputs({ fields, setFields, disabled=false }: { fields: ComplaintFields; setFields:(v:ComplaintFields)=>void; disabled?:boolean }) {
   return <div className="space-y-5">{([
@@ -27,7 +28,11 @@ export async function sendComplaintAction(action:ComplaintAction, sign:(message:
 export default function Orders() {
   const params=useSearchParams();const router=useRouter();const cache=useQueryClient();const {address,chainId}=useAccount();
   const signer=useSignMessage();const switching=useSwitchChain();const sending=useSendTransaction();
-  const [fields,setFields]=useState(blank);const [chain,setChain]=useState<ComplaintDraft["chain"]>((["sepolia","arbitrum","arc"].includes(params.get("chain")||"")?params.get("chain"):"arc") as ComplaintDraft["chain"]);
+  const {ag}=useAg();
+  const [fields,setFields]=useState(blank);
+  const [chosenChain,setChain]=useState<ComplaintDraft["chain"]|null>(null);
+  const queryChain=params.get("chain");
+  const chain=chosenChain ?? ((["sepolia","arbitrum","arc"].includes(queryChain||"")?queryChain:ag==="ethereum"?"sepolia":ag) as ComplaintDraft["chain"]);
   const [agentId,setAgentId]=useState(params.get("agentId")||"");const [demo,setDemo]=useState(false);const [consent,setConsent]=useState(false);
   const [prepared,setPrepared]=useState<ComplaintRecord|null>(null);const [tx,setTx]=useState("");const [busy,setBusy]=useState("");const [error,setError]=useState("");const [notice,setNotice]=useState("");
   const [mine,setMine]=useState(false);const [filter,setFilter]=useState("all");const [page,setPage]=useState(1);

@@ -40,7 +40,7 @@ export default function SahipSayfasi({ params }: { params: Promise<{ chain: stri
   if (!valid) notFound();
   return (
     <main className="mx-auto max-w-5xl px-5 pb-20 pt-10">
-      <Link href="/" className="text-[13px] text-[var(--soluk)] hover:text-[var(--yazi)]">← {z.ad} directory</Link>
+      <Link href="/workbench#directory" className="text-[13px] text-[var(--soluk)] hover:text-[var(--yazi)]">← {z.ad} directory</Link>
       <p className="mt-6 text-[13px] uppercase tracking-[0.18em] text-[var(--cok-soluk)]">{bensin ? "Your profile" : "Owner"} on {z.ad}</p>
       <h1 className="mono mt-2 break-all text-[22px] sm:text-[28px]">{address}</h1>
       <div className="mt-2 flex flex-wrap items-center gap-3 text-[14px] text-[var(--soluk)]">

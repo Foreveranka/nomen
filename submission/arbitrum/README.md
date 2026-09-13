@@ -60,3 +60,7 @@ A new Arbitrum demo should show: task search → Arbitrum agent identity → his
 5. Complete the event-specific form and final submission after the above. Project creation alone is not event submission.
 
 Sources: https://www.hackquest.io/hackathons/Arbitrum-Open-House-Singapore-Online-Buildathon and the authenticated project setup/submission forms inspected September 13, 2026.
+
+## Comprehensive verification (14 September 2026 local)
+
+See [verification/README.md](verification/README.md): 49 application/database tests, 30 contract tests, real Arbitrum 5-USDC publication, author edits, registered-owner reply, resolve/reopen, negative authorization and idempotency. ENS/Graph support and wallet-extension UI limitations are explicitly documented. Synthetic test agent #206 and complaint are clearly labeled TEST.

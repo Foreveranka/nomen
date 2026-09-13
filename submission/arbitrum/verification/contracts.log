@@ -1,0 +1,57 @@
+No files changed, compilation skipped
+2026-09-13T21:07:37.632396Z  WARN traces::etherscan: etherscan config not found
+
+Ran 4 tests for test/MerkleCrossCheck.t.sol:MerkleCrossCheckTest
+[PASS] test_a_filtered_agent_does_not_verify_with_a_borrowed_proof() (gas: 13206)
+[PASS] test_python_proof_for_agent_2364_verifies_in_solidity() (gas: 22578)
+[PASS] test_python_proof_for_agent_34678_verifies_in_solidity() (gas: 22662)
+[PASS] test_python_proof_for_agent_50688_verifies_in_solidity() (gas: 19185)
+Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 7.86ms (3.63ms CPU time)
+
+Ran 3 tests for test/Erc7930.t.sol:Erc7930Test
+[PASS] test_arc_testnet_reference() (gas: 44464)
+[PASS] test_matches_the_ensip25_mainnet_example() (gas: 40881)
+[PASS] test_sepolia_uses_a_three_byte_chain_reference() (gas: 44464)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 10.46ms (4.95ms CPU time)
+
+Ran 5 tests for test/NomenEvaluationRegistry.t.sol:NomenEvaluationRegistryTest
+[PASS] testRecordsHashOnlyReceipt() (gas: 189922)
+[PASS] testRejectsEmptyHashesAndMissingBlock() (gas: 14413)
+[PASS] testRejectsNonContractIdentityRegistry() (gas: 39551)
+[PASS] testRejectsUnknownAgent() (gas: 17198)
+[PASS] testSameEvidenceGetsUniqueReviewerReceipts() (gas: 302491)
+Suite result: ok. 5 passed; 0 failed; 0 skipped; finished in 10.49ms (9.44ms CPU time)
+
+Ran 18 tests for test/NomenRegistrar.t.sol:NomenRegistrarTest
+[PASS] testFuzz_only_the_two_scanned_agents_are_eligible(uint256) (runs: 256, μ: 18459, ~: 18462)
+[PASS] test_a_revoked_agent_can_claim_again_after_it_is_fixed() (gas: 683585)
+[PASS] test_a_wrong_proof_does_not_pass() (gas: 34376)
+[PASS] test_agent_outside_the_published_scan_cannot_claim() (gas: 34432)
+[PASS] test_claiming_before_any_scan_is_published_reverts() (gas: 3998299)
+[PASS] test_claiming_for_an_agent_you_do_not_own_reverts() (gas: 33512)
+[PASS] test_eligible_owner_claims_a_name() (gas: 485993)
+[PASS] test_expired_name_reads_as_not_live() (gas: 479167)
+[PASS] test_failed_record_write_rolls_back_registration() (gas: 350274)
+[PASS] test_label_cannot_contain_dot() (gas: 16425)
+[PASS] test_new_root_requires_fresh_proof_for_renewal() (gas: 501008)
+[PASS] test_only_admin_revokes() (gas: 474042)
+[PASS] test_publishing_a_new_scan_replaces_the_root() (gas: 56752)
+[PASS] test_resolver_hides_expired_revoked_and_reused_records() (gas: 1895572)
+[PASS] test_revocation_frees_the_name_and_says_why() (gas: 433857)
+[PASS] test_the_name_cannot_be_transferred() (gas: 474587)
+[PASS] test_the_same_agent_cannot_hold_two_names() (gas: 493998)
+[PASS] test_transfer_invalidates_badge() (gas: 487041)
+Suite result: ok. 18 passed; 0 failed; 0 skipped; finished in 15.05ms (20.19ms CPU time)
+
+╭-----------------------------+--------+--------+---------╮
+| Test Suite                  | Passed | Failed | Skipped |
++=========================================================+
+| Erc7930Test                 | 3      | 0      | 0       |
+|-----------------------------+--------+--------+---------|
+| MerkleCrossCheckTest        | 4      | 0      | 0       |
+|-----------------------------+--------+--------+---------|
+| NomenEvaluationRegistryTest | 5      | 0      | 0       |
+|-----------------------------+--------+--------+---------|
+| NomenRegistrarTest          | 18     | 0      | 0       |
+╰-----------------------------+--------+--------+---------╯
+
