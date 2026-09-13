@@ -44,3 +44,7 @@ Scope: NOMEN production at https://nomen-beta.vercel.app, chain 421614. This is 
 - `signed-lifecycle.json` contains registration/funding/payment hashes, test assertions and final history summary. Test keys remain outside this repository.
 - `live-api.json`, `additional-api.json`, `tests-with-db.log`, `contracts.log`, `build.log`, `lint.log` retain execution evidence.
 - Initial smoke harness expected 400 for mismatched payment; production correctly returned 422. Harness corrected and full lifecycle completed. This was a test expectation correction, not a server bypass.
+
+## Deployment correction
+
+Post-deploy API checks caught an overbroad `api/` exclusion matching `site/app/api`, causing HTML 404 responses. The rule was removed and other root exclusions anchored. The two in-progress faulty deployments were removed, and the known working deployment was restored to the public alias before the corrected build. This incident is recorded rather than counted as a pass. Final post-deploy results are saved separately.
