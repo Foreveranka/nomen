@@ -1,0 +1,13 @@
+{
+  "checkedAt": "2026-09-13T20:39:24.833Z",
+  "chainId": 421614,
+  "block": "308573071",
+  "contract": "0x33D6893fA6015EeecE1d9232A8D0659F42eF669e",
+  "codeBytes": 3283,
+  "operator": "0xD7256e7a20368bAc505A738CC1C2cbc8d0648849",
+  "operatorETHWei": "0",
+  "operatorUSDCBaseUnits": "0",
+  "historicalReceiptStatus": "success",
+  "historicalReceiptBlock": "307944729",
+  "mode": "read-only; no transaction sent"
+}

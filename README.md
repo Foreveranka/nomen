@@ -47,6 +47,8 @@ All three deployments use the same Solidity source and are pinned to the ERC-800
 
 ## Arbitrum Open House Singapore 2026
 
+Current preparation: [Arbitrum submission packet](submission/arbitrum/README.md), including the saved HackQuest project, fresh chain checks and remaining funding/media/event-work gates.
+
 NOMEN existed before the buildathon. The public pre-buildathon baseline is preserved in the annotated tag [`arbitrum-open-house-baseline-2026-09-12`](https://github.com/Foreveranka/nomen/tree/arbitrum-open-house-baseline-2026-09-12). Work attributed to the buildathon will begin after the official event start and will be documented through normal commits. The Arbitrum scope and its timing are described in [`inceleme/arbitrum-open-house-feature-plan.md`](inceleme/arbitrum-open-house-feature-plan.md).
 
 The Arbitrum Sepolia integration is already functional in the baseline: the catalog includes eligible ERC-8004 identities, live trial checks read current identity data, and deployed receipt contracts remain independently readable. New receipt publication has since been removed from the workbench in favor of Orders. Complaint payments now also support Sepolia and Arbitrum Sepolia; these September 13 additions are pre-buildathon work. A public, independently readable trust history was added on September 12 as a pre-event extension and will not be presented as buildathon-period work.

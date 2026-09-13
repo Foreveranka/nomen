@@ -55,3 +55,7 @@ The current workbench no longer publishes new trial receipts. Public feedback no
 The authenticated dashboard shows registration complete but no project created. The official prize tab accepts Arbitrum Sepolia. The schedule displays submissions from Sep 13 20:01 through Oct 4 18:59 without a timezone label; confirm the official build-start cutoff before assigning work to the event. See 2026-09-13-submission-readiness.md for source links and exact observations.
 
 Recommended new feature after the start: Arbitrum-native complaint commitments and resolution history, linked to the agent identity and usable as honestly labeled comparison evidence. Preserve current Arc records and avoid charging again for existing publication. This proposal is not implemented. Retain both the original baseline tag and the later pre-window commits; the older tag alone no longer captures all pre-existing work.
+
+## September 13 evening preparation
+
+The HackQuest NOMEN project was created and its description, stack, links and pre-existing-work disclosure were saved. See [the current submission packet](../submission/arbitrum/README.md). The September 13 baseline is `a713f696e3fb9eb7bdd9a7567299f1a78055523f`; it includes the later multi-network payment changes. Fresh RPC verification confirms deployed Arbitrum bytecode and a successful historical receipt, but the safe operator still has zero Arbitrum Sepolia ETH and USDC. No new post-start feature or final event submission is claimed.
