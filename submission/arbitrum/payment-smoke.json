@@ -1,0 +1,42 @@
+{
+  "startedAt": "2026-09-13T20:53:37.103Z",
+  "chainId": 421614,
+  "author": "0xb422a67E72Bc398BbA7d19a558493be4DF739AF2",
+  "treasury": "0xD7256e7a20368bAc505A738CC1C2cbc8d0648849",
+  "demo": true,
+  "id": "e9a861ae-5cc8-46db-8835-25cdebd8fd0f",
+  "draft": {
+    "id": "e9a861ae-5cc8-46db-8835-25cdebd8fd0f",
+    "demo": true,
+    "chain": "arbitrum",
+    "author": "0xb422a67e72bc398bba7d19a558493be4df739af2",
+    "agentId": 205,
+    "problem": "TEST \u2014 Simulated missing report section. Resolve this record after verifying the test payment and persistence.",
+    "evidence": "",
+    "happened": "TEST \u2014 This scenario only exercises the payment and public record workflow; no agent task was executed.",
+    "requested": "TEST \u2014 Verify a synthetic Arbitrum complaint publication, with no provider service purchased.",
+    "paymentVersion": 2
+  },
+  "commitment": "0x8ae83820283c31896f86f61eeec134a666f69d94102f20357705852b15cf4040",
+  "gasFundingTx": "0x2eee7ec2206b67b7409c7853408225cfab9e5e5aab072afab4ce3a17e790923e",
+  "usdcFundingTx": "0x0ef0d778fcade8f84110e530458ea7e50bc55580e2450b808b18217608e70337",
+  "paymentTx": "0x768f77028f561e0cf4ba4790b282a5062b4a30c7ae9c5abb47e8d34c7f2561cf",
+  "paymentVerified": true,
+  "paymentBlock": "308576520",
+  "published": true,
+  "resolved": true,
+  "version": 2,
+  "url": "https://nomen-beta.vercel.app/orders?id=e9a861ae-5cc8-46db-8835-25cdebd8fd0f",
+  "completedAt": "2026-09-13T20:53:49.166Z",
+  "publicReadbackVerified": {
+    "id": "e9a861ae-5cc8-46db-8835-25cdebd8fd0f",
+    "status": "resolved",
+    "demo": true,
+    "paymentTx": "0x768f77028f561e0cf4ba4790b282a5062b4a30c7ae9c5abb47e8d34c7f2561cf",
+    "events": [
+      "status",
+      "publish",
+      "prepare"
+    ]
+  }
+}

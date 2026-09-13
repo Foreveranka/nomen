@@ -28,3 +28,13 @@ Legacy drafts without paymentVersion, including unpaid reservations, retain thei
 No funded 5-USDC transfer has been broadcast on the two newly added networks in this change. The operator has 0 Circle USDC on both, and 0 Arbitrum Sepolia ETH as of the check. The user has been asked for test tokens. RPC simulation and signed reservation success do not prove the full payment-to-publication path. Complete that test after funding, label synthetic records TEST, and preserve transaction hashes.
 
 ENS naming remains on Sepolia. Graph and historical trial indexing keep their existing network-specific implementations; this change provides complaint-payment workflow parity, not a redeployment of every integration.
+
+## Arbitrum real-transfer verification — September 13 evening
+
+Supersedes the Arbitrum funding blocker above. A distinct test payer transferred exactly 5 Circle test USDC on chain 421614 with the original draft commitment. Production verification accepted the canonical successful receipt and token Transfer event. The TEST record was published, then resolved by an author-signed update without another payment, and read back through the public API. No provider service or purchase is claimed. Sepolia full-transfer status is unchanged.
+
+Payment: https://sepolia.arbiscan.io/tx/0x768f77028f561e0cf4ba4790b282a5062b4a30c7ae9c5abb47e8d34c7f2561cf
+
+Record: https://nomen-beta.vercel.app/orders?id=e9a861ae-5cc8-46db-8835-25cdebd8fd0f
+
+Evidence: [payment smoke](../submission/arbitrum/payment-smoke.json).

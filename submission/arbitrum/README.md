@@ -6,7 +6,7 @@ Prepared September 13, 2026. This is a preparation packet, not a completed event
 
 HackQuest project: https://www.hackquest.io/projects/setup/eff2fe9a-44e3-4046-b08e-08b5d567fe44
 
-Created for Metehan İzal as a solo project. Saved: name, 128-character intro, AI/Infra sectors, React/Next/Node/Python/Solidity tags, live site, public repository, project description and honest pre-event progress. Wallet and media remain pending. No final event submission was made.
+Created for Metehan İzal as a solo project. Saved: name, 128-character intro, AI/Infra sectors, React/Next/Node/Python/Solidity tags, live site, public repository, project description and honest pre-event progress. Prize-wallet connection and media remain pending. No final event submission was made.
 
 ## Copy-ready event fields
 
@@ -31,7 +31,7 @@ NOMEN was previously submitted to ETHOnline 2026 (owner confirmation). All curre
 - 30 Foundry contract tests passed, including 5 evaluation-registry tests and registrar fuzz tests.
 - Live /api/evaluations?chain=arbitrum&agentId=205 returned one inconclusive historical receipt. See live-history.json.
 - Public RPC confirmed chain 421614, deployed contract bytecode and successful historical receipt. See live-chain-check.json.
-- Test operator 0xD7256e7a20368bAc505A738CC1C2cbc8d0648849 has zero test ETH and zero test USDC on Arbitrum Sepolia. Full transfer-to-publication test remains blocked by funding.
+- Superseding funding check: the operator received 0.489959234975732 test ETH and 20 test USDC. A separate test payer was funded with 0.001 test ETH and 5 test USDC. Actual 5-USDC payment, production publication, author-signed resolution without another payment, and public API readback all passed. See payment-smoke.json. This is a synthetic test, not a purchase or customer complaint.
 - Prior source verification is recorded as Sourcify exact match; fresh Arbiscan source verification was not established.
 
 These checks do not certify agent performance, complaint truth, purchase verification or exhaustive security.
@@ -54,7 +54,7 @@ A new Arbitrum demo should show: task search → Arbitrum agent identity → his
 ## Remaining gates
 
 1. Confirm event terms and treatment of a prior ETHGlobal entry. The linked terms PDF returned HTTP 403 in the web reader; do not attest to unseen terms.
-2. Fund the safe operator with Arbitrum Sepolia test ETH and at least 5 Circle test USDC; complete and preserve an actual TEST payment/publication receipt.
+2. COMPLETE: real Arbitrum Sepolia TEST payment, publication and signed resolution verified. Record: https://nomen-beta.vercel.app/orders?id=e9a861ae-5cc8-46db-8835-25cdebd8fd0f
 3. Implement substantive post-start functionality with normal commits. Proposed scope: Arbitrum complaint commitments and resolution history. Not implemented by this preparation.
 4. Connect the owner's prize wallet, finish media upload and final demo, and replace the interim progress field with actual event work.
 5. Complete the event-specific form and final submission after the above. Project creation alone is not event submission.
